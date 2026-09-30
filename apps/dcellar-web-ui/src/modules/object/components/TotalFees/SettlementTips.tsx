@@ -16,9 +16,9 @@ export const SettlementTips = memo<SettlementTipsProps>(function SettlementTips(
       tips={
         <Box>
           <Box>
-            BNB Greenfield uses a settlement system to secure funds for service fees. You will be
-            charged extra fees for the next {displayTime(reserveTime)} or receive a refund if
-            storage and quota prices change.
+            BNB Greenfield menggunakan sistem penyelesaian untuk mengamankan dana biaya layanan. Anda akan
+            dikenakan biaya tambahan untuk {displayTime(reserveTime)} berikutnya atau menerima pengembalian dana jika
+            harga penyimpanan dan kuota berubah.
           </Box>
         </Box>
       }

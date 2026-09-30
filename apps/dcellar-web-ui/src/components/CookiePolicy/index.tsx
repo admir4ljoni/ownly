@@ -50,7 +50,7 @@ export const CookiePolicy = ({ onClose }: Props) => {
       >
         <Box mb={['16px', '0']}>
           <Text maxW={'716px'} fontSize="14" lineHeight={'150%'} color="#E6E8EA">
-            We use cookies to provide a better experience. Check here to manage{' '}
+            Kami menggunakan cookie untuk memberikan pengalaman yang lebih baik. Atur di sini melalui{' '}
             <Box
               as="button"
               color="brand.mint"
@@ -65,9 +65,9 @@ export const CookiePolicy = ({ onClose }: Props) => {
                 });
               }}
             >
-              cookies setting
+              pengaturan cookie
             </Box>{' '}
-            or{' '}
+            atau{' '}
             <Box
               as="a"
               target="_blank"
@@ -78,7 +78,7 @@ export const CookiePolicy = ({ onClose }: Props) => {
                 color: 'brand.brand3',
               }}
             >
-              learn more
+              pelajari lebih lanjut
             </Box>
             .
           </Text>
@@ -90,7 +90,7 @@ export const CookiePolicy = ({ onClose }: Props) => {
               reportEvent({ name: 'dc_lp.main.cookie.accept.click', data: {} });
             }}
           >
-            Accept
+            Terima
           </DCButton>
         </Flex>
       </Flex>

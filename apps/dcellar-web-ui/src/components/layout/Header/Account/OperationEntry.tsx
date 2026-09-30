@@ -30,14 +30,14 @@ export const OperationEntry = () => {
         gaClickName="dc.main.account.accounts.click"
       >
         <IconFont type="account" w={24} />
-        <Text>Accounts</Text>
+        <Text>Akun</Text>
       </OperationEntryItem>
       <OperationEntryItem
         onClick={onDisconnectClick}
         gaClickName="dc.main.account.disconnect.click"
       >
         <IconFont type="logout" w={24} />
-        <Text>Disconnect</Text>
+        <Text>Putuskan</Text>
       </OperationEntryItem>
     </>
   );

@@ -25,29 +25,29 @@ export const TimeOptions: TTimeOption[] = [
     value: '6',
     id: '6d',
     unit: 'm',
-    title: '6 months',
+    title: '6 bulan',
     gaClickName: 'dc_lp.calculator.time.6mo.click',
   },
   {
     id: '1y',
     value: '1',
     unit: 'y',
-    title: '1 year',
+    title: '1 tahun',
     gaClickName: 'dc_lp.calculator.time.1yr.click',
   },
   {
     id: 'custom',
     value: '180',
     unit: 'd',
-    title: 'Custom',
+    title: 'Kustom',
     gaClickName: 'dc_lp.calculator.time.custom.click',
   },
 ];
 
 export const TimeUnits: { [key: string]: string } = {
-  d: 'Day',
-  m: 'Month',
-  y: 'Year',
+  d: 'Hari',
+  m: 'Bulan',
+  y: 'Tahun',
 };
 
 export const swapObj = (obj: { [key: string]: string }) => {

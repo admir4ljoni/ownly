@@ -99,7 +99,7 @@ export const TxConfirmModal = memo<TxConfirmModalProps>(function TxConfirmModal(
             justifyContent={'space-between'}
             alignItems={'center'}
           >
-            <Text>Total Fees</Text>
+            <Text>Total Biaya</Text>
             <Flex
               color={'readable.secondary'}
               alignItems="center"
@@ -113,14 +113,14 @@ export const TxConfirmModal = memo<TxConfirmModalProps>(function TxConfirmModal(
           <Divider borderColor={'readable.disable'} />
           <Flex alignItems={'center'} justifyContent={'space-between'} color={'readable.secondary'}>
             <Flex alignItems="center">
-              <Text>Gas fee</Text>
+              <Text>Biaya jaringan</Text>
               <GasFeeTips />
             </Flex>
             <Text>{renderFeeValue(String(fee), exchangeRate)}</Text>
           </Flex>
           <Flex justifyContent={'flex-end'}>
             <Text fontSize={'12px'} color={'readable.disabled'}>
-              Owner Account balance: {renderBalanceNumber(bankBalance || '0')}
+              Saldo Akun Utama: {renderBalanceNumber(bankBalance || '0')}
             </Text>
           </Flex>
         </Flex>
@@ -143,7 +143,7 @@ export const TxConfirmModal = memo<TxConfirmModalProps>(function TxConfirmModal(
           onClick={_onClose}
           gaClickName={`${prefix}.cancel.click`}
         >
-          Cancel
+          Batal
         </DCButton>
 
         <DCButton

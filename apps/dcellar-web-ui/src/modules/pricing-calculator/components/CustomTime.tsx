@@ -83,7 +83,6 @@ export const CustomTime = ({
           }}
         >
           {customStorageTime.title}: {customStorageTime.value} {TimeUnits[customStorageTime.unit]}
-          {+customStorageTime.value > 1 ? 's' : ''}
         </DCButton>
       </PopoverTrigger>
       <PopoverContent
@@ -97,7 +96,7 @@ export const CustomTime = ({
       >
         {/* <PopoverCloseButton onClick={onClose} color={'readable.tertiary'} /> */}
         <PopoverHeader fontSize={14} fontWeight={600} color={'readable.normal'}>
-          Custom Storage Time
+          Lama Penyimpanan Kustom
         </PopoverHeader>
         <PopoverBody display={'flex'}>
           <NumInput
@@ -112,7 +111,7 @@ export const CustomTime = ({
           />
           <SizeMenu
             buttonStyles={{ height: '32px', marginLeft: '8px', borderRadius: '4px' }}
-            sizes={['Day', 'Month', 'Year']}
+            sizes={['Hari', 'Bulan', 'Tahun']}
             value={TimeUnits[customStorageTime.unit]}
             onItemClick={(item: string) => {
               const unit = swapTimeUnits[item];
@@ -124,7 +123,7 @@ export const CustomTime = ({
           />
         </PopoverBody>
         <PopoverFooter justifyContent={'flex-start'}>
-          <DCButton onClick={() => onClose()}>Confirm</DCButton>
+          <DCButton onClick={() => onClose()}>Konfirmasi</DCButton>
         </PopoverFooter>
       </PopoverContent>
     </Popover>

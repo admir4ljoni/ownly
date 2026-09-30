@@ -33,7 +33,7 @@ export const FullBalance = memo<FullBalanceProps>(function FullBalance({ address
     <Flex w="100%" alignItems="center" justifyContent="space-between">
       <Flex alignItems="center" />
       <Text fontSize={12} color="readable.disable">
-        {`${accountDetail.name} balance: `}
+        {`Saldo ${accountDetail.name}: `}
         {renderFee(balance, exchangeRate)}
       </Text>
     </Flex>

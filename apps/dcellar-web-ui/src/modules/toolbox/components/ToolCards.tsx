@@ -25,7 +25,7 @@ export const ToolCards = ({ data }: { data: ToolItem[] }) => {
             </Text>
             {item.links &&
               item.links.map((link, i) => (
-                <CircleLink key={i} title={link.name} href={link.url}>
+                <CircleLink key={i} title={link.name === 'Link' ? 'Tautan' : link.name} href={link.url}>
                   <IconFont type={link.icon} w={16} />
                 </CircleLink>
               ))}

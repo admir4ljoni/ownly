@@ -61,7 +61,7 @@ export const FilterTypes = ({ filterTypes, onSetFilterTypes }: FilterTypesProps)
 
   return (
     <DCMenu
-      emptyText={'No results.'}
+      emptyText={'Tidak ada hasil.'}
       multiple
       options={typeOptions}
       placement="bottom-start"
@@ -82,7 +82,7 @@ export const FilterTypes = ({ filterTypes, onSetFilterTypes }: FilterTypesProps)
                 <SearchIcon w={16} color={'readable.secondary'} />
               </InputLeftElement>
             }
-            placeholder="Search"
+            placeholder="Cari"
             onChange={(e) => setTypeFilter(e.target.value)}
           />
         </MenuHeader>
@@ -90,7 +90,7 @@ export const FilterTypes = ({ filterTypes, onSetFilterTypes }: FilterTypesProps)
       renderFooter={() => (
         <MenuFooter>
           {/* <Text onClick={() => setSelectedType(types)}>Select All</Text> */}
-          <Text onClick={() => setSelectedType([])}>Clear All</Text>
+          <Text onClick={() => setSelectedType([])}>Hapus Semua</Text>
         </MenuFooter>
       )}
       renderOption={({ label, value }) => (
@@ -112,9 +112,7 @@ export const FilterTypes = ({ filterTypes, onSetFilterTypes }: FilterTypesProps)
         <Tooltip
           placement="top-start"
           visibility={selectedTypeOptions.length ? 'visible' : 'hidden'}
-          content={`${selectedTypeOptions.map((i) => i.label).join(', ')} ${
-            selectedTypeOptions.length > 1 ? 'are' : 'is'
-          } selected.`}
+          content={`${selectedTypeOptions.map((i) => i.label).join(', ')} dipilih.`}
         >
           <MenuButton
             className={cn(
@@ -145,7 +143,7 @@ export const FilterTypes = ({ filterTypes, onSetFilterTypes }: FilterTypesProps)
             }
           >
             {!selectedTypeOptions.length ? (
-              'Type'
+              'Jenis'
             ) : (
               <>
                 {trimLongStr(selectedTypeOptions[0].label, 6, 6, 0)}{' '}

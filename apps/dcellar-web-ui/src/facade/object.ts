@@ -636,11 +636,11 @@ export const getObjectMeta = async (
       },
       (e) => {
         const { response } = e;
-        if (!response) return [null, { code: 500, message: 'Oops, something went wrong' }];
+        if (!response) return [null, { code: 500, message: 'Ups, terjadi kesalahan' }];
 
         const error =
           response?.status === 429
-            ? { code: response.status, message: 'SP not available. Try later.' }
+            ? { code: response.status, message: 'Penyedia Penyimpanan sedang tidak tersedia. Silakan coba lagi nanti.' }
             : { message: xmlParser.parse(response.data)?.Error?.Message, code: response.status };
         return [null, error];
       },

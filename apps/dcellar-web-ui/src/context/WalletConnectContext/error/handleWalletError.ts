@@ -13,11 +13,11 @@ export function handleWalletError(err: any, args: any, context: unknown) {
   switch (true) {
     case err instanceof ConnectorNotFoundError:
       if (connector.id === 'metaMask') {
-        text = `Metamask not installed. Please install and reconnect.`;
+        text = `MetaMask belum terpasang. Silakan pasang lalu hubungkan kembali.`;
       } else if (connector.id === 'trust') {
-        text = `Trust wallet not installed. Please install and reconnect.`;
+        text = `Trust Wallet belum terpasang. Silakan pasang lalu hubungkan kembali.`;
       } else {
-        text = `Wallet not installed. Please install and reconnect.`;
+        text = `Dompet belum terpasang. Silakan pasang lalu hubungkan kembali.`;
       }
       break;
   }
@@ -39,7 +39,7 @@ export function handleWalletError(err: any, args: any, context: unknown) {
   ) {
     toast.error({
       description:
-        'Sorry, it seems like we lost the connection of your wallet, please login again to continue.',
+        'Maaf, sepertinya koneksi ke dompet Anda terputus. Silakan masuk kembali untuk melanjutkan.',
     });
     return disconnect();
   }

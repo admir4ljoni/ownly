@@ -17,19 +17,19 @@ export const DisconnectWalletModal = () => {
 
   return (
     <DCModal isOpen={walletDisconnected} onClose={onClose}>
-      <ModalHeader>Disconnect Wallet</ModalHeader>
+      <ModalHeader>Putuskan Dompet</ModalHeader>
       <ModalCloseButton />
       <ModalBody color={'readable.tertiary'} textAlign={'center'} fontSize={18}>
-        Are you sure you want to disconnect wallet? This action may cause any uploading objects to
-        fail.
+        Apakah Anda yakin ingin memutuskan dompet? Tindakan ini dapat membuat berkas yang sedang
+        diunggah gagal.
       </ModalBody>
       <ModalFooter>
         <DCButton size={'lg'} variant="ghost" flex={1} onClick={onClose} gaClickName={''}>
-          Cancel
+          Batal
         </DCButton>
 
         <DCButton size={'lg'} flex={1} onClick={() => logout(true)}>
-          Disconnect
+          Putuskan
         </DCButton>
       </ModalFooter>
     </DCModal>

@@ -152,9 +152,9 @@ export const FilterContainer = styled(Flex)`
 `;
 
 export const rangePresets: TimeRangePickerProps['presets'] = [
-  { label: 'Current Month', value: [dayjs().startOf('month'), dayjs()] },
-  { label: 'Last 3 Months', value: [dayjs().add(-3, 'month'), dayjs()] },
-  { label: 'Last 6 Months', value: [dayjs().add(-6, 'month'), dayjs()] },
+  { label: 'Bulan Ini', value: [dayjs().startOf('month'), dayjs()] },
+  { label: '3 Bulan Terakhir', value: [dayjs().add(-3, 'month'), dayjs()] },
+  { label: '6 Bulan Terakhir', value: [dayjs().add(-6, 'month'), dayjs()] },
 ];
 
 export const MenuHeader = styled(Flex)`

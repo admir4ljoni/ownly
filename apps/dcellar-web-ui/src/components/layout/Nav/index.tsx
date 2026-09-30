@@ -9,32 +9,38 @@ import { memo } from 'react';
 const MENU_ITEMS = [
   {
     icon: 'dashboard-menu',
-    text: 'Dashboard',
+    text: 'Dasbor',
+    path: '/dashboard',
     trackId: 'dc.main.nav.dashboard.click',
   },
   {
     icon: 'bucket',
-    text: 'Buckets',
+    text: 'Penyimpanan',
+    path: '/buckets',
     trackId: 'dc.main.nav.bucket.click',
   },
   {
     icon: 'group',
-    text: 'Groups',
+    text: 'Grup',
+    path: '/groups',
     trackId: 'dc.main.nav.groups.click',
   },
   {
     icon: 'wallet',
-    text: 'Wallet',
+    text: 'Dompet',
+    path: '/wallet',
     trackId: 'dc.main.nav.wallet.click',
   },
   {
     icon: 'account',
-    text: 'Accounts',
+    text: 'Akun',
+    path: '/accounts',
     trackId: 'dc.main.nav.accounts.click',
   },
   {
     icon: 'toolbox',
-    text: 'Toolbox',
+    text: 'Alat Bantu',
+    path: '/toolbox',
     trackId: 'dc.main.nav.toolbox.click',
   },
 ];
@@ -44,13 +50,13 @@ const ASIDE = [
     link: 'https://docs.bnbchain.org/bnb-greenfield/',
     trackId: 'dc.main.nav.doc.click',
     icon: 'book',
-    text: 'BNB Greenfield Docs',
+    text: 'Dokumentasi BNB Greenfield',
   },
   {
     link: 'https://docs.bnbchain.org/bnb-greenfield/for-developers/network-endpoint/endpoints/?h=rpc',
     trackId: 'dc.main.nav.release_note.click',
     icon: 'doc',
-    text: 'Release Notes',
+    text: 'Catatan Rilis',
   },
   {
     link: 'https://discord.com/invite/bnbchain',
@@ -69,7 +75,7 @@ export const Nav = memo<NavProps>(function Nav() {
     <NavContainer>
       <MenuList>
         {MENU_ITEMS.map((menu) => {
-          const link = `/${menu.text.toLowerCase()}`;
+          const link = menu.path;
           const active = pathname.startsWith(link);
           const icon = `${menu.icon}${active ? '-filled' : ''}`;
           return (

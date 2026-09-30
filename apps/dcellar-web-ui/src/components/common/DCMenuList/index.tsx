@@ -36,7 +36,7 @@ export const DCMenuList = memo<DCMenuListProps>(function DCMenu(props) {
     renderOption,
     renderHeader,
     renderFooter,
-    emptyText = 'No Result',
+    emptyText = 'Tidak Ada Hasil',
     emptyIcon = 'empty-object',
     scrollH = 220,
     multiple = false,

@@ -88,7 +88,7 @@ export const ShareFolder = memo<ShareFolderProps>(function ShareFolder({ fileNam
             alignSelf={'start'}
             href={hash}
           >
-            Check on Explorer <IconFont type={'external'} w={14} />
+            Lihat di Penjelajah <IconFont type={'external'} w={14} />
           </DCLink>
         </Flex>
         <Content>

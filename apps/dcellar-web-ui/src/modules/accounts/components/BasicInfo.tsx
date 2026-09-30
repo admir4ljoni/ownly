@@ -36,7 +36,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
   const exchangeRate = useAppSelector(selectBnbUsdtExchangeRate);
   const router = useRouter();
 
-  const isOwnerAccount = accountDetail?.name?.toLowerCase() === 'owner account';
+  const isOwnerAccount = accountDetail?.name?.toLowerCase() === 'akun utama';
   const balance = isOwnerAccount
     ? BN(accountDetail?.staticBalance || 0)
         .plus(BN(bankBalance))
@@ -58,7 +58,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
 
   const detailItems = [
     {
-      label: 'Account address',
+      label: 'Alamat akun',
       value: (
         <Flex>
           <Text fontSize={'14px'} fontWeight={500}>
@@ -83,7 +83,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
       ),
     },
     {
-      label: 'Balance',
+      label: 'Saldo',
       value: (
         <Flex>
           <LoadingAdaptor loading={loading} empty={false}>
@@ -104,7 +104,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
       ),
     },
     {
-      label: 'Prepaid fee',
+      label: 'Biaya prabayar',
       value: (
         <Flex>
           <LoadingAdaptor loading={loading} empty={false}>
@@ -119,7 +119,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
       ),
     },
     {
-      label: 'Flow rate',
+      label: 'Laju pembayaran',
       value: (
         <LoadingAdaptor loading={loading} empty={false}>
           <Text fontSize={14} fontWeight={500}>
@@ -134,7 +134,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
       ),
     },
     {
-      label: 'Last update date',
+      label: 'Tanggal pembaruan terakhir',
       value: (
         <LoadingAdaptor loading={loading} empty={false}>
           <Text fontSize={14} fontWeight={500}>
@@ -144,7 +144,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
       ),
     },
     {
-      label: 'Force settlement date',
+      label: 'Tanggal penyelesaian paksa',
       value: (
         <LoadingAdaptor loading={loading} empty={false}>
           <Text fontSize={14} fontWeight={500}>
@@ -182,15 +182,15 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
                   tips={
                     <Box>
                       <Text fontSize={14} fontWeight={600} mb={4}>
-                        Frozen Account
+                        Akun Dibekukan
                       </Text>
                       <Text fontSize={14} fontWeight={400} color="readable.normal" mb={4}>
-                        Your account is suspended due to insufficient balance. To reactivate your
-                        account, please deposit at least &nbsp;
+                        Akun Anda ditangguhkan karena saldo tidak cukup. Untuk mengaktifkan kembali
+                        akun Anda, segera isi saldo minimal &nbsp;
                         <strong>
                           {unFreezeAmount} &nbsp;{displayTokenSymbol()}
                         </strong>
-                        &nbsp; immediately.
+                        .
                       </Text>
                       <Link
                         cursor={'pointer'}
@@ -200,7 +200,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
                         textAlign={'right'}
                         onClick={() => onTopUpClick()}
                       >
-                        Top Up
+                        Isi Saldo
                       </Link>
                     </Box>
                   }
@@ -218,7 +218,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
                 w="fit-content"
                 color={'readable.tertiary'}
               >
-                Non-Refundable
+                Tidak Dapat Dikembalikan
               </Box>
             )}
           </Box>

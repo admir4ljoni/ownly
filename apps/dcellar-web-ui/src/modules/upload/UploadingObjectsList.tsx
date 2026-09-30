@@ -21,7 +21,7 @@ export const UploadingObjectsList = ({ data }: { data: UploadObject[] }) => {
   const columns: ColumnProps<UploadObject>[] = [
     {
       key: 'name',
-      title: 'Name',
+      title: 'Nama',
       render: (_, record) => {
         return (
           <NameItem
@@ -36,7 +36,7 @@ export const UploadingObjectsList = ({ data }: { data: UploadObject[] }) => {
     },
     {
       key: 'path',
-      title: 'Path',
+      title: 'Lokasi',
       width: 170,
       render: (_, record) => {
         return (
@@ -63,7 +63,7 @@ export const UploadingObjectsList = ({ data }: { data: UploadObject[] }) => {
     },
     {
       key: 'action',
-      title: 'Action',
+      title: 'Tindakan',
       width: 146,
       render: (record) => {
         const { status, id } = record;
@@ -77,7 +77,7 @@ export const UploadingObjectsList = ({ data }: { data: UploadObject[] }) => {
 
         switch (status) {
           case 'FINISH':
-            return <UploadActionButton type="clear" text="Clear Record" ids={[id]} />;
+            return <UploadActionButton type="clear" text="Hapus Riwayat" ids={[id]} />;
 
           case 'CANCEL':
           case 'ERROR':
@@ -94,7 +94,7 @@ export const UploadingObjectsList = ({ data }: { data: UploadObject[] }) => {
           case 'SIGN':
           case 'SIGNED':
           case 'UPLOAD':
-            return <UploadActionButton type="cancel" text="Cancel" ids={[id]} />;
+            return <UploadActionButton type="cancel" text="Batal" ids={[id]} />;
 
           default:
             return null;

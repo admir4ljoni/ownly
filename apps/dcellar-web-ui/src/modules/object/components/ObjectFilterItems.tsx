@@ -104,9 +104,9 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
   };
 
   const rangePresets: TimeRangePickerProps['presets'] = [
-    { label: 'Current Month', value: [dayjs().startOf('month'), dayjs()] },
-    { label: 'Last 3 Months', value: [dayjs().add(-3, 'month'), dayjs()] },
-    { label: 'Last 6 Months', value: [dayjs().add(-6, 'month'), dayjs()] },
+    { label: 'Bulan Ini', value: [dayjs().startOf('month'), dayjs()] },
+    { label: '3 Bulan Terakhir', value: [dayjs().add(-3, 'month'), dayjs()] },
+    { label: '6 Bulan Terakhir', value: [dayjs().add(-6, 'month'), dayjs()] },
   ];
 
   const onInputNumberKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -172,7 +172,7 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
       <Divider />
       <Container>
         <DCMenu
-          emptyText={'No results.'}
+          emptyText={'Tidak ada hasil.'}
           multiple
           options={options}
           placement="bottom-start"
@@ -193,15 +193,15 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
                     <SearchIcon w={16} color={'readable.secondary'} />
                   </InputLeftElement>
                 }
-                placeholder="Search"
+                placeholder="Cari"
                 onChange={(e) => setTypeFilter(e.target.value)}
               />
             </MenuHeader>
           )}
           renderFooter={() => (
             <MenuFooter>
-              <Text onClick={() => setSelectedType(types)}>Select All</Text>
-              <Text onClick={() => setSelectedType([])}>Clear All</Text>
+              <Text onClick={() => setSelectedType(types)}>Pilih Semua</Text>
+              <Text onClick={() => setSelectedType([])}>Hapus Semua</Text>
             </MenuFooter>
           )}
           renderOption={({ label, value }) => (
@@ -222,9 +222,7 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
             <Tooltip
               placement="top-start"
               visibility={selectedOptions.length ? 'visible' : 'hidden'}
-              content={`${selectedOptions.map((i) => i.label).join(', ')} ${
-                selectedOptions.length > 1 ? 'are' : 'is'
-              } selected.`}
+              content={`${selectedOptions.map((i) => i.label).join(', ')} dipilih.`}
             >
               <MenuButton
                 className={cn(
@@ -258,7 +256,7 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
                 }
               >
                 {!selectedOptions.length ? (
-                  'Type'
+                  'Jenis'
                 ) : (
                   <>
                     {trimLongStr(selectedOptions[0].label, 6, 6, 0)}{' '}
@@ -304,8 +302,8 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
           >
             {objectCreationTimeRangeFilter.filter(Boolean).length
               ? objectCreationTimeRangeFilter.join(' ~ ') +
-                (objectCreationTimeRangeFilter[1] ? '' : 'Now')
-              : 'Date Created'}
+                (objectCreationTimeRangeFilter[1] ? '' : 'Sekarang')
+              : 'Tanggal Dibuat'}
           </DCButton>
           <DCRangePicker
             dropdownClassName={'object-list-date-filter'}
@@ -348,7 +346,7 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
                   precision={0}
                   onKeyDown={onInputNumberKeyDown}
                   onChange={(e) => setSizeFrom((v) => ({ ...v, value: e }))}
-                  placeholder="Set amount"
+                  placeholder="Masukkan jumlah"
                 />
                 <DCMenu
                   options={sizeOptions}
@@ -386,7 +384,7 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
                   precision={0}
                   onChange={(e) => setSizeTo((v) => ({ ...v, value: e }))}
                   onKeyDown={onInputNumberKeyDown}
-                  placeholder="Set amount"
+                  placeholder="Masukkan jumlah"
                 />
 
                 <DCMenu
@@ -413,7 +411,7 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
                 </DCMenu>
               </Flex>
               <DCButton h={32} w={94} onClick={onSetSize}>
-                Confirm
+                Konfirmasi
               </DCButton>
             </SizeContainer>
           )}
@@ -460,7 +458,7 @@ export const ObjectFilterItems = memo<ObjectFilterItemsProps>(function ObjectFil
                     }`
                   : objectSizeToFilter?.value !== null && objectSizeFromFilter?.value === null
                     ? `<= ${objectSizeToFilter.value}${objectSizeToFilter.unit === '1' ? 'KB' : 'MB'}`
-                    : 'Size'}
+                    : 'Ukuran'}
             </MenuButton>
           )}
         </DCMenu>

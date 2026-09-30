@@ -62,7 +62,7 @@ export const PaymentAccountSelector = memo<PaymentAccountSelectorProps>(
               _hover={{ color: 'brand.brand5' }}
               onMouseDown={() => router.push('/accounts')}
             >
-              Manage Accounts
+              Kelola Akun
             </Text>
           </Link>
         </Grid>
@@ -102,7 +102,7 @@ export const PaymentAccountSelector = memo<PaymentAccountSelectorProps>(
         value={paymentAccount.address}
         text={renderItem(paymentAccount.name, paymentAccount.address)}
         options={options}
-        header={() => `Accounts (${accountCount})`}
+        header={() => `Akun (${accountCount})`}
         onChange={onPaymentAccountChange}
         onSearchFilter={onSearchFilter}
         onSearch={onSearch}

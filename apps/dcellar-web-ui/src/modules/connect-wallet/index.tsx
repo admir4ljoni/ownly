@@ -44,15 +44,15 @@ export const ConnectWallet = () => {
             <Flex h="100%" alignItems="center" justifyContent="center" paddingX={20}>
               <Flex flexDirection="column" maxW={509} gap={24} overflow="hidden">
                 <Text as="h1" fontSize={40} fontWeight={700}>
-                  BNB Greenfield Storage Console
+                  Konsol Penyimpanan BNB Greenfield
                 </Text>
                 <Text as="h2" fontSize={16} color="readable.secondary">
-                  Empower developers to quickly get started with BNB Greenfield decentralized
-                  storage and assist in the development process.
+                  Mulai simpan berkas Anda dengan cepat di penyimpanan terdesentralisasi BNB
+                  Greenfield, aman dan mudah digunakan.
                 </Text>
                 {isMobile && (
                   <ConnectWalletButton
-                    text="Connect Wallet"
+                    text="Hubungkan Dompet"
                     w="fit-content"
                     margin="80px auto 0"
                     h={54}

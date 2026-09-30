@@ -10,7 +10,7 @@ import { smMedia } from '@/modules/responsive';
 export const StartBuildContent = ({ gaClickName }: { gaClickName: string }) => (
   <>
     <H2 fontSize={40} fontWeight={700}>
-      Start Building with Ownly Now
+      Mulai Membangun dengan Ownly Sekarang
     </H2>
     <Text
       fontSize={16}
@@ -20,11 +20,11 @@ export const StartBuildContent = ({ gaClickName }: { gaClickName: string }) => (
         },
       }}
     >
-      Start your business with BNB Greenfield&apos;s decentralized storage solution with Ownly, and
-      easily expand your operations.
+      Mulai bisnis Anda dengan solusi penyimpanan terdesentralisasi BNB Greenfield bersama Ownly, dan
+      kembangkan operasional Anda dengan mudah.
     </Text>
     <ConnectWallet
-      text="Get Started"
+      text="Mulai Sekarang"
       w={'fit-content'}
       margin={'auto auto'}
       h={54}

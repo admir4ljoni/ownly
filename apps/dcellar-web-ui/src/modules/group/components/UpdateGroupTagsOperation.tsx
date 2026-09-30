@@ -41,7 +41,7 @@ export const UpdateGroupTagsOperation = memo<UpdateGroupTagsOperationProps>(
           modal.error({
             title: TAGS_UPDATE_FAILED,
             buttonText: BUTTON_GOT_IT,
-            errorText: 'Error message: ' + error,
+            errorText: 'Pesan kesalahan: ' + error,
           });
           return;
       }

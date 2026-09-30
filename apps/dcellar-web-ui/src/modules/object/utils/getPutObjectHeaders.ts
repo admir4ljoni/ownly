@@ -28,7 +28,7 @@ export const makePutObjectHeaders = async (
   verifyObjectName(objectName);
 
   if (!txnHash) {
-    throw new Error('Transaction hash is empty, please check.');
+    throw new Error('ID Transaksi kosong, silakan periksa.');
   }
 
   const method = METHOD_PUT;

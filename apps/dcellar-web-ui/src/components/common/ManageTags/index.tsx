@@ -35,7 +35,7 @@ export const ManageTags = memo<ManageTagsProps>(function ManageTags({ onSave, on
     };
 
     if (bytesLength > limits[type]) {
-      return `Should not exceed ${limits[type]} bytes.`;
+      return `Tidak boleh lebih dari ${limits[type]} byte.`;
     }
 
     return false;
@@ -64,11 +64,11 @@ export const ManageTags = memo<ManageTagsProps>(function ManageTags({ onSave, on
       <QDrawerHeader flexDir={'column'}>
         <Flex cursor={'pointer'} alignItems={'center'} onClick={onCancel} gap={8}>
           <IconFont type="back" />
-          Manage Tags
+          Kelola Label
         </Flex>
         <Box className="ui-drawer-sub">
-          Buckets are containers for data stored on BNB Greenfield. Bucket name must be globally
-          unique.
+          Penyimpanan adalah wadah untuk data yang disimpan di BNB Greenfield. Nama penyimpanan harus
+          unik secara global.
         </Box>
       </QDrawerHeader>
       <QDrawerBody>
@@ -80,7 +80,7 @@ export const ManageTags = memo<ManageTagsProps>(function ManageTags({ onSave, on
                   <Input
                     value={item.key}
                     onChange={(e) => onInputChange('key', e.target.value, index)}
-                    placeholder="Key"
+                    placeholder="Kunci"
                   />
                   {isInvalid('key', item.key) && (
                     <FormErrorMessage>{isInvalid('key', item.key)}</FormErrorMessage>
@@ -94,7 +94,7 @@ export const ManageTags = memo<ManageTagsProps>(function ManageTags({ onSave, on
                   <Input
                     value={item.value}
                     onChange={(e) => onInputChange('value', e.target.value, index)}
-                    placeholder="Value"
+                    placeholder="Nilai"
                   />
                   {isInvalid('value', item.value) && (
                     <FormErrorMessage>{isInvalid('value', item.value)}</FormErrorMessage>
@@ -108,10 +108,10 @@ export const ManageTags = memo<ManageTagsProps>(function ManageTags({ onSave, on
       </QDrawerBody>
       <QDrawerFooter>
         <DCButton variant="ghost" w={'100%'} onClick={onCancel}>
-          Cancel
+          Batal
         </DCButton>
         <DCButton variant="brand" w={'100%'} onClick={() => onSave(internalTags)}>
-          Save
+          Simpan
         </DCButton>
       </QDrawerFooter>
     </>
@@ -137,7 +137,7 @@ export const EditTags = memo<EditTagsProps>(function EditTags({
     if (validTags && validTags.length > 0) {
       return (
         <>
-          <Text as="span">Edit Tags</Text>
+          <Text as="span">Ubah Label</Text>
           <Text
             as="span"
             _hover={{
@@ -149,7 +149,7 @@ export const EditTags = memo<EditTagsProps>(function EditTags({
         </>
       );
     }
-    return <>Add Tags</>;
+    return <>Tambah Label</>;
   };
 
   return (
@@ -190,7 +190,7 @@ export const AddTagItem = memo<AddTagItemProps>(function AddTagItem({ onClick, d
       disabled={disabled}
       onClick={onClick}
     >
-      Add Tags
+      Tambah Label
     </DCButton>
   );
 });

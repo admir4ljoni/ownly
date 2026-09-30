@@ -10,17 +10,17 @@ import { useAppSelector } from '@/store';
 const contentTexts = {
   pending: {
     icon: <AnimatePng type="object" />,
-    title: 'Waiting for Confirmation',
-    subtitle: 'Please confirm the transaction in your wallet.',
+    title: 'Menunggu Konfirmasi',
+    subtitle: 'Silakan konfirmasi transaksi di dompet Anda.',
   },
   success: {
     icon: <IconFont w={120} type="status-success" />,
-    title: 'Transaction Submitted',
+    title: 'Transaksi Terkirim',
     subtitle: '',
   },
   failed: {
     icon: <IconFont w={120} type="status-failed" />,
-    title: 'Transaction Failed',
+    title: 'Transaksi Gagal',
     subtitle: '',
   },
 };
@@ -50,7 +50,7 @@ export const StatusModal = memo<StatusModalProps>(function StatusModal({
     if (status === 'failed') {
       return (
         <DCButton size={'lg'} w="100%" onClick={onClose} gaClickName={gaOptions.tryAgainName}>
-          Try Again
+          Coba Lagi
         </DCButton>
       );
     }
@@ -68,10 +68,10 @@ export const StatusModal = memo<StatusModalProps>(function StatusModal({
                 href={viewTxUrl}
                 gaClickName={gaOptions.nextActionName}
               >
-                View in Explorer
+                Lihat di Penjelajah
               </DCButton>
               <DCButton size={'lg'} onClick={onClose} gaClickName={gaOptions.tryAgainName}>
-                Transfer Again
+                Transfer Lagi
               </DCButton>
             </>
           );
@@ -87,10 +87,10 @@ export const StatusModal = memo<StatusModalProps>(function StatusModal({
                 as="a"
                 gaClickName={gaOptions.nextActionName}
               >
-                View in GreenfieldScan
+                Lihat di GreenfieldScan
               </DCButton>
               <DCButton onClick={onClose} gaClickName={gaOptions.tryAgainName}>
-                Transfer Again
+                Transfer Lagi
               </DCButton>
             </>
           );
@@ -106,10 +106,10 @@ export const StatusModal = memo<StatusModalProps>(function StatusModal({
                 href={viewTxUrl}
                 gaClickName={gaOptions.nextActionName}
               >
-                View in GreenfieldScan
+                Lihat di GreenfieldScan
               </DCButton>
               <DCButton size={'lg'} onClick={onClose} gaClickName={gaOptions.tryAgainName}>
-                Send Again
+                Kirim Lagi
               </DCButton>
             </>
           );

@@ -12,7 +12,7 @@ export const BalanceOn = ({ amount, ...restProps }: BalanceOnProps) => {
 
   return (
     <Text color={'readable.tertiary'} fontSize={12} textAlign={'right'} mt={8} {...restProps}>
-      Balance on Greenfield: {renderFee(amount, exchangeRate)}
+      Saldo di Greenfield: {renderFee(amount, exchangeRate)}
     </Text>
   );
 };

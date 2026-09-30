@@ -71,17 +71,17 @@ const Actions: ObjectMenuOption[] = [
   {
     label: (
       <Flex alignItems={'center'}>
-        List for Sell
+        Jual di Pasar
         <IconFont ml={4} w={76} h={16} type="data-marketplace" />
       </Flex>
     ),
     value: 'marketplace',
   },
-  { label: 'View Details', value: 'detail' },
-  { label: 'Share', value: 'share' },
-  { label: 'Download', value: 'download' },
-  { label: 'Cancel', value: 'cancel', variant: 'danger' },
-  { label: 'Delete', value: 'delete', variant: 'danger' },
+  { label: 'Lihat Detail', value: 'detail' },
+  { label: 'Bagikan', value: 'share' },
+  { label: 'Unduh', value: 'download' },
+  { label: 'Batal', value: 'cancel', variant: 'danger' },
+  { label: 'Hapus', value: 'delete', variant: 'danger' },
 ];
 
 const QuickActionValues = ['download', 'share'];
@@ -198,28 +198,28 @@ export const ObjectList = memo<ObjectListProps>(function ObjectList({ shareMode 
   const renderEmpty = useCallback(() => {
     const type = isBucketDiscontinue && !filtered ? 'discontinue' : 'empty-object';
     const title = (() => {
-      if (filtered || shareMode) return 'No Results';
-      if (isBucketDiscontinue) return 'Discontinue Notice';
-      if (isBucketMigrating) return 'Migrating Notice';
-      if (!currentPathExist && isBucketOwner) return 'No Objects Under This Path';
-      return 'Upload Objects and Start Your Work Now';
+      if (filtered || shareMode) return 'Tidak Ada Hasil';
+      if (isBucketDiscontinue) return 'Pemberitahuan Penghentian';
+      if (isBucketMigrating) return 'Pemberitahuan Migrasi';
+      if (!currentPathExist && isBucketOwner) return 'Tidak Ada Berkas di Lokasi Ini';
+      return 'Unggah Berkas dan Mulai Sekarang';
     })();
 
     const desc = (() => {
-      if (filtered || shareMode) return 'No results found. Please try different conditions.';
+      if (filtered || shareMode) return 'Tidak ada hasil. Silakan coba kriteria lain.';
       if (isBucketDiscontinue)
-        return 'This bucket were marked as discontinued and will be deleted by SP soon. ';
+        return 'Penyimpanan ini ditandai dihentikan dan akan segera dihapus oleh Penyedia Penyimpanan. ';
       if (isBucketMigrating)
-        return 'This bucket were marked as migrating and will be migrated by SP soon.';
+        return 'Penyimpanan ini ditandai sedang migrasi dan akan segera dimigrasikan oleh Penyedia Penyimpanan.';
       if (!currentPathExist && isBucketOwner)
         return (
           <Box sx={{ a: { color: 'brand.normal' } }}>
-            The path no longer exists on Ownly. You can{' '}
-            <Link href={`/buckets/${currentBucketName}`}>return to the bucket list</Link> and
-            continue your work.
+            Lokasi ini sudah tidak ada di Ownly. Anda bisa{' '}
+            <Link href={`/buckets/${currentBucketName}`}>kembali ke daftar penyimpanan</Link> dan
+            melanjutkan pekerjaan Anda.
           </Box>
         );
-      return `To avoid data loss during testnet phase, the file size should not exceed ${formatBytes(
+      return `Untuk menghindari kehilangan data selama fase Jaringan Uji, ukuran berkas tidak boleh melebihi ${formatBytes(
         SINGLE_OBJECT_MAX_SIZE,
       )}.`;
     })();
@@ -244,7 +244,7 @@ export const ObjectList = memo<ObjectListProps>(function ObjectList({ shareMode 
       key: 'objectName',
       title: (
         <SortItem onClick={() => onSorterChange('objectName', 'ascend')}>
-          Name{sortName === 'objectName' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
+          Nama{sortName === 'objectName' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
       render: (_: string, record: ObjectEntity) => (
@@ -262,7 +262,7 @@ export const ObjectList = memo<ObjectListProps>(function ObjectList({ shareMode 
       width: 150,
       title: (
         <SortItem onClick={() => onSorterChange('contentType', 'ascend')}>
-          Type{sortName === 'contentType' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
+          Jenis{sortName === 'contentType' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
       render: (_: string, record: ObjectEntity) => (
@@ -276,7 +276,7 @@ export const ObjectList = memo<ObjectListProps>(function ObjectList({ shareMode 
       width: 200,
       title: (
         <SortItem onClick={() => onSorterChange('payloadSize', 'ascend')}>
-          Size{sortName === 'payloadSize' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
+          Ukuran{sortName === 'payloadSize' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
       render: (_: string, record: ObjectEntity) =>
@@ -300,7 +300,7 @@ export const ObjectList = memo<ObjectListProps>(function ObjectList({ shareMode 
       width: 160,
       title: (
         <SortItem onClick={() => onSorterChange('createAt', 'descend')}>
-          Date Created
+          Tanggal Dibuat
           {sortName === 'createAt' ? SortIcon[dir] : <span>{SortIcon['descend']}</span>}
         </SortItem>
       ),
@@ -596,7 +596,7 @@ export const ObjectList = memo<ObjectListProps>(function ObjectList({ shareMode 
       scroll={{ x: 800 }}
       total={
         objectListTruncated[completeCommonPrefix]
-          ? 'Latest 10,000 objects.'
+          ? '10.000 berkas terbaru.'
           : `Total: ${objectList.length.toLocaleString()}`
       }
     />

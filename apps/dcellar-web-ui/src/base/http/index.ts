@@ -96,10 +96,10 @@ const request = ({ url, options, customOptions }: RequestOptions) => {
         errorCodes[code as TErrorCodeKey] ||
         e.response?.msg ||
         e?.msg ||
-        'Internal error. Please try again later.';
+        'Terjadi kesalahan internal. Silakan coba lagi nanti.';
 
       if (needNotify && e?.code !== 'ECONNABORTED' && e.response && e.response.status !== 401) {
-        toast.error({ description: `Operation failed. Error message: ${message}.` });
+        toast.error({ description: `Operasi gagal. Pesan kesalahan: ${message}.` });
         console.error(`Operation failed. Error message: ${message}.`);
       }
 

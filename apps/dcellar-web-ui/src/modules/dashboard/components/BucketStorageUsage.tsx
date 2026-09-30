@@ -65,7 +65,7 @@ export const BucketStorageUsage = () => {
           const curData = lineData[params[0].dataIndex];
           return `
             <p ${LABEL_STYLES}>${formatChartTime(curData.time)}</p>
-            <p ${VALUE_STYLES}>Storage Size: ${formatBytes(data)}</p>
+            <p ${VALUE_STYLES}>Ukuran: ${formatBytes(data)}</p>
           `;
         },
       },
@@ -76,7 +76,7 @@ export const BucketStorageUsage = () => {
         itemGap: 16,
         right: 12,
         textStyle: { fontWeight: 400 },
-        data: ['Storage Usage', 'Quota Usage'],
+        data: ['Penggunaan Penyimpanan', 'Penggunaan Kuota'],
       },
       xAxis: {
         data: xData,
@@ -98,10 +98,10 @@ export const BucketStorageUsage = () => {
           },
           emphasis: { itemStyle: { opacity: 1 } },
           animationDuration: 600,
-          name: 'Storage Usage',
+          name: 'Penggunaan Penyimpanan',
           type: 'line',
           smooth: false,
-          stack: 'Storage Usage',
+          stack: 'Penggunaan Penyimpanan',
           data: yData,
         },
       ],

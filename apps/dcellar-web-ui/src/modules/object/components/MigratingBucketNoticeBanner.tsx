@@ -18,7 +18,7 @@ export const MigratingBucketNoticeBanner = ({ bucketName }: { bucketName: string
     dispatch(
       setSignatureAction({
         icon: Animates.object,
-        title: 'Cancelling Migrate Bucket',
+        title: 'Membatalkan Migrasi Penyimpanan',
         desc: WALLET_CONFIRM,
       }),
     );
@@ -30,7 +30,7 @@ export const MigratingBucketNoticeBanner = ({ bucketName }: { bucketName: string
     if (bucketInfo?.bucketStatus === BucketStatus.BUCKET_STATUS_CREATED) {
       await dispatch(setupBucket(bucketName));
       dispatch(setSignatureAction({}));
-      toast.success({ description: 'This bucket has been migrated!' });
+      toast.success({ description: 'Penyimpanan ini sudah dimigrasikan!' });
       return;
     }
 
@@ -39,17 +39,17 @@ export const MigratingBucketNoticeBanner = ({ bucketName }: { bucketName: string
     if (!txRes || txRes.code !== 0) {
       return dispatch(
         setSignatureAction({
-          title: 'Migrate Failed',
+          title: 'Migrasi Gagal',
           icon: 'status-failed',
-          desc: 'Sorry, there’s something wrong when signing with the wallet.',
+          desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
           buttonText: BUTTON_GOT_IT,
-          errorText: 'Error message: ' + error,
+          errorText: 'Pesan kesalahan: ' + error,
         }),
       );
     }
     await dispatch(setupBucket(bucketName));
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Cancel Migrate Bucket successfully!' });
+    toast.success({ description: 'Migrasi penyimpanan berhasil dibatalkan!' });
   };
 
   return (
@@ -63,8 +63,8 @@ export const MigratingBucketNoticeBanner = ({ bucketName }: { bucketName: string
     >
       <Flex alignItems={'center'} gap={4}>
         <IconFont type="migrate" />
-        This bucket, in the process of data migration to another provider, supports only downloads,
-        quota modifications, deletions, and sharing.
+        Penyimpanan ini sedang dalam proses migrasi data ke penyedia lain, dan hanya mendukung unduhan,
+        perubahan kuota, penghapusan, dan berbagi.
       </Flex>
       <Text
         as="span"
@@ -73,7 +73,7 @@ export const MigratingBucketNoticeBanner = ({ bucketName }: { bucketName: string
         textDecoration={'underline'}
         onClick={onCancelMigration}
       >
-        Cancel Migration
+        Batalkan Migrasi
       </Text>
     </Flex>
   );

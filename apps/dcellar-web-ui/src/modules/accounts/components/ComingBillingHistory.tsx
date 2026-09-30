@@ -7,19 +7,19 @@ import { memo, useCallback } from 'react';
 const emptyArr: string[] = [];
 const columns: ColumnProps<any>[] = [
   {
-    title: 'Time',
+    title: 'Waktu',
     key: 'timestamp',
   },
   {
-    title: 'Type',
+    title: 'Jenis',
     key: 'address',
   },
   {
-    title: 'Total Cost',
+    title: 'Total Biaya',
     key: 'totalCost',
   },
   {
-    title: 'Flow Rate',
+    title: 'Laju Pembayaran',
     key: 'netflowRate',
   },
 ].map((col) => ({ ...col, dataIndex: col.key }));
@@ -29,7 +29,7 @@ export const ComingBillingHistory = memo(function ComingBillingHistory() {
     () => (
       <ListEmpty type="discontinue" title="" desc="" empty={true} h={274}>
         <Text mt={16} fontSize={14} color={'readable.tertiary'}>
-          Coming Soon...
+          Segera Hadir...
         </Text>
       </ListEmpty>
     ),

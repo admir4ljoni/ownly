@@ -58,7 +58,7 @@ export const SimplePagination = memo<SimplePaginationProps>(function SimplePagin
   return (
     <Container>
       <Box flex={1}>{total}</Box>
-      {!simple && <>Rows per page: {menu}</>}
+      {!simple && <>Baris per halaman: {menu}</>}
       <Flex gap={16}>
         <StyledNav
           type="back"

@@ -14,13 +14,13 @@ import { useDetectScroll } from './useDetectScroll';
 
 export const MENUS = [
   {
-    title: 'Homepage',
+    title: 'Beranda',
     link: '/',
     target: '',
     gaName: 'dc_lp.main.header.homepage.click',
   },
   {
-    title: 'Pricing',
+    title: 'Harga',
     link: '/pricing-calculator',
     target: '',
     gaName: 'dc_lp.main.header.pricing.click',
@@ -92,7 +92,7 @@ export const BaseHeader = () => {
           fontSize={14}
           gaClickName={gaClickName}
           icon={<IconFont type={'wallet-filled'} w={24} />}
-          text="Get Started"
+          text="Mulai"
           variant="ghost"
           border={'1px solid readable.border'}
           _hover={{

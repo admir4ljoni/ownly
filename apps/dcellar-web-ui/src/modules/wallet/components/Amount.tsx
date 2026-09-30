@@ -55,14 +55,14 @@ type AmountProps = {
 
 const AmountErrors = {
   validateWithdrawStaticBalance:
-    "The payment account doesn't have enough balance to pay settlement fee.",
-  validateWithdrawBankBalance: "The owner account doesn't have enough balance to pay gas fee.",
-  validateBalance: 'Insufficient balance.',
-  validateFormat: 'Invalid amount.',
-  validatePrecision: `The maximum precision is ${CRYPTOCURRENCY_DISPLAY_PRECISION} digits.`,
-  required: 'Amount is required.',
-  min: 'Please enter a minimum amount of 0.00000001.',
-  validateWithdrawMaxAmountError: <>No withdrawals allowed over 100 {displayTokenSymbol()}.</>,
+    'Saldo Akun Pembayaran tidak cukup untuk membayar biaya penyelesaian.',
+  validateWithdrawBankBalance: 'Saldo Akun Utama tidak cukup untuk membayar biaya jaringan.',
+  validateBalance: 'Saldo tidak cukup.',
+  validateFormat: 'Jumlah tidak valid.',
+  validatePrecision: `Maksimal ${CRYPTOCURRENCY_DISPLAY_PRECISION} angka di belakang koma.`,
+  required: 'Jumlah wajib diisi.',
+  min: 'Masukkan jumlah minimal 0.00000001.',
+  validateWithdrawMaxAmountError: <>Penarikan di atas 100 {displayTokenSymbol()} tidak diizinkan.</>,
 };
 
 const DefaultFee = {
@@ -114,7 +114,7 @@ export const Amount = ({
     const unifyUsdPrice = currencyFormatter(usdPrice.toString(DECIMAL_NUMBER));
     return (
       <>
-        Balance on {curInfo?.chainName}: {val} {displayTokenSymbol()} ({unifyUsdPrice})
+        Saldo di {curInfo?.chainName}: {val} {displayTokenSymbol()} ({unifyUsdPrice})
       </>
     );
   }, [balance, exchangeRate, curInfo?.chainName, isLoading]);
@@ -211,7 +211,7 @@ export const Amount = ({
           mb={'8px'}
           display="inline-block"
         >
-          Amount
+          Jumlah
         </FormLabel>
         {isShowMaxButton && <MaxButton disabled={maxDisabled} onMaxClick={onMaxClick} />}
       </Flex>

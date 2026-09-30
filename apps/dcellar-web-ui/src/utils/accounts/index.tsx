@@ -8,29 +8,29 @@ import { stringify } from 'querystring';
 export const getAccountDisplay = (type: AccountType) => {
   const accountDisplays = {
     error_account: {
-      name: 'Invalid Address',
+      name: 'Alamat Tidak Valid',
       icon: <IconFont type={'account-error'} w={24} />,
-      tip: 'Invalid Address',
+      tip: 'Alamat Tidak Valid',
     },
     unknown_account: {
-      name: 'Unknown Account',
+      name: 'Akun Tidak Dikenal',
       icon: <IconFont type={'account-unknown'} w={24} />,
-      tip: 'Please ensure that you transfer funds to a BNB Greenfield account. Sending to other network addresses may result in permanent loss.',
+      tip: 'Pastikan Anda mengirim dana ke akun BNB Greenfield. Mengirim ke alamat di jaringan lain dapat menyebabkan dana hilang selamanya.',
     },
     gnfd_account: {
-      name: 'Greenfield Regular Account',
+      name: 'Akun Reguler Greenfield',
       icon: <IconFont type={'account-gnfd'} w={24} />,
-      tip: 'Greenfield Regular Account',
+      tip: 'Akun Reguler Greenfield',
     },
     payment_account: {
-      name: 'Payment Account',
+      name: 'Akun Pembayaran',
       icon: <IconFont type={'account-payment'} w={24} />,
-      tip: 'Payment Account',
+      tip: 'Akun Pembayaran',
     },
     non_refundable_payment_account: {
-      name: 'Payment Account (Non-Refundable)',
+      name: 'Akun Pembayaran (Tidak Dapat Dikembalikan)',
       icon: <IconFont type={'account-nonrefundable'} w={24} />,
-      tip: 'Payment Account (Non-Refundable)',
+      tip: 'Akun Pembayaran (Tidak Dapat Dikembalikan)',
     },
   };
   return accountDisplays[type];

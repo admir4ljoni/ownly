@@ -124,9 +124,9 @@ export const BatchOperations = memo<BatchOperationsProps>(function BatchOperatio
                   borderBottom="1px solid currentColor"
                   onClick={onOpenQuotaManage}
                 >
-                  Increase the quota
+                  Tambah kuota
                 </Text>{' '}
-                or decrease the number of selected objects to continue.
+                atau kurangi jumlah berkas yang dipilih untuk melanjutkan.
               </Box>
             }
           >
@@ -136,13 +136,13 @@ export const BatchOperations = memo<BatchOperationsProps>(function BatchOperatio
               variant="ghost"
               onClick={onBatchDownload}
             >
-              Download
+              Unduh
             </DCButton>
           </DCTooltip>
         )}
         {!shareMode && (
           <DCButton disabled={!items.length} variant="ghost" onClick={onBatchDelete}>
-            Delete
+            Hapus
           </DCButton>
         )}
       </Text>

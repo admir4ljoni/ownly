@@ -19,8 +19,8 @@ const datas = [
         }}
       />
     ),
-    title: 'Decentralized Storage of Data',
-    desc: 'BNB Greenfield allows Ethereum-compatible addresses to create and manage both data and token assets.',
+    title: 'Penyimpanan Data Terdesentralisasi',
+    desc: 'BNB Greenfield memungkinkan alamat yang kompatibel dengan Ethereum untuk membuat dan mengelola data sekaligus aset token.',
   },
   {
     icon: (
@@ -35,8 +35,8 @@ const datas = [
         }}
       />
     ),
-    title: 'Native Smart-Contract Ecosystem',
-    desc: 'BNB Greenfield natively links data permissions and management logic onto BSC as exchangeable assets and smart contract programs with all other assets.',
+    title: 'Ekosistem Kontrak Pintar Bawaan',
+    desc: 'BNB Greenfield langsung menghubungkan izin dan pengelolaan data ke BSC sebagai aset yang dapat dipertukarkan dan program kontrak pintar bersama aset lainnya.',
   },
   {
     icon: (
@@ -50,8 +50,8 @@ const datas = [
         }}
       />
     ),
-    title: 'Great User Experience',
-    desc: 'BNB Greenfield provides developers with similar API primitives and performance as popular existing Web2 cloud storage.',
+    title: 'Pengalaman Pengguna yang Nyaman',
+    desc: 'BNB Greenfield memberi developer API dasar dan performa yang setara dengan layanan penyimpanan cloud Web2 populer.',
   },
 ];
 export const Building = () => {
@@ -78,10 +78,10 @@ export const Building = () => {
             },
           }}
         >
-          <LandingH2>Building on BNB Greenfield</LandingH2>
+          <LandingH2>Membangun di BNB Greenfield</LandingH2>
           <Text fontFamily={INTER_FONT} color="readable.secondary">
-            BNB Greenfield is an innovative blockchain and storage platform that seeks to unleash
-            the power of decentralized technology on data ownership and the data economy.
+            BNB Greenfield adalah platform blockchain dan penyimpanan inovatif yang menghadirkan
+            kekuatan teknologi terdesentralisasi untuk kepemilikan data dan ekonomi data.
           </Text>
         </Flex>
         <Flex

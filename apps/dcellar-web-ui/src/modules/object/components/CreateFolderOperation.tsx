@@ -166,10 +166,10 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
     toast.success({
       description: (
         <>
-          Folder created successfully!{' '}
+          Folder berhasil dibuat!{' '}
           {tx && (
             <>
-              View in{' '}
+              Lihat di{' '}
               <Link
                 color="#3C9AF1"
                 _hover={{ color: '#3C9AF1', textDecoration: 'underline' }}
@@ -218,7 +218,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
     dispatch(
       setSignatureAction({
         icon: Animates.object,
-        title: 'Creating Folder',
+        title: 'Membuat Folder',
         desc: WALLET_CONFIRM,
       }),
     );
@@ -238,7 +238,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
             title: FOLDER_CREATE_FAILED,
             desc: FOLDER_DESCRIPTION_CREATE_ERROR,
             buttonText: BUTTON_GOT_IT,
-            errorText: error2 ? `Error Message: ${error2}` : '',
+            errorText: error2 ? `Pesan kesalahan: ${error2}` : '',
           }),
         );
       }
@@ -263,7 +263,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
           title: FOLDER_CREATE_FAILED,
           desc: FOLDER_DESCRIPTION_CREATE_ERROR,
           buttonText: BUTTON_GOT_IT,
-          errorText: bcError ? `Error Message: ${bcError}` : '',
+          errorText: bcError ? `Pesan kesalahan: ${bcError}` : '',
         }),
       );
       return;
@@ -276,7 +276,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
           title: FOLDER_CREATE_FAILED,
           desc: FOLDER_DESCRIPTION_CREATE_ERROR,
           buttonText: BUTTON_GOT_IT,
-          errorText: txRes?.rawLog ? `Error Message: ${txRes?.rawLog}` : '',
+          errorText: txRes?.rawLog ? `Pesan kesalahan: ${txRes?.rawLog}` : '',
           buttonOnClick: onCloseStatusModal,
         }),
       );
@@ -309,7 +309,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
     dispatch(
       setSignatureAction({
         icon: Animates.object,
-        title: 'Creating Folder',
+        title: 'Membuat Folder',
         desc: WALLET_CONFIRM,
       }),
     );
@@ -358,7 +358,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
             title: FOLDER_CREATE_FAILED,
             desc: FOLDER_DESCRIPTION_CREATE_ERROR,
             buttonText: BUTTON_GOT_IT,
-            errorText: error3 ? `Error Message: ${error3}` : '',
+            errorText: error3 ? `Pesan kesalahan: ${error3}` : '',
           }),
         );
       }
@@ -381,7 +381,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
             title: FOLDER_CREATE_FAILED,
             desc: FOLDER_DESCRIPTION_CREATE_ERROR,
             buttonText: BUTTON_GOT_IT,
-            errorText: error4 ? `Error Message: ${error4}` : '',
+            errorText: error4 ? `Pesan kesalahan: ${error4}` : '',
           }),
         );
         return;
@@ -396,7 +396,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
             title: FOLDER_CREATE_FAILED,
             desc: FOLDER_DESCRIPTION_CREATE_ERROR,
             buttonText: BUTTON_GOT_IT,
-            errorText: txRes?.rawLog ? `Error Message: ${txRes?.rawLog}` : '',
+            errorText: txRes?.rawLog ? `Pesan kesalahan: ${txRes?.rawLog}` : '',
             buttonOnClick: onCloseStatusModal,
           }),
         );
@@ -417,19 +417,19 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
   const validateFolderName = (value: string) => {
     const errors = Array<string>();
     if (value === '') {
-      errors.push('Please enter the folder name.');
+      errors.push('Silakan masukkan nama folder.');
       setFormErrors(errors);
       return false;
     }
     if (new Blob([value]).size > 70) {
-      errors.push('Must be between 1 to 70 characters long.');
+      errors.push('Harus terdiri dari 1 hingga 70 karakter.');
     }
     if (value.includes('/')) {
-      errors.push('Cannot consist of slash(/).');
+      errors.push('Tidak boleh mengandung garis miring (/).');
     }
     const folderNames = folderList.map((folder) => folder.name);
     if (folderNames.includes(value) && !chainFolderName) {
-      errors.push('Folder name already exists.');
+      errors.push('Nama folder sudah ada.');
     }
     setFormErrors(errors);
 
@@ -520,13 +520,13 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
   return (
     <>
       <QDrawerHeader flexDirection={'column'}>
-        <Box>{chainFolderName ? 'Create on chain folder' : 'Create a Folder'}</Box>
+        <Box>{chainFolderName ? 'Buat folder di jaringan' : 'Buat Folder'}</Box>
         <Text className="ui-drawer-sub">
           {chainFolderName ? (
-            'Convert your existing path to an on chain folder to view detailed data on the chain and obtain additional features.'
+            'Ubah lokasi yang ada menjadi folder di jaringan untuk melihat data detail di jaringan dan mendapatkan fitur tambahan.'
           ) : (
             <>
-              Use folders to group objects in your bucket. Folder names can&apos;t contain
+              Gunakan folder untuk mengelompokkan berkas di penyimpanan Anda. Nama folder tidak boleh mengandung
               &quot;/&quot;.
             </>
           )}
@@ -537,7 +537,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
           <FormControl isInvalid={!!formErrors.length} w="100%">
             <FormLabel>
               <Text fontSize={14} fontWeight={500} mb={8}>
-                Name
+                Nama
               </Text>
               <InputItem
                 disabled={!!chainFolderName}
@@ -545,10 +545,10 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
                 value={inputFolderName}
                 onChange={onFolderNameChange}
                 tips={{
-                  title: 'Naming Rules',
+                  title: 'Aturan Penamaan',
                   rules: [
-                    'Must be between 1 and 70 characters long.',
-                    'Cannot consist of slash(/).',
+                    'Harus terdiri dari 1 hingga 70 karakter.',
+                    'Tidak boleh mengandung garis miring (/).',
                   ],
                 }}
               />
@@ -557,7 +557,7 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
             {formErrors && formErrors.length > 0 && <ErrorDisplay errorMsgs={formErrors} />}
           </FormControl>
           <FormControl w={'100%'} gap={8}>
-            <FormLabel fontWeight={500}>Tags</FormLabel>
+            <FormLabel fontWeight={500}>Label</FormLabel>
             <EditTags onClick={onEditTags} tagsData={validTags} />
           </FormControl>
         </Flex>
@@ -591,11 +591,11 @@ export const CreateFolderOperation = memo<CreateFolderOperationProps>(function C
           >
             {loading ? (
               <>
-                Loading
+                Memuat
                 <DotLoading />
               </>
             ) : (
-              'Create'
+              'Buat'
             )}
           </DCButton>
         </Flex>

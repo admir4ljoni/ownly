@@ -45,12 +45,12 @@ export const AllBillingHistory = () => {
 
   const columns: ColumnProps<any>[] = [
     {
-      title: 'Transaction Hash',
+      title: 'ID Transaksi',
       key: 'tx',
       render: (_: string, record: AccountBill) => <ShortTxCopy address={record.txHash} />,
     },
     {
-      title: 'Account',
+      title: 'Akun',
       key: 'address',
       render: (_: string, record: AccountBill) => {
         return (
@@ -65,21 +65,21 @@ export const AllBillingHistory = () => {
       },
     },
     {
-      title: 'Type',
+      title: 'Jenis',
       key: 'type',
       render: (_: string, record: AccountBill) => {
         return <Box>{formatTxType(record.txType)}</Box>;
       },
     },
     {
-      title: 'Time',
+      title: 'Waktu',
       key: 'timestamp',
       render: (_: string, record: AccountBill) => {
         return <Box>{formatTime(record.timestamp)}</Box>;
       },
     },
     {
-      title: 'Total Cost',
+      title: 'Total Biaya',
       key: 'totalCost',
       render: (_: string, record: AccountBill) => {
         return (
@@ -107,8 +107,8 @@ export const AllBillingHistory = () => {
     () => (
       <ListEmpty
         type="empty-billing"
-        title="No Billing History"
-        desc="There are no billing records at the moment."
+        title="Belum Ada Riwayat Tagihan"
+        desc="Belum ada catatan tagihan saat ini."
         empty={empty}
         h={274}
       ></ListEmpty>

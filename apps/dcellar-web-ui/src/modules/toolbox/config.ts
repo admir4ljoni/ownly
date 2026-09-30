@@ -4,7 +4,7 @@ export enum ToolTypeEnum {
   API = 'API',
 }
 export const badgeTexts = {
-  [ToolTypeEnum.DevTool]: 'Developer Tool',
+  [ToolTypeEnum.DevTool]: 'Alat Developer',
   [ToolTypeEnum.SDK]: 'SDK',
   [ToolTypeEnum.API]: 'API',
 };
@@ -24,7 +24,7 @@ export type ToolItem = {
 export const toolList = [
   {
     icon: 'source-code',
-    title: 'Ownly Open Source',
+    title: 'Ownly Sumber Terbuka',
     type: ToolTypeEnum.DevTool,
     badge: badgeTexts[ToolTypeEnum.DevTool],
     links: [
@@ -34,7 +34,7 @@ export const toolList = [
         url: 'https://github.com/node-real/dcellar',
       },
     ],
-    desc: 'Utilize the Ownly open-source codebase and encourage collaboration to improve and extend its functionality.',
+    desc: 'Manfaatkan kode sumber terbuka Ownly dan ikut berkolaborasi untuk menyempurnakan serta memperluas fiturnya.',
   },
   {
     icon: 'upload',
@@ -49,7 +49,7 @@ export const toolList = [
       },
       {
         icon: 'doc',
-        name: 'Docs',
+        name: 'Dokumentasi',
         url: 'https://node-real.github.io/greenfield-toolkit',
       },
       {
@@ -58,7 +58,7 @@ export const toolList = [
         url: 'https://www.npmjs.com/package/@node-real/greenfield-uploadkit',
       },
     ],
-    desc: 'Greenfield Upload UIKit is offered by NodeReal, it&apos;s fully open sourced, developers can easily integrate into their WebUI dApps.',
+    desc: "Greenfield Upload UIKit disediakan oleh NodeReal, sepenuhnya bersumber terbuka, dan mudah diintegrasikan developer ke dalam dApp WebUI mereka.",
   },
   {
     icon: 'golang',
@@ -72,7 +72,7 @@ export const toolList = [
         url: 'https://github.com/bnb-chain/greenfield-go-sdk',
       },
     ],
-    desc: 'Go SDK for Greenfield',
+    desc: 'Go SDK untuk Greenfield',
   },
   {
     icon: 'cosmos',
@@ -86,7 +86,7 @@ export const toolList = [
         url: 'https://github.com/bnb-chain/greenfield-cosmos-sdk',
       },
     ],
-    desc: 'A cosmos-SDK fork for Greenfield',
+    desc: 'Fork cosmos-SDK untuk Greenfield',
   },
   {
     icon: 'javascript',
@@ -100,7 +100,7 @@ export const toolList = [
         url: 'https://github.com/bnb-chain/greenfield-js-sdk',
       },
     ],
-    desc: 'JS SDK for Greenfield',
+    desc: 'JS SDK untuk Greenfield',
   },
   {
     icon: 'source-code',
@@ -114,7 +114,7 @@ export const toolList = [
         url: 'https://github.com/bnb-chain/greenfield-bundle-sdk',
       },
     ],
-    desc: 'Go SDK for Greenfield bundle',
+    desc: 'Go SDK untuk bundle Greenfield',
   },
   {
     icon: 'source-code',
@@ -128,7 +128,7 @@ export const toolList = [
         url: 'https://github.com/bnb-chain/greenfield-contracts-sdk',
       },
     ],
-    desc: 'A library of smart contracts for the Greenfield',
+    desc: 'Kumpulan kontrak pintar untuk Greenfield',
   },
   {
     icon: 'python',
@@ -142,7 +142,7 @@ export const toolList = [
         url: 'https://github.com/bnb-chain/greenfield-python-sdk',
       },
     ],
-    desc: 'Python SDK for Greenfield',
+    desc: 'Python SDK untuk Greenfield',
   },
   {
     icon: 'terminal',
@@ -156,11 +156,11 @@ export const toolList = [
         url: 'https://github.com/bnb-chain/greenfield-cmd',
       },
     ],
-    desc: 'Support CMD Tool for Greenfield',
+    desc: 'Alat baris perintah (CMD) untuk Greenfield',
   },
   {
     icon: 'nodereal',
-    title: 'Greenfield Mainnet Billing API',
+    title: 'API Tagihan Jaringan Utama Greenfield',
     type: ToolTypeEnum.API,
     badge: badgeTexts[ToolTypeEnum.API],
     links: [
@@ -170,11 +170,11 @@ export const toolList = [
         url: 'https://nodereal.io/api-marketplace/bnb-greenfield-mainnet-billing-api',
       },
     ],
-    desc: 'This API package can help you get billing info instantly in BNB Greenfield Mainnet.',
+    desc: 'Paket API ini membantu Anda mendapatkan info tagihan secara instan di Jaringan Utama BNB Greenfield.',
   },
   {
     icon: 'nodereal',
-    title: 'Greenfield Mainnet Enhanced API',
+    title: 'API Lanjutan Jaringan Utama Greenfield',
     type: ToolTypeEnum.API,
     badge: badgeTexts[ToolTypeEnum.API],
     links: [
@@ -184,11 +184,11 @@ export const toolList = [
         url: 'https://nodereal.io/api-marketplace/bnb-greenfield-mainnet-enhanced-api',
       },
     ],
-    desc: 'This API package can help you get transactions, objects, buckets, and account info in Greenfield.',
+    desc: 'Paket API ini membantu Anda mendapatkan info transaksi, berkas, penyimpanan, dan akun di Greenfield.',
   },
   {
     icon: 'nodereal',
-    title: 'Greenfield Testnet Billing API',
+    title: 'API Tagihan Jaringan Uji Greenfield',
     type: ToolTypeEnum.API,
     badge: badgeTexts[ToolTypeEnum.API],
     links: [
@@ -198,11 +198,11 @@ export const toolList = [
         url: 'https://nodereal.io/api-marketplace/bnb-greenfield-testnet-billing-api',
       },
     ],
-    desc: 'This API package can help you get billing info instantly in BNB Greenfield Testnet.',
+    desc: 'Paket API ini membantu Anda mendapatkan info tagihan secara instan di Jaringan Uji BNB Greenfield.',
   },
   {
     icon: 'nodereal',
-    title: 'Greenfield Testnet Enhanced API',
+    title: 'API Lanjutan Jaringan Uji Greenfield',
     type: ToolTypeEnum.API,
     badge: badgeTexts[ToolTypeEnum.API],
     links: [
@@ -212,6 +212,6 @@ export const toolList = [
         url: 'https://nodereal.io/api-marketplace/bnb-greenfield-testnet-enhanced-api',
       },
     ],
-    desc: 'This API package can help you get transactions, objects, buckets, and account info in Greenfield.',
+    desc: 'Paket API ini membantu Anda mendapatkan info transaksi, berkas, penyimpanan, dan akun di Greenfield.',
   },
 ];

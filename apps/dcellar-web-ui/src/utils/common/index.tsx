@@ -52,11 +52,11 @@ export const displayTime = (intervalTime: number | string) => {
   Object.entries(timeObj).forEach(([key, value]) => {
     const interval = Math.floor(time / value);
     if (interval >= 1) {
-      display += interval + ' ' + key.replace('InSeconds', '') + (interval > 1 ? 's' : '');
+      display += interval + ' ' + (key === 'monthInSeconds' ? 'bulan' : 'hari');
     }
   });
 
-  return display.replace(/(months?)(.*)/, '$1 ($2)');
+  return display.replace(/(bulan)(.+)/, '$1 ($2)');
 };
 
 export const capitalizeFLetter = (str: string) => {
@@ -65,7 +65,11 @@ export const capitalizeFLetter = (str: string) => {
 };
 
 export const networkTag = (runtimeEnv: TRuntimeEnv) => {
-  return ['mainnet', 'testnet'].includes(runtimeEnv) ? ` ${capitalizeFLetter(runtimeEnv)}` : '';
+  const labels: Partial<Record<TRuntimeEnv, string>> = {
+    mainnet: 'Jaringan Utama',
+    testnet: 'Jaringan Uji',
+  };
+  return labels[runtimeEnv] ? ` ${labels[runtimeEnv]}` : '';
 };
 
 export function cssVar(name: string, type = 'colors') {

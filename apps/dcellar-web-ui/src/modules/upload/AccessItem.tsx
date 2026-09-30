@@ -11,15 +11,15 @@ const options = [
   {
     icon: <IconFont w={16} type={'private'} />,
     bgColor: '#E6E8EA',
-    label: 'Private',
-    desc: 'Only peoples with permission can access the objects.',
+    label: 'Privat',
+    desc: 'Hanya orang yang memiliki izin yang dapat mengakses berkas.',
     value: VisibilityType.VISIBILITY_TYPE_PRIVATE,
   },
   {
     icon: <IconFont w={16} type={'public'} />,
     bgColor: '#E7F3FD',
-    label: 'Public',
-    desc: 'Anyone with a shared link can access objects.',
+    label: 'Publik',
+    desc: 'Siapa pun yang memiliki tautan dapat mengakses berkas.',
     value: VisibilityType.VISIBILITY_TYPE_PUBLIC_READ,
   },
 ];

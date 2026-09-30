@@ -28,15 +28,15 @@ const BUCKET_ACTIONS: MenuOption[] = [
   {
     label: (
       <Flex alignItems={'center'}>
-        List for Sell
+        Jual di Pasar
         <IconFont ml={4} w={76} h={16} type="data-marketplace" />
       </Flex>
     ),
     value: 'marketplace',
   },
-  { label: 'View Details', value: 'detail' },
-  { label: 'Share', value: 'share' },
-  { label: 'Delete', value: 'delete', variant: 'danger' },
+  { label: 'Lihat Detail', value: 'detail' },
+  { label: 'Bagikan', value: 'share' },
+  { label: 'Hapus', value: 'delete', variant: 'danger' },
 ];
 
 interface BucketListProps {}
@@ -63,7 +63,7 @@ export const BucketList = memo<BucketListProps>(function BucketList() {
       key: 'BucketName',
       title: (
         <SortItem onClick={() => onSorterChange('BucketName', 'ascend')}>
-          Name{sortName === 'BucketName' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
+          Nama{sortName === 'BucketName' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
       render: (_: string, record: BucketEntity) => <BucketNameColumn item={record} />,
@@ -73,7 +73,7 @@ export const BucketList = memo<BucketListProps>(function BucketList() {
       width: 200,
       title: (
         <SortItem onClick={() => onSorterChange('CreateAt', 'descend')}>
-          Date Created
+          Tanggal Dibuat
           {sortName === 'CreateAt' ? SortIcon[dir] : <span>{SortIcon['descend']}</span>}
         </SortItem>
       ),
@@ -115,8 +115,8 @@ export const BucketList = memo<BucketListProps>(function BucketList() {
       <ListEmpty
         type="empty-bucket"
         empty={empty}
-        title="No Buckets"
-        desc="Create a bucket to get started!👏"
+        title="Belum Ada Penyimpanan"
+        desc="Buat penyimpanan untuk memulai!👏"
       >
         <CreateBucket showRefresh={false} />
       </ListEmpty>

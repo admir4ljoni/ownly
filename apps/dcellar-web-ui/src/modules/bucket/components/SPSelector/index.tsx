@@ -138,10 +138,10 @@ export const SPSelector = memo<SPSelectorProps>(function SPSelector({ onChange, 
       options={options}
       header={() => (
         <>
-          <TH w={216}>SP list ({total})</TH>
-          <TH w={80}>Free Quota</TH>
-          <TH w={136}>Free Monthly Quota</TH>
-          <TH w={80}>Latency</TH>
+          <TH w={216}>Daftar Penyedia ({total})</TH>
+          <TH w={80}>Kuota Gratis</TH>
+          <TH w={136}>Kuota Gratis Bulanan</TH>
+          <TH w={80}>Latensi</TH>
         </>
       )}
       headerProps={{

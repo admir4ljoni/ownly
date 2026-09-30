@@ -121,9 +121,9 @@ export const UploadObjectsOperation = memo<UploadObjectsOperationProps>(
         setSignatureAction({
           title: FILE_TITLE_UPLOAD_FAILED,
           icon: 'status-failed',
-          desc: "Sorry, there's something wrong when signing with the wallet.",
+          desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
           buttonText: BUTTON_GOT_IT,
-          errorText: 'Error message: ' + error,
+          errorText: 'Pesan kesalahan: ' + error,
         }),
       );
     };
@@ -132,7 +132,7 @@ export const UploadObjectsOperation = memo<UploadObjectsOperationProps>(
       const validFiles = selectedFiles.filter(waitUploadFilterFn);
       const isOneFile = validFiles.length === 1;
       if (isEmpty(validFiles)) {
-        return errorHandler('No valid files to upload.');
+        return errorHandler('Tidak ada berkas valid untuk diunggah.');
       }
       if (DELEGATE_UPLOAD) {
         dispatch(
@@ -152,7 +152,7 @@ export const UploadObjectsOperation = memo<UploadObjectsOperationProps>(
       dispatch(
         setSignatureAction({
           icon: Animates.upload,
-          title: 'Uploading',
+          title: 'Mengunggah',
           desc: WALLET_CONFIRM,
         }),
       );
@@ -207,7 +207,7 @@ export const UploadObjectsOperation = memo<UploadObjectsOperationProps>(
           dispatch(
             setupWaitTaskErrorMsg({
               id: waitObject.id,
-              errorMsg: error ?? 'Something went wrong.',
+              errorMsg: error ?? 'Terjadi kesalahan.',
             }),
           );
           cleanup();
@@ -280,12 +280,12 @@ export const UploadObjectsOperation = memo<UploadObjectsOperationProps>(
           <DragOverlay>
             <IconFont w={120} type={'drag-upload'} mb={16} />
             <Text fontSize={16} fontWeight={500}>
-              Drop the objects or folders you want to upload here.
+              Lepas berkas atau folder yang ingin Anda unggah di sini.
             </Text>
           </DragOverlay>
         )}
         <DragContainer ref={drop}>
-          <QDrawerHeader>Upload Objects</QDrawerHeader>
+          <QDrawerHeader>Unggah Berkas</QDrawerHeader>
           <QDrawerBody ref={ref}>
             <Tabs activeKey={activeKey} onChange={(key: any) => setActiveKey(key)}>
               <TabList
@@ -336,7 +336,7 @@ export const UploadObjectsOperation = memo<UploadObjectsOperationProps>(
               <Flex alignItems={'center'} justifyContent={'space-between'}>
                 <AccessItem freeze={loading} value={visibility} onChange={setVisibility} />
                 <Box>
-                  Total Upload:{' '}
+                  Total Unggahan:{' '}
                   <strong>
                     {formatBytes(
                       checkedQueue
@@ -344,7 +344,7 @@ export const UploadObjectsOperation = memo<UploadObjectsOperationProps>(
                         .reduce((accumulator, currentValue) => accumulator + currentValue.size, 0),
                     )}
                   </strong>{' '}
-                  / <strong>{checkedQueue.length} Objects</strong>
+                  / <strong>{checkedQueue.length} Berkas</strong>
                 </Box>
               </Flex>
               <UploadObjectsFees delegateUpload={DELEGATE_UPLOAD} />
@@ -365,11 +365,11 @@ export const UploadObjectsOperation = memo<UploadObjectsOperationProps>(
                 >
                   {(loading || creating) && !checkedQueue ? (
                     <>
-                      Loading
+                      Memuat
                       <DotLoading />
                     </>
                   ) : (
-                    'Upload'
+                    'Unggah'
                   )}
                 </DCButton>
               </Flex>

@@ -116,7 +116,7 @@ export const GlobalObjectUploadManager = memo<GlobalTasksProps>(
           setupUploadTaskErrorMsg({
             account: loginAccount,
             task,
-            errorMsg: error.message || 'Something went wrong.',
+            errorMsg: error.message || 'Terjadi kesalahan.',
           }),
         );
       }
@@ -213,7 +213,7 @@ export const GlobalObjectUploadManager = memo<GlobalTasksProps>(
             setupUploadTaskErrorMsg({
               account: loginAccount,
               task,
-              errorMsg: authExpired ? 'Authentication expired.' : error1 || 'upload error',
+              errorMsg: authExpired ? 'Sesi masuk sudah kedaluwarsa.' : error1 || 'gagal mengunggah',
             }),
           );
         }
@@ -278,7 +278,7 @@ export const GlobalObjectUploadManager = memo<GlobalTasksProps>(
               message = E_BUCKET_FLOW_RATE_NOT_SET;
             }
             if (rateLimitLow) {
-              message = 'Flow rate exceeds limit.';
+              message = 'Laju pembayaran melebihi batas.';
             }
 
             setTimeout(() => {
@@ -288,8 +288,8 @@ export const GlobalObjectUploadManager = memo<GlobalTasksProps>(
                   task,
                   status: e?.code === 'ERR_CANCELED' ? 'CANCEL' : 'ERROR',
                   errorMsg: authExpired
-                    ? 'Authentication expired.'
-                    : message || e?.message || 'upload error',
+                    ? 'Sesi masuk sudah kedaluwarsa.'
+                    : message || e?.message || 'gagal mengunggah',
                 }),
               );
             }, 200);
@@ -317,7 +317,7 @@ export const GlobalObjectUploadManager = memo<GlobalTasksProps>(
             setupUploadTaskErrorMsg({
               account: loginAccount,
               task,
-              errorMsg: 'Sealing timeout exceeded.',
+              errorMsg: 'Waktu penyimpanan berkas habis.',
             }),
           );
           return;
@@ -335,7 +335,7 @@ export const GlobalObjectUploadManager = memo<GlobalTasksProps>(
               setupUploadTaskErrorMsg({
                 account: loginAccount,
                 task,
-                errorMsg: error.message || 'Something went wrong.',
+                errorMsg: error.message || 'Terjadi kesalahan.',
               }),
             );
             return;
@@ -379,7 +379,7 @@ export const GlobalObjectUploadManager = memo<GlobalTasksProps>(
           setupUploadTaskErrorMsg({
             account: loginAccount,
             task: hashTask,
-            errorMsg: 'calculating hash error',
+            errorMsg: 'gagal menghitung sidik berkas',
           }),
         );
       }

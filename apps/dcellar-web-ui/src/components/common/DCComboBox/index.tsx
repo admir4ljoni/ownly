@@ -47,9 +47,9 @@ export const DCComboBox = memo<DCComboBoxProps>(function DCComboBox({
       {addon}
       <ExpireSelector>
         <IconFont type={'calendar'} w={20} mr={4} />
-        Access expires {dayjs(date).format('D MMM, YYYY')}{' '}
+        Akses berakhir {dayjs(date).format('D MMM, YYYY')}{' '}
         <Text as={'span'} ml={16} onClick={() => setOpen(!open)}>
-          Edit
+          Ubah
         </Text>
         <DCDatePicker
           value={date}

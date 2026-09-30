@@ -38,27 +38,27 @@ export const useTaskManagementTab = () => {
     data: UploadObject[];
   }[] = [
     {
-      title: 'All Objects',
+      title: 'Semua Berkas',
       key: UploadingPanelKey.ALL,
       data: queue,
     },
     {
-      title: 'Uploading',
+      title: 'Mengunggah',
       key: UploadingPanelKey.UPLOADING,
       data: uploadingQueue,
     },
     {
-      title: 'Stopped',
+      title: 'Dihentikan',
       key: UploadingPanelKey.STOPPED,
       data: stoppedQueue,
     },
     {
-      title: 'Complete',
+      title: 'Selesai',
       key: UploadingPanelKey.COMPLETE,
       data: completeQueue,
     },
     {
-      title: 'Failed',
+      title: 'Gagal',
       key: UploadingPanelKey.FAILED,
       data: errorQueue,
     },

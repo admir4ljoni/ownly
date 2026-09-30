@@ -62,7 +62,7 @@ export const ObjectListFilter = memo<ObjectListFilterProps>(function ObjectListF
             )}
           </InputRightElement>
         }
-        placeholder="Search objects or folders"
+        placeholder="Cari berkas atau folder"
         value={objectNameFilter}
         onChange={(e) => dispatch(setObjectNameFilter(e.target.value))}
       />

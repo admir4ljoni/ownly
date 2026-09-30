@@ -37,11 +37,11 @@ export const GroupMemberOperation = memo<GroupMemberOperationProps>(function Gro
       default:
         dispatch(
           setSignatureAction({
-            title: 'Update Failed',
+            title: 'Gagal Memperbarui',
             icon: 'status-failed',
-            desc: 'Sorry, there’s something wrong when signing with the wallet.',
+            desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
             buttonText: BUTTON_GOT_IT,
-            errorText: 'Error message: ' + error,
+            errorText: 'Pesan kesalahan: ' + error,
             buttonOnClick: () => dispatch(setSignatureAction({})),
           }),
         );
@@ -70,7 +70,7 @@ export const GroupMemberOperation = memo<GroupMemberOperationProps>(function Gro
 
   return (
     <>
-      <QDrawerHeader>Group Members</QDrawerHeader>
+      <QDrawerHeader>Anggota Grup</QDrawerHeader>
       <QDrawerBody>
         <AddGroupMember
           errorHandler={errorHandler}

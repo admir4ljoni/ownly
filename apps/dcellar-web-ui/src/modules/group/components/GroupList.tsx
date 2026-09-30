@@ -25,10 +25,10 @@ import { ethers } from 'ethers';
 import { memo, useCallback } from 'react';
 
 const GROUP_ACTIONS: MenuOption[] = [
-  { label: 'View Details', value: 'detail' },
-  { label: 'Edit Group', value: 'edit' },
-  { label: 'Manage Members', value: 'add' },
-  { label: 'Delete', value: 'delete', variant: 'danger' },
+  { label: 'Lihat Detail', value: 'detail' },
+  { label: 'Ubah Grup', value: 'edit' },
+  { label: 'Kelola Anggota', value: 'add' },
+  { label: 'Hapus', value: 'delete', variant: 'danger' },
 ];
 
 interface GroupListProps {}
@@ -55,7 +55,7 @@ export const GroupList = memo<GroupListProps>(function GroupList() {
       key: 'groupName',
       title: (
         <SortItem onClick={() => onSorterChange('groupName', 'ascend')}>
-          Name{sortName === 'groupName' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
+          Nama{sortName === 'groupName' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
       render: (_: string, item: GroupInfo) => <GroupNameColumn item={item} />,
@@ -65,7 +65,7 @@ export const GroupList = memo<GroupListProps>(function GroupList() {
       width: 200,
       title: (
         <SortItem onClick={() => onSorterChange('id', 'descend')}>
-          Group ID{sortName === 'id' ? SortIcon[dir] : <span>{SortIcon['descend']}</span>}
+          ID Grup{sortName === 'id' ? SortIcon[dir] : <span>{SortIcon['descend']}</span>}
         </SortItem>
       ),
       render: (_: string) => {
@@ -87,7 +87,7 @@ export const GroupList = memo<GroupListProps>(function GroupList() {
       key: 'extra',
       title: (
         <SortItem onClick={() => onSorterChange('extra', 'ascend')}>
-          Description{sortName === 'extra' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
+          Deskripsi{sortName === 'extra' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
       render: (_: string) => (
@@ -120,7 +120,7 @@ export const GroupList = memo<GroupListProps>(function GroupList() {
 
   const renderEmpty = useCallback(
     () => (
-      <ListEmpty type="empty-group" title="No Groups" desc="Create a group!👏" empty={empty}>
+      <ListEmpty type="empty-group" title="Belum Ada Grup" desc="Buat grup!👏" empty={empty}>
         <CreateGroup showRefresh={false} />
       </ListEmpty>
     ),

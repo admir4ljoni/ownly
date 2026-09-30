@@ -113,7 +113,7 @@ export const ConnectWallet = memo<Partial<ConnectWalletProps>>(function ConnectB
           }}
         >
           {icon ? icon : ''}
-          <Text marginLeft={icon ? '4px' : ''}>{text ? text : 'Connect Wallet'}</Text>
+          <Text marginLeft={icon ? '4px' : ''}>{text ? text : 'Hubungkan Dompet'}</Text>
         </DCButton>
       )}
     </>

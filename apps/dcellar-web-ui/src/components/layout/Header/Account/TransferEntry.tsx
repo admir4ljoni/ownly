@@ -49,17 +49,20 @@ export const TransferEntry = () => {
   const options = [
     {
       icon: 'in',
-      label: 'Transfer In',
+      label: 'Transfer Masuk',
+      ga: 'transferin',
       link: InternalRoutePaths.transfer_in,
     },
     {
       icon: 'out',
-      label: 'Transfer Out',
+      label: 'Transfer Keluar',
+      ga: 'transferout',
       link: InternalRoutePaths.transfer_out,
     },
     {
       icon: 'send',
-      label: 'Send',
+      label: 'Kirim',
+      ga: 'send',
       link: InternalRoutePaths.send,
     },
   ];
@@ -70,7 +73,7 @@ export const TransferEntry = () => {
         <TransferButton
           key={index}
           href={item.link}
-          gaClickName={`dc.main.account.${item.label.replace(' ', '').toLowerCase()}.click`}
+          gaClickName={`dc.main.account.${item.ga}.click`}
         >
           <TransferIcon>
             <IconFont type={item.icon} />

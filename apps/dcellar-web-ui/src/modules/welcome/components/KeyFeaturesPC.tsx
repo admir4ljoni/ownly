@@ -31,7 +31,7 @@ export const KeyFeaturesPC = memo(function KeyFeaturesPC() {
   return (
     <LandingResponsiveContainer>
       <Flex flexDirection={'column'} alignItems={'center'} my={80}>
-        <LandingH2 marginBottom={40}>Key Features</LandingH2>
+        <LandingH2 marginBottom={40}>Fitur Utama</LandingH2>
         <Tabs
           variant="squared"
           alignItems={'center'}

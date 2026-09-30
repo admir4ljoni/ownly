@@ -192,13 +192,9 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
 
   const storageTimeDisplay = useMemo(() => {
     if (storageTime.id === 'custom') {
-      return `${customStorageTime.value || 0} ${TimeUnits[customStorageTime.unit]}${
-        +customStorageTime.value > 1 ? 's' : ''
-      }`;
+      return `${customStorageTime.value || 0} ${TimeUnits[customStorageTime.unit]}`;
     }
-    return `${storageTime.value || 0} ${TimeUnits[storageTime.unit]}${
-      +customStorageTime.value > 1 ? 's' : ''
-    }`;
+    return `${storageTime.value || 0} ${TimeUnits[storageTime.unit]}`;
   }, [
     customStorageTime.unit,
     customStorageTime.value,
@@ -244,7 +240,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
               },
             }}
           >
-            BNB Greenfield Mainnet
+            Jaringan Utama BNB Greenfield
           </Text>
           <Text
             fontSize={14}
@@ -258,7 +254,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
               },
             }}
           >
-            Prices are updated monthly: {updateMonth}
+            Harga diperbarui setiap bulan: {updateMonth}
           </Text>
         </Flex>
         <Flex gap={8} flexDirection={'column'}>
@@ -271,22 +267,22 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
               },
             }}
           >
-            Total Storage Size
+            Total Ukuran Penyimpanan
             <Tips
               placement={'top'}
               w={262}
               tips={
                 <>
-                  <Text display={'inline-block'}>Check out&nbsp;</Text>
+                  <Text display={'inline-block'}>Lihat&nbsp;</Text>
                   <JumpLink id="#faq" openKey={0} onOpenKey={onOpenKey}>
-                    the Storage Fee Formula
+                    Rumus Biaya Penyimpanan
                   </JumpLink>
                   .
                 </>
               }
             />
           </Flex>
-          <Text fontSize={12}>What&apos;s your estimated Storage Size?</Text>
+          <Text fontSize={12}>Berapa perkiraan ukuran penyimpanan Anda?</Text>
           <Flex alignItems={'center'} flexWrap={'wrap'} gap={12}>
             <NumInput
               value={storageSize.size}
@@ -321,7 +317,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
             <Flex flexDirection={'column'}>
               <Box fontWeight={600}>{storeNetflowRate}</Box>
               <Box color="readable.tertiary" fontSize={12}>
-                {TOKEN_SYMBOL}/{storageSize.unit}/month
+                {TOKEN_SYMBOL}/{storageSize.unit}/bulan
               </Box>
             </Flex>
             <Flex
@@ -336,7 +332,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
               textAlign={'right'}
             >
               <Text fontWeight={600}>
-                = {storageFee} {TOKEN_SYMBOL}/month
+                = {storageFee} {TOKEN_SYMBOL}/bulan
               </Text>
               <Text color="readable.tertiary" wordBreak={'break-all'}>
                 &nbsp;({displayUsd(storageFee || '0', bnbPrice)})
@@ -354,15 +350,15 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
               },
             }}
           >
-            Monthly Download Quota
+            Kuota Unduhan Bulanan
             <Tips
               placement={'top'}
               w={'fit-content'}
               tips={
                 <>
-                  Learn More about{' '}
+                  Pelajari lebih lanjut tentang{' '}
                   <JumpLink id="#download_quota" openKey={4} onOpenKey={onOpenKey}>
-                    Quota
+                    Kuota
                   </JumpLink>
                   .
                 </>
@@ -370,8 +366,8 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
             />
           </Flex>
           <Text fontSize={12}>
-            How much network traffic will cost for your download and view activities within one
-            month?{' '}
+            Berapa banyak lalu lintas data untuk aktivitas unduh dan lihat Anda dalam satu
+            bulan?{' '}
           </Text>
           <Flex alignItems={'center'} gap={12} flexWrap={'wrap'}>
             <NumInput
@@ -407,7 +403,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
             <Flex flexDirection={'column'}>
               <Box fontWeight={600}>{quotaNetflowRate}</Box>
               <Box color="readable.tertiary" fontSize={12}>
-                {TOKEN_SYMBOL}/{quotaSize.unit}/month
+                {TOKEN_SYMBOL}/{quotaSize.unit}/bulan
               </Box>
             </Flex>
             <Flex
@@ -422,7 +418,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
               }}
             >
               <Text fontWeight={600}>
-                = {quotaFee} {TOKEN_SYMBOL}/month
+                = {quotaFee} {TOKEN_SYMBOL}/bulan
               </Text>
               <Text color="readable.tertiary" wordBreak={'break-all'}>
                 &nbsp;({displayUsd(quotaFee || '0', bnbPrice)})
@@ -501,7 +497,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
               },
             }}
           >
-            Storage Time
+            Lama Penyimpanan
           </Text>
           <Flex gap={12} flexWrap={'wrap'}>
             {TimeOptions.map((item, index) => (
@@ -536,7 +532,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
                     onToggle={onToggle}
                     gaClickName={item.gaClickName || ''}
                     onChangeButton={() =>
-                      setStorageTime({ ...storageTime, id: 'custom', title: 'Custom' })
+                      setStorageTime({ ...storageTime, id: 'custom', title: 'Kustom' })
                     }
                     onChangeInput={(option) => {
                       setCustomStorageTime(option);
@@ -547,8 +543,8 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
             ))}
           </Flex>
           <Text fontSize={'12'}>
-            * Storage fees for at least 6 months must be paid even if you store for less than 6
-            months.
+            * Biaya penyimpanan minimal 6 bulan tetap harus dibayar meskipun Anda menyimpan kurang dari
+            6 bulan.
           </Text>
         </Flex>
         <Divider
@@ -570,7 +566,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
                   },
                 }}
               >
-                {isMobile ? 'Total' : 'Estimated Total Cost'}
+                {isMobile ? 'Total' : 'Perkiraan Total Biaya'}
               </Text>
               <Box
                 textAlign={'right'}
@@ -602,7 +598,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
               }}
             >
               <Box display={'inline-block'}>
-                {costs.averageMonthCost} {TOKEN_SYMBOL}/month
+                {costs.averageMonthCost} {TOKEN_SYMBOL}/bulan
               </Box>
               <Box
                 display={'inline-block'}
@@ -617,18 +613,18 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
             </Box>
           </Box>
           <FeeItem
-            title="Storage fee"
+            title="Biaya penyimpanan"
             storeTime={storageTimeDisplay}
             size={storageSize.size}
-            unit={`${storageSize.unit}/month`}
+            unit={`${storageSize.unit}/bulan`}
             fee={costs.totalStorageCost}
             bnbPrice={bnbPrice}
           />
           <FeeItem
-            title="Download fee"
+            title="Biaya unduhan"
             storeTime={storageTimeDisplay}
             size={quotaSize.size}
-            unit={`${quotaSize.unit}/month`}
+            unit={`${quotaSize.unit}/bulan`}
             fee={costs.totalQuotaCost}
             bnbPrice={bnbPrice}
           />
@@ -640,7 +636,7 @@ export const Calculator = ({ storeParams, bnbPrice, onOpenKey }: CalculatorProps
             fee={costs.totalGasCost}
             bnbPrice={bnbPrice}
           /> */}
-          <Text color={'readable.disabled'}>*1 month=30 day</Text>
+          <Text color={'readable.disabled'}>*1 bulan = 30 hari</Text>
         </Flex>
       </Flex>
     </PriceResponsiveContainer>

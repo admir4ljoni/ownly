@@ -15,9 +15,9 @@ type ErrorBadgeProps = {
 
 export const ErrorBadge = memo(function ErrorBadge({ access, address, status }: ErrorBadgeProps) {
   const renderUnavailableBadge = () => (
-    <DCTooltip title="This storage provider is currently unavailable" placement="bottomLeft">
+    <DCTooltip title="Penyedia penyimpanan ini sedang tidak tersedia" placement="bottomLeft">
       <Badge ml={4} colorScheme="danger">
-        SP Error
+        Penyedia Bermasalah
       </Badge>
     </DCTooltip>
   );

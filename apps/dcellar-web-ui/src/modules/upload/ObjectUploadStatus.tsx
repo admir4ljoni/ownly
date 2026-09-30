@@ -15,21 +15,21 @@ export const ObjectUploadStatus = memo(function ObjectUploadStatus({
       return (
         <>
           <Loading iconSize={12} justifyContent={'flex-end'} />
-          Checking
+          Memeriksa
         </>
       );
     case 'WAIT':
       return (
         <>
           <Loading iconSize={12} justifyContent={'flex-end'} />
-          Waiting
+          Menunggu
         </>
       );
     case 'HASH':
       return (
         <>
           <Loading iconSize={12} justifyContent={'flex-end'} />
-          Hashing
+          Memproses
         </>
       );
     case 'HASHED':
@@ -45,28 +45,28 @@ export const ObjectUploadStatus = memo(function ObjectUploadStatus({
       return (
         <>
           <Loading iconSize={12} justifyContent={'flex-end'} />
-          Sealing
+          Menyimpan
         </>
       );
     case 'FINISH':
       return (
         <>
           <IconFont type="colored-success" w={16} />
-          Complete
+          Selesai
         </>
       );
     case 'ERROR':
       return (
         <>
           <IconFont type="colored-error2" w={20} />
-          Failed
+          Gagal
         </>
       );
     case 'CANCEL':
       return (
         <>
           <IconFont type="stop" w={20} />
-          Stopped
+          Dihentikan
         </>
       );
     default:

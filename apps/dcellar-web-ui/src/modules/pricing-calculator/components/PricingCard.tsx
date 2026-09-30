@@ -20,17 +20,17 @@ type PricingCardProps = {
 
 const UnitOptions = [
   {
-    title: `BNB/MB/month`,
+    title: `BNB/MB/bulan`,
     size: 'MB',
     time: 'm',
   },
   {
-    title: `BNB/GB/month`,
+    title: `BNB/GB/bulan`,
     size: 'GB',
     time: 'm',
   },
   {
-    title: `BNB/TB/month`,
+    title: `BNB/TB/bulan`,
     size: 'TB',
     time: 'm',
   },
@@ -70,7 +70,7 @@ export const PricingCard = ({ storeParams }: PricingCardProps) => {
       flexDirection={'column'}
     >
       <Flex gap={16} alignItems={'center'}>
-        <H2>BNB Greenfield Pricing</H2>
+        <H2>Harga BNB Greenfield</H2>
         <Box
           borderRadius={4}
           p={'8px 12px'}
@@ -103,9 +103,9 @@ export const PricingCard = ({ storeParams }: PricingCardProps) => {
             },
           }}
         >
-          Global prices will update monthly based on all the SPs&apos; suggested prices.{' '}
+          Harga global diperbarui setiap bulan berdasarkan harga yang disarankan semua Penyedia Penyimpanan.{' '}
           <UnderlineLink href="https://github.com/bnb-chain/greenfield/blob/master/docs/modules/billing-and-payment.md#billing-and-payment">
-            Learn More
+            Pelajari Lebih Lanjut
           </UnderlineLink>
         </Text>
         <Menu matchWidth>
@@ -160,7 +160,7 @@ export const PricingCard = ({ storeParams }: PricingCardProps) => {
           p={12}
         >
           <Text fontSize={16} fontWeight={600}>
-            Global Storage Price
+            Harga Penyimpanan Global
           </Text>
           <Text fontSize={14} fontWeight={500}>
             {prices.storageFee} {unit.title}
@@ -175,7 +175,7 @@ export const PricingCard = ({ storeParams }: PricingCardProps) => {
           p={12}
         >
           <Text fontSize={16} fontWeight={600}>
-            Global Download Quota Price
+            Harga Kuota Unduhan Global
           </Text>
           <Text fontSize={14} fontWeight={500}>
             {prices.quotaFee} {unit.title}

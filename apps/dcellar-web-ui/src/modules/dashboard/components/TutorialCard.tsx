@@ -17,18 +17,18 @@ export const TutorialCard = () => {
 
   const steps = [
     {
-      title: 'Create a bucket',
+      title: 'Buat penyimpanan',
       description:
-        "A bucket acts as your data's storage space. Feel free to manage your data via the console or the SDK.",
+        'Penyimpanan adalah tempat untuk menyimpan data Anda. Kelola data Anda dengan mudah lewat konsol atau SDK.',
       icon: 'create-bucket',
       Link: (
-        <DCButton onClick={() => router.push(InternalRoutePaths.buckets)}>Create Bucket</DCButton>
+        <DCButton onClick={() => router.push(InternalRoutePaths.buckets)}>Buat Penyimpanan</DCButton>
       ),
     },
     {
-      title: 'Manage Objects',
+      title: 'Kelola Berkas',
       description:
-        'Upload, delete, and share objects with invited groups that have the appropriate authority levels.',
+        'Unggah, hapus, dan bagikan berkas dengan grup undangan yang memiliki tingkat akses sesuai.',
       icon: 'upload-objects',
       Link: (
         <Link
@@ -36,14 +36,14 @@ export const TutorialCard = () => {
           cursor="pointer"
           onClick={() => router.push(InternalRoutePaths.buckets)}
         >
-          Go to Buckets
+          Buka Penyimpanan
         </Link>
       ),
     },
     {
-      title: 'Monitor Usage',
+      title: 'Pantau Penggunaan',
       description:
-        'Ownly provides a highly efficient dashboard, enabling you to manage your data usage and cost estimates with ease.',
+        'Ownly menyediakan dasbor yang praktis untuk memantau penggunaan data dan perkiraan biaya Anda dengan mudah.',
       icon: 'share-objects',
       Link: (
         <Link
@@ -51,7 +51,7 @@ export const TutorialCard = () => {
           cursor="pointer"
           onClick={() => router.push(InternalRoutePaths.accounts)}
         >
-          View Accounts
+          Lihat Akun
         </Link>
       ),
     },
@@ -61,7 +61,7 @@ export const TutorialCard = () => {
     <Card mb={16} border="1px solid brand.brand6">
       <Flex justifyContent={'space-between'} paddingY={8} mb={8}>
         <Text fontSize={18} fontWeight={700}>
-          Get Started with BNB Greenfield
+          Mulai dengan BNB Greenfield
         </Text>
         <Flex
           onClick={onHideClick}
@@ -71,7 +71,7 @@ export const TutorialCard = () => {
           cursor={'pointer'}
         >
           <IconFont type="nosee" />
-          <Text>Don&apos;t show again</Text>
+          <Text>Jangan tampilkan lagi</Text>
         </Flex>
       </Flex>
       <Flex>

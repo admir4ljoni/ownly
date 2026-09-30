@@ -18,10 +18,10 @@ import { useRouter } from 'next/router';
 import { ShortTxCopy } from './Common';
 
 const actions: MenuOption[] = [
-  { label: 'View Details', value: 'detail' },
-  { label: 'Transfer In', value: 'transfer_in' },
-  { label: 'Transfer Out', value: 'transfer_out' },
-  { label: 'Send', value: 'send' },
+  { label: 'Lihat Detail', value: 'detail' },
+  { label: 'Transfer Masuk', value: 'transfer_in' },
+  { label: 'Transfer Keluar', value: 'transfer_out' },
+  { label: 'Kirim', value: 'send' },
 ];
 
 export const OwnerAccount = () => {
@@ -43,20 +43,20 @@ export const OwnerAccount = () => {
 
   const columns: ColumnProps<AccountInfo>[] = [
     {
-      title: 'Name',
+      title: 'Nama',
       key: 'name',
       render: (_: string, record: AccountInfo) => {
         return <Text>{record.name}</Text>;
       },
     },
     {
-      title: 'Account Address',
+      title: 'Alamat Akun',
       key: 'address',
       width: isLessThan1100 ? 130 : 'auto',
       render: (_: string, record: AccountInfo) => <ShortTxCopy address={record.address} />,
     },
     {
-      title: 'Balance',
+      title: 'Saldo',
       key: 'bankBalance',
       render: (_: string, record: AccountInfo) => {
         return (
@@ -74,7 +74,7 @@ export const OwnerAccount = () => {
       },
     },
     {
-      title: 'Prepaid Fee',
+      title: 'Biaya Prabayar',
       key: 'bufferBalance',
       render: (_: string, record: AccountInfo) => {
         return (
@@ -88,7 +88,7 @@ export const OwnerAccount = () => {
       },
     },
     {
-      title: 'Flow Rate',
+      title: 'Laju Pembayaran',
       key: 'netflowRate',
       render: (_: string, record: AccountInfo) => {
         const value = BN(record?.netflowRate || 0)
@@ -104,7 +104,7 @@ export const OwnerAccount = () => {
       },
     },
     {
-      title: <Text textAlign={'center'}>Operation</Text>,
+      title: <Text textAlign={'center'}>Tindakan</Text>,
       key: 'Operation',
       width: 150,
       render: (_: string, record: AccountInfo) => {

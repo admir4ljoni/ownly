@@ -49,11 +49,11 @@ export const ConfirmModal: React.FC<Props> = ({ open, cancelFn, confirmFn }) => 
 
   return (
     <DCModal isOpen={open} data-testid="modal" onClose={() => cancelFn()}>
-      <Title>Cookie Settings</Title>
+      <Title>Pengaturan Cookie</Title>
       {/* <Subtitle>Statistics</Subtitle> */}
       <Desc>
-        Statistic cookies help website owners to understand how visitors interact with websites by
-        collecting and reporting information anonymously.
+        Cookie statistik membantu pemilik situs memahami cara pengunjung berinteraksi dengan situs
+        dengan mengumpulkan dan melaporkan informasi secara anonim.
       </Desc>
       <StyleQAccordion>
         <QAccordionItem>
@@ -85,17 +85,17 @@ export const ConfirmModal: React.FC<Props> = ({ open, cancelFn, confirmFn }) => 
             <StyledChild>
               <div className="cookie_item_title">_ga_#</div>
               <div className="cookie_item_text">
-                Used by Google Analytics to collect data on the number of times a user has visited
-                the website as well as dates for the first and most recent visit.
+                Digunakan oleh Google Analytics untuk mengumpulkan data tentang berapa kali pengguna
+                mengunjungi situs, serta tanggal kunjungan pertama dan terakhir.
               </div>
               <Divider />
               <Flex mt={'16px'}>
                 <Flex flex={1} align="center">
-                  <Label>Expiry:</Label>
-                  <LabelContent>24 months</LabelContent>
+                  <Label>Masa berlaku:</Label>
+                  <LabelContent>24 bulan</LabelContent>
                 </Flex>
                 <Flex flex={1} align={'center'}>
-                  <Label>Type:</Label>
+                  <Label>Jenis:</Label>
                   <LabelContent>HTTP</LabelContent>
                 </Flex>
               </Flex>
@@ -108,7 +108,7 @@ export const ConfirmModal: React.FC<Props> = ({ open, cancelFn, confirmFn }) => 
                 fontWeight="600"
                 mr="4px"
               >
-                Learn more about this provider
+                Pelajari lebih lanjut tentang penyedia ini
               </Link>
               <SendIcon fill="#76808F" />
             </LearnMore>
@@ -142,16 +142,16 @@ export const ConfirmModal: React.FC<Props> = ({ open, cancelFn, confirmFn }) => 
           <QAccordionPanel p={0}>
             <StyledChild>
               <div className="cookie_item_text">
-                Sentry collects data to enable us to operate the services effectively.
+                Sentry mengumpulkan data agar kami dapat menjalankan layanan dengan baik.
               </div>
               <Divider />
               <Flex mt={'16px'}>
                 <Flex flex={1} align="center">
-                  <Label>Expiry:</Label>
-                  <LabelContent>3 months</LabelContent>
+                  <Label>Masa berlaku:</Label>
+                  <LabelContent>3 bulan</LabelContent>
                 </Flex>
                 <Flex flex={1} align={'center'}>
-                  <Label>Type:</Label>
+                  <Label>Jenis:</Label>
                   <LabelContent>HTTP</LabelContent>
                 </Flex>
               </Flex>
@@ -164,7 +164,7 @@ export const ConfirmModal: React.FC<Props> = ({ open, cancelFn, confirmFn }) => 
                 fontWeight="600"
                 mr="4px"
               >
-                Learn more about this provider
+                Pelajari lebih lanjut tentang penyedia ini
               </Link>
               <SendIcon fill="#76808F" />
             </LearnMore>
@@ -179,7 +179,7 @@ export const ConfirmModal: React.FC<Props> = ({ open, cancelFn, confirmFn }) => 
               reportEvent({ name: 'dc_lp.main.cookie.modal.save.click', data: {} });
             }}
           >
-            Save
+            Simpan
           </CustomButton>
         </Flex>
       </ModalFooter>

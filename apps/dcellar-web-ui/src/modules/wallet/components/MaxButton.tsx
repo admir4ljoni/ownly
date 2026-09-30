@@ -20,7 +20,7 @@ export const MaxButton = ({ disabled = false, onMaxClick }: MaxButtonProps) => {
       borderRadius={9}
       color={'brand.brand6'}
     >
-      Max
+      Maks
     </DCButton>
   );
 };

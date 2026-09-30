@@ -18,32 +18,32 @@ export type ActionButtonProps = {
 const actionItems = [
   {
     type: 'cancel',
-    text: 'Cancel',
+    text: 'Batal',
     icon: 'stop',
   },
   {
     type: 'cancel-all',
-    text: 'Stop Uploading',
+    text: 'Hentikan Unggahan',
     icon: 'stop',
   },
   {
     type: 'retry',
-    text: 'Retry',
+    text: 'Coba lagi',
     icon: 'retry',
   },
   {
     type: 'retry-all',
-    text: 'Retry All',
+    text: 'Coba Lagi Semua',
     icon: 'retry',
   },
   {
     type: 'clear',
-    text: 'Clear',
+    text: 'Hapus',
     icon: 'delete',
   },
   {
     type: 'clear-all',
-    text: 'Clear All Records',
+    text: 'Hapus Semua Riwayat',
     icon: 'delete',
   },
 ];

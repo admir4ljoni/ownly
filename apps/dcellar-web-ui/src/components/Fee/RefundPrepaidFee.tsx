@@ -15,13 +15,13 @@ export const RefundPrepaidFee = ({ amount }: RefundPrepaidFeeProps) => {
     <Flex w="100%" alignItems="center" justifyContent="space-between">
       <Flex alignItems="center">
         <Text color="readable.tertiary" as="p">
-          Prepaid fee refund
+          Pengembalian biaya prabayar
         </Text>
         <PrePaidTips />
       </Flex>
       <Text color="readable.tertiary">
         <Text as="span" color={'#EEBE11'} mr={4}>
-          Refund
+          Dikembalikan
         </Text>
         {renderFee(amount, exchangeRate)}
       </Text>

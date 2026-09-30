@@ -57,7 +57,7 @@ export const Fees = memo<FeesProps>(function Fees({ fees, setBalanceAvailable })
           alignItems={'center'}
           cursor={'pointer'}
         >
-          <Text>Total Fees</Text>
+          <Text>Total Biaya</Text>
           <Flex
             color="readable.secondary"
             justifySelf={'flex-end'}
@@ -85,7 +85,7 @@ export const Fees = memo<FeesProps>(function Fees({ fees, setBalanceAvailable })
             ))}
             <Flex w={'100%'} justifyContent={'flex-end'}>
               <Text fontSize={'12px'} color={'readable.disable'}>
-                Owner Account balance: {renderBalanceNumber(bankBalance || '0')}
+                Saldo Akun Utama: {renderBalanceNumber(bankBalance || '0')}
               </Text>
             </Flex>
           </>

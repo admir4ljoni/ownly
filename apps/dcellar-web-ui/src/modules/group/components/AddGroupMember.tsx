@@ -51,9 +51,9 @@ export const AddGroupMember = memo<AddGroupMemberProps>(function AddGroupMember(
     const invalid = e.filter((i) => !i.match(ADDRESS_RE));
     setInvalidIds(invalid);
     if (e.length > ITEM_LIMIT) {
-      setError(`Please enter less than ${ITEM_LIMIT} addresses. `);
+      setError(`Silakan masukkan kurang dari ${ITEM_LIMIT} alamat. `);
     } else if (!e.length) {
-      setError(`Please enter addresses. `);
+      setError(`Silakan masukkan alamat. `);
     } else {
       setError('');
     }
@@ -62,7 +62,7 @@ export const AddGroupMember = memo<AddGroupMemberProps>(function AddGroupMember(
   const onAddGroupMember = async () => {
     setLoading(true);
     dispatch(
-      setSignatureAction({ icon: Animates.group, title: 'Updating Group', desc: WALLET_CONFIRM }),
+      setSignatureAction({ icon: Animates.group, title: 'Memperbarui Grup', desc: WALLET_CONFIRM }),
     );
     const membersToAdd = values.map((item) => ({
       member: item,
@@ -81,7 +81,7 @@ export const AddGroupMember = memo<AddGroupMemberProps>(function AddGroupMember(
     setLoading(false);
     if (!txRes || txRes.code !== 0) return errorHandler(txError || UNKNOWN_ERROR);
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Members added successfully!' });
+    toast.success({ description: 'Anggota berhasil ditambahkan!' });
     updateMemberList(values[0]);
     setValues([]);
   };
@@ -90,13 +90,13 @@ export const AddGroupMember = memo<AddGroupMemberProps>(function AddGroupMember(
     <>
       <GAContextProvider prefix={'add_member_confirm'}>
         <TxConfirmModal
-          confirmText="Confirm"
+          confirmText="Konfirmasi"
           isOpen={confirmModal}
-          title="Confirm Action"
+          title="Konfirmasi Tindakan"
           fee={fee}
           onConfirm={onAddGroupMember}
           onClose={() => setConfirmModal(false)}
-          description="Are you sure you want to add members to this group?"
+          description="Apakah Anda yakin ingin menambahkan anggota ke grup ini?"
         />
       </GAContextProvider>
       <Flex gap={12}>
@@ -104,14 +104,14 @@ export const AddGroupMember = memo<AddGroupMemberProps>(function AddGroupMember(
           dateChange={setExpiration}
           value={values}
           tokenSeparators={[',']}
-          placeholder="Add address, comma separated"
+          placeholder="Tambahkan alamat, pisahkan dengan koma"
           bordered={false}
           mode="tags"
           onChange={onFieldValueChange}
           tagRender={(props) => <RenderItem invalidIds={invalidIds} value={props} />}
           suffixIcon={
             <Text color="#1E2026" fontSize={14}>
-              Member
+              Anggota
             </Text>
           }
         />
@@ -124,10 +124,10 @@ export const AddGroupMember = memo<AddGroupMemberProps>(function AddGroupMember(
             setConfirmModal(true);
           }}
         >
-          Add
+          Tambah
         </DCButton>
       </Flex>
-      {invalid && <Text color="#EE3911">{!invalidIds.length ? error : 'Invalid addresses.'}</Text>}
+      {invalid && <Text color="#EE3911">{!invalidIds.length ? error : 'Alamat tidak valid.'}</Text>}
     </>
   );
 });

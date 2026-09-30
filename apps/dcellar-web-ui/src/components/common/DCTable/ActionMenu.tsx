@@ -9,26 +9,26 @@ import { memo } from 'react';
 import { ActionButton } from './ActionButton';
 
 const OPERATIONS: Record<string, { ga: string; tip: string; type: string; w: number }> = {
-  add: { ga: 'dc.group.add_member.0.click', tip: 'Add Members', type: 'add-member', w: 20 },
-  download: { ga: 'dc.file.download_btn.0.click', tip: 'Download', type: 'download', w: 20 },
-  share: { ga: 'dc.file.share_btn.0.click', tip: 'Share', type: 'share', w: 24 },
-  transfer_in: { ga: 'dc.accounts.transfer_in_btn.0.click', tip: 'Transfer In', type: 'in', w: 20 },
+  add: { ga: 'dc.group.add_member.0.click', tip: 'Tambah Anggota', type: 'add-member', w: 20 },
+  download: { ga: 'dc.file.download_btn.0.click', tip: 'Unduh', type: 'download', w: 20 },
+  share: { ga: 'dc.file.share_btn.0.click', tip: 'Bagikan', type: 'share', w: 24 },
+  transfer_in: { ga: 'dc.accounts.transfer_in_btn.0.click', tip: 'Transfer Masuk', type: 'in', w: 20 },
   transfer_out: {
     ga: 'dc.accounts.owner_account.transfer_out_btn.0.click',
-    tip: 'Transfer Out',
+    tip: 'Transfer Keluar',
     type: 'out',
     w: 20,
   },
-  send: { ga: 'dc.accounts.owner_account.send_btn.0.click', tip: 'Send', type: 'send', w: 20 },
+  send: { ga: 'dc.accounts.owner_account.send_btn.0.click', tip: 'Kirim', type: 'send', w: 20 },
   deposit: {
     ga: 'dc.accounts.payment_account.deposit_btn.0.click',
-    tip: 'Deposit',
+    tip: 'Isi Saldo',
     type: 'deposit',
     w: 20,
   },
   withdraw: {
     ga: 'dc.accounts.payment_account.withdraw_btn.0.click',
-    tip: 'Withdraw',
+    tip: 'Tarik Saldo',
     type: 'withdraw',
     w: 20,
   },

@@ -57,8 +57,8 @@ const MEMBER_SIZE = 20;
 const MAX_GROUP = 10;
 
 const menus: MenuOption[] = [
-  { label: 'Viewer', value: 'viewer' },
-  { label: 'Remove', value: 'remove', variant: 'danger' },
+  { label: 'Pelihat', value: 'viewer' },
+  { label: 'Hapus', value: 'remove', variant: 'danger' },
 ];
 
 interface ViewerListProps {
@@ -142,9 +142,9 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
     setInvalidIds((ids) => ids.filter((id) => e.includes(id)));
     setSearchValue('');
     if (e.length > MAX_COUNT) {
-      setError(`Please enter less than ${MAX_COUNT} addresses or group IDs. `);
+      setError(`Masukkan kurang dari ${MAX_COUNT} alamat atau ID grup. `);
     } else if (!e.length) {
-      setError(`Please enter addresses or group IDs. `);
+      setError(`Silakan masukkan alamat atau ID grup. `);
     } else {
       setError('');
     }
@@ -174,7 +174,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
             icon: 'status-failed',
             buttonText: BUTTON_GOT_IT,
             buttonOnClick: () => dispatch(setSignatureAction({})),
-            errorText: 'Error message: ' + type,
+            errorText: 'Pesan kesalahan: ' + type,
           }),
         );
         return;
@@ -277,7 +277,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
 
       dispatch(
         setSignatureAction({
-          title: 'Updating Access',
+          title: 'Memperbarui Akses',
           icon: Animates.access,
           desc: WALLET_CONFIRM,
         }),
@@ -298,7 +298,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
     }
 
     setValues([]);
-    toast.success({ description: 'Access updated!' });
+    toast.success({ description: 'Akses diperbarui!' });
     updateMemberList(values[0]);
   };
 
@@ -307,7 +307,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
       setLoading(true);
       dispatch(
         setSignatureAction({
-          title: 'Updating Access',
+          title: 'Memperbarui Akses',
           icon: Animates.access,
           desc: WALLET_CONFIRM,
         }),
@@ -322,7 +322,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
       setLoading(false);
       if (error) return errorHandler(error);
       dispatch(setSignatureAction({}));
-      toast.success({ description: 'Access updated!' });
+      toast.success({ description: 'Akses diperbarui!' });
       updateMemberList(removeAccount[0], true);
     } else {
       await onAddMember(removeAccount);
@@ -361,7 +361,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
   useEffect(() => {
     if (members > MAX_COUNT) {
       toast.error({
-        description: `Exceed the permission limit (${MAX_COUNT}). Please select fewer items or repeat this action multiple times.`,
+        description: `Melebihi batas izin (${MAX_COUNT}). Silakan pilih lebih sedikit item atau ulangi tindakan ini beberapa kali.`,
       });
     }
   }, [members]);
@@ -370,22 +370,22 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
     <>
       <GAContextProvider prefix={'add_object_policy_confirm'}>
         <TxConfirmModal
-          confirmText="Confirm"
+          confirmText="Konfirmasi"
           isOpen={confirmModal}
-          title="Allow Access"
+          title="Izinkan Akses"
           fee={putFee}
           onConfirm={onAddMember}
           onClose={() => {
             setConfirmModal(false);
           }}
-          description="Please confirm the transaction in your wallet."
+          description="Silakan konfirmasi transaksi di dompet Anda."
         />
       </GAContextProvider>
       <GAContextProvider prefix={'remove_object_policy_confirm'}>
         <TxConfirmModal
-          confirmText="Remove"
+          confirmText="Hapus"
           isOpen={deleteModal}
-          title="Remove Access"
+          title="Hapus Akses"
           fee={deleteFee}
           onConfirm={onRemoveMember}
           onClose={() => {
@@ -394,8 +394,8 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
           variant={'scene'}
           description={
             removeAccount.length === 1
-              ? 'Please confirm the transaction in your wallet.'
-              : 'Are you sure you want to remove access to these addresses?'
+              ? 'Silakan konfirmasi transaksi di dompet Anda.'
+              : 'Apakah Anda yakin ingin menghapus akses untuk alamat-alamat ini?'
           }
         />
       </GAContextProvider>
@@ -408,7 +408,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
             value={values}
             onChange={_onChange}
             tokenSeparators={[',']}
-            placeholder="Enter addresses / group IDs, comma separated"
+            placeholder="Masukkan alamat / ID grup, pisahkan dengan koma"
             bordered={false}
             options={options}
             searchValue={searchValue}
@@ -422,7 +422,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
             onBlur={() => setOpen(false)}
             suffixIcon={
               <Text color="#1E2026" fontSize={14}>
-                Viewer
+                Pelihat
               </Text>
             }
             tagRender={(props) => (
@@ -447,7 +447,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
                     position="sticky"
                     top={0}
                   >
-                    My Groups ({_options.length})
+                    Grup Saya ({_options.length})
                   </Text>
                   <ScrollContent>
                     {_options.map((item) => {
@@ -523,16 +523,16 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
             }}
             w={90}
           >
-            Add
+            Tambah
           </DCButton>
         </Flex>
         {invalid && (
           <Text color="#EE3911">
             {!invalidIds.length
               ? groups.length > MAX_GROUP
-                ? `Exceed the group limit (${MAX_GROUP})`
+                ? `Melebihi batas grup (${MAX_GROUP})`
                 : error
-              : 'Invalid addresses or group IDs.\n'}
+              : 'Alamat atau ID grup tidak valid.\n'}
           </Text>
         )}
         <Box my={24}>
@@ -549,7 +549,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
                   disabled={!accounts.length}
                 >
                   <Text fontWeight={600} color={'readable.normal'}>
-                    People with Access{members > 0 && `(${members})`}
+                    Orang dengan Akses{members > 0 && `(${members})`}
                   </Text>
                 </DCCheckbox>
                 <RemoveBtn
@@ -560,7 +560,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
                     setDeleteModal(true);
                   }}
                 >
-                  Remove
+                  Hapus
                 </RemoveBtn>
               </Thead>
               <Flex direction="column" gap={8}>
@@ -607,7 +607,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
                                     : 'scene.danger.normal'
                                 }
                               >
-                                Expire date: {dayjs(expirationTime).format('D MMM, YYYY')}
+                                Tanggal kedaluwarsa: {dayjs(expirationTime).format('D MMM, YYYY')}
                               </Text>
                             )}
                           </Flex>
@@ -615,7 +615,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
                       </DCCheckbox>
                       <Operation>
                         {owner ? (
-                          <Text mr={4}>Owner</Text>
+                          <Text mr={4}>Pemilik</Text>
                         ) : (
                           <DCMenu
                             zIndex={1300}
@@ -632,7 +632,7 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
                           >
                             {({ isOpen }) => (
                               <StyledMenuButton as={Text}>
-                                Viewer
+                                Pelihat
                                 <IconFont type={isOpen ? 'menu-open' : 'menu-close'} w={16} />
                               </StyledMenuButton>
                             )}

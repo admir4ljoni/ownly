@@ -17,11 +17,11 @@ export const InsufficientBalances = ({ loginAccount, accounts }: InsufficientBal
       return isOwnerAccount
         ? {
             link: InternalRoutePaths.transfer_in,
-            text: 'Transfer in',
+            text: 'Transfer masuk',
           }
         : {
             link: `${InternalRoutePaths.send}&from=${loginAccount}&to=${account}`,
-            text: 'Send',
+            text: 'Kirim',
           };
     });
     setActiveWays(ways);
@@ -31,7 +31,7 @@ export const InsufficientBalances = ({ loginAccount, accounts }: InsufficientBal
     <Flex color={'#EE3911'} flexDirection={'column'} gap={4}>
       {activeWays.map((item, index) => (
         <Flex key={index}>
-          Insufficient balance.&nbsp;
+          Saldo tidak cukup.&nbsp;
           <NextLink href={item.link} passHref legacyBehavior>
             <Text
               cursor={'pointer'}

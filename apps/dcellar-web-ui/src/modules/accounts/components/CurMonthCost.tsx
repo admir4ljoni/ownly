@@ -46,7 +46,7 @@ export const CurMonthCost = ({ children, showLink = true, ...restProps }: CurMon
 
   return (
     <CardContainer w={260} flex={1} {...restProps}>
-      <CardTitle mb={8}>Current Month Cost</CardTitle>
+      <CardTitle mb={8}>Biaya Bulan Ini</CardTitle>
       <CardTime mb={16}>{costTime}</CardTime>
       <Flex gap={8} flexWrap={'wrap'} whiteSpace={'break-spaces'}>
         <CardCost>{isLoading ? '--' : monthTotalCost}</CardCost>
@@ -64,7 +64,7 @@ export const CurMonthCost = ({ children, showLink = true, ...restProps }: CurMon
             onBillingHistory();
           }}
         >
-          <Text fontWeight={500}>View Detail</Text>
+          <Text fontWeight={500}>Lihat Detail</Text>
           <IconFont type="forward" />
         </Flex>
       )}

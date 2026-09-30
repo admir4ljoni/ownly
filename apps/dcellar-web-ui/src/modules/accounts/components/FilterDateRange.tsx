@@ -88,8 +88,8 @@ export const FilterDateRange = ({
         }
       >
         {filterDateRange.filter(Boolean).length
-          ? filterDateRange.join(' ~ ') + (filterDateRange[1] ? '' : 'Now')
-          : 'Date Created'}
+          ? filterDateRange.join(' ~ ') + (filterDateRange[1] ? '' : 'Sekarang')
+          : 'Tanggal Dibuat'}
       </DCButton>
       <DCRangePicker
         changeOnBlur

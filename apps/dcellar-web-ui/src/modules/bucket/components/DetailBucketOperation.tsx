@@ -52,7 +52,7 @@ export const Label = ({ children }: PropsWithChildren) => (
   </Text>
 );
 
-const VERSION_TABS = ['General Info', 'Activities'];
+const VERSION_TABS = ['Info Umum', 'Aktivitas'];
 
 interface DetailBucketOperationProps {
   selectedBucketInfo: TBucket;
@@ -110,7 +110,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
 
   const quotaDetail = [
     {
-      key: 'Monthly quota',
+      key: 'Kuota bulanan',
       quota: formattedQuota.totalReadText,
       expired: endDate,
       remain: formattedQuota.remainReadText,
@@ -118,7 +118,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
     ...(formattedQuota.monthlyFreeQuota
       ? [
           {
-            key: 'Free monthly quota',
+            key: 'Kuota gratis bulanan',
             quota: formattedQuota.monthlyFreeQuotaText,
             expired: endDate,
             remain: formattedQuota.monthlyQuotaRemainText,
@@ -128,7 +128,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
     ...(formattedQuota.oneTimeFree
       ? [
           {
-            key: 'Free quota (one-time)',
+            key: 'Kuota gratis (sekali)',
             quota: formattedQuota.oneTimeFreeText,
             expired: '',
             remain: formattedQuota.oneTimeFreeRemainText,
@@ -158,14 +158,14 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
     const infos = [
       {
         canCopy: false,
-        label: 'Date created',
+        label: 'Tanggal dibuat',
         value: formatFullTime(CreateAt),
         display: formatFullTime(CreateAt),
         href: '',
       },
       {
         canCopy: true,
-        label: 'Primary SP address',
+        label: 'Alamat Penyedia Penyimpanan Utama',
         edit: 'migrate',
         editDisabled: [
           BucketStatus.BUCKET_STATUS_MIGRATING,
@@ -186,7 +186,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
           BucketStatus.BUCKET_STATUS_MIGRATING,
           BucketStatus.BUCKET_STATUS_DISCONTINUED,
         ].includes(selectedBucketInfo.BucketStatus),
-        label: 'Payment address',
+        label: 'Alamat pembayaran',
         name: payAccountName,
         value: selectedBucketInfo.PaymentAddress,
         display: `${trimAddress(selectedBucketInfo.PaymentAddress)}`,
@@ -196,7 +196,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
       },
       {
         canCopy: true,
-        label: 'Bucket ID',
+        label: 'ID Penyimpanan',
         value: formatId(Number(selectedBucketInfo.Id)),
         display: formatAddress(formatId(Number(selectedBucketInfo.Id))),
         copyGaClickName: 'dc.bucket.b_detail_pop.id_copy.click',
@@ -205,7 +205,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
       },
       {
         canCopy: true,
-        label: 'Create transaction hash',
+        label: 'ID Transaksi pembuatan',
         value: selectedBucketInfo.CreateTxHash,
         display: formatAddress(selectedBucketInfo.CreateTxHash),
         copyGaClickName: 'dc.bucket.b_detail_pop.copy_create_tx_hash.click',
@@ -229,12 +229,12 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
           >
             <Label>{item.label}</Label>
             <Flex>
-              {item.label === 'Date created' && (
+              {item.label === 'Tanggal dibuat' && (
                 <Text fontSize={'14px'} fontWeight={500} color="readable.normal">
                   {item.display}
                 </Text>
               )}
-              {item.label !== 'Date created' &&
+              {item.label !== 'Tanggal dibuat' &&
                 (item.canCopy ? (
                   <>
                     {item.edit && (
@@ -301,7 +301,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
             mb: 8,
           }}
         >
-          <Label>Tags</Label>
+          <Label>Label</Label>
           <Flex>
             <Flex
               alignItems={'center'}
@@ -311,7 +311,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
               onClick={onEditTags}
             >
               <IconFont type="pen" />
-              {selectedBucketInfo.Tags.Tags.length || 0} tags
+              {selectedBucketInfo.Tags.Tags.length || 0} label
             </Flex>
           </Flex>
         </Flex>
@@ -331,7 +331,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
               alignItems={'center'}
               onClick={() => setQuotaDetailVisible((v) => !v)}
             >
-              Total quota{' '}
+              Total kuota{' '}
               <IconFont type={quotaDetailVisible ? 'menu-open' : 'menu-close'} w={16} ml={4} />
             </Flex>
           </Label>
@@ -339,7 +339,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
             <Text fontSize={'14px'} fontWeight={500} color="readable.normal">
               {formattedQuota.totalText}{' '}
               <Text as="span" color="#76808F">
-                ({formattedQuota.remainText} remains)
+                ({formattedQuota.remainText} tersisa)
               </Text>
             </Text>
           </Flex>
@@ -367,9 +367,9 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
                 <Text as={'div'} w={200}>
                   {detail.expired ? (
                     <Box>
-                      <Text fontWeight={500}>{detail.quota}/mo</Text>
+                      <Text fontWeight={500}>{detail.quota}/bln</Text>
                       <Text mt={2} fontSize={12} color={'readable.disable'}>
-                        Expire date: {detail.expired}
+                        Tanggal kedaluwarsa: {detail.expired}
                       </Text>
                     </Box>
                   ) : (
@@ -377,7 +377,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
                   )}
                 </Text>
                 <Text w={120} color={'readable.tertiary'}>
-                  {detail.remain} remains
+                  {detail.remain} tersisa
                 </Text>
               </Flex>
             ))}
@@ -399,7 +399,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
         break;
       case 'migrate':
         if (selectedBucketInfo.BucketStatus === BucketStatus.BUCKET_STATUS_MIGRATING) {
-          toast.error({ description: 'The bucket is migrating, please wait.' });
+          toast.error({ description: 'Penyimpanan sedang dipindahkan, harap tunggu.' });
         } else {
           dispatch(
             setBucketOperation({
@@ -423,27 +423,27 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
 
   return (
     <>
-      <QDrawerHeader>Bucket Detail</QDrawerHeader>
+      <QDrawerHeader>Detail Penyimpanan</QDrawerHeader>
       <QDrawerBody>
         <Flex mb={16}>
           <IconFont type="detail-bucket" w={120} />
           <Box marginLeft={'24px'} flex={1}>
             <Text color="readable.tertiary" fontSize={'12px'} marginBottom="4px">
-              Name
+              Nama
             </Text>
             <Text fontSize={'14px'} fontWeight={500} wordBreak="break-all">
               {selectedBucketInfo.BucketName}
             </Text>
             <Text color="readable.tertiary" fontSize={'12px'} marginBottom="4px" marginTop="8px">
-              Remaining Quota
+              Sisa Kuota
             </Text>
             <Tooltip
               maxW="365px"
               content={
                 <Box fontSize={12} lineHeight="normal" color="#1E2026">
-                  <Box>Free quota: {formattedQuota.remainFreeText} remaining.</Box>
+                  <Box>Kuota gratis: {formattedQuota.remainFreeText} tersisa.</Box>
                   <Box whiteSpace="nowrap">
-                    Monthly quota: {formattedQuota.remainReadText} remaining.
+                    Kuota bulanan: {formattedQuota.remainReadText} tersisa.
                     <Text
                       as="span"
                       color="#76808F"
@@ -452,7 +452,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
                       display="inline-flex"
                       ml={4}
                     >
-                      (Expire date: {endDate})
+                      (Tanggal kedaluwarsa: {endDate})
                     </Text>
                   </Box>
                 </Box>
@@ -479,7 +479,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
                 cursor="pointer"
                 onClick={onManageQuota}
               >
-                Increase Quota
+                Tambah Kuota
               </Text>
             </Text>
           </Box>
@@ -487,13 +487,13 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
         {isFlowRateLimit && (
           <DiscontinueBanner
             marginBottom={16}
-            content="The bucket's flow rate exceeds the payment account limit."
+            content="Laju pembayaran penyimpanan ini melebihi batas akun pembayaran."
           />
         )}
         {isBucketDiscontinue && (
           <DiscontinueBanner
             marginBottom={16}
-            content="All discontinued items in this bucket will be deleted by SP soon."
+            content="Semua item yang dihentikan di penyimpanan ini akan segera dihapus oleh Penyedia Penyimpanan."
           />
         )}
         {isBucketMigrating && (
@@ -502,7 +502,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
             color={'#3685D8'}
             bg="opacity7"
             marginBottom={16}
-            content="This bucket is in the process of data migration to another provider."
+            content="Penyimpanan ini sedang dalam proses pemindahan data ke penyedia lain."
           />
         )}
         <Tabs>
@@ -527,7 +527,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
       </QDrawerBody>
       <QDrawerFooter>
         <DCButton size="lg" w={'100%'} onClick={onManageQuota}>
-          Manage Quota
+          Kelola Kuota
         </DCButton>
       </QDrawerFooter>
     </>

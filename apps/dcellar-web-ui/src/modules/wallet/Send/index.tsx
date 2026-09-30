@@ -89,7 +89,7 @@ export const Send = memo<SendProps>(function Send() {
   const [timeout, setTimeout] = useState(false);
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [status, setStatus] = useState<any>('success');
-  const [errorMsg, setErrorMsg] = useState<any>('Oops, something went wrong');
+  const [errorMsg, setErrorMsg] = useState<any>('Ups, terjadi kesalahan');
   const [viewTxUrl, setViewTxUrl] = useState('');
   const [loadingToAccount, setLoadingToAccount] = useState(false);
   const { feeData, isLoading } = useSendFee();
@@ -104,7 +104,7 @@ export const Send = memo<SendProps>(function Send() {
 
   const balance = useMemo(() => {
     if (isEmpty(transferFromAccount)) return '';
-    if (transferFromAccount.name.toLowerCase().includes('owner account')) {
+    if (transferFromAccount.name.toLowerCase().includes('akun utama')) {
       return bankBalance;
     }
     return accountInfos[transferFromAccount?.address]?.staticBalance || '';
@@ -112,7 +112,7 @@ export const Send = memo<SendProps>(function Send() {
 
   const toBalance = useMemo(() => {
     if (isEmpty(transferToAccount)) return '';
-    if (transferToAccount.name.toLowerCase().includes('owner account')) {
+    if (transferToAccount.name.toLowerCase().includes('akun utama')) {
       return bankBalance;
     }
     return accountInfos[transferToAccount?.address]?.staticBalance || '';
@@ -150,18 +150,18 @@ export const Send = memo<SendProps>(function Send() {
       return 'deposit_to_owner_account';
     }
     if (
-      transferFromAccount.name.toLowerCase() === 'owner account' &&
+      transferFromAccount.name.toLowerCase() === 'akun utama' &&
       ['payment_account', 'non_refundable_payment_account'].includes(
         accountTypeRecords[transferToAccount.address],
       )
     ) {
       return 'deposit_to_payment_account';
     }
-    if (transferFromAccount.name.toLowerCase().includes('payment account')) {
+    if (transferFromAccount.name.toLowerCase().includes('akun pembayaran')) {
       return 'withdraw_from_payment_account';
     }
     if (
-      transferFromAccount.name.toLowerCase() === 'owner account' &&
+      transferFromAccount.name.toLowerCase() === 'akun utama' &&
       ['gnfd_account', 'unknown_account'].includes(accountTypeRecords[transferToAccount.address])
     ) {
       return 'send_to_external_account';
@@ -205,7 +205,7 @@ export const Send = memo<SendProps>(function Send() {
       txType !== 'withdraw_from_payment_account' &&
       (isEmpty(transferToAccount) || !transferToAccount.address)
     ) {
-      return setToJsErrors(['Address is required.']);
+      return setToJsErrors(['Alamat wajib diisi.']);
     }
     if (!connector) return;
     if (
@@ -214,7 +214,7 @@ export const Send = memo<SendProps>(function Send() {
       transferFromAccount.address === transferToAccount.address
     ) {
       return toast.error({
-        description: 'Sender and recipient cannot be the same.',
+        description: 'Pengirim dan penerima tidak boleh sama.',
         isClosable: true,
       });
     }
@@ -286,7 +286,7 @@ export const Send = memo<SendProps>(function Send() {
       setToJsErrors([]);
       if (!!account.address && !isAddress(account.address)) {
         dispatch(setAccountType({ addr: account.address, type: 'error_account' }));
-        return setToJsErrors(['Invalid address']);
+        return setToJsErrors(['Alamat tidak valid']);
       }
       const accountType = accountTypeRecords[account.address];
       const accountDetail = accountInfos[account.address];
@@ -307,15 +307,15 @@ export const Send = memo<SendProps>(function Send() {
     if (accountInfoLoading || isEmpty(transferFromAccount)) return errors;
     const fromAccountDetail = accountInfos[transferFromAccount?.address];
     if (isEmpty(fromAccountDetail)) return errors;
-    const isPaymentAccount = fromAccountDetail.name.toLocaleLowerCase().includes('payment account');
+    const isPaymentAccount = fromAccountDetail.name.toLocaleLowerCase().includes('akun pembayaran');
     if (!isPaymentAccount) {
       return errors;
     }
     if (fromAccountDetail?.status === EStreamRecordStatus.FROZEN) {
-      errors.push('This account is frozen due to insufficient balance.');
+      errors.push('Akun ini dibekukan karena saldo tidak cukup.');
     }
     if (fromAccountDetail.refundable === false) {
-      errors.push('This account is non-refundable.');
+      errors.push('Akun ini tidak dapat dikembalikan dananya.');
     }
     return errors;
   }, [accountInfos, transferFromAccount, accountInfoLoading]);
@@ -387,7 +387,7 @@ export const Send = memo<SendProps>(function Send() {
               htmlFor="text"
               display={'inline-block'}
             >
-              From
+              Dari
             </FormLabel>
             <FromAccountSelector
               from={transferFromAddress}
@@ -404,7 +404,7 @@ export const Send = memo<SendProps>(function Send() {
               textAlign={'right'}
               color="#76808F"
             >
-              Balance on Greenfield:{' '}
+              Saldo di Greenfield:{' '}
               {accountInfoLoading === transferFromAccount.address ? (
                 <Loading size={12} marginX={4} color="readable.normal" />
               ) : (
@@ -420,10 +420,10 @@ export const Send = memo<SendProps>(function Send() {
               htmlFor="text"
               display={'flex'}
             >
-              To
+              Ke
               <Tips
                 tips={
-                  'Only send to BNB Greenfield addresses. Sending to other network addresses may result in permanent loss.'
+                  'Hanya kirim ke alamat BNB Greenfield. Mengirim ke alamat jaringan lain dapat menyebabkan dana hilang permanen.'
                 }
               />
             </FormLabel>
@@ -445,7 +445,7 @@ export const Send = memo<SendProps>(function Send() {
                 color="#76808F"
                 mt={8}
               >
-                Balance on Greenfield:{' '}
+                Saldo di Greenfield:{' '}
                 {loadingToAccount ? (
                   <Loading size={12} marginX={4} color="readable.normal" />
                 ) : (

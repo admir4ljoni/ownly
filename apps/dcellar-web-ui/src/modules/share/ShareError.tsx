@@ -8,28 +8,28 @@ import { IconFont } from '@/components/IconFont';
 
 export const SHARE_ERROR_TYPES = {
   NO_QUOTA: {
-    title: 'No Enough Quota',
-    desc: 'This bucket where this object is stored don’t have enough download quota, contact the object owner to increase the download quota.',
+    title: 'Kuota Tidak Cukup',
+    desc: 'Penyimpanan tempat berkas ini disimpan tidak memiliki kuota unduhan yang cukup. Hubungi pemilik berkas untuk menambah kuota unduhan.',
     icon: 'empty-quota',
   },
   PERMISSION_DENIED: {
-    title: 'You Need Access',
-    desc: 'You don’t have permission to download. You can ask the person who shared the link to invite you directly.',
+    title: 'Anda Memerlukan Akses',
+    desc: 'Anda tidak memiliki izin untuk mengunduh. Anda bisa meminta orang yang membagikan tautan untuk mengundang Anda secara langsung.',
     icon: 'status-failed',
   },
   NOT_FOUND: {
-    title: 'Object Not Exist or Deleted',
-    desc: 'This item might not exist or is no longer available. Contact the owner of this item for more information.',
+    title: 'Berkas Tidak Ada atau Sudah Dihapus',
+    desc: 'Item ini mungkin tidak ada atau sudah tidak tersedia. Hubungi pemilik item ini untuk informasi lebih lanjut.',
     icon: 'status-failed',
   },
   SP_NOT_FOUND: {
-    title: 'Something Wrong',
-    desc: 'SP address information mismatch. Please retry.',
+    title: 'Terjadi Kesalahan',
+    desc: 'Informasi alamat Penyedia Penyimpanan tidak cocok. Silakan coba lagi.',
     icon: 'discontinue',
   },
   UNKNOWN: {
-    title: 'Something Wrong',
-    desc: 'Oops, there’s something wrong. ',
+    title: 'Terjadi Kesalahan',
+    desc: 'Ups, terjadi kesalahan. ',
     icon: 'discontinue',
   },
 };
@@ -50,7 +50,7 @@ export const ShareError = memo<{ type: ShareErrorType }>(function ShareError({ t
       </Text>
       <Link href="/buckets" legacyBehavior passHref replace>
         <DCButton w={188} h={48} as="a" mb={40} fontSize={16}>
-          Back to Home
+          Kembali ke Beranda
         </DCButton>
       </Link>
     </Content>

@@ -45,7 +45,7 @@ export const renderFee = (
       <Flex alignItems="center" mb="4px">
         <Text fontSize={'14px'} lineHeight={'28px'} fontWeight={400} color={'readable.tertiary'}>
           {key}
-          {key?.toLowerCase() === 'gas fee' && <> ( Pay by Owner Account )</>}
+          {key?.toLowerCase() === 'biaya jaringan' && <> ( Dibayar oleh Akun Utama )</>}
         </Text>
         {keyIcon && <Box>{keyIcon}</Box>}
       </Flex>
@@ -94,7 +94,7 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
     const simulateGasFee = gnfdGasFeesConfig[MsgCancelCreateObjectTypeUrl]?.gasFee + '';
     const filePath = objectInfo.ObjectName.split('/');
     const showName = filePath[filePath.length - 1];
-    const description = `Are you sure you want to cancel uploading the object "${showName}"?`;
+    const description = `Apakah Anda yakin ingin membatalkan unggahan berkas "${showName}"?`;
 
     const setFailedStatusModal = (description: string, error: any) => {
       setSignatureAction({
@@ -102,7 +102,7 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
         title: FILE_TITLE_CANCEL_FAILED,
         desc: description,
         buttonText: BUTTON_GOT_IT,
-        errorText: 'Error message: ' + error?.message ?? '',
+        errorText: 'Pesan kesalahan: ' + error?.message ?? '',
       });
     };
 
@@ -115,7 +115,7 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
       const [data, error] = await queryLockFee(params);
       if (error) {
         toast.error({
-          description: error || 'Query lock fee failed!',
+          description: error || 'Gagal memuat biaya yang ditahan!',
         });
         return;
       }
@@ -143,7 +143,7 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
 
     return (
       <>
-        <ModalHeader>Cancel Uploading</ModalHeader>
+        <ModalHeader>Batalkan Unggahan</ModalHeader>
         <ModalBody>
           <Text className="ui-modal-desc">{description}</Text>
           <Flex
@@ -156,7 +156,7 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
             alignItems={'center'}
           >
             {renderFee(
-              'Prepaid fee refund',
+              'Pengembalian biaya prabayar',
               refundStoreFee || '',
               exchangeRate,
               <Tips
@@ -170,14 +170,14 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
                       lineHeight={'150%'}
                       wordBreak={'break-word'}
                     >
-                      We will unlock the storage fee after you cancel the object.
+                      Kami akan membuka kembali biaya penyimpanan setelah Anda membatalkan berkas ini.
                     </Box>
                   </Box>
                 }
               />,
             )}
-            {renderFee('Settlement fee', settlementFee, exchangeRate)}
-            {renderFee('Gas fee', simulateGasFee, exchangeRate)}
+            {renderFee('Biaya penyelesaian', settlementFee, exchangeRate)}
+            {renderFee('Biaya jaringan', simulateGasFee, exchangeRate)}
           </Flex>
           <Flex w={'100%'} justifyContent={'space-between'} mt="8px">
             <Text fontSize={'12px'} lineHeight={'16px'} color={'scene.danger.normal'}>
@@ -209,7 +209,7 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
                 dispatch(
                   setSignatureAction({
                     icon: Animates.object,
-                    title: 'Canceling Uploading',
+                    title: 'Membatalkan Unggahan',
                     desc: WALLET_CONFIRM,
                   }),
                 );
@@ -234,11 +234,11 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
                   .then(resolve, commonFault);
                 dispatch(setSignatureAction({}));
                 if (txRes === null) {
-                  toast.error({ description: error || 'Upload cancellation failed.' });
+                  toast.error({ description: error || 'Gagal membatalkan unggahan.' });
                   return;
                 }
                 if (txRes && txRes.code === 0) {
-                  toast.success({ description: 'Upload cancelled successfully.' });
+                  toast.success({ description: 'Unggahan berhasil dibatalkan.' });
                   dispatch(
                     setDeletedObject({
                       path: [currentBucketName, objectInfo.ObjectName].join('/'),
@@ -252,7 +252,7 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
                   refetch();
                   dispatch(setupBucketQuota(currentBucketName));
                 } else {
-                  toast.error({ description: 'Upload cancellation failed.' });
+                  toast.error({ description: 'Gagal membatalkan unggahan.' });
                 }
                 setLoading(false);
               } catch (error: any) {
@@ -270,7 +270,7 @@ export const CancelObjectOperation = memo<CancelObjectOperationProps>(
             isLoading={loading}
             isDisabled={buttonDisabled || isLoadingSF || refundStoreFee === null}
           >
-            Confirm
+            Konfirmasi
           </DCButton>
         </ModalFooter>
       </>

@@ -15,7 +15,7 @@ export const KeyFeaturesMobile = () => {
 
   return (
     <Box px={20} my={20}>
-      <LandingH2 textAlign={'center'}>Key Features</LandingH2>
+      <LandingH2 textAlign={'center'}>Fitur Utama</LandingH2>
       <Box marginTop={24}>
         <Flex justifyContent={'space-between'} alignItems={'center'} mb={16}>
           <button

@@ -22,17 +22,17 @@ interface SharePermissionProps {
 const Access: Record<number, { icon: ReactNode; text: string; bg: string }> = {
   [VisibilityType.VISIBILITY_TYPE_PUBLIC_READ]: {
     icon: <IconFont type="public" w={16} />,
-    text: 'Public',
+    text: 'Publik',
     bg: '#E7F3FD',
   },
   [VisibilityType.VISIBILITY_TYPE_PRIVATE]: {
     icon: <IconFont type="private" w={16} />,
-    text: 'Private',
+    text: 'Privat',
     bg: '#E6E8EA',
   },
   [VisibilityType.VISIBILITY_TYPE_INHERIT]: {
     icon: <IconFont type="public" w={16} />,
-    text: 'Public',
+    text: 'Publik',
     bg: '#E7F3FD',
   },
 };
@@ -63,7 +63,7 @@ export const SharePermission = memo<SharePermissionProps>(function SharePermissi
     <>
       {objectInfo.ObjectStatus === 1 && (
         <Container>
-          <Title>Share with</Title>
+          <Title>Dibagikan dengan</Title>
           <AccessRow>
             <AccessType $bg={CurrentAccess.bg}>
               <span>{CurrentAccess.icon}</span>
@@ -74,7 +74,7 @@ export const SharePermission = memo<SharePermissionProps>(function SharePermissi
               <LoadingAdaptor
                 loading={loading}
                 empty={empty}
-                emptyText="This group currently has no members."
+                emptyText="Grup ini belum memiliki anggota."
               >
                 <Flex gap={8}>
                   {members.slice(0, 5).map((m, index) => {
@@ -120,14 +120,14 @@ export const SharePermission = memo<SharePermissionProps>(function SharePermissi
                   );
                 }}
               >
-                Manage Access
+                Kelola Akses
               </ManageAccess>
             )}
           </AccessRow>
-          <Tip>Only people with access can open with the link.</Tip>
+          <Tip>Hanya orang yang memiliki akses yang dapat membuka tautan ini.</Tip>
           <Box my={16}>
             <CopyButton text={getShareLink(bucketName, objectInfo.ObjectName)}>
-              Copy Link
+              Salin Tautan
             </CopyButton>
           </Box>
         </Container>

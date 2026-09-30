@@ -127,8 +127,8 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
     const showName = filePath[filePath.length - 1];
     const folderName = filePath[filePath.length - 2];
     const description = isFolder
-      ? `Are you sure you want to delete folder "${folderName}"?`
-      : `Are you sure you want to delete object "${showName}"?`;
+      ? `Apakah Anda yakin ingin menghapus folder "${folderName}"?`
+      : `Apakah Anda yakin ingin menghapus berkas "${showName}"?`;
 
     const setFailedStatusModal = (description: string, error: any) => {
       dispatch(
@@ -137,7 +137,7 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
           title: FILE_TITLE_DELETE_FAILED,
           desc: description,
           buttonText: BUTTON_GOT_IT,
-          errorText: 'Error message: ' + error?.message ?? '',
+          errorText: 'Pesan kesalahan: ' + error?.message ?? '',
           buttonOnClick: () => {
             dispatch(setSignatureAction({}));
           },
@@ -152,7 +152,7 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
         dispatch(
           setSignatureAction({
             icon: Animates.delete,
-            title: isFolder ? 'Deleting Folder' : 'Deleting File',
+            title: isFolder ? 'Menghapus Folder' : 'Menghapus Berkas',
             desc: WALLET_CONFIRM,
           }),
         );
@@ -177,12 +177,12 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
           .then(resolve, broadcastFault);
         if (txRes === null) {
           dispatch(setSignatureAction({}));
-          return toast.error({ description: error || 'Object deletion failed.' });
+          return toast.error({ description: error || 'Gagal menghapus berkas.' });
         }
         if (txRes.code === 0) {
           await dispatch(setupAccountRecords(bucket.PaymentAddress));
           toast.success({
-            description: isFolder ? 'Folder deleted successfully.' : 'Object deleted successfully.',
+            description: isFolder ? 'Folder berhasil dihapus.' : 'Berkas berhasil dihapus.',
           });
           reportEvent({
             name: 'dc.toast.file_delete.success.show',
@@ -196,7 +196,7 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
           // unselected
           dispatch(setObjectSelectedKeys(without(objectSelectedKeys, objectInfo.ObjectName)));
         } else {
-          toast.error({ description: 'Object deletion failed.' });
+          toast.error({ description: 'Gagal menghapus berkas.' });
         }
         refetch();
         onClose();
@@ -254,7 +254,7 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
 
     return (
       <>
-        <ModalHeader>Confirm Delete</ModalHeader>
+        <ModalHeader>Konfirmasi Hapus</ModalHeader>
         <ModalBody>
           {!isFolder && isStoredAtMinimumTime !== null && !isStoredAtMinimumTime && (
             <Text
@@ -266,8 +266,8 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
               color={'readable.secondary'}
               mb={'12px'}
             >
-              You’ve paid {displayTime(reserveTime)} locked storage fee for this object, but this
-              object has been stored less than {displayTime(reserveTime)}.
+              Anda telah membayar biaya penyimpanan yang ditahan untuk {displayTime(reserveTime)} bagi berkas ini, tetapi
+              berkas ini baru disimpan kurang dari {displayTime(reserveTime)}.
             </Text>
           )}
           <Text className="ui-modal-desc">{description}</Text>
@@ -306,7 +306,7 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
             onClick={onClose}
             gaClickName="dc.file.delete_confirm.cancel.click"
           >
-            Cancel
+            Batal
           </DCButton>
           <DCButton
             variant={'scene'}
@@ -320,7 +320,7 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
               buttonDisabled || refundAmount === null || loadingSettlementFee || !balanceEnough
             }
           >
-            Delete
+            Hapus
           </DCButton>
         </ModalFooter>
       </>

@@ -20,22 +20,22 @@ interface AccessItemProps {
 const options = [
   {
     icon: <IconFont w={16} type="private" />,
-    label: 'Private',
-    desc: 'Only peoples with permission can access the objects.',
+    label: 'Privat',
+    desc: 'Hanya orang yang memiliki izin yang dapat mengakses berkas.',
     value: '2',
     bg: '#E6E8EA',
   },
   {
     icon: <IconFont w={16} type="public" />,
-    label: 'Public',
-    desc: 'Anyone with a shared link can access objects.',
+    label: 'Publik',
+    desc: 'Siapa pun yang memiliki tautan dapat mengakses berkas.',
     value: '1',
     bg: '#E7F3FD',
   },
   {
     icon: <IconFont w={16} type="public" />,
-    label: 'Public',
-    desc: 'Anyone with a shared link can access objects.',
+    label: 'Publik',
+    desc: 'Siapa pun yang memiliki tautan dapat mengakses berkas.',
     value: '3',
     bg: '#E7F3FD',
   },
@@ -58,21 +58,21 @@ export const AccessItem = memo<AccessItemProps>(function AccessItem({
     <>
       <GAContextProvider prefix={'update_object_info_confirm'}>
         <TxConfirmModal
-          confirmText="Confirm"
+          confirmText="Konfirmasi"
           isOpen={confirmModal}
-          title="Access Update"
+          title="Perbarui Akses"
           fee={fee}
           onConfirm={() => onChange(_value)}
           onClose={() => {
             setConfirmModal(false);
           }}
-          description={`Are you sure to change the object to "${
-            _value === 1 ? 'Public' : 'Private'
+          description={`Apakah Anda yakin ingin mengubah berkas menjadi "${
+            _value === 1 ? 'Publik' : 'Privat'
           }"?`}
         />
       </GAContextProvider>
       <FormItem>
-        <FormLabel>General Access</FormLabel>
+        <FormLabel>Akses Umum</FormLabel>
         <Flex alignItems="center" py={8}>
           <AccessStatus $bg={valueOption.bg}>{valueOption.icon}</AccessStatus>
           <Flex flexDirection="column" py={2} alignItems="flex-start">
@@ -115,7 +115,7 @@ export const AccessItem = memo<AccessItemProps>(function AccessItem({
           </Flex>
           {valueOption.value === '1' && (
             <Text flex={1} align="right">
-              Viewer
+              Pelihat
             </Text>
           )}
         </Flex>

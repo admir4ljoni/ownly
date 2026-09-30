@@ -130,13 +130,13 @@ export const useHandleFolderTree = () => {
     const totalFiles = objectWaitQueue.length + Object.keys(tree).length;
     if (totalFiles > SELECT_OBJECT_NUM_LIMIT) {
       return toast.error({
-        description: `You can only upload a maximum of ${SELECT_OBJECT_NUM_LIMIT} objects at a time.`,
+        description: `Anda hanya dapat mengunggah maksimal ${SELECT_OBJECT_NUM_LIMIT} berkas sekaligus.`,
         isClosable: true,
       });
     }
     if (totalFiles === objectWaitQueue.length) {
       return toast.error({
-        description: 'You can only upload folders that contain objects.',
+        description: 'Anda hanya dapat mengunggah folder yang berisi berkas.',
         isClosable: true,
       });
     }

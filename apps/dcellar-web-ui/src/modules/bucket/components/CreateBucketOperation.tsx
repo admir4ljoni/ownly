@@ -165,20 +165,20 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
       }
 
       if (value === '') {
-        types['required'] = 'Bucket Name is required';
+        types['required'] = 'Nama Penyimpanan wajib diisi';
       }
       if (value !== '' && !/^.{3,63}$/.test(value)) {
-        types['validateLen'] = 'Must be between 3 to 63 characters long.';
+        types['validateLen'] = 'Harus terdiri dari 3 sampai 63 karakter.';
       }
       // if (value !== '' && !/^[a-z0-9.-]+$/.test(value)) {
       if (value !== '' && !/^[a-z0-9-]+$/.test(value)) {
-        types['validateChar'] = 'Consist only of lowercase letters, numbers, and hyphens (-).';
+        types['validateChar'] = 'Hanya boleh berisi huruf kecil, angka, dan tanda hubung (-).';
       }
       if (value !== '' && !/^[a-zA-Z0-9].*[a-zA-Z0-9]$/.test(value)) {
-        types['validateStartEnd'] = 'Begin and end with a letter or number.';
+        types['validateStartEnd'] = 'Harus diawali dan diakhiri huruf atau angka.';
       }
       if (bucketList.some((bucket) => bucket.BucketName === value)) {
-        types['validateName'] = 'This name is already taken, try another one.';
+        types['validateName'] = 'Nama ini sudah dipakai, coba nama lain.';
       }
       return types;
     },
@@ -193,10 +193,10 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
     dispatch(
       setSignatureAction({
         icon: 'status-failed',
-        title: 'Create Failed',
-        desc: 'Sorry, there’s something wrong when creating the bucket.',
+        title: 'Gagal Membuat',
+        desc: 'Maaf, terjadi kesalahan saat membuat penyimpanan.',
         buttonText: BUTTON_GOT_IT,
-        errorText: 'Error message: ' + type,
+        errorText: 'Pesan kesalahan: ' + type,
         extraParams: [bucketName],
       }),
     );
@@ -219,7 +219,7 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
         available: false,
         value: value,
       };
-      types['validateName'] = 'This name is already taken, try another one.';
+      types['validateName'] = 'Nama ini sudah dipakai, coba nama lain.';
     } else if (message === E_GET_GAS_FEE_LACK_BALANCE_ERROR) {
       result['gas'] = {
         available: false,
@@ -317,7 +317,7 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
 
   const doSubmit = async (data: any) => {
     dispatch(
-      setSignatureAction({ icon: Animates.object, title: 'Creating Bucket', desc: WALLET_CONFIRM }),
+      setSignatureAction({ icon: Animates.object, title: 'Membuat Penyimpanan', desc: WALLET_CONFIRM }),
     );
     const bucketName = data.bucketName;
     const selectedPaAddress = selectedPaRef.current.address;
@@ -364,7 +364,7 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
     onClose();
     dispatch(setupBucketList(loginAccount));
     toast.success({
-      description: `Bucket created successfully!`,
+      description: `Penyimpanan berhasil dibuat!`,
     });
     dispatch(setSignatureAction({}));
     reportEvent({
@@ -379,7 +379,7 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
     dispatch(
       setSignatureAction({
         icon: 'error-auth',
-        title: 'Confirm Payment Account',
+        title: 'Konfirmasi Akun Pembayaran',
         desc: PAYMASTER_CONTINUE_DESC,
         buttonText: CONTINUE_STEP,
         buttonOnClick() {
@@ -444,10 +444,10 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
   return (
     <>
       <QDrawerHeader flexDirection="column">
-        <Box>Create a Bucket</Box>
+        <Box>Buat Penyimpanan</Box>
         <Box className="ui-drawer-sub">
-          Buckets are containers for data stored on BNB Greenfield. Bucket name must be globally
-          unique.
+          Penyimpanan adalah wadah untuk data yang disimpan di BNB Greenfield. Nama penyimpanan harus
+          unik secara global.
         </Box>
       </QDrawerHeader>
       <QDrawerBody>
@@ -456,7 +456,7 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
             <Flex flexDir="column" gap={24}>
               <FormControl isInvalid={!isEmpty(errors?.bucketName)}>
                 <FormLabel fontWeight={500} fontSize={14} mb={8}>
-                  Name
+                  Nama
                 </FormLabel>
                 <InputGroup>
                   <Input
@@ -465,7 +465,7 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
                     type="text"
                     id="bucketName"
                     border="1px solid readable.border"
-                    placeholder="Enter a bucket name"
+                    placeholder="Masukkan nama penyimpanan"
                     fontSize="16px"
                     lineHeight={'19px'}
                     fontWeight={500}
@@ -487,7 +487,7 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
                             fontWeight={600}
                             marginBottom="4px"
                           >
-                            Naming Rules
+                            Aturan Penamaan
                           </Text>
                           <Box
                             as="ul"
@@ -500,12 +500,12 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
                             wordBreak={'break-word'}
                           >
                             <Box as="li" marginBottom={'4px'}>
-                              Must be between 3 and 63 characters long.
+                              Harus terdiri dari 3 sampai 63 karakter.
                             </Box>
                             <Box as="li" marginBottom={'4px'}>
-                              Consist only of lowercase letters, numbers, and hyphens (-).
+                              Hanya boleh berisi huruf kecil, angka, dan tanda hubung (-).
                             </Box>
-                            <Box as="li">Begin and end with a letter or number.</Box>
+                            <Box as="li">Harus diawali dan diakhiri huruf atau angka.</Box>
                           </Box>
                         </Box>
                       }
@@ -520,19 +520,19 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
 
               <FormControl>
                 <FormLabel fontSize={14} fontWeight={500} mb={8}>
-                  Primary Storage Provider
+                  Penyedia Penyimpanan Utama
                 </FormLabel>
                 <SPSelector onChange={onSpChange} />
               </FormControl>
               <FormControl>
                 <FormLabel fontSize={14} fontWeight={500} mb={8}>
-                  Payment Account
+                  Akun Pembayaran
                 </FormLabel>
                 <PaymentAccountSelector onChange={onPaymentAccountChange} />
               </FormControl>
               <FormControl>
                 <FormLabel mb={8} fontWeight={500}>
-                  Tags
+                  Label
                 </FormLabel>
                 <EditTags onClick={onEditTags} tagsData={validTags} />
               </FormControl>
@@ -571,7 +571,7 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
           type="submit"
           form="create-bucket-drawer"
         >
-          Create
+          Buat
         </DCButton>
       </QDrawerFooter>
     </>

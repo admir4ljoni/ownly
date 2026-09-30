@@ -50,10 +50,10 @@ export const Banner = () => {
                 },
               }}
             >
-              <Box>Storage Console for</Box>
-              <Box>Developers on</Box>
+              <Box>Konsol Penyimpanan untuk</Box>
+              <Box>Developer di</Box>
               <Box position={'relative'} whiteSpace={'nowrap'}>
-                BNB Greenfield Network
+                Jaringan BNB Greenfield
               </Box>
             </Text>
             <Text
@@ -75,18 +75,18 @@ export const Banner = () => {
                 },
               }}
             >
-              Empower developers to build with BNB Greenfield Network at ease, assist in development
-              process and team collaboration.
+              Memudahkan developer membangun di Jaringan BNB Greenfield, serta membantu proses
+              pengembangan dan kolaborasi tim.
             </Text>
             <ConnectWallet
               gaClickName="dc_lp.homepage.hero.get_started.click"
-              text="Get Started"
+              text="Mulai Sekarang"
               marginBottom={40}
             />
           </Flex>
           <Flex justifySelf={'flex-end'} alignSelf={'flex-end'}>
             <Image
-              alt="Ownly function screenshot"
+              alt="Tangkapan layar fitur Ownly"
               src={`${assetPrefix}/images/welcome/banner_3_new.png`}
               w={553}
               sx={{

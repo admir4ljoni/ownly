@@ -57,7 +57,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
 
   const detailItems = [
     {
-      label: 'Account address',
+      label: 'Alamat akun',
       value: (
         <Flex>
           <Link
@@ -79,7 +79,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
       ),
     },
     {
-      label: 'Prepaid fee',
+      label: 'Biaya prabayar',
       value: (
         <Flex>
           <LoadingAdaptor loading={loading} empty={false}>
@@ -94,7 +94,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
       ),
     },
     {
-      label: 'Flow rate',
+      label: 'Laju pembayaran',
       value: (
         <LoadingAdaptor loading={loading} empty={false}>
           <Text fontSize={14} fontWeight={500}>
@@ -109,7 +109,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
       ),
     },
     {
-      label: 'Last update date',
+      label: 'Tanggal pembaruan terakhir',
       value: (
         <LoadingAdaptor loading={loading} empty={false}>
           <Text fontSize={14} fontWeight={500}>
@@ -119,7 +119,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
       ),
     },
     {
-      label: 'Force settlement date',
+      label: 'Tanggal penyelesaian paksa',
       value: (
         <LoadingAdaptor loading={loading} empty={false}>
           <Text fontSize={14} fontWeight={500}>
@@ -142,7 +142,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
     <Box minW={570} p={16} border={'1px solid readable.border'} borderRadius={4} flex={1}>
       <Flex gap={12} flexDirection={'column'}>
         <Text fontSize={16} fontWeight={600}>
-          Balance
+          Saldo
         </Text>
         <Box>
           <Flex gap={8} alignItems={'center'} mb={8}>
@@ -180,7 +180,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
               gaClickName="dc.file.f_detail_pop.share.click"
               onClick={() => onAction('transfer_in')}
             >
-              Transfer In
+              Transfer Masuk
             </DCButton>
             <DCButton
               size={'md'}
@@ -189,7 +189,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
               gaClickName="dc.file.f_detail_pop.download.click"
               onClick={() => onAction('transfer_out')}
             >
-              Transfer Out
+              Transfer Keluar
             </DCButton>
             <DCButton
               size={'md'}
@@ -198,7 +198,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
               gaClickName="dc.file.f_detail_pop.download.click"
               onClick={() => onAction('send')}
             >
-              Send
+              Kirim
             </DCButton>
           </Flex>
         )}
@@ -211,7 +211,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
               gaClickName="dc.file.f_detail_pop.download.click"
               onClick={() => onAction('deposit')}
             >
-              Deposit
+              Isi Saldo
             </DCButton>
             <DCButton
               size={'md'}
@@ -221,7 +221,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
               gaClickName="dc.file.f_detail_pop.share.click"
               onClick={() => onAction('withdraw')}
             >
-              Withdraw
+              Tarik Saldo
             </DCButton>
             <DCButton
               size={'md'}
@@ -234,7 +234,7 @@ export const MetaInfo = memo(function MetaInfo({ address }: Props) {
               gaClickName="dc.file.f_detail_pop.share.click"
               onClick={() => onAction('setNonRefundable')}
             >
-              Set as Non-Refundable
+              Jadikan Tidak Dapat Dikembalikan
             </DCButton>
           </Flex>
         )}

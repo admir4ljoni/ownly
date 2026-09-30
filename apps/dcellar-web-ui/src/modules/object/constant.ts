@@ -1,48 +1,48 @@
 import { ObjectMeta } from '@bnb-chain/greenfield-js-sdk/dist/esm/types/sp/Common';
 
 // status_TITLE
-const FILE_TITLE_UPLOADING = 'Uploading Object';
-const FILE_TITLE_DOWNLOADING = 'Downloading Object';
-const FILE_TITLE_DELETING = 'Deleting Object';
-const FILE_TITLE_CANCELING = 'Canceling Uploading';
-const FOLDER_CREATING = 'Creating Folder';
-const FILE_ACCESS = 'Updating Access';
+const FILE_TITLE_UPLOADING = 'Mengunggah Berkas';
+const FILE_TITLE_DOWNLOADING = 'Mengunduh Berkas';
+const FILE_TITLE_DELETING = 'Menghapus Berkas';
+const FILE_TITLE_CANCELING = 'Membatalkan Unggahan';
+const FOLDER_CREATING = 'Membuat Folder';
+const FILE_ACCESS = 'Memperbarui Akses';
 // error title
-const FILE_TITLE_UPLOAD_FAILED = 'Upload Failed';
-const FILE_TITLE_DOWNLOAD_FAILED = 'Download Failed';
-const FILE_TITLE_DELETE_FAILED = 'Delete Failed';
-const FILE_TITLE_CANCEL_FAILED = 'Cancel Failed';
-const NOT_ENOUGH_QUOTA = 'Quota Insufficient';
-const FOLDER_CREATE_FAILED = 'Create Failed';
-const FOLDER_TITLE_NOT_EMPTY = 'Non-Empty Folder';
+const FILE_TITLE_UPLOAD_FAILED = 'Unggah Gagal';
+const FILE_TITLE_DOWNLOAD_FAILED = 'Unduh Gagal';
+const FILE_TITLE_DELETE_FAILED = 'Hapus Gagal';
+const FILE_TITLE_CANCEL_FAILED = 'Batal Gagal';
+const NOT_ENOUGH_QUOTA = 'Kuota Tidak Cukup';
+const FOLDER_CREATE_FAILED = 'Gagal Membuat';
+const FOLDER_TITLE_NOT_EMPTY = 'Folder Tidak Kosong';
 
-const FILE_TITLE_FILE_TOO_LARGE = 'Object Exceeds Size Limit';
-const FILE_TITLE_FILE_EMPTY = 'Object is Empty';
-const FILE_TITLE_FILE_NAME_ERROR = 'Invalid Object Name';
-const FILE_TITLE_SP_REJECTED = 'SP Rejected';
+const FILE_TITLE_FILE_TOO_LARGE = 'Berkas Melebihi Batas Ukuran';
+const FILE_TITLE_FILE_EMPTY = 'Berkas Kosong';
+const FILE_TITLE_FILE_NAME_ERROR = 'Nama Berkas Tidak Valid';
+const FILE_TITLE_SP_REJECTED = 'Ditolak Penyedia Penyimpanan';
 
 // status description
-const FILE_STATUS_DOWNLOADING = `Downloading Object now, please wait...`;
+const FILE_STATUS_DOWNLOADING = `Sedang mengunduh berkas, mohon tunggu...`;
 // error description
-const FILE_DESCRIPTION_DELETE_ERROR = `Sorry, there’s something wrong when deleting the file.`;
-const FILE_DESCRIPTION_CANCEL_ERROR = `Sorry, there’s something wrong when canceling the file.`;
-const FOLDER_DESCRIPTION_CREATE_ERROR = `Sorry, there’s something wrong when creating the folder.`;
-const BUTTON_GOT_IT = 'Got It';
+const FILE_DESCRIPTION_DELETE_ERROR = `Maaf, terjadi kesalahan saat menghapus berkas.`;
+const FILE_DESCRIPTION_CANCEL_ERROR = `Maaf, terjadi kesalahan saat membatalkan berkas.`;
+const FOLDER_DESCRIPTION_CREATE_ERROR = `Maaf, terjadi kesalahan saat membuat folder.`;
+const BUTTON_GOT_IT = 'Mengerti';
 const FOLDER_DESC_NOT_EMPTY =
-  'Only empty folder can be deleted. Please delete all objects in this folder first.';
+  'Hanya folder kosong yang dapat dihapus. Hapus semua berkas di folder ini terlebih dahulu.';
 
 // file status
 const OBJECT_SEALED_STATUS = 1;
 
-const GET_GAS_FEE_LACK_BALANCE_ERROR = `Gas fee estimation error, please retry later.`;
-const LOCK_FEE_LACK_BALANCE_ERROR = `Current available balance is not enough for prepaid fee, please check.`;
-const DUPLICATE_OBJECT_NAME = 'This name is already taken, try another one.';
-const UNKNOWN_ERROR = `Unknown error. Please try again later.`;
+const GET_GAS_FEE_LACK_BALANCE_ERROR = `Gagal memperkirakan biaya jaringan, silakan coba lagi nanti.`;
+const LOCK_FEE_LACK_BALANCE_ERROR = `Saldo tersedia saat ini tidak cukup untuk biaya prabayar, silakan periksa.`;
+const DUPLICATE_OBJECT_NAME = 'Nama ini sudah digunakan, coba nama lain.';
+const UNKNOWN_ERROR = `Terjadi kesalahan. Silakan coba lagi nanti.`;
 const AUTH_EXPIRED = 'Authentication Expired';
-const WALLET_CONFIRM = 'Please confirm the transaction in your wallet.';
+const WALLET_CONFIRM = 'Silakan konfirmasi transaksi di dompet Anda.';
 export const PAYMASTER_CONTINUE_DESC =
-  'This payment account does not belong to you. Please ensure that the account owner has set the flow rate for you; otherwise, you will be unable to upload anything to this bucket.';
-export const CONTINUE_STEP = 'Continue';
+  'Akun pembayaran ini bukan milik Anda. Pastikan pemilik akun sudah mengatur laju pembayaran untuk Anda; jika belum, Anda tidak akan bisa mengunggah apa pun ke penyimpanan ini.';
+export const CONTINUE_STEP = 'Lanjutkan';
 
 export const EMPTY_TX_HASH = '0x0000000000000000000000000000000000000000000000000000000000000000';
 

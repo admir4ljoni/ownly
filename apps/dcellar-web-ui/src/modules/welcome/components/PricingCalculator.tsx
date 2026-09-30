@@ -28,7 +28,7 @@ export const PricingCalculator = () => {
           },
         }}
       >
-        <LandingH2>Pricing Calculator</LandingH2>
+        <LandingH2>Kalkulator Harga</LandingH2>
         <Text
           fontFamily={INTER_FONT}
           mb={24}
@@ -40,7 +40,7 @@ export const PricingCalculator = () => {
             },
           }}
         >
-          With our pricing calculator, you can easily get an estimate for your project on BNB
+          Dengan kalkulator harga kami, Anda bisa dengan mudah memperkirakan biaya proyek Anda di BNB
           Greenfield.
         </Text>
         <DCButton
@@ -55,7 +55,7 @@ export const PricingCalculator = () => {
             },
           }}
         >
-          Calculate Now
+          Hitung Sekarang
         </DCButton>
       </Flex>
     </LandingResponsiveContainer>

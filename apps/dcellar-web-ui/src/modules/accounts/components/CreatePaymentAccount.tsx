@@ -39,7 +39,7 @@ export const CreatePaymentAccount = memo<CreatePaymentAccountProps>(
     const onCreatePayment = async () => {
       dispatch(
         setSignatureAction({
-          title: 'Creating Payment Account',
+          title: 'Membuat Akun Pembayaran',
           icon: Animates.object,
           desc: WALLET_CONFIRM,
         }),
@@ -50,7 +50,7 @@ export const CreatePaymentAccount = memo<CreatePaymentAccountProps>(
       if (error && typeof error === 'string') {
         dispatch(
           setSignatureAction({
-            title: 'Create Failed',
+            title: 'Gagal Membuat',
             icon: 'status-failed',
             desc: error || '',
             buttonText: BUTTON_GOT_IT,
@@ -66,15 +66,15 @@ export const CreatePaymentAccount = memo<CreatePaymentAccountProps>(
       <>
         <GAContextProvider prefix={'create_payment_account'}>
           <TxConfirmModal
-            confirmText="Confirm"
+            confirmText="Konfirmasi"
             isOpen={confirmModal}
-            title="Create Payment Account"
+            title="Buat Akun Pembayaran"
             fee={fee}
             onConfirm={onCreatePayment}
             onClose={() => {
               setConfirmModal(false);
             }}
-            description="Are you sure you want to create a new payment account?"
+            description="Yakin ingin membuat Akun Pembayaran baru?"
           />
         </GAContextProvider>
         <Popover trigger={'hover'}>
@@ -86,7 +86,7 @@ export const CreatePaymentAccount = memo<CreatePaymentAccountProps>(
                 onClick={() => setConfirmModal(true)}
                 disabled={!hasBankBalance}
               >
-                Create Payment Account
+                Buat Akun Pembayaran
               </DCButton>
             </Box>
           </PopoverTrigger>
@@ -100,7 +100,7 @@ export const CreatePaymentAccount = memo<CreatePaymentAccountProps>(
           >
             <PopoverBody>
               <Box w={232} textAlign={'left'}>
-                Insufficient balance in Owner Account.{' '}
+                Saldo Akun Utama tidak cukup.{' '}
                 <Link
                   textDecoration={'underline'}
                   onClick={() => router.push(InternalRoutePaths.transfer_in)}
@@ -108,7 +108,7 @@ export const CreatePaymentAccount = memo<CreatePaymentAccountProps>(
                     textDecoration: 'underline',
                   }}
                 >
-                  Transfer In
+                  Transfer Masuk
                 </Link>
               </Box>
             </PopoverBody>

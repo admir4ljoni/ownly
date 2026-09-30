@@ -57,7 +57,7 @@ export const AccountBillingHistoryFilter = ({ address }: { address: string }) =>
   return (
     <Flex justifyContent={'space-between'} alignItems={'center'} gap={12}>
       <Text fontSize={16} fontWeight={600} flex={1}>
-        Billing History
+        Riwayat Tagihan
       </Text>
       <DCButton
         variant="ghost"

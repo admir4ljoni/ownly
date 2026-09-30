@@ -160,11 +160,11 @@ export const BucketQuotaManager = memo<ManageQuotaProps>(function ManageQuota({ 
       default:
         dispatch(
           setSignatureAction({
-            title: 'Update Failed',
+            title: 'Gagal Memperbarui',
             icon: 'status-failed',
-            desc: 'Sorry, there’s something wrong when signing with the wallet.',
+            desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
             buttonText: BUTTON_GOT_IT,
-            errorText: 'Error message: ' + error,
+            errorText: 'Pesan kesalahan: ' + error,
           }),
         );
     }
@@ -173,13 +173,13 @@ export const BucketQuotaManager = memo<ManageQuotaProps>(function ManageQuota({ 
   const onConfirm = async () => {
     if (loading) return;
     if (currentQuota === newChargedQuota * G_BYTES) {
-      toast.success({ description: 'Quota updated!' });
+      toast.success({ description: 'Kuota berhasil diperbarui!' });
       onClose();
       return;
     }
     setLoading(true);
     dispatch(
-      setSignatureAction({ icon: Animates.object, title: 'Updating Quota', desc: WALLET_CONFIRM }),
+      setSignatureAction({ icon: Animates.object, title: 'Memperbarui Kuota', desc: WALLET_CONFIRM }),
     );
 
     const payload: UpdateBucketInfoPayload = {
@@ -194,7 +194,7 @@ export const BucketQuotaManager = memo<ManageQuotaProps>(function ManageQuota({ 
     setLoading(false);
     if (!txRes || txRes.code !== 0) return errorHandler(txError || UNKNOWN_ERROR);
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Quota updated!' });
+    toast.success({ description: 'Kuota berhasil diperbarui!' });
     onClose();
     dispatch(setupBucketQuota(bucketName));
   };
@@ -243,36 +243,36 @@ export const BucketQuotaManager = memo<ManageQuotaProps>(function ManageQuota({ 
     <>
       <QDrawerBody>
         <Text fontWeight={500} lineHeight="normal">
-          Bucket Info
+          Info Penyimpanan
         </Text>
         <Divider my={8} />
         <Field>
-          <Label>Bucket name</Label>
+          <Label>Nama penyimpanan</Label>
           <Value>{bucket.BucketName}</Value>
         </Field>
         <Field>
-          <Label>Payment account</Label>
+          <Label>Akun pembayaran</Label>
           <Value>{paymentAccount}</Value>
         </Field>
         <Field>
-          <Label>Primary storage provider</Label>
+          <Label>Penyedia penyimpanan utama</Label>
           <Value>{moniker}</Value>
         </Field>
         {!!formattedQuota.monthlyFreeQuota && (
           <Field>
-            <Label>Free monthly quota</Label>
+            <Label>Kuota gratis bulanan</Label>
             <Value>
-              {formattedQuota.monthlyFreeQuotaText}/mo
-              <Text as={'span'}>({formattedQuota.monthlyQuotaRemainText} remains)</Text>
+              {formattedQuota.monthlyFreeQuotaText}/bln
+              <Text as={'span'}>({formattedQuota.monthlyQuotaRemainText} tersisa)</Text>
             </Value>
           </Field>
         )}
         {!!formattedQuota.oneTimeFree && (
           <Field>
-            <Label>Free quota (one-time)</Label>
+            <Label>Kuota gratis (sekali pakai)</Label>
             <Value>
               {formattedQuota.oneTimeFreeText}
-              <Text as={'span'}>({formattedQuota.oneTimeFreeRemainText} remains)</Text>
+              <Text as={'span'}>({formattedQuota.oneTimeFreeRemainText} tersisa)</Text>
             </Value>
           </Field>
         )}
@@ -319,7 +319,7 @@ export const BucketQuotaManager = memo<ManageQuotaProps>(function ManageQuota({ 
           width={'100%'}
           onClick={onConfirm}
         >
-          Confirm
+          Konfirmasi
         </DCButton>
       </QDrawerFooter>
     </>
@@ -346,7 +346,7 @@ export const BucketQuotaDrawer = memo<BucketQuotaDrawerProps>(function BucketQuo
 
   return (
     <DCDrawer isOpen={!!bucketName} onClose={onClose}>
-      <QDrawerHeader>Manage Quota</QDrawerHeader>
+      <QDrawerHeader>Kelola Kuota</QDrawerHeader>
       <BucketQuotaManager onClose={onClose} />
     </DCDrawer>
   );

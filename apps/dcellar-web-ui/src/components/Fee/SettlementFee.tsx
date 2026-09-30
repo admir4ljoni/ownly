@@ -15,7 +15,7 @@ export const SettlementFee = ({ amount }: SettlementFeeProps) => {
     <Flex w="100%" alignItems="center" justifyContent="space-between">
       <Flex alignItems="center">
         <Text color="readable.tertiary" as="p">
-          Settlement fee
+          Biaya penyelesaian
         </Text>
         <SettlementTips />
       </Flex>

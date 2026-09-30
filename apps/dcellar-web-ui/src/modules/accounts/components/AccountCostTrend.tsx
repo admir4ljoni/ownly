@@ -106,7 +106,7 @@ export const AccountCostTrend = memo(function AccountCostTrend({ address }: Prop
     return {
       color: colors,
       title: {
-        text: 'Cost Trend',
+        text: 'Tren Biaya',
       },
       tooltip: {
         trigger: 'axis',
@@ -117,7 +117,7 @@ export const AccountCostTrend = memo(function AccountCostTrend({ address }: Prop
           const curData = barData[params[0].dataIndex];
           const styles = getStyles();
           const TokenSymbol = displayTokenSymbol();
-          const TotalFragment = `<div style="${styles.total}">Total Cost: <div style="${
+          const TotalFragment = `<div style="${styles.total}">Total Biaya: <div style="${
             styles.bnb
           }">${curData.totalCost || 0} ${TokenSymbol}</div>
           </div>`;
@@ -125,7 +125,7 @@ export const AccountCostTrend = memo(function AccountCostTrend({ address }: Prop
             curData.estimateCost === null
               ? ''
               : `
-          <div style="${styles.normal}">Estimate Cost:<div style="${styles.bnb}">${curData.estimateCost} ${TokenSymbol}</div>
+          <div style="${styles.normal}">Perkiraan Biaya:<div style="${styles.bnb}">${curData.estimateCost} ${TokenSymbol}</div>
           </div>
           `;
           // const MoMFragment =
@@ -141,7 +141,7 @@ export const AccountCostTrend = memo(function AccountCostTrend({ address }: Prop
         },
       },
       legend: {
-        data: ['Monthly Cost', 'Estimate Cost', 'MoM'],
+        data: ['Biaya Bulanan', 'Perkiraan Biaya', 'MoM'],
       },
       xAxis: [
         {
@@ -169,15 +169,15 @@ export const AccountCostTrend = memo(function AccountCostTrend({ address }: Prop
       ],
       series: [
         {
-          name: 'Monthly Cost',
+          name: 'Biaya Bulanan',
           type: 'bar',
-          stack: 'Monthly Cost',
+          stack: 'Biaya Bulanan',
           data: monthlyCostData,
         },
         {
-          name: 'Estimate Cost',
+          name: 'Perkiraan Biaya',
           type: 'bar',
-          stack: 'Monthly Cost',
+          stack: 'Biaya Bulanan',
           data: estimateCostData,
         },
         // {

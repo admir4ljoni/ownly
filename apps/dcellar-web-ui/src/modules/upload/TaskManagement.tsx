@@ -42,10 +42,10 @@ export const TaskManagement = () => {
           {isUploading ? (
             <>
               <Loading strokeWidth={2} iconSize={16} />
-              <Text>Uploading...</Text>
+              <Text>Mengunggah...</Text>
             </>
           ) : (
-            <>Task Management</>
+            <>Manajemen Tugas</>
           )}
         </DCButton>
       </Box>

@@ -58,7 +58,7 @@ export const FilterAccounts = () => {
 
   return (
     <DCMenu
-      emptyText={'No results.'}
+      emptyText={'Tidak ada hasil.'}
       multiple
       options={accountOptions}
       placement="bottom-start"
@@ -79,7 +79,7 @@ export const FilterAccounts = () => {
                 <SearchIcon w={16} color={'readable.secondary'} />
               </InputLeftElement>
             }
-            placeholder="Search"
+            placeholder="Cari"
             onChange={(e) => setAccountFilter(e.target.value)}
           />
         </MenuHeader>
@@ -87,7 +87,7 @@ export const FilterAccounts = () => {
       renderFooter={() => (
         <MenuFooter>
           {/* <Text onClick={() => setSelectedAccount(accountIds)}>Select All</Text> */}
-          <Text onClick={() => setSelectedAccount([])}>Clear All</Text>
+          <Text onClick={() => setSelectedAccount([])}>Hapus Semua</Text>
         </MenuFooter>
       )}
       renderOption={({ label, value }) => (
@@ -108,9 +108,7 @@ export const FilterAccounts = () => {
         <Tooltip
           placement="top-start"
           visibility={selectedAccountOptions.length ? 'visible' : 'hidden'}
-          content={`${selectedAccountOptions.map((i) => i.label).join(', ')} ${
-            selectedAccountOptions.length > 1 ? 'are' : 'is'
-          } selected.`}
+          content={`${selectedAccountOptions.map((i) => i.label).join(', ')} dipilih.`}
         >
           <MenuButton
             className={cn(
@@ -141,7 +139,7 @@ export const FilterAccounts = () => {
             }
           >
             {!selectedAccountOptions.length ? (
-              'Account'
+              'Akun'
             ) : (
               <>
                 {trimLongStr(selectedAccountOptions[0].label, 6, 6, 0)}{' '}

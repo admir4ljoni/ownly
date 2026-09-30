@@ -60,7 +60,7 @@ export const CreateGroupOperation = memo<CreateGroupOperationProps>(function Cre
   const valid = !(error.name || error.desc);
   const fees = [
     {
-      label: 'Gas fee',
+      label: 'Biaya jaringan',
       types: isSetTags ? [MsgCreateGroupTypeUrl, MsgSetTagTypeUrl] : [MsgCreateGroupTypeUrl],
     },
   ];
@@ -70,16 +70,16 @@ export const CreateGroupOperation = memo<CreateGroupOperationProps>(function Cre
     const _error = { ...error };
     const nlen = new Blob([name]).size;
     if (!nlen) {
-      _error.name = 'Please enter the group name.';
+      _error.name = 'Silakan masukkan nama grup.';
     } else if (nlen < 3 || nlen > 63) {
-      _error.name = 'Must be between 3 to 63 characters long.';
+      _error.name = 'Panjang harus antara 3 dan 63 karakter.';
     } else if (groupList?.some((i) => i.groupName === name)) {
-      _error.name = 'This name is already taken by you, try another one.';
+      _error.name = 'Nama ini sudah Anda gunakan, coba nama lain.';
     } else {
       _error.name = '';
     }
     if (new Blob([desc]).size >= 500) {
-      _error.desc = 'Please enter less than 500 characters.';
+      _error.desc = 'Silakan masukkan kurang dari 500 karakter.';
     } else {
       _error.desc = '';
     }
@@ -96,11 +96,11 @@ export const CreateGroupOperation = memo<CreateGroupOperationProps>(function Cre
       default:
         dispatch(
           setSignatureAction({
-            title: 'Create Failed',
+            title: 'Gagal Membuat',
             icon: 'status-failed',
-            desc: 'Sorry, there’s something wrong when signing with the wallet.',
+            desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
             buttonText: BUTTON_GOT_IT,
-            errorText: 'Error message: ' + error,
+            errorText: 'Pesan kesalahan: ' + error,
           }),
         );
     }
@@ -122,7 +122,7 @@ export const CreateGroupOperation = memo<CreateGroupOperationProps>(function Cre
       extra: form.desc,
     };
     dispatch(
-      setSignatureAction({ icon: Animates.group, title: 'Creating Group', desc: WALLET_CONFIRM }),
+      setSignatureAction({ icon: Animates.group, title: 'Membuat Grup', desc: WALLET_CONFIRM }),
     );
 
     const txs: TxResponse[] = [];
@@ -150,7 +150,7 @@ export const CreateGroupOperation = memo<CreateGroupOperationProps>(function Cre
     setLoading(false);
     if (!txRes || txRes.code !== 0) return errorHandler(error3 || UNKNOWN_ERROR);
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Group created successfully!' });
+    toast.success({ description: 'Grup berhasil dibuat!' });
     dispatch(setupGroupList(loginAccount));
     onClose();
   };
@@ -164,27 +164,27 @@ export const CreateGroupOperation = memo<CreateGroupOperationProps>(function Cre
   return (
     <>
       <QDrawerHeader flexDirection="column">
-        Create a Group
+        Buat Grup
         <Text className="ui-drawer-sub">
-          Groups are collections of accounts that share the same permissions.
+          Grup adalah kumpulan akun yang memiliki izin yang sama.
         </Text>
       </QDrawerHeader>
       <QDrawerBody>
         <FormControl mb={16} isInvalid={!!error.name}>
           <FormLabel>
             <Text fontSize={14} fontWeight={500} mb={8}>
-              Name
+              Nama
             </Text>
             <InputItem
               onKeyDown={(e) => e.key === 'Enter' && onCreateGroup()}
               value={form.name}
-              placeholder="Enter a group name"
+              placeholder="Masukkan nama grup"
               onChange={(e) => onFormValueChange(e.target.value, 'name')}
               tips={{
-                title: 'Naming Rules',
+                title: 'Aturan Penamaan',
                 rules: [
-                  'The group name cannot be duplicated under the same user.',
-                  'Must be between 1 and 63 characters long.',
+                  'Nama grup tidak boleh sama dengan grup lain milik pengguna yang sama.',
+                  'Panjang harus antara 1 dan 63 karakter.',
                 ],
               }}
             />
@@ -194,14 +194,14 @@ export const CreateGroupOperation = memo<CreateGroupOperationProps>(function Cre
         <FormControl mb={16} isInvalid={!!error.desc}>
           <FormLabel>
             <Text fontSize={14} fontWeight={500} mb={8}>
-              Description
+              Deskripsi
             </Text>
             <TextareaItem
               onKeyDown={(e) => e.key === 'Enter' && onCreateGroup()}
               value={form.desc}
               h={100}
               resize="none"
-              placeholder="Enter description for your group. (Optional)"
+              placeholder="Masukkan deskripsi grup Anda. (Opsional)"
               onChange={(e) => onFormValueChange(e.target.value, 'desc')}
             />
           </FormLabel>
@@ -210,7 +210,7 @@ export const CreateGroupOperation = memo<CreateGroupOperationProps>(function Cre
         <FormControl mb={16}>
           <FormLabel>
             <Text fontWeight={500} mb={8}>
-              Tags
+              Label
             </Text>
             <EditTags onClick={onEditGroupTags} tagsData={groupEditTagsData} />
           </FormLabel>
@@ -234,11 +234,11 @@ export const CreateGroupOperation = memo<CreateGroupOperationProps>(function Cre
           >
             {loading ? (
               <>
-                Loading
+                Memuat
                 <DotLoading />
               </>
             ) : (
-              'Create'
+              'Buat'
             )}
           </DCButton>
         </Flex>

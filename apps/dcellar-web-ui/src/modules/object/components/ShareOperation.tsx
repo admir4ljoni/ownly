@@ -63,11 +63,11 @@ export const ShareOperation = memo<ShareOperationProps>(function ShareOperation(
       default:
         dispatch(
           setSignatureAction({
-            title: 'Updating Access',
+            title: 'Memperbarui Akses',
             icon: 'status-failed',
             buttonText: BUTTON_GOT_IT,
             buttonOnClick: () => dispatch(setSignatureAction({})),
-            errorText: 'Error message: ' + msg,
+            errorText: 'Pesan kesalahan: ' + msg,
           }),
         );
         return;
@@ -85,7 +85,7 @@ export const ShareOperation = memo<ShareOperationProps>(function ShareOperation(
     dispatch(
       setSignatureAction({
         icon: Animates.access,
-        title: 'Updating Access',
+        title: 'Memperbarui Akses',
         desc: WALLET_CONFIRM,
       }),
     );
@@ -94,7 +94,7 @@ export const ShareOperation = memo<ShareOperationProps>(function ShareOperation(
 
     if (error) return handleError(error);
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Access updated!' });
+    toast.success({ description: 'Akses diperbarui!' });
     dispatch(setObjectVisibility({ objectName: objectInfo.ObjectName, visibility }));
   };
 
@@ -156,7 +156,7 @@ export const ShareOperation = memo<ShareOperationProps>(function ShareOperation(
           display="flex"
           pr={30}
         >
-          Share “
+          Bagikan “
           {
             <Text
               fontWeight={600}
@@ -186,11 +186,11 @@ export const ShareOperation = memo<ShareOperationProps>(function ShareOperation(
           {hasCopied ? (
             <>
               <IconFont type={'colored-success2'} w={20} />
-              <Text fontWeight={500}>Copied</Text>
+              <Text fontWeight={500}>Tersalin</Text>
             </>
           ) : (
             <>
-              <Text fontWeight={500}>Copy Link</Text>
+              <Text fontWeight={500}>Salin Tautan</Text>
             </>
           )}
         </DCButton>

@@ -18,7 +18,7 @@ export const BankBalance = ({ amount, ...restProps }: BankBalanceProps) => {
       {...restProps}
       justifyContent={'flex-end'}
     >
-      Owner Account Bank Balance: {renderFee(amount, exchangeRate)}
+      Saldo Dompet Akun Utama: {renderFee(amount, exchangeRate)}
     </Flex>
   );
 };

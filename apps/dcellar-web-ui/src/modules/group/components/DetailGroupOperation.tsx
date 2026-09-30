@@ -33,7 +33,7 @@ import { ethers } from 'ethers';
 import { memo } from 'react';
 import { useMount } from 'react-use';
 
-const VERSION_TABS = ['General Info', 'Activities'];
+const VERSION_TABS = ['Info Umum', 'Aktivitas'];
 interface DetailGroupOperationProps {
   selectGroup: GroupInfo;
 }
@@ -78,7 +78,7 @@ export const DetailGroupOperation = memo<DetailGroupOperationProps>(function Gro
 
   return (
     <>
-      <QDrawerHeader>Group Detail</QDrawerHeader>
+      <QDrawerHeader>Detail Grup</QDrawerHeader>
       <QDrawerBody>
         <Flex mb={24} flexDirection={'column'} alignItems={'center'} display={'flex'}>
           <Flex w="100%" overflow="hidden">
@@ -128,7 +128,7 @@ export const DetailGroupOperation = memo<DetailGroupOperationProps>(function Gro
                   justifyContent="space-between"
                   alignItems={'center'}
                 >
-                  <Text color="#76808F">Group ID</Text>
+                  <Text color="#76808F">ID Grup</Text>
                   <CopyText
                     alignItems="center"
                     value={selectGroup.id}
@@ -154,7 +154,7 @@ export const DetailGroupOperation = memo<DetailGroupOperationProps>(function Gro
                   justifyContent="space-between"
                   alignItems={'center'}
                 >
-                  <Text color={'#76808F'}>Tags</Text>
+                  <Text color={'#76808F'}>Label</Text>
                   <Flex
                     alignItems={'center'}
                     gap={4}
@@ -163,21 +163,21 @@ export const DetailGroupOperation = memo<DetailGroupOperationProps>(function Gro
                     onClick={onEditTag}
                   >
                     <IconFont type="pen" />
-                    {selectGroup?.tags?.tags?.length || 0} tags
+                    {selectGroup?.tags?.tags?.length || 0} label
                   </Flex>
                 </Flex>
                 <Divider />
               </Flex>
               <Box my={24}>
                 <Text fontWeight={600} lineHeight="normal">
-                  Members
+                  Anggota
                 </Text>
                 <Flex my={8} alignItems="center" height={48}>
                   <Flex color="#474D57" fontWeight={500} fontSize={12} flex={1}>
                     <LoadingAdaptor
                       loading={loading}
                       empty={empty}
-                      emptyText="This group currently has no members."
+                      emptyText="Grup ini belum memiliki anggota."
                     >
                       <Flex gap={8}>
                         {members.slice(0, 5).map((m) => {
@@ -208,7 +208,7 @@ export const DetailGroupOperation = memo<DetailGroupOperationProps>(function Gro
                       dispatch(setGroupOperation({ level: 1, operation: [selectGroup.id, 'add'] }))
                     }
                   >
-                    Manage Members
+                    Kelola Anggota
                   </ManageMembers>
                 </Flex>
               </Box>

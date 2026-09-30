@@ -10,7 +10,7 @@ export const ShareCTA = () => {
     <Content>
       <Image alt="Ownly" src={`${assetPrefix}/images/ownly-mark.svg`} w={40} />
       <Text fontWeight={600} fontSize={16} lineHeight="19px" m={24}>
-        Start your journey of BNB Greenfield decentralized data network with Ownly Now.🥳
+        Mulai perjalanan Anda di jaringan data terdesentralisasi BNB Greenfield bersama Ownly sekarang.🥳
       </Text>
       <Link href="/buckets" legacyBehavior passHref replace>
         <DCButton
@@ -21,7 +21,7 @@ export const ShareCTA = () => {
           mb={12}
           padding={0}
         >
-          Get Started
+          Mulai Sekarang
         </DCButton>
       </Link>
     </Content>

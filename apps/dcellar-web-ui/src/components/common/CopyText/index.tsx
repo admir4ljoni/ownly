@@ -57,10 +57,10 @@ export function CopyText(props: CopyTextProps) {
           hasCopied ? (
             <Center color={'readable.normal'}>
               <IconFont type="colored-success" w={16} mr={4} />
-              Copied
+              Tersalin
             </Center>
           ) : (
-            <Text color={'readable.normal'}>Copy</Text>
+            <Text color={'readable.normal'}>Salin</Text>
           )
         }
       >

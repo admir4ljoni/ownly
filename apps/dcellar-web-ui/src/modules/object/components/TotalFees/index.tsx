@@ -50,7 +50,7 @@ export const TotalFees = memo<TotalFeesProps>(function TotalFeesItem(props) {
     (a) => a.address === payStoreFeeAddress,
   );
   const str = payStoreFeeAddress.substring(38);
-  const paymentLabel = paymentAccount && `${paymentAccount.name} (${str}) balance:`;
+  const paymentLabel = paymentAccount && `Saldo ${paymentAccount.name} (${str}):`;
 
   return (
     <Flex
@@ -69,7 +69,7 @@ export const TotalFees = memo<TotalFeesProps>(function TotalFeesItem(props) {
         alignItems={'center'}
         cursor={expandable ? 'pointer' : 'default'}
       >
-        <Text>Total Fees</Text>
+        <Text>Total Biaya</Text>
         <Flex
           color={'readable.secondary'}
           alignItems="center"
@@ -100,14 +100,14 @@ export const TotalFees = memo<TotalFeesProps>(function TotalFeesItem(props) {
               <Flex w="100%" alignItems="center" justifyContent="space-between">
                 <Flex alignItems="center">
                   <Text color="readable.tertiary" as="p">
-                    {refund ? 'Prepaid fee refund' : 'Prepaid fee'}
+                    {refund ? 'Pengembalian biaya prabayar' : 'Biaya prabayar'}
                   </Text>
                   <PrePaidTips />
                 </Flex>
                 <Text color="readable.tertiary">
                   {refund && (
                     <Text as="span" color={'#EEBE11'} mr={4}>
-                      Refund
+                      Pengembalian
                     </Text>
                   )}
                   {renderFeeValue(prepaidFee, exchangeRate)}
@@ -117,7 +117,7 @@ export const TotalFees = memo<TotalFeesProps>(function TotalFeesItem(props) {
               <Flex w="100%" alignItems="center" justifyContent="space-between">
                 <Flex alignItems="center">
                   <Text color="readable.tertiary" as="p">
-                    Settlement fee
+                    Biaya penyelesaian
                   </Text>
                   <SettlementTips />
                 </Flex>
@@ -139,7 +139,7 @@ export const TotalFees = memo<TotalFeesProps>(function TotalFeesItem(props) {
             <Flex w="100%" alignItems="center" justifyContent="space-between">
               <Flex alignItems="center">
                 <Text color="readable.tertiary" as="p">
-                  Gas fee
+                  Biaya jaringan
                 </Text>
                 <GasFeeTips />
               </Flex>
@@ -147,7 +147,7 @@ export const TotalFees = memo<TotalFeesProps>(function TotalFeesItem(props) {
             </Flex>
           )}
           <Text fontSize={12} lineHeight="16px" color="readable.disabled" alignSelf="flex-end">
-            Owner Account balance: {renderBalanceNumber(bankBalance || '0')} (
+            Saldo Akun Utama: {renderBalanceNumber(bankBalance || '0')} (
             {renderUsd(bankBalance || '0', exchangeRate)})
           </Text>
         </>

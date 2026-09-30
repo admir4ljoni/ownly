@@ -67,7 +67,7 @@ export const ToAccountSelector = memo<ToAccountSelectorProps>(function ToAccount
   const onChangeAccount = (value: string) => {
     setAccount(
       keyAccountList[value] || {
-        name: 'Custom Account',
+        name: 'Akun Kustom',
         address: value,
       },
     );
@@ -88,7 +88,7 @@ export const ToAccountSelector = memo<ToAccountSelectorProps>(function ToAccount
     <Grid borderTop={'1px solid readable.border'} h={33} placeItems="center">
       <Link href="/accounts" passHref legacyBehavior>
         <Text fontWeight={500} as="a" color="brand.normal" _hover={{ color: 'brand.brand5' }}>
-          Manage Accounts
+          Kelola Akun
         </Text>
       </Link>
     </Grid>
@@ -111,7 +111,7 @@ export const ToAccountSelector = memo<ToAccountSelectorProps>(function ToAccount
   useEffect(() => {
     if (account.address === value || !value) return;
     const initialAccount = accountList.find((item) => item.address === value);
-    setAccount(initialAccount || { name: 'Custom Account', address: value, id: 'CA' });
+    setAccount(initialAccount || { name: 'Akun Kustom', address: value, id: 'CA' });
   }, [accountList, value]);
 
   useEffect(() => {
@@ -125,9 +125,9 @@ export const ToAccountSelector = memo<ToAccountSelectorProps>(function ToAccount
       RightIcon={() => <Box onClick={(e) => e.stopPropagation()}>{RightIcon()}</Box>}
       value={account?.address}
       text={account?.address}
-      placeholder="Choose or enter addresses"
+      placeholder="Pilih atau masukkan alamat"
       options={options}
-      header={() => `Payment Accounts (${total})`}
+      header={() => `Akun Pembayaran (${total})`}
       onChange={onChangeAccount}
       onSearchFilter={onSearchFilter}
       onSearch={onSearch}
@@ -137,7 +137,7 @@ export const ToAccountSelector = memo<ToAccountSelectorProps>(function ToAccount
       footer={Footer}
       renderOption={({ value, label }) => <OptionItem value={value} label={label} />}
       emptyIcon="empty-account"
-      emptyText="No Payment Accounts"
+      emptyText="Tidak ada Akun Pembayaran"
     />
   );
 });

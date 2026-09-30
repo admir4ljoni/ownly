@@ -3,9 +3,9 @@ import { parseWCMessage } from '@/utils/common';
 
 export type ErrorMsg = string;
 
-export const E_GET_GAS_FEE_LACK_BALANCE_ERROR = `Insufficient balance for gas estimation.`;
-export const E_UNKNOWN_ERROR = `Unknown error. Please try again later.`;
-export const E_SP_PRICE_FAILED = `Get SP storage price failed.`;
+export const E_GET_GAS_FEE_LACK_BALANCE_ERROR = `Saldo tidak cukup untuk menghitung biaya jaringan.`;
+export const E_UNKNOWN_ERROR = `Terjadi kesalahan yang tidak diketahui. Silakan coba lagi nanti.`;
+export const E_SP_PRICE_FAILED = `Gagal mengambil harga penyimpanan dari Penyedia Penyimpanan.`;
 export const E_USER_REJECT_STATUS_NUM = '4001';
 export const E_NOT_FOUND = 'NOT_FOUND';
 export const E_PERMISSION_DENIED = 'PERMISSION_DENIED';
@@ -33,9 +33,9 @@ export const E_ACCOUNT_BALANCE_NOT_ENOUGH = 'ACCOUNT_BALANCE_NOT_ENOUGH';
 export const E_NO_PERMISSION = 'NO_PERMISSION';
 export const E_SP_STORAGE_PRICE_FAILED = 'SP_STORAGE_PRICE_FAILED';
 export const E_BUCKET_FLOW_RATE_NOT_SET =
-  'The payment account does not specify a flow rate for this bucket, hence it cannot be created. Please contact the payment account owner first to set the flow rate for your bucket.';
+  'Akun Pembayaran belum menetapkan laju pembayaran untuk Penyimpanan ini, sehingga Penyimpanan tidak dapat dibuat. Silakan hubungi pemilik Akun Pembayaran terlebih dahulu untuk menetapkan laju pembayaran Penyimpanan Anda.';
 export const E_BUCKET_FLOW_RATE_LOW =
-  "The flow rate exceeds the maximum value. Please remove some objects or contact the payment account's owner to increase the flow rate.";
+  'Laju pembayaran melebihi batas maksimum. Silakan hapus beberapa berkas atau hubungi pemilik Akun Pembayaran untuk menaikkan laju pembayaran.';
 
 export declare class BroadcastTxError extends Error {
   readonly code: number;
@@ -82,7 +82,7 @@ export const broadcastFault = (e: BroadcastTxError): ErrorResponse => {
     e?.message.includes('is greater than the flow rate limit') ||
     e?.message.includes('payment account is not changed but the bucket is limited')
   ) {
-    return [null, 'Flow rate exceeds limit'];
+    return [null, 'Laju pembayaran melebihi batas'];
   }
   return [null, parseWCMessage(e?.message) || E_UNKNOWN_ERROR];
 };
@@ -107,7 +107,7 @@ export const createTxFault = (e: any): ErrorResponse => {
     return [null, E_OFF_CHAIN_AUTH];
   }
   if ((e as any).statusCode === 429) {
-    return [null, 'SP not available. Try later.'];
+    return [null, 'Penyedia Penyimpanan sedang tidak tersedia. Silakan coba lagi nanti.'];
   }
   return [null, e?.message || E_UNKNOWN_ERROR];
 };
@@ -153,7 +153,7 @@ export const queryLockFeeFault = (e: any): ErrorResponse => {
 export const semanticRPCError = (err: string): string => {
   if (!err) return E_UNKNOWN_ERROR;
   const errorList = [
-    { key: 'is frozen', message: 'Your account is frozen. Please deposit to reactivate it.' },
+    { key: 'is frozen', message: 'Akun Anda dibekukan. Silakan isi saldo untuk mengaktifkannya kembali.' },
   ];
   const foundError = errorList.find(({ key }) => err.includes(key));
 

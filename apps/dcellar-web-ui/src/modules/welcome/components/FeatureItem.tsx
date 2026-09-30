@@ -68,7 +68,7 @@ export const FeatureItem = ({ title, desc, tag, introImg, introImgSm }: TFeature
         </Text>
       </Flex>
       <Image
-        alt={`${title} image`}
+        alt={`Gambar ${title}`}
         w={'50%'}
         src={isMobile ? introImgSm : introImg}
         fallbackStrategy="beforeLoadOrError"

@@ -119,7 +119,7 @@ export const paymentAccountSlice = createSlice({
       const { loginAccount, paymentAccounts } = payload;
       state.paymentAccountListRecords[loginAccount] = (paymentAccounts || []).map(
         (account, index) => {
-          return { name: `Payment Account ${index + 1}`, id: `pa${index + 1}`, address: account };
+          return { name: `Akun Pembayaran ${index + 1}`, id: `pa${index + 1}`, address: account };
         },
       );
     },
@@ -312,7 +312,7 @@ export const setupPaymentAccounts =
       );
 
       return {
-        name: `Payment Account ${index + 1}`,
+        name: `Akun Pembayaran ${index + 1}`,
         address,
         streamRecord: detail?.StreamRecord || {},
         refundable:

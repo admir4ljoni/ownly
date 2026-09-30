@@ -26,8 +26,8 @@ export const BucketStatusNotice = ({
   const discontinueReasons: InvalidStatusReason[] = [
     {
       icon: 'colored-error2',
-      title: 'Flow rate exceeds limit',
-      desc: "The bucket's flow rate exceeds the payment account limit. Contact the account owner or switch accounts to increase it.",
+      title: 'Laju pembayaran melebihi batas',
+      desc: 'Laju pembayaran penyimpanan ini melebihi batas akun pembayaran. Hubungi pemilik akun atau ganti akun untuk menaikkannya.',
       show: flowRateLimit,
     },
     bucketStatusReason || { title: '', desc: '', icon: '', show: false },
@@ -66,7 +66,7 @@ export const BucketStatusNotice = ({
                 <Flex justifyContent={'right'}>
                   {link && (
                     <DCLink href={link} target="_blank" onClick={(e) => e.stopPropagation()}>
-                      Learn More
+                      Pelajari Lebih Lanjut
                     </DCLink>
                   )}
                 </Flex>

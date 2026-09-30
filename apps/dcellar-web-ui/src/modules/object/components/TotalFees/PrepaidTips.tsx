@@ -16,7 +16,7 @@ export const PrePaidTips = memo<PrePaidTipsProps>(function PrePaidTips() {
       w={260}
       tips={
         <Box>
-          <Box>Prepaid fee for {reserveTime} and will be charged based on the flow rate.</Box>
+          <Box>Biaya prabayar untuk {reserveTime} dan akan ditagih sesuai laju pembayaran.</Box>
         </Box>
       }
     />

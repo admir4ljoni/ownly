@@ -25,7 +25,7 @@ export const ChainBox = memo<ChainBoxProps>(function ChainBox({ chainId, type }:
         fontSize="14px"
         htmlFor={chain?.name}
       >
-        {type}
+        {type === 'from' ? 'Dari' : 'Ke'}
       </FormLabel>
       <Flex
         backgroundColor={'#F5F5F5'}
@@ -54,7 +54,7 @@ export const ChainBox = memo<ChainBoxProps>(function ChainBox({ chainId, type }:
           fontWeight={500}
           top={17}
         >
-          Testnet
+          Jaringan Uji
         </Box>
       )}
     </Box>

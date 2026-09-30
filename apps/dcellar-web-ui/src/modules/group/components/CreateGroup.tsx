@@ -32,7 +32,7 @@ export const CreateGroup = memo<NewGroupProps>(function NewGroup({ showRefresh =
         />
       )}
       <DCButton onClick={() => dispatch(setGroupOperation({ operation: ['', 'create'] }))}>
-        Create Group
+        Buat Grup
       </DCButton>
     </Flex>
   );

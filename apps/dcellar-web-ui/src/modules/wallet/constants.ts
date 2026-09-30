@@ -32,23 +32,23 @@ export const ChainInfos = [
 
 export const WalletOperationInfos = {
   send: {
-    text: 'Send',
-    changeChainText: 'Switch to BNB Greenfield',
-    warning: 'Please switch to BNB Greenfield to continue sending.',
+    text: 'Kirim',
+    changeChainText: 'Beralih ke BNB Greenfield',
+    warning: 'Silakan beralih ke BNB Greenfield untuk melanjutkan pengiriman.',
     chainId: GREENFIELD_CHAIN_ID,
     chainName: 'Greenfield',
   },
   transfer_in: {
-    text: 'Transfer In',
-    changeChainText: 'Switch to BNB Smart Chain',
-    warning: 'Please switch to BNB Smart Chain to continue the transfer.',
+    text: 'Transfer Masuk',
+    changeChainText: 'Beralih ke BNB Smart Chain',
+    warning: 'Silakan beralih ke BNB Smart Chain untuk melanjutkan transfer.',
     chainId: BSC_CHAIN_ID,
     chainName: 'BNB Smart Chain',
   },
   transfer_out: {
-    text: 'Transfer Out',
-    changeChainText: 'Switch to BNB Greenfield',
-    warning: 'Please switch to BNB Greenfield to continue the transfer.',
+    text: 'Transfer Keluar',
+    changeChainText: 'Beralih ke BNB Greenfield',
+    warning: 'Silakan beralih ke BNB Greenfield untuk melanjutkan transfer.',
     chainId: GREENFIELD_CHAIN_ID,
     chainName: 'Greenfield',
   },

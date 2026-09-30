@@ -5,12 +5,12 @@ export type ToolTabKey = 'ALL' | 'DEV_TOOL' | 'SDK' | 'API';
 export const useToolBoxTab = () => {
   const tabOptions = [
     {
-      name: 'All Tools',
+      name: 'Semua Alat',
       key: 'ALL',
       data: toolList,
     },
     {
-      name: 'Developer Tool',
+      name: 'Alat Developer',
       key: ToolTypeEnum.DevTool,
       data: toolList.filter((item) => item.type === ToolTypeEnum.DevTool),
     },

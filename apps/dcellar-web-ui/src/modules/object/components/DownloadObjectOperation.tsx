@@ -112,10 +112,10 @@ export const DownloadObjectOperation = memo<DownloadObjectOperationProps>(functi
 
   return (
     <>
-      <ModalHeader>Confirm Action</ModalHeader>
+      <ModalHeader>Konfirmasi Tindakan</ModalHeader>
       <ModalBody>
         <Text className="ui-modal-desc">
-          You are going to cost quota. The process cannot be interrupted.
+          Tindakan ini akan memakai kuota. Proses tidak dapat dihentikan.
         </Text>
         <Flex
           bg={'bg.bottom'}
@@ -125,9 +125,9 @@ export const DownloadObjectOperation = memo<DownloadObjectOperationProps>(functi
           gap={8}
           color={'readable.tertiary'}
         >
-          {renderProp('Required quota', formatBytes(payloadSize))}
+          {renderProp('Kuota yang diperlukan', formatBytes(payloadSize))}
           <Text fontSize={'12px'} textAlign={'right'} color={'readable.disabled'}>
-            {`Remaining quota: ${transformedRemainingQuota}`}
+            {`Sisa kuota: ${transformedRemainingQuota}`}
           </Text>
         </Flex>
       </ModalBody>
@@ -148,7 +148,7 @@ export const DownloadObjectOperation = memo<DownloadObjectOperationProps>(functi
               );
           }}
         >
-          Confirm
+          Konfirmasi
         </DCButton>
         <Flex w={'100%'} alignItems={'center'} justifyContent={'center'} marginTop={16}>
           <GAClick
@@ -175,7 +175,7 @@ export const DownloadObjectOperation = memo<DownloadObjectOperationProps>(functi
                 setCurrentAllowDirectDownload(checked);
               }}
             >
-              Don&apos;t show again.
+              Jangan tampilkan lagi.
             </Checkbox>
           </GAClick>
         </Flex>

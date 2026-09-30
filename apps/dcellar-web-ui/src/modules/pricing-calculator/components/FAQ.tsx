@@ -25,7 +25,7 @@ const BillingFormula = () => {
     {
       header: (
         <Text as="div" fontSize={16} fontWeight={600}>
-          Fee
+          Biaya
         </Text>
       ),
       width: '20%',
@@ -36,7 +36,7 @@ const BillingFormula = () => {
     {
       header: (
         <Text as="div" fontSize={16} fontWeight={600}>
-          Billing Formula
+          Rumus Tagihan
         </Text>
       ),
       cell: (item: TBillingFormula) => {
@@ -48,32 +48,32 @@ const BillingFormula = () => {
   const data: TBillingFormula[] = [
     {
       id: 1,
-      name: 'Storage Fee',
+      name: 'Biaya Penyimpanan',
       value: (
         <Flex flexDirection={'column'} gap={4}>
           <Text as="div" fontWeight={400} wordBreak={'break-all'}>
-            Fee = sum(ChargedSize) * (PrimaryStorePrice + SecondaryStorePrice*SecondarySPNumber) *
-            (1+Validator Tax Rate) * ReserveTime
+            Biaya = sum(ChargedSize) * (PrimaryStorePrice + SecondaryStorePrice*SecondarySPNumber) *
+            (1+Tarif Pajak Validator) * ReserveTime
           </Text>
           <Text as="div" fontWeight={400}>
             ReserveTime = 180
           </Text>
           <Text as="div" fontWeight={400}>
-            Validator Tax Rate = 1%
+            Tarif Pajak Validator = 1%
           </Text>
           <Text as="div" fontWeight={400}>
-            ChargeSize ≥ Total Storage Size (For data object smaller than 128K, it will be charged
-            as 128K)
+            ChargeSize ≥ Total Ukuran Penyimpanan (berkas yang lebih kecil dari 128K akan dihitung
+            sebagai 128K)
           </Text>
         </Flex>
       ),
     },
     {
       id: 2,
-      name: 'Download Quota Fee',
+      name: 'Biaya Kuota Unduhan',
       value: (
         <Text as="div" fontWeight={400} wordBreak={'break-all'}>
-          Fee = ChargedReadQuota * ReadPrice * (1 + Validator Tax Rate) * ReserveTime
+          Biaya = ChargedReadQuota * ReadPrice * (1 + Tarif Pajak Validator) * ReserveTime
         </Text>
       ),
     },
@@ -104,50 +104,51 @@ type FAQProps = { openKeys: number[]; toggleOpenKeys: (key: number) => void };
 export const FAQ = ({ openKeys, toggleOpenKeys }: FAQProps) => {
   const data = [
     {
-      question: <Text>Billing Formula</Text>,
+      question: <Text>Rumus Tagihan</Text>,
       id: '#billing_formula',
       answer: (
         <>
           <Text as="div" mb={8}>
-            In Greenfield, Besides transaction fee, users are required to pay two kinds of storage
-            service fees: storage fee and download quota fee. These storage service fees are charged
-            by Storage Providers (SPs) in a steam payment. Users need to prelock an amount of
-            storage service fee when they start using the service.
+            Di Greenfield, selain biaya transaksi, pengguna perlu membayar dua jenis biaya layanan
+            penyimpanan: biaya penyimpanan dan biaya kuota unduhan. Biaya layanan ini ditagih oleh
+            Penyedia Penyimpanan secara berkelanjutan (laju pembayaran). Pengguna perlu menyisihkan
+            sejumlah biaya layanan penyimpanan di awal saat mulai menggunakan layanan.
           </Text>
           <BillingFormula />
         </>
       ),
     },
     {
-      question: 'What is Charged Size?',
+      question: 'Apa itu Ukuran Tertagih (Charged Size)?',
       id: '#charged_size',
       answer: (
         <Flex flexDirection={'column'} gap={4}>
           <Text as="div">
-            In general, charge size is slightly larger than the real storage size.
+            Secara umum, ukuran tertagih sedikit lebih besar dari ukuran penyimpanan sebenarnya.
           </Text>
           <Text as="div">
-            ChargeSize is calculated from the object&apos;s payload size, if the payload size is
-            less than 128k then ChargeSize is 128k, otherwise ChargeSize is equal to payload size.
+            ChargeSize dihitung dari ukuran isi berkas. Jika ukurannya kurang dari 128k, maka
+            ChargeSize adalah 128k; jika tidak, ChargeSize sama dengan ukuran isi berkas.
           </Text>
           <Text as="div">
-            If Data Size &lt; 128K, ChargedSize = 128K; else, ChargedSize = Data Size
+            Jika Ukuran Data &lt; 128K, ChargedSize = 128K; selain itu, ChargedSize = Ukuran Data
           </Text>
-          <Text as="div">If object is an empty folder, ChargedSize = 128K</Text>
+          <Text as="div">Jika berkas berupa folder kosong, ChargedSize = 128K</Text>
         </Flex>
       ),
     },
     {
-      question: 'What is Primary/Secondary Store Price?',
+      question: 'Apa itu Harga Penyimpanan Utama/Sekunder?',
       id: '#store_price',
       answer: (
         <Text as={'div'}>
-          Every SP can set their own suggested store price and read price via on-chain transactions.
-          At the first block of each month, the median all SPs&apos; store prices will be calculated
-          as the Primary SP Store Price, the Secondary SP Store Price will be calculated as a
-          proportion of the Primary SP Store Price (e.g. 12%, which can be governed), and the median
-          of all SPs&apos; read prices will be calculated as the Primary SP Read Price. To learn
-          more about it, please refer to{' '}
+          Setiap Penyedia Penyimpanan dapat menetapkan harga penyimpanan dan harga baca yang
+          disarankan melalui transaksi di jaringan. Pada awal setiap bulan, nilai tengah (median)
+          harga penyimpanan dari semua Penyedia Penyimpanan dihitung sebagai Harga Penyimpanan
+          Penyedia Penyimpanan Utama. Harga Penyimpanan Sekunder dihitung sebagai persentase dari
+          harga utama tersebut (misalnya 12%, yang dapat diubah melalui tata kelola), dan median harga
+          baca dari semua Penyedia Penyimpanan dihitung sebagai Harga Baca Utama. Untuk mempelajari
+          lebih lanjut, silakan lihat{' '}
           <UnderlineLink
             target="_blank"
             href="https://github.com/bnb-chain/greenfield/blob/master/docs/modules/billing-and-payment.md#storage-fee-price-and-adjustment"
@@ -159,60 +160,59 @@ export const FAQ = ({ openKeys, toggleOpenKeys }: FAQProps) => {
       ),
     },
     {
-      question: 'What is Validator Tax Rate?',
+      question: 'Apa itu Tarif Pajak Validator?',
       id: '#tax_rate',
       answer: (
         <Text as="div">
-          For each data related operation on Greenfield, validators can get some rewards for
-          protecting the security and integrity of data (i.e. challenge). Through charging validator
-          tax, part of user&apos;s cost will go to validator tax pool, and then become
-          validators&apos; rewards.
+          Untuk setiap operasi data di Greenfield, validator mendapatkan imbalan karena menjaga
+          keamanan dan keutuhan data. Melalui pajak validator, sebagian biaya pengguna masuk ke
+          kumpulan pajak validator dan kemudian menjadi imbalan bagi validator.
         </Text>
       ),
     },
     {
-      question: 'What is Download Quota?',
+      question: 'Apa itu Kuota Unduhan?',
       id: '#download_quota',
       answer: (
         <Flex gap={4} flexDirection={'column'}>
           <Text as="div">
-            Each download operation will consume Download Quota, which is related to the data
-            object&apos;s size.
+            Setiap unduhan akan memakai Kuota Unduhan, sesuai dengan ukuran berkas yang
+            diunduh.
           </Text>
           <Text as="div">
-            For each bucket, you are granted a free, one-time download quota from the storage
-            provider you have chosen. You can find in the above sector how much free quota each
-            storage provider gives.
+            Untuk setiap penyimpanan, Anda mendapat kuota unduhan gratis sekali pakai dari Penyedia
+            Penyimpanan yang Anda pilih. Anda dapat melihat besar kuota gratis dari setiap Penyedia
+            Penyimpanan pada bagian di atas.
           </Text>
           <Text as="div">
-            You can upgrade your bucket monthly quota to get more download quota. After your free
-            quota is used out, Greenfield will start to use the download quota you bought. If your
-            purchased monthly download quota does not use out before the end of the month, your
-            monthly quota will be expired.
+            Anda dapat menambah kuota bulanan penyimpanan untuk mendapatkan lebih banyak kuota
+            unduhan. Setelah kuota gratis habis, Greenfield akan memakai kuota unduhan yang Anda beli.
+            Jika kuota unduhan bulanan yang Anda beli tidak habis sebelum akhir bulan, kuota bulanan
+            tersebut akan kedaluwarsa.
           </Text>
         </Flex>
       ),
     },
     {
-      question: 'What is Read Price?',
+      question: 'Apa itu Harga Baca?',
       id: '#read_price',
       answer: (
         <Text as="div">
-          A storage provider can update its free read quote, suggested primary store price and read
-          price. All SPs&apos; suggested primary store and read prices will be used to generate the
-          global primary/secondary store price and read price.
+          Penyedia Penyimpanan dapat memperbarui kuota baca gratis, harga penyimpanan utama yang
+          disarankan, dan harga baca. Harga yang disarankan oleh semua Penyedia Penyimpanan akan
+          digunakan untuk menentukan harga penyimpanan utama/sekunder dan harga baca global.
         </Text>
       ),
     },
     {
-      question: 'What is Reserve Time?',
+      question: 'Apa itu Waktu Cadangan (Reserve Time)?',
       id: '#reserve_time',
       answer: (
         <Text as="div">
-          The storage fee will be charged on Greenfield in a steam payment style. The fees are paid
-          on Greenfield in the style of &quot;Stream&quot; from users to receiver accounts at a
-          constant rate. By reseveing some balance, users do not need to payment the fee in a very
-          high frequency. Currently, the reserve time is 6 months and it can be governed.
+          Biaya penyimpanan di Greenfield ditagih secara berkelanjutan. Biaya dibayarkan dari
+          pengguna ke akun penerima dengan laju pembayaran yang tetap. Dengan menyisihkan sebagian
+          saldo sebagai cadangan, pengguna tidak perlu membayar terlalu sering. Saat ini, waktu
+          cadangan adalah 6 bulan dan dapat diubah melalui tata kelola.
         </Text>
       ),
     },
@@ -221,7 +221,7 @@ export const FAQ = ({ openKeys, toggleOpenKeys }: FAQProps) => {
   return (
     <PriceResponsiveContainer>
       <H2 id="#faq" marginBottom={'16px'}>
-        FAQ
+        Pertanyaan Umum (FAQ)
       </H2>
       <QAccordion activeKey={openKeys}>
         {data.map((item, index) => (

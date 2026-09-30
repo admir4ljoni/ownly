@@ -26,49 +26,49 @@ const datas = [
   {
     icon: <ResponsiveIcon type="security-search" color={'readable.white'} />,
     iconBg: '#C372F6',
-    name: 'BNB Greenfield Whitepaper',
+    name: 'Whitepaper BNB Greenfield',
     link: 'https://github.com/bnb-chain/greenfield-whitepaper',
     gaClickName: 'dc_lp.homepage.tool.whitepaper.click',
   },
   {
     icon: <ResponsiveIcon type="filled-docs" color={'readable.white'} />,
     iconBg: '#F5A861',
-    name: 'BNB Greenfield Docs',
+    name: 'Dokumentasi BNB Greenfield',
     link: 'https://docs.bnbchain.org/bnb-greenfield/',
     gaClickName: 'dc_lp.homepage.tool.docs.click',
   },
   {
     icon: <ResponsiveIcon type="filled-discord" color={'readable.white'} />,
     iconBg: '#7983EF',
-    name: 'BNB Chain Community',
+    name: 'Komunitas BNB Chain',
     link: 'https://discord.com/invite/bnbchain',
     gaClickName: 'dc_lp.homepage.tool.discord.click',
   },
   {
     icon: <ResponsiveIcon type="colored-explorer" />,
     iconBg: '#88E286',
-    name: 'Explorer-GreenfieldScan',
+    name: 'Penjelajah GreenfieldScan',
     link: 'https://greenfieldscan.com/',
     gaClickName: 'dc_lp.homepage.tool.greenfieldscan.click',
   },
   {
     icon: <ResponsiveIcon type="line-calculator" color={'readable.white'} />,
     iconBg: '#69B2F4',
-    name: 'BNB Greenfield Calculator',
+    name: 'Kalkulator BNB Greenfield',
     link: '/pricing-calculator',
     gaClickName: 'dc_lp.homepage.tool.pricingcalculator.click',
   },
   {
     icon: <ResponsiveIcon type="filled-github" w={36} />,
     iconBg: '#000000',
-    name: 'BNB Greenfield Github',
+    name: 'Github BNB Greenfield',
     link: 'https://github.com/bnb-chain/greenfield',
     gaClickName: 'dc_lp.homepage.tool.github.click',
   },
   {
     icon: <ResponsiveIcon type="faucet" color={'readable.white'} />,
     iconBg: '#1DAC8A',
-    name: 'BNB Chain Faucet',
+    name: 'Faucet BNB Chain',
     link: 'https://testnet.bnbchain.org/faucet-smart',
     gaClickName: 'dc_lp.homepage.tool.faucet.click',
   },
@@ -89,7 +89,7 @@ export const DeveloperTools = () => {
           },
         }}
       >
-        <LandingH2>Developer Tools and Resources</LandingH2>
+        <LandingH2>Alat dan Sumber Daya Developer</LandingH2>
         <Flex
           gap={24}
           flexWrap={'wrap'}

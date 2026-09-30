@@ -25,17 +25,17 @@ export const VersionTable = memo<VersionTableProps>(function VersionTable({
         empty
         h={240}
         type="empty-object"
-        title="No Records"
-        desc="There are no records at the moment."
+        title="Belum Ada Riwayat"
+        desc="Saat ini belum ada riwayat."
       />
     );
 
   return (
     <Box borderRadius={4} border={'1px solid readable.border'}>
       <TR>
-        <TH>Version</TH>
-        <TH>Date</TH>
-        <TH>Transaction</TH>
+        <TH>Versi</TH>
+        <TH>Tanggal</TH>
+        <TH>Transaksi</TH>
       </TR>
       {versions.map((version, index) => (
         <TR key={index}>

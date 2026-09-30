@@ -67,7 +67,7 @@ export const renderTags = ({ onClick, tagsCount }: { onClick: () => void; tagsCo
       }}
     >
       <Text fontSize={'14px'} fontWeight={500} color="readable.tertiary">
-        Tags
+        Label
       </Text>
       <Flex>
         <Flex
@@ -78,7 +78,7 @@ export const renderTags = ({ onClick, tagsCount }: { onClick: () => void; tagsCo
           onClick={onClick}
         >
           <IconFont type="pen" />
-          {tagsCount || 0} tags
+          {tagsCount || 0} label
         </Flex>
       </Flex>
     </Flex>

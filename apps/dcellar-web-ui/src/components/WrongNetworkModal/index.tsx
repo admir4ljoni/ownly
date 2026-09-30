@@ -23,10 +23,10 @@ export const WrongNetworkModal = ({ isOpen, onClose }: any) => {
           <IconFont w={120} type={'switch-network'} />
         </Flex>
         <Text fontSize={'24px'} fontWeight={600} lineHeight="150%" marginY={'16px'}>
-          Switch Network
+          Ganti Jaringan
         </Text>
         <Text color="#76808F" fontSize={'18px'} fontWeight="400" lineHeight={'22px'}>
-          To complete the action, you need to switch to {CHAIN_NAMES[GREENFIELD_CHAIN_ID]}.
+          Untuk melanjutkan, Anda perlu beralih ke {CHAIN_NAMES[GREENFIELD_CHAIN_ID]}.
         </Text>
       </ModalBody>
       <ModalFooter flexDirection={'column'} mt={24} gap={16}>
@@ -38,7 +38,7 @@ export const WrongNetworkModal = ({ isOpen, onClose }: any) => {
             switchNetwork?.(GREENFIELD_CHAIN_ID);
           }}
         >
-          Switch to {CHAIN_NAMES[GREENFIELD_CHAIN_ID]}
+          Beralih ke {CHAIN_NAMES[GREENFIELD_CHAIN_ID]}
         </DCButton>
         <DCButton
           size={'lg'}
@@ -50,7 +50,7 @@ export const WrongNetworkModal = ({ isOpen, onClose }: any) => {
             onClose();
           }}
         >
-          Disconnect Wallet
+          Putuskan Dompet
         </DCButton>
       </ModalFooter>
     </DCModal>

@@ -4,7 +4,6 @@ import { DCButton } from '@/components/common/DCButton';
 import { DCMenu } from '@/components/common/DCMenu';
 import { MenuOption } from '@/components/common/DCMenuList';
 import { InternalRoutePaths } from '@/constants/paths';
-import { capitalizeFLetter } from '@/utils/common';
 import { ButtonProps, MenuButton } from '@node-real/uikit';
 import { useRouter } from 'next/router';
 
@@ -20,12 +19,12 @@ type SelectNetworkProps = {
 
 const networks: TNetwork[] = [
   {
-    label: 'Mainnet',
+    label: 'Jaringan Utama',
     value: 'mainnet',
     domain: NETWORK_URLS.mainnet,
   },
   {
-    label: 'Testnet',
+    label: 'Jaringan Uji',
     value: 'testnet',
     domain: NETWORK_URLS.testnet,
   },
@@ -77,7 +76,7 @@ export const SelectNetwork = ({ buttonStyles = {} }: SelectNetworkProps) => {
           }}
           {...buttonStyles}
         >
-          {capitalizeFLetter(selected)}
+          {networks.find((net) => net.value === selected)?.label}
           <IconFont w={16} type={isOpen ? 'menu-open' : 'menu-close'} />
         </MenuButton>
       )}

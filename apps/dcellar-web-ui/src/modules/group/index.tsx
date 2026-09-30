@@ -33,7 +33,7 @@ export const GroupsPage = memo<GroupsPageProps>(function GroupsPage() {
       <GroupOperations />
       <GroupOperations level={1} />
 
-      <PageTitle title={'Groups'} metaTitle={'Groups'}>
+      <PageTitle title={'Grup'} metaTitle={'Grup'}>
         <CreateGroup />
       </PageTitle>
       <GroupList />

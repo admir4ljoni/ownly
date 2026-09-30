@@ -87,7 +87,7 @@ export const FromAccountSelector = memo<FromAccountSelectorProps>(
       <Grid borderTop={'1px solid readable.border'} h={33} placeItems="center">
         <Link href="/accounts" passHref legacyBehavior>
           <Text fontWeight={500} as="a" color="brand.normal" _hover={{ color: 'brand.brand5' }}>
-            Manage Accounts
+            Kelola Akun
           </Text>
         </Link>
       </Grid>
@@ -98,7 +98,7 @@ export const FromAccountSelector = memo<FromAccountSelectorProps>(
         value={account?.address}
         text={renderItem(account?.name, account?.address)}
         options={options}
-        header={() => `Accounts (${total})`}
+        header={() => `Akun (${total})`}
         onChange={onChangeAccount}
         onSearchFilter={onSearchFilter}
         onSearch={onSearch}

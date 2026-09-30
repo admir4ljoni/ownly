@@ -14,7 +14,7 @@ const DEFAULT_STORE_TIME = 30 * 24 * 60 * 60;
 const TOOL_OPTIONS = [
   {
     icon: 'calculate',
-    name: 'Pricing Calculator',
+    name: 'Kalkulator Harga',
     link: '/pricing-calculator',
     target: '_blank',
   },
@@ -38,22 +38,22 @@ export const ToolBox = ({ children, ...restProps }: CardProps) => {
     return [
       {
         icon: 'dollar',
-        label: 'Global Storage Price',
+        label: 'Harga Penyimpanan Global',
         value: storageFee,
-        symbol: displayTokenSymbol() + '/GB/month',
+        symbol: displayTokenSymbol() + '/GB/bulan',
       },
       {
         icon: 'dollar',
-        label: 'Global Download Quota Price',
+        label: 'Harga Kuota Unduhan Global',
         value: quotaFee,
-        symbol: displayTokenSymbol() + '/GB/month',
+        symbol: displayTokenSymbol() + '/GB/bulan',
       },
     ];
   }, [storeFeeParams]);
 
   return (
     <Card w={374} flex={1} {...restProps}>
-      <CardTitle>ToolBox</CardTitle>
+      <CardTitle>Alat Bantu</CardTitle>
       {TOOL_OPTIONS.map((item, index) => (
         <Flex
           key={index}

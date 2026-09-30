@@ -46,7 +46,7 @@ export const BucketsFilter = ({
 
   return (
     <DCMenu
-      emptyText={'No results.'}
+      emptyText={'Tidak ada hasil.'}
       multiple
       options={typeOptions}
       placement="bottom-start"
@@ -67,15 +67,15 @@ export const BucketsFilter = ({
                 <SearchIcon w={16} color={'readable.secondary'} />
               </InputLeftElement>
             }
-            placeholder="Search"
+            placeholder="Cari"
             onChange={(e) => setNameFilter(e.target.value)}
           />
         </MenuHeader>
       )}
       renderFooter={() => (
         <MenuFooter justifyContent={'space-between'}>
-          <Text onClick={() => setSelectedBucket(names)}>Select All</Text>
-          <Text onClick={() => setSelectedBucket([])}>Clear All</Text>
+          <Text onClick={() => setSelectedBucket(names)}>Pilih Semua</Text>
+          <Text onClick={() => setSelectedBucket([])}>Hapus Semua</Text>
         </MenuFooter>
       )}
       renderOption={({ label, value }) => (
@@ -98,9 +98,7 @@ export const BucketsFilter = ({
         <Tooltip
           placement="top-start"
           visibility={selectedTypeOptions.length ? 'visible' : 'hidden'}
-          content={`${selectedTypeOptions.map((i) => i.label).join(', ')} ${
-            selectedTypeOptions.length > 1 ? 'are' : 'is'
-          } selected.`}
+          content={`${selectedTypeOptions.map((i) => i.label).join(', ')} dipilih.`}
         >
           <MenuButton
             className={cn(
@@ -131,7 +129,7 @@ export const BucketsFilter = ({
             }
           >
             {!selectedTypeOptions.length ? (
-              'Bucket'
+              'Penyimpanan'
             ) : (
               <>
                 {trimLongStr(selectedTypeOptions[0].label, 6, 6, 0)}{' '}

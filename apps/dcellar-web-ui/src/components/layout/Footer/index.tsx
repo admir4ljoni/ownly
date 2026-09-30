@@ -56,16 +56,16 @@ export const Footer = (props: FlexProps) => {
             NodeReal
           </UnderlineLink>
         </GAClick>
-        . All rights reserved.
+        . Hak cipta dilindungi.
       </Text>
       <GAClick name="dc_lp.main.Footer.terms.click">
         <UnderlineLink href={InternalRoutePaths.terms} target="_blank">
-          Terms of Use
+          Ketentuan Penggunaan
         </UnderlineLink>
       </GAClick>
       <GAClick name="dc_lp.main.Footer.privacy.click">
         <UnderlineLink href={'https://nodereal.io/privacy-policy'} target="_blank">
-          Privacy Policy
+          Kebijakan Privasi
         </UnderlineLink>
       </GAClick>
     </Flex>

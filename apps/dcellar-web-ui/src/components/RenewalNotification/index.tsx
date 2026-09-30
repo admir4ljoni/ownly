@@ -79,19 +79,18 @@ export const RenewalNotification = ({ address }: RenewalNotificationProps) => {
                 <IconFont type={'colored-error2'} w={'16'} />
               </Flex>
               <Box fontSize={'14px'} lineHeight={'20px'}>
-                Your{' '}
                 <Box as="span" fontWeight={600}>
                   {item.name}
                 </Box>{' '}
-                is frozen, associated storage services are currently limited. To avoid data loss,
-                please deposit at least{' '}
+                Anda dibekukan, layanan penyimpanan terkait saat ini dibatasi. Agar data tidak
+                hilang, silakan isi saldo minimal{' '}
                 <Box fontWeight={600} as="span">
                   {renewalStoreFee.isLessThan(MIN_AMOUNT)
                     ? MIN_AMOUNT
                     : renewalStoreFee.toFixed(8, 0)}{' '}
                   {displayTokenSymbol()}
                 </Box>{' '}
-                to reactive.{' '}
+                untuk mengaktifkannya kembali.{' '}
                 <Button
                   variant="link"
                   onClick={() => onNavDeposit(item.address)}
@@ -99,7 +98,7 @@ export const RenewalNotification = ({ address }: RenewalNotificationProps) => {
                   fontSize={'14px'}
                   textDecoration={'underline'}
                 >
-                  Deposit Now
+                  Isi Saldo Sekarang
                 </Button>
               </Box>
             </Flex>
@@ -153,17 +152,17 @@ export const RenewalNotification = ({ address }: RenewalNotificationProps) => {
                 <IconFont type={'warning'} w={'16'} />
               </Flex>
               <Box fontSize={'14px'}>
-                Your{' '}
                 <Box as="span" fontWeight={600}>
                   {item.name}
                 </Box>{' '}
-                is estimated to settle on {dayjs(item.settleTimestamp * 1000).format('MMM-DD-YYYY')}
-                . To avoid account freezing and potential data loss, please deposit at least{' '}
+                Anda diperkirakan akan menjalani penyelesaian biaya pada{' '}
+                {dayjs(item.settleTimestamp * 1000).format('MMM-DD-YYYY')}. Agar akun tidak dibekukan
+                dan data tidak hilang, silakan isi saldo minimal{' '}
                 <Box fontWeight={600} as="span">
                   {fee.isLessThan(MIN_AMOUNT) ? MIN_AMOUNT : fee.toFixed(8, 0)}{' '}
                   {displayTokenSymbol()}
                 </Box>{' '}
-                into your payment account or associated owner account.{' '}
+                ke akun pembayaran Anda atau akun utama terkait.{' '}
                 <Button
                   variant="link"
                   onClick={() => onNavDeposit(item.address)}
@@ -171,7 +170,7 @@ export const RenewalNotification = ({ address }: RenewalNotificationProps) => {
                   fontSize={'14px'}
                   textDecoration={'underline'}
                 >
-                  Deposit Now
+                  Isi Saldo Sekarang
                 </Button>
               </Box>
             </Flex>

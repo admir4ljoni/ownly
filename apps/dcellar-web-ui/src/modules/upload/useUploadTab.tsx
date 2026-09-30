@@ -26,17 +26,17 @@ export const useUploadTab = () => {
     icon?: React.ReactNode;
   }[] = [
     {
-      title: 'All Objects',
+      title: 'Semua Berkas',
       key: 'ALL',
       len: allLen,
     },
     {
-      title: 'Awaiting Upload',
+      title: 'Menunggu Diunggah',
       key: 'WAIT',
       len: waitLen,
     },
     {
-      title: 'Error',
+      title: 'Gagal',
       key: 'ERROR',
       len: errorLen,
       // icon: <ColoredAlertIcon width={'16px'} height={'16px'} marginRight={'4px'} />

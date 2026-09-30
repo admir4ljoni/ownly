@@ -47,7 +47,7 @@ export const NetworkSwitch = () => {
                 }
           }
         >
-          Mainnet
+          Jaringan Utama
         </DCButton>
         <DCButton
           border="none"
@@ -69,7 +69,7 @@ export const NetworkSwitch = () => {
                 }
           }
         >
-          Testnet
+          Jaringan Uji
         </DCButton>
       </ButtonGroup>
     </Flex>

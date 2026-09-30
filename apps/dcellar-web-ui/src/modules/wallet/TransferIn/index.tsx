@@ -29,7 +29,7 @@ interface TransferInProps {}
 export const TransferIn = memo<TransferInProps>(function TransferIn() {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [status, setStatus] = useState<any>('success');
-  const [errorMsg, setErrorMsg] = useState<any>('Oops, something went wrong');
+  const [errorMsg, setErrorMsg] = useState<any>('Ups, terjadi kesalahan');
   const router = useRouter();
   const [viewTxUrl, setViewTxUrl] = useState('');
   const { all } = useChainsBalance();

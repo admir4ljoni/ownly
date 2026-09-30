@@ -113,7 +113,7 @@ export const DetailFolderOperation = memo<DetailFolderOperationProps>(
 
     return (
       <>
-        <QDrawerHeader>Folder Detail</QDrawerHeader>
+        <QDrawerHeader>Detail Folder</QDrawerHeader>
         <QDrawerBody>
           <Flex mb={24}>
             <IconFont type="detail-folder" w={48} mr={24} />
@@ -133,7 +133,7 @@ export const DetailFolderOperation = memo<DetailFolderOperationProps>(
                   '--'
                 ) : (
                   <Flex alignItems={'center'}>
-                    This is a folder simulated by a path.{' '}
+                    Ini adalah folder bayangan yang dibentuk dari lokasi berkas.{' '}
                     <Tips
                       placement={'bottom'}
                       containerWidth={'220px'}
@@ -141,7 +141,7 @@ export const DetailFolderOperation = memo<DetailFolderOperationProps>(
                         <Box fontSize={'12px'} lineHeight="14px" w={'200px'}>
                           <Box>
                             {
-                              "This path doesn't exist as an entity on the blockchain and lacks chain information."
+                              'Lokasi ini tidak tercatat sebagai folder di jaringan sehingga tidak memiliki informasi jaringan.'
                             }
                           </Box>
                         </Box>
@@ -176,35 +176,35 @@ export const DetailFolderOperation = memo<DetailFolderOperationProps>(
                   right={24}
                   top={70}
                 >
-                  Create on chain folder
+                  Buat folder di jaringan
                 </DCButton>
               </Box>
             )}
             {renderPropRow(
-              'Date created',
+              'Tanggal dibuat',
               loading ? '' : formatFullTime(+objectInfo.CreateAt * 1000),
             )}
             {renderAddressLink(
-              'Object ID',
+              'ID Berkas',
               loading ? '' : formatId(Number(objectInfo.Id)),
               'dc.file.f_detail_pop.id.click',
               'dc.file.f_detail_pop.copy_id.click',
               'object',
             )}
             {renderAddressLink(
-              'Primary SP address',
+              'Alamat Penyedia Penyimpanan Utama',
               loading ? '' : primarySp.operatorAddress,
               'dc.file.f_detail_pop.spadd.click',
               'dc.file.f_detail_pop.copy_spadd.click',
             )}
             {renderAddressLink(
-              'Payment address',
+              'Alamat pembayaran',
               loading ? '' : selectBucket.PaymentAddress,
               'dc.file.f_detail_pop.seal.click',
               'dc.file.f_detail_pop.copy_seal.click',
             )}
             {renderAddressLink(
-              'Create transaction hash',
+              'ID Transaksi pembuatan',
               loading ? '' : selectObjectInfo.CreateTxHash,
               'dc.object.f_detail_pop.CreateTxHash.click',
               'dc.object.f_detail_pop.copy_create_tx_hash.click',

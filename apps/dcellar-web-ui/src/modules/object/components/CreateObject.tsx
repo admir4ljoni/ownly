@@ -171,8 +171,8 @@ export const CreateObject = memo<NewObjectProps>(function NewObject({
           <Tooltip
             content={
               invalidPath
-                ? 'Folder does not exist.'
-                : `You have reached the maximum supported folder depth (${MAX_FOLDER_LEVEL}).`
+                ? 'Folder tidak ada.'
+                : `Anda telah mencapai batas maksimum kedalaman folder (${MAX_FOLDER_LEVEL}).`
             }
             placement={'bottom-start'}
             visibility={maxFolderDepth && !loading ? 'visible' : 'hidden'}
@@ -185,7 +185,7 @@ export const CreateObject = memo<NewObjectProps>(function NewObject({
                   onClick={onOpenCreateFolder}
                   disabled={disabled}
                 >
-                  Create Folder
+                  Buat Folder
                 </DCButton>
               </GAClick>
             </div>
@@ -195,18 +195,18 @@ export const CreateObject = memo<NewObjectProps>(function NewObject({
               placement="top-end"
               content={
                 isBucketDiscontinue
-                  ? 'Bucket in the discontinue status cannot upload objects.'
+                  ? 'Penyimpanan yang dihentikan tidak dapat menerima unggahan berkas.'
                   : isFlowRateLimit
-                    ? "The bucket's flow rate exceeds the payment account limit. Contact the account owner or switch accounts to increase it."
+                    ? 'Laju pembayaran penyimpanan ini melebihi batas akun pembayaran. Hubungi pemilik akun atau ganti akun untuk menaikkannya.'
                     : isBucketMigrating
-                      ? 'Bucket in the migrating status cannot upload objects.'
+                      ? 'Penyimpanan yang sedang dimigrasikan tidak dapat menerima unggahan berkas.'
                       : accountDetail.status === EStreamRecordStatus.FROZEN
-                        ? 'The payment account in the frozen status cannot upload objects.'
+                        ? 'Akun pembayaran yang dibekukan tidak dapat mengunggah berkas.'
                         : uploadDisabled
-                          ? 'Path invalid'
-                          : `Please limit object size to ${formatBytes(
+                          ? 'Lokasi tidak valid'
+                          : `Batasi ukuran berkas maksimal ${formatBytes(
                               SINGLE_OBJECT_MAX_SIZE,
-                            )} and upload a maximum of ${SELECT_OBJECT_NUM_LIMIT} objects at a time.`
+                            )} dan unggah maksimal ${SELECT_OBJECT_NUM_LIMIT} berkas sekaligus.`
               }
             >
               <div>
@@ -217,7 +217,7 @@ export const CreateObject = memo<NewObjectProps>(function NewObject({
                   handlerFolderChange={onFolderChange}
                 >
                   <IconFont type="upload" w={24} />
-                  Upload
+                  Unggah
                   <Flex
                     className="ui-icon__container"
                     paddingX={'4px'}

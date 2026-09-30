@@ -63,7 +63,7 @@ const contentTypeToExtension = (contentType = '', fileName?: string) => {
     case 'application/zip':
       return 'ZIP';
     case 'application/octet-stream':
-      return 'Document';
+      return 'Dokumen';
     default:
       if (fileName && fileName.length > 0) {
         const fileExtension = getFileExtension(fileName);
@@ -136,7 +136,7 @@ const contentIconTypeToExtension = (fileName: string) => {
 };
 
 const renderBalanceNumber = (availableBalance: string) => {
-  if (Number(availableBalance) < 0) return 'Fetching balance...';
+  if (Number(availableBalance) < 0) return 'Memuat saldo...';
   return `${getNumInDigits(
     availableBalance,
     CRYPTOCURRENCY_DISPLAY_PRECISION,
@@ -157,11 +157,11 @@ const renderInsufficientBalance = (
   if (currentBalance >= Number(simulateGasFee) + Number(lockFee)) return <></>;
   return (
     <GAShow name={gaOptions?.gaShowName}>
-      Insufficient balance.&nbsp;
+      Saldo tidak cukup.&nbsp;
       <GAClick name={gaOptions?.gaClickName}>
         <NextLink href={InternalRoutePaths.transfer_in} passHref legacyBehavior>
           <Text style={{ textDecoration: 'underline' }} color="#EE3911" cursor={'pointer'}>
-            Transfer in
+            Transfer Masuk
           </Text>
         </NextLink>
       </GAClick>
@@ -172,7 +172,7 @@ const renderInsufficientBalance = (
 const directlyDownload = (url: string, target = '_self', name?: string) => {
   if (!url) {
     toast.error({
-      description: 'Download URL does not exist. Please check.',
+      description: 'Tautan unduhan tidak ada. Silakan periksa.',
     });
   }
   const link = document.createElement('a');
@@ -251,21 +251,21 @@ export const PaymentInsufficientBalance = memo<PaymentInsufficientBalanceProps>(
         ) {
           items.push({
             link: InternalRoutePaths.transfer_in,
-            text: 'Transfer In',
+            text: 'Transfer Masuk',
           });
         }
       } else {
         if (BN(payGasFeeBalance).lt(BN(gasFee))) {
           items.push({
             link: InternalRoutePaths.transfer_in,
-            text: 'Transfer In',
+            text: 'Transfer Masuk',
           });
         }
         if (BN(payStoreFeeBalance).lt(BN(storeFee).plus(settlementFee).minus(refundFee))) {
           const link = `${InternalRoutePaths.send}&from=${ownerAccount}&to=${payAccount}`;
           items.push({
             link: link,
-            text: 'Deposit',
+            text: 'Isi Saldo',
           });
         }
       }
@@ -279,7 +279,7 @@ export const PaymentInsufficientBalance = memo<PaymentInsufficientBalanceProps>(
         {items.map((item, index) => (
           <GAShow key={index} name={gaOptions?.gaShowName}>
             <Flex>
-              Insufficient balance.&nbsp;
+              Saldo tidak cukup.&nbsp;
               <GAClick name={gaOptions?.gaClickName}>
                 <NextLink href={item.link} passHref legacyBehavior>
                   <Text
@@ -339,21 +339,21 @@ const renderPaymentInsufficientBalance = ({
     ) {
       items.push({
         link: InternalRoutePaths.transfer_in,
-        text: 'Transfer In',
+        text: 'Transfer Masuk',
       });
     }
   } else {
     if (BN(payGasFeeBalance).lt(BN(gasFee))) {
       items.push({
         link: InternalRoutePaths.transfer_in,
-        text: 'Transfer In',
+        text: 'Transfer Masuk',
       });
     }
     if (BN(payStoreFeeBalance).lt(BN(storeFee).plus(settlementFee).minus(refundFee))) {
       const link = `${InternalRoutePaths.send}&from=${ownerAccount}&to=${payAccount}`;
       items.push({
         link: link,
-        text: 'Deposit',
+        text: 'Isi Saldo',
       });
     }
   }
@@ -364,7 +364,7 @@ const renderPaymentInsufficientBalance = ({
       {items.map((item, index) => (
         <GAShow key={index} name={gaOptions?.gaShowName}>
           <Flex>
-            Insufficient balance.&nbsp;
+            Saldo tidak cukup.&nbsp;
             <GAClick name={gaOptions?.gaClickName}>
               <NextLink href={item.link} passHref legacyBehavior>
                 <Text

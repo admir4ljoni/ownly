@@ -25,7 +25,7 @@ export const CurForecastCost = memo(function CurForecastCost({ children, ...rest
 
   return (
     <CardContainer w={260} {...restProps}>
-      <CardTitle mb={8}>Current Month&apos;s Total Forecast Cost</CardTitle>
+      <CardTitle mb={8}>Perkiraan Total Biaya Bulan Ini</CardTitle>
       <CardTime mb={16}>{costTime}</CardTime>
       <Flex gap={8}>
         <CardCost>{isLoading ? '--' : forecastCost}</CardCost>

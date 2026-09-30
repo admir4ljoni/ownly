@@ -32,8 +32,8 @@ export const NonRefundableModal = memo<NonRefundableModal>(function NonRefundabl
     dispatch(
       setSignatureAction({
         icon: 'account-failed',
-        title: 'Set as Non-Refundable',
-        desc: 'Please confirm the transaction in your wallet.',
+        title: 'Jadikan Tidak Dapat Dikembalikan',
+        desc: 'Silakan konfirmasi transaksi di dompet Anda.',
       }),
     );
     const [res, error] = await disablePaymentAccountRefund(
@@ -45,11 +45,11 @@ export const NonRefundableModal = memo<NonRefundableModal>(function NonRefundabl
       if (
         error?.toLocaleLowerCase().includes('payment account has already be set as non-refundable')
       ) {
-        msg = 'This payment account has already be set as non-refundable.';
+        msg = 'Akun Pembayaran ini sudah diatur tidak dapat dikembalikan dananya.';
       }
       return dispatch(
         setSignatureAction({
-          title: 'Set Failed',
+          title: 'Gagal Mengatur',
           icon: 'account-failed',
           desc: msg,
         }),
@@ -65,11 +65,11 @@ export const NonRefundableModal = memo<NonRefundableModal>(function NonRefundabl
       <ModalBody display={'flex'} flexDirection={'column'} alignItems={'center'}>
         <IconFont type={'account-failed'} w={120} />
         <Text mt={32} fontSize={24} fontWeight={600}>
-          Set as Non-Refundable
+          Jadikan Tidak Dapat Dikembalikan
         </Text>
         <Text fontSize="16px" textAlign={'center'} marginTop="8px" color={'readable.tertiary'}>
-          Making this payment account non-refundable means it can&apos;t be refunded anymore and
-          this action can&apos;t be undone.
+          Menjadikan Akun Pembayaran ini tidak dapat dikembalikan berarti dananya tidak bisa ditarik
+          kembali lagi, dan tindakan ini tidak dapat dibatalkan.
         </Text>
       </ModalBody>
       <ModalFooter flexDirection={'row'}>
@@ -80,7 +80,7 @@ export const NonRefundableModal = memo<NonRefundableModal>(function NonRefundabl
           onClick={onClose}
           gaClickName="dc.payment_account.delete_confirm.cancel.click"
         >
-          Cancel
+          Batal
         </DCButton>
         <DCButton
           size={'lg'}
@@ -88,7 +88,7 @@ export const NonRefundableModal = memo<NonRefundableModal>(function NonRefundabl
           flex={1}
           onClick={onContinueClick}
         >
-          Continue
+          Lanjutkan
         </DCButton>
       </ModalFooter>
     </DCModal>

@@ -22,8 +22,8 @@ export const Activities = memo<ActivitiesProps>(function Activities({ loading, a
         empty
         h={240}
         type="empty-object"
-        title="No Records"
-        desc="There are no records at the moment."
+        title="Belum Ada Catatan"
+        desc="Belum ada catatan untuk saat ini."
       />
     );
 
@@ -45,7 +45,7 @@ export const Activities = memo<ActivitiesProps>(function Activities({ loading, a
                 {formatMsgType(item.tx_result.type)}&nbsp;
               </Text>
               <Text as="span" color={'readable.normal'}>
-                Transaction Hash
+                ID Transaksi
               </Text>
               &nbsp; (
               <Link
@@ -72,7 +72,7 @@ export const Activities = memo<ActivitiesProps>(function Activities({ loading, a
       ))}
       {activities.length >= 100 && (
         <Text textAlign={'center'} fontSize={12} color={'readable.tertiary'}>
-          Only showing the latest 100 activities ~
+          Hanya menampilkan 100 aktivitas terbaru ~
         </Text>
       )}
     </>

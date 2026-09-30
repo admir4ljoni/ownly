@@ -20,13 +20,13 @@ export const InsufficientBalance = () => {
             <ColoredWarningIcon color={'#EE3911'} width={16} />
           </Flex>
           <Box lineHeight={'20px'}>
-            This Bucket&apos;s Payment Account is frozen. Currently, all services are restricted. To
-            prevent data loss, please contact the owner of the associated Payment Account and
-            deposit at least{' '}
+            Akun Pembayaran untuk penyimpanan ini dibekukan. Saat ini, semua layanan dibatasi. Untuk
+            mencegah kehilangan data, silakan hubungi pemilik Akun Pembayaran terkait dan
+            isi saldo minimal{' '}
             <Box as="span" fontWeight={600}>
               {amount} {displayTokenSymbol()}
             </Box>{' '}
-            to reactivate it.
+            untuk mengaktifkannya kembali.
           </Box>
         </Flex>
       )}

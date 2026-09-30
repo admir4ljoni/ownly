@@ -41,7 +41,7 @@ export const Dashboard = () => {
     <Box h={'100%'}>
       <RenewalNotification />
       <Text as="h1" fontSize={24} fontWeight={700} mb={16}>
-        Dashboard
+        Dasbor
       </Text>
       {isShowTutorialCard && <TutorialCard />}
       <Flex gap={16}>

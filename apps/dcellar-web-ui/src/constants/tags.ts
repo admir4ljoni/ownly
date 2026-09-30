@@ -1,5 +1,5 @@
-export const TAGS_UPDATING = 'Updating Tags';
+export const TAGS_UPDATING = 'Memperbarui Label';
 
-export const TAGS_UPDATE_FAILED = 'Update Failed';
+export const TAGS_UPDATE_FAILED = 'Pembaruan Gagal';
 
-export const TAGS_UPDATED_SUCCESS = 'Tags updated successfully!';
+export const TAGS_UPDATED_SUCCESS = 'Label berhasil diperbarui!';

@@ -39,8 +39,8 @@ export const LargeAmountTip = ({ amount, formError }: Props) => {
     <Flex gap={4} marginTop={8}>
       <IconFont type="warning" w={16} color={'scene.danger.normal'} />
       <Text fontSize={14} color={'readable.tertiary'}>
-        {LARGE_TRANSFER_WAIT_TIME}-hour wait for cross chain transfer of {LARGE_TRANSFER_AMOUNT}+
-        BNB.
+        Transfer antar-jaringan sebesar {LARGE_TRANSFER_AMOUNT}+ BNB perlu menunggu{' '}
+        {LARGE_TRANSFER_WAIT_TIME} jam.
       </Text>
     </Flex>
   );

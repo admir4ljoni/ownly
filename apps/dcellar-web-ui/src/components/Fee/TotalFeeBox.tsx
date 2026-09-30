@@ -39,7 +39,7 @@ export const TotalFeeBox = ({
         cursor={expand ? 'pointer' : 'default'}
       >
         <Flex alignItems="center">
-          <Text>Total Fees</Text>
+          <Text>Total Biaya</Text>
           {Tips}
         </Flex>
         <Flex

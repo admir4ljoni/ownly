@@ -84,7 +84,7 @@ export const BatchDeleteObjectOperation = memo<BatchDeleteObjectOperationProps>(
     const deleteFee =
       (gnfdGasFeesConfig[MsgDeleteObjectTypeUrl]?.gasFee || 0) * deleteObjects.length;
     const cancelFee = gnfdGasFeesConfig[MsgCancelCreateObjectTypeUrl]?.gasFee || 0;
-    const description = 'Are you sure you want to delete these objects?';
+    const description = 'Apakah Anda yakin ingin menghapus berkas-berkas ini?';
 
     const createTmpAccountGasFee = useMemo(() => {
       const grantAllowTxFee = BN(gnfdGasFeesConfig[MsgGrantAllowanceTypeUrl].gasFee).plus(
@@ -115,9 +115,9 @@ export const BatchDeleteObjectOperation = memo<BatchDeleteObjectOperationProps>(
             setSignatureAction({
               title: FILE_TITLE_DELETE_FAILED,
               icon: 'status-failed',
-              desc: 'Sorry, there’s something wrong when signing with the wallet.',
+              desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
               buttonText: BUTTON_GOT_IT,
-              errorText: 'Error message: ' + error,
+              errorText: 'Pesan kesalahan: ' + error,
             }),
           );
       }
@@ -129,7 +129,7 @@ export const BatchDeleteObjectOperation = memo<BatchDeleteObjectOperationProps>(
       dispatch(
         setSignatureAction({
           icon: Animates.delete,
-          title: 'Deleting File',
+          title: 'Menghapus Berkas',
           desc: WALLET_CONFIRM,
         }),
       );
@@ -167,7 +167,7 @@ export const BatchDeleteObjectOperation = memo<BatchDeleteObjectOperationProps>(
             errorHandler(error as string);
             return false;
           }
-          toast.success({ description: `${objectName} deleted successfully.` });
+          toast.success({ description: `${objectName} berhasil dihapus.` });
           dispatch(
             setDeletedObject({
               path: [currentBucketName, obj.ObjectInfo.ObjectName].join('/'),
@@ -179,7 +179,7 @@ export const BatchDeleteObjectOperation = memo<BatchDeleteObjectOperationProps>(
         return true;
       }
 
-      toast.info({ description: 'Deleting objects', icon: <ColoredWaitingIcon /> });
+      toast.info({ description: 'Menghapus berkas', icon: <ColoredWaitingIcon /> });
       const success = await deleteInRow();
       refetch();
       onClose();
@@ -211,7 +211,7 @@ export const BatchDeleteObjectOperation = memo<BatchDeleteObjectOperationProps>(
 
     return (
       <>
-        <ModalHeader>Confirm Delete</ModalHeader>
+        <ModalHeader>Konfirmasi Hapus</ModalHeader>
 
         <ModalBody>
           <Text className="ui-modal-desc">{description}</Text>
@@ -250,7 +250,7 @@ export const BatchDeleteObjectOperation = memo<BatchDeleteObjectOperationProps>(
             onClick={onClose}
             gaClickName="dc.file.delete_confirm.cancel.click"
           >
-            Cancel
+            Batal
           </DCButton>
           <DCButton
             variant={'scene'}
@@ -262,7 +262,7 @@ export const BatchDeleteObjectOperation = memo<BatchDeleteObjectOperationProps>(
             isLoading={loading || loadingSettlementFee}
             isDisabled={loadingSettlementFee || refundAmount === null || !balanceEnough}
           >
-            Delete
+            Hapus
           </DCButton>
         </ModalFooter>
       </>

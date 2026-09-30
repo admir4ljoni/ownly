@@ -134,7 +134,7 @@ export const SealLoading = () => {
         borderRadius={4}
         padding={4}
       >
-        Sealing...
+        Menyimpan...
       </Box>
     </Flex>
   );
@@ -168,7 +168,7 @@ export const UploadStatus = ({ object, size }: { object: string; size: number })
 
   const processing = processUploadObjects.includes(object);
 
-  if (!processing) return <Badge colorScheme="warning">Created on Chain</Badge>;
+  if (!processing) return <Badge colorScheme="warning">Dibuat di Jaringan</Badge>;
 
   const file = processUploadObjectRecord[object];
 
@@ -176,7 +176,7 @@ export const UploadStatus = ({ object, size }: { object: string; size: number })
 
   if (['SEAL', 'SEALING'].includes(file.status)) return <SealLoading />;
 
-  if (file.msg) return <Badge colorScheme="danger">Upload Failed</Badge>;
+  if (file.msg) return <Badge colorScheme="danger">Unggahan Gagal</Badge>;
 
   return <>{formatBytes(size)}</>;
 };

@@ -16,7 +16,7 @@ export const BalanceAmount = memo<BalanceAmountProps>(function BalanceAmount() {
   const exchangeRate = useAppSelector(selectBnbUsdtExchangeRate);
 
   const renderBalanceNumber = () => {
-    if (Number(bankBalance) < 0) return 'Fetching balance...';
+    if (Number(bankBalance) < 0) return 'Memuat saldo...';
     return `${getNumInDigits(
       bankBalance,
       CRYPTOCURRENCY_DISPLAY_PRECISION,

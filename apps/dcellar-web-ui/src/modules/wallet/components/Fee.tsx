@@ -82,11 +82,11 @@ export const Fee = memo<FeeProps>(function Fee({
   );
   const sendingAmount = `${amount} ${TOKEN_SYMBOL} (${amountUsd})`;
   const paymentAccount = transferFromAccount.address?.substring(38);
-  const paymentLabel = `${transferFromAccount?.name} (${paymentAccount}) balance:`;
+  const paymentLabel = `${transferFromAccount?.name} (${paymentAccount}) saldo:`;
   const showPaymentAccountBalance =
     transferType === 'send' &&
     !isEmpty(transferFromAccount) &&
-    transferFromAccount.name.includes('Payment');
+    transferFromAccount.name.includes('Akun Pembayaran');
 
   const TotalFeeContent = useMemo(() => {
     let total = totalFee;
@@ -115,7 +115,7 @@ export const Fee = memo<FeeProps>(function Fee({
     return (
       <Box>
         <Text>
-          Gas fee:{' '}
+          Biaya jaringan:{' '}
           {gasFee.toString() === '0'
             ? BigNumber(defaultTransferFee.gasFee)
                 .dp(CRYPTOCURRENCY_DISPLAY_PRECISION, 1)
@@ -124,7 +124,7 @@ export const Fee = memo<FeeProps>(function Fee({
           {TOKEN_SYMBOL}
         </Text>
         <Text>
-          Relayer fee:{' '}
+          Biaya relayer:{' '}
           {gasFee.toString() === '0'
             ? BigNumber(defaultTransferFee.relayerFee)
                 .dp(CRYPTOCURRENCY_DISPLAY_PRECISION, 1)
@@ -133,9 +133,9 @@ export const Fee = memo<FeeProps>(function Fee({
           {TOKEN_SYMBOL}
         </Text>
         <Text>
-          BNB Gas fee covers the gas cost for sending your transfer on the destination chain.
+          Biaya jaringan BNB menanggung biaya pengiriman transfer Anda di jaringan tujuan.
         </Text>
-        <Text>Relayer fee is paid to relayers for handling cross-chain packets.</Text>
+        <Text>Biaya relayer dibayarkan kepada relayer untuk memproses transfer antar-jaringan.</Text>
       </Box>
     );
   }, [transferType, gasFee, defaultTransferFee, TOKEN_SYMBOL, relayerFee]);
@@ -150,7 +150,7 @@ export const Fee = memo<FeeProps>(function Fee({
       padding={'8px 12px'}
     >
       <Flex justifyContent={'space-between'} fontWeight={600} color={'readable.normal'}>
-        <Text>Total Amount</Text>
+        <Text>Jumlah Total</Text>
         <Text color={'readable.secondary'} fontWeight={500}>
           {isGasLoading ? '--' : TotalAmountContent}
         </Text>
@@ -159,7 +159,7 @@ export const Fee = memo<FeeProps>(function Fee({
       {showSettlement && (
         <Flex justifyContent={'space-between'} color="readable.tertiary">
           <Flex justifyContent={'flex-start'} alignItems="center">
-            <Text>Settlement Fee</Text> <SettlementTips />
+            <Text>Biaya Penyelesaian</Text> <SettlementTips />
           </Flex>
           <Text textAlign="right">
             {isGasLoading ? '--' : renderFeeValue(String(settlementFee), exchangeRate)}
@@ -168,7 +168,7 @@ export const Fee = memo<FeeProps>(function Fee({
       )}
       <Flex color="readable.tertiary" justifyContent={'space-between'} alignItems={'center'}>
         <Flex justifyContent={'flex-start'}>
-          <Text>{'Sending amount'}</Text>{' '}
+          <Text>{'Jumlah dikirim'}</Text>{' '}
         </Flex>
         <Text>{isGasLoading ? '--' : sendingAmount}</Text>
       </Flex>
@@ -186,7 +186,7 @@ export const Fee = memo<FeeProps>(function Fee({
         <Flex>
           {transferType !== 'send' && (
             <Flex justifyContent={'flex-start'}>
-              <Text>{'Gas fee'}</Text>{' '}
+              <Text>{'Biaya jaringan'}</Text>{' '}
               <Tips
                 containerWidth={'308px'}
                 tips={TipContent}
@@ -197,7 +197,7 @@ export const Fee = memo<FeeProps>(function Fee({
           )}
           {transferType === 'send' && (
             <>
-              <Text>Gas fee</Text>
+              <Text>Biaya jaringan</Text>
               <GasFeeTips />
             </>
           )}
@@ -211,7 +211,7 @@ export const Fee = memo<FeeProps>(function Fee({
           justifyContent={'flex-end'}
           alignItems={'center'}
         >
-          Owner Account balance: {renderFee(bankBalance, exchangeRate)}
+          Saldo Akun Utama: {renderFee(bankBalance, exchangeRate)}
         </Flex>
       )}
     </Flex>

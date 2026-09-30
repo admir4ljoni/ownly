@@ -87,17 +87,17 @@ export const Accounts = () => {
   return (
     <>
       <Head>
-        <title>Accounts - Ownly{networkTag(runtimeEnv)}</title>
+        <title>Akun - Ownly{networkTag(runtimeEnv)}</title>
       </Head>
       <NonRefundableModal />
       <AccountOperations />
       <>
         <Flex flexDirection={'column'} gap={16}>
           <Text as="h2" fontWeight={700} fontSize={24}>
-            Accounts
+            Akun
           </Text>
           <Text fontSize={16} fontWeight={600}>
-            Data Overview
+            Ringkasan Data
           </Text>
           <Flex gap={16} wrap={'wrap'}>
             <Flex flexDirection={'column'} gap={16}>
@@ -119,7 +119,7 @@ export const Accounts = () => {
                 tabKey={'a'}
                 onClick={() => onChangeKey('a')}
               >
-                Account List
+                Daftar Akun
               </Tab>
               <Tab
                 h={27}
@@ -129,14 +129,14 @@ export const Accounts = () => {
                 tabKey={'b'}
                 onClick={() => onChangeKey('b')}
               >
-                Billing History
+                Riwayat Tagihan
               </Tab>
             </TabList>
             <TabPanels>
               <TabPanel panelKey={'a'}>
                 <Flex flexDirection={'column'} gap={16}>
                   <Flex justifyContent={'space-between'} alignItems={'center'} marginTop={16}>
-                    <SectionHeader>Account List</SectionHeader>
+                    <SectionHeader>Daftar Akun</SectionHeader>
                     <CreatePaymentAccount />
                   </Flex>
                   <OwnerAccount />

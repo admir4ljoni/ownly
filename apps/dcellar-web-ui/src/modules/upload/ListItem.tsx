@@ -69,7 +69,7 @@ export const ListItem = ({ path, type, handleFolderTree }: ListItemProps) => {
       <DropContainer className={cn({ 'drop-area-small': !isEmpty(list) })}>
         <IconFont type={'drag-upload'} w={64} />
         <Flex alignItems={'center'}>
-          Drag and drop objects here or{' '}
+          Seret dan lepas berkas di sini atau{' '}
           <Menu>
             {({ isOpen }) => (
               <UploadMenuList
@@ -89,7 +89,7 @@ export const ListItem = ({ path, type, handleFolderTree }: ListItemProps) => {
                     color: 'brand.brand5',
                   }}
                 >
-                  browse files <IconFont w={16} type={isOpen ? 'menu-open' : 'menu-close'} />
+                  pilih berkas <IconFont w={16} type={isOpen ? 'menu-open' : 'menu-close'} />
                 </Flex>
               </UploadMenuList>
             )}

@@ -14,16 +14,16 @@ import { useAppSelector } from '@/store';
 
 const tabConfig = [
   {
-    name: 'Transfer In',
+    name: 'Transfer Masuk',
     gaClickName: 'dc.wallet.tab.transferin.click',
     key: EOperation.transfer_in,
   },
   {
-    name: 'Transfer Out',
+    name: 'Transfer Keluar',
     gaClickName: 'dc.wallet.tab.transferout.click',
     key: EOperation.transfer_out,
   },
-  { name: 'Send', gaClickName: 'dc.wallet.tab.send.click', key: EOperation.send },
+  { name: 'Kirim', gaClickName: 'dc.wallet.tab.send.click', key: EOperation.send },
 ];
 
 interface WalletProps {}
@@ -42,7 +42,7 @@ export const Wallet = memo<WalletProps>(function Wallet() {
     <WalletBalanceProvider>
       <Container>
         <Text as={'h1'} fontWeight="700" fontSize={'24px'} mb={16}>
-          Wallet
+          Dompet
         </Text>
         <Tabs activeKey={transferType} onChange={(key) => onChange(key.toString())}>
           <TabList gap={'24px'} borderBottom="1px solid readable.border !important">

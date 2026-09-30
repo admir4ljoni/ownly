@@ -32,7 +32,7 @@ export const CreateBucket = memo<NewBucketProps>(function NewBucket({ showRefres
         />
       )}
       <DCButton onClick={() => dispatch(setBucketOperation({ operation: ['', 'create'] }))}>
-        Create Bucket
+        Buat Penyimpanan
       </DCButton>
     </Flex>
   );

@@ -27,16 +27,16 @@ export const BucketNameColumn = memo<BucketNameColumnProps>(function BucketNameC
         );
         return {
           icon: 'colored-error2',
-          title: 'Discontinue Notice',
-          desc: `This item will be deleted by SP with an estimated time of ${estimateTime}. Please backup your data in time.`,
+          title: 'Pemberitahuan Penghentian',
+          desc: `Item ini akan dihapus oleh Penyedia Penyimpanan dengan perkiraan waktu ${estimateTime}. Harap cadangkan data Anda tepat waktu.`,
           show: true,
         };
       }
       case BucketStatusEnum.BUCKET_STATUS_MIGRATING:
         return {
           icon: 'migrate',
-          title: 'Data Migrating',
-          desc: 'This bucket, in the process of data migration to another provider, supports only downloads, quota modifications, deletions, and sharing. It does not support uploads.',
+          title: 'Data Sedang Dipindahkan',
+          desc: 'Penyimpanan ini sedang dipindahkan ke penyedia lain. Selama proses ini hanya bisa unduh, ubah kuota, hapus, dan bagikan. Unggah tidak tersedia.',
           show: true,
         };
       default:

@@ -15,7 +15,7 @@ export const PrepaidFee = ({ amount }: PrepaidFeeProps) => {
     <Flex w="100%" alignItems="center" justifyContent="space-between">
       <Flex alignItems="center">
         <Text color="readable.tertiary" as="p">
-          Prepaid fee
+          Biaya prabayar
         </Text>
         <PrePaidTips />
       </Flex>

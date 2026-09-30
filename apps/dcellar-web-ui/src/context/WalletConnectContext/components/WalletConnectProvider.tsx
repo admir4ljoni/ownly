@@ -17,7 +17,7 @@ import { useRouter } from 'next/router';
 const config = createConfig(
   getDefaultConfig({
     autoConnect: true,
-    appName: 'Connect a Wallet',
+    appName: 'Hubungkan Dompet',
     /* WC 2.0 requires a project ID (get one here: https://cloud.walletconnect.com/sign-in) */
     walletConnectProjectId: '89848e3205cafe0bf76c91aa1aaa71d0',
     chains: [bscChain, greenFieldChain],
@@ -36,9 +36,9 @@ const options: WalletKitOptions = {
   closeModalOnOverlayClick: false,
   disclaimer: (
     <Text>
-      By connecting your wallet, you agree to our{' '}
+      Dengan menghubungkan dompet, Anda menyetujui{' '}
       <DCLink whiteSpace={'nowrap'} target="_blank" href="/terms" color={'readable.secondary'}>
-        Terms of Use
+        Ketentuan Penggunaan
       </DCLink>
       .
     </Text>

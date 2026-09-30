@@ -1,10 +1,10 @@
-export const OWNER_ACCOUNT_NAME = 'Owner Account';
+export const OWNER_ACCOUNT_NAME = 'Akun Utama';
 
 export const EVENT_CROSS_TRANSFER_IN = 'greenfield.bridge.EventCrossTransferIn';
 
 export const TX_TYPE_MAP: Record<string, string> = {
-  [EVENT_CROSS_TRANSFER_IN]: 'Transfer In',
-  'cosmos.gov.v1.MsgDeposit': 'Proposal Deposit',
+  [EVENT_CROSS_TRANSFER_IN]: 'Transfer Masuk',
+  'cosmos.gov.v1.MsgDeposit': 'Setoran Proposal',
 };
 
 export const CHAIN_NAMES: { [key: number | string]: string } = {

@@ -79,7 +79,7 @@ export const UploadingObjects = memo<UploadingObjectsProps>(function UploadingOb
 
   return (
     <>
-      <QDrawerHeader>Task Management</QDrawerHeader>
+      <QDrawerHeader>Manajemen Tugas</QDrawerHeader>
       <QDrawerBody ref={ref}>
         <Tabs activeKey={activeKey} onChange={(key: any) => setActiveKey(key)}>
           <StyledTabList
@@ -95,7 +95,7 @@ export const UploadingObjects = memo<UploadingObjectsProps>(function UploadingOb
                   <Empty>
                     <IconFont type="empty-object" w={120} />
                     <Text marginTop={'16px'} fontWeight={500} color={'readable.secondary'}>
-                      There are no objects in the list.
+                      Belum ada berkas dalam daftar.
                     </Text>
                   </Empty>
                 )}

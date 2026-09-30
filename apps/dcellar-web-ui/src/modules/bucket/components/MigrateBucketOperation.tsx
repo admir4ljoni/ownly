@@ -97,11 +97,11 @@ export const MigrateBucketOperation = memo(function MigrateBucketOperation({
       default:
         dispatch(
           setSignatureAction({
-            title: 'Update Failed',
+            title: 'Pembaruan Gagal',
             icon: 'status-failed',
-            desc: 'Sorry, there’s something wrong when signing with the wallet.',
+            desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
             buttonText: BUTTON_GOT_IT,
-            errorText: 'Error message: ' + error,
+            errorText: 'Pesan kesalahan: ' + error,
           }),
         );
     }
@@ -113,7 +113,7 @@ export const MigrateBucketOperation = memo(function MigrateBucketOperation({
     dispatch(
       setSignatureAction({
         icon: Animates.object,
-        title: 'Changing Primary Storage Provider',
+        title: 'Mengganti Penyedia Penyimpanan Utama',
         desc: WALLET_CONFIRM,
       }),
     );
@@ -136,7 +136,7 @@ export const MigrateBucketOperation = memo(function MigrateBucketOperation({
     setLoading(false);
     if (!txRes || txRes.code !== 0) return errorHandler(txError || UNKNOWN_ERROR);
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Primary Storage Provider updated!' });
+    toast.success({ description: 'Penyedia Penyimpanan Utama diperbarui!' });
     onClose();
     dispatch(setupBucketList(loginAccount));
   };
@@ -154,41 +154,41 @@ export const MigrateBucketOperation = memo(function MigrateBucketOperation({
       <QDrawerHeader flexDir={'column'}>
         <Flex cursor={'pointer'} alignItems={'center'} onClick={onClose} gap={8}>
           <IconFont type="back" />
-          Change Primary Storage Provider
+          Ganti Penyedia Penyimpanan Utama
         </Flex>
         <Text fontSize={16} fontWeight={400} color={'readable.tertiary'}>
-          Migrate your storage to another primary storage provider. This operation consumes a quota
-          of the same size as the bucket size.
+          Pindahkan penyimpanan Anda ke penyedia penyimpanan utama lain. Proses ini memakai kuota
+          sebesar ukuran penyimpanan.
         </Text>
       </QDrawerHeader>
       <QDrawerBody>
         <Text fontWeight={500} lineHeight="normal">
-          Bucket Info
+          Info Penyimpanan
         </Text>
         <Divider my={8} />
         <Field>
-          <Label>Bucket name</Label>
+          <Label>Nama penyimpanan</Label>
           <Value>{bucket?.BucketName}</Value>
         </Field>
 
         <Field>
-          <Label>Bucket size</Label>
+          <Label>Ukuran penyimpanan</Label>
           <Value>{formatBytes(bucketStorageSize)}</Value>
         </Field>
 
         <Field>
-          <Label w={'fit-content'}>Total quota</Label>
+          <Label w={'fit-content'}>Total kuota</Label>
           <Value>
             {formattedQuota.totalText}&nbsp;
             <Text as="span" color="#76808F">
-              ({formattedQuota.remainText} remains)
+              ({formattedQuota.remainText} tersisa)
             </Text>
           </Value>
         </Field>
         {!isPayQuota && (
           <Flex fontSize={12} mb={10} justifyContent={'space-between'}>
             <Text color={'scene.danger.active'} mr={12}>
-              No enough download quota to change primary storage provider.
+              Kuota unduhan tidak cukup untuk mengganti penyedia penyimpanan utama.
             </Text>
             <Text
               color="#4363E1"
@@ -196,7 +196,7 @@ export const MigrateBucketOperation = memo(function MigrateBucketOperation({
               cursor="pointer"
               onClick={onManageQuota}
             >
-              manage quota
+              kelola kuota
             </Text>
           </Flex>
         )}
@@ -204,7 +204,7 @@ export const MigrateBucketOperation = memo(function MigrateBucketOperation({
         <Divider mb={24} />
         <FormControl>
           <FormLabel fontSize={14} fontWeight={500} mb={8}>
-            Primary Storage Provider
+            Penyedia Penyimpanan Utama
           </FormLabel>
           <SPSelector onChange={onSpChange} selectedSp={primarySp.operatorAddress} />
         </FormControl>
@@ -217,7 +217,7 @@ export const MigrateBucketOperation = memo(function MigrateBucketOperation({
         />
         <InsufficientBalances loginAccount={loginAccount} accounts={insufficientBalanceAccounts} />
         <DCButton size={'lg'} variant="brand" disabled={!valid} onClick={onChangeConfirm}>
-          Confirm
+          Konfirmasi
         </DCButton>
       </QDrawerFooter>
     </>

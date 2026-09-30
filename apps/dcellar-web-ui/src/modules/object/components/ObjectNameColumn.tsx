@@ -112,7 +112,7 @@ export const ObjectNameColumn = memo<ObjectNameColumnProps>(function NameItem({
     <>
       <IconFont w={20} type={`${fileType}-file`} /> <span title={name}>{name}</span>
       {visibility === 1 && !folder && (
-        <Tooltip content={'Public'} placement={'bottom-start'}>
+        <Tooltip content={'Publik'} placement={'bottom-start'}>
           <span className="access-icon">
             <IconFont type="public" w={20} />
           </span>
@@ -145,7 +145,7 @@ export const ObjectNameColumn = memo<ObjectNameColumnProps>(function NameItem({
             return;
           }
           if (!isBucketOwner && !shareMode) {
-            toast.warning({ description: 'You are browsing a bucket created by someone else. ' });
+            toast.warning({ description: 'Anda sedang melihat penyimpanan milik orang lain. ' });
             e.stopPropagation();
             e.preventDefault();
             return;

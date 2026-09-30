@@ -10,7 +10,7 @@ export const GasFee = ({ amount }: { amount: string }) => {
     <Flex w="100%" alignItems="center" justifyContent="space-between">
       <Flex alignItems="center">
         <Text color="readable.tertiary" as="p">
-          Gas fee
+          Biaya jaringan
         </Text>
       </Flex>
       <Text color="readable.tertiary">{renderFeeValue(String(amount), exchangeRate)}</Text>

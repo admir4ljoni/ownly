@@ -153,7 +153,7 @@ export const SharedFile = memo<SharedFileProps>(function SharedFile({
             variant="ghost"
             onClick={() => onAction('view')}
           >
-            View
+            Lihat
           </DCButton>
           <DCButton
             size={'lg'}
@@ -168,7 +168,7 @@ export const SharedFile = memo<SharedFileProps>(function SharedFile({
             w={188}
             onClick={() => onAction('download')}
           >
-            Download
+            Unduh
           </DCButton>
         </Flex>
         <Text
@@ -183,11 +183,11 @@ export const SharedFile = memo<SharedFileProps>(function SharedFile({
           color={'readable.secondary'}
           _hover={{ color: 'brand.brand7' }}
         >
-          Check on Explorer <IconFont w={14} ml={2} type="out" />
+          Lihat di Penjelajah <IconFont w={14} ml={2} type="out" />
         </Text>
       </Content>
       <Text as="div" color={'readable.tertiary'} textAlign={'center'}>
-        By downloading the object, you agree to our{' '}
+        Dengan mengunduh berkas ini, Anda menyetujui{' '}
         <Text
           textDecoration={'underline'}
           as="a"
@@ -196,9 +196,9 @@ export const SharedFile = memo<SharedFileProps>(function SharedFile({
           color={'readable.normal'}
           _hover={{ color: 'brand.brand7' }}
         >
-          Terms of Use
-        </Text>
-        .
+          Ketentuan Penggunaan
+        </Text>{' '}
+        kami.
       </Text>
     </Grid>
   );

@@ -25,7 +25,7 @@ export const QuotaCard = memo<QuotaCardProps>(function QuotaCard() {
         <Flex fontWeight={600}>
           {formattedQuota.remainText}{' '}
           <Text ml={4} fontWeight={500} color="#76808F">
-            of {formattedQuota.totalText}
+            dari {formattedQuota.totalText}
           </Text>
         </Flex>
         <Text
@@ -35,7 +35,7 @@ export const QuotaCard = memo<QuotaCardProps>(function QuotaCard() {
           cursor="pointer"
           onClick={onManageQuota}
         >
-          Increase Quota
+          Tambah Kuota
         </Text>
       </Flex>
       <Track>

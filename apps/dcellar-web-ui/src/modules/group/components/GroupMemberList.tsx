@@ -31,8 +31,8 @@ import { MenuOption } from '@/components/common/DCMenuList';
 import { selectGnfdGasFeesConfig, setSignatureAction } from '@/store/slices/global';
 
 const MEMBER_ACTIONS: MenuOption[] = [
-  { label: 'Member', value: 'member' },
-  { label: 'Remove', value: 'remove', variant: 'danger' },
+  { label: 'Anggota', value: 'member' },
+  { label: 'Keluarkan', value: 'remove', variant: 'danger' },
 ];
 
 const ITEM_LIMIT = 20;
@@ -78,7 +78,7 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
 
   const onRemoveMember = async () => {
     dispatch(
-      setSignatureAction({ icon: Animates.group, title: 'Updating Group', desc: WALLET_CONFIRM }),
+      setSignatureAction({ icon: Animates.group, title: 'Memperbarui Grup', desc: WALLET_CONFIRM }),
     );
     const payload = {
       operator: loginAccount,
@@ -90,7 +90,7 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
     const [txRes, txError] = await removeMemberFromGroup(payload, connector!);
     if (!txRes || txRes.code !== 0) return errorHandler(txError || UNKNOWN_ERROR);
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Members removed successfully!' });
+    toast.success({ description: 'Anggota berhasil dikeluarkan!' });
     updateMemberList(removeAccount[0], true);
     dispatch(setGroupSelectedMembers(without(groupSelectedMembers, ...removeAccount)));
   };
@@ -116,7 +116,7 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
   useEffect(() => {
     if (memberCount > ITEM_LIMIT) {
       toast.error({
-        description: `Exceed the permission limit (${ITEM_LIMIT}). Please select fewer items or repeat this action multiple times.`,
+        description: `Melebihi batas izin (${ITEM_LIMIT}). Silakan pilih lebih sedikit item atau ulangi tindakan ini beberapa kali.`,
       });
     }
   }, [memberCount]);
@@ -130,16 +130,16 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
     <>
       <GAContextProvider prefix={'remove_member_confirm'}>
         <TxConfirmModal
-          confirmText="Remove"
+          confirmText="Keluarkan"
           isOpen={deleteModal}
-          title="Remove Member"
+          title="Keluarkan Anggota"
           fee={fee}
           onConfirm={onRemoveMember}
           onClose={() => setDeleteModal(false)}
           variant={'scene'}
-          description={`Are you sure you want to remove ${
-            removeAccount.length === 1 ? trimAddress(removeAccount[0]) : 'these members'
-          } from the group?`}
+          description={`Apakah Anda yakin ingin mengeluarkan ${
+            removeAccount.length === 1 ? trimAddress(removeAccount[0]) : 'anggota-anggota ini'
+          } dari grup?`}
         />
       </GAContextProvider>
       <Thead>
@@ -150,7 +150,7 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
           disabled={!accounts.length}
         >
           <Text fontWeight={600} color={'readable.normal'}>
-            Members{memberCount > 0 && `(${memberCount})`}
+            Anggota{memberCount > 0 && `(${memberCount})`}
           </Text>
         </DCCheckbox>
         <RemoveBtn
@@ -161,7 +161,7 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
             setDeleteModal(true);
           }}
         >
-          Remove
+          Keluarkan
         </RemoveBtn>
       </Thead>
       <Flex direction="column" gap={8}>
@@ -194,7 +194,7 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
                       lineHeight="17px"
                     >
                       {trimAddress(p.AccountId)}
-                      {owner && <> (you)</>}
+                      {owner && <> (Anda)</>}
                     </Text>
                     {!owner && !!expirationTime && (
                       <Text
@@ -207,7 +207,7 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
                             : 'scene.danger.normal'
                         }
                       >
-                        Expire date: {dayjs(expirationTime).format('D MMM, YYYY')}
+                        Tanggal kedaluwarsa: {dayjs(expirationTime).format('D MMM, YYYY')}
                       </Text>
                     )}
                   </Flex>
@@ -215,7 +215,7 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
               </DCCheckbox>
               <Operation>
                 {owner ? (
-                  <Text mr={4}>Owner</Text>
+                  <Text mr={4}>Pemilik</Text>
                 ) : (
                   <DCMenu
                     zIndex={1300}
@@ -233,7 +233,7 @@ export const GroupMemberList = memo<GroupMemberListProps>(function GroupMemberLi
                   >
                     {({ isOpen }) => (
                       <StyledMenuButton as={Text}>
-                        Viewer
+                        Anggota
                         <IconFont type={isOpen ? 'menu-open' : 'menu-close'} w={16} />
                       </StyledMenuButton>
                     )}

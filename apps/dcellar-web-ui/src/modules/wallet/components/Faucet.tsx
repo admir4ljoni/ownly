@@ -28,10 +28,10 @@ export const Faucet = memo(function Faucet() {
     >
       <Box>
         <Text fontSize={16} fontWeight={700}>
-          Get Testnet Tokens
+          Dapatkan Token Jaringan Uji
         </Text>
         <Text fontSize={12} color={'readable.secondary'} marginTop={4}>
-          Use the BNB Greenfield faucet to get testnet tokens.
+          Gunakan faucet BNB Greenfield untuk mendapatkan token jaringan uji.
         </Text>
       </Box>
       <IconFont type="share-b38fk167" width={16} />

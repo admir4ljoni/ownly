@@ -1,7 +1,7 @@
 import { useAppDispatch } from '@/store';
 import { SignatureAction, setSignatureAction } from '@/store/slices/global';
 
-export const BUTTON_GOT_IT = 'Got It';
+export const BUTTON_GOT_IT = 'Mengerti';
 
 export function useStatusModal() {
   const dispatch = useAppDispatch();
@@ -29,7 +29,7 @@ export function useStatusModal() {
           title,
           icon: icon || 'status-failed',
           buttonText: BUTTON_GOT_IT,
-          errorText: 'Error message: ' + errorText,
+          errorText: 'Pesan kesalahan: ' + errorText,
           ...props,
         }),
       );

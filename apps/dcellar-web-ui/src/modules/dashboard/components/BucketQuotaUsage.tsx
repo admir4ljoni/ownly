@@ -78,18 +78,18 @@ export const BucketQuotaUsage = () => {
         trigger: 'axis',
         content: (params: any) => {
           const { data: quotaUsage } =
-            params.find((item: any) => item.seriesName === 'Quota Usage') || {};
+            params.find((item: any) => item.seriesName === 'Penggunaan Kuota') || {};
           const { data: totalQuota } =
-            params.find((item: any) => item.seriesName === 'Total Quota') || {};
+            params.find((item: any) => item.seriesName === 'Total Kuota') || {};
           const curData = lineData[params[0].dataIndex] || {};
 
           const TotalQuotaFragment =
             totalQuota !== undefined
-              ? ` <p ${VALUE_STYLES}>Total Quota: ${formatBytes(totalQuota)}</p>`
+              ? ` <p ${VALUE_STYLES}>Total Kuota: ${formatBytes(totalQuota)}</p>`
               : '';
           const QuotaUsageFragment =
             quotaUsage !== undefined
-              ? `<p ${VALUE_STYLES}>Quota Usage: ${formatBytes(quotaUsage)}</p>`
+              ? `<p ${VALUE_STYLES}>Penggunaan Kuota: ${formatBytes(quotaUsage)}</p>`
               : '';
           return `
             <p ${LABEL_STYLES}>${formatChartTime(curData.time)}</p>
@@ -105,7 +105,7 @@ export const BucketQuotaUsage = () => {
         itemGap: 16,
         right: 12,
         textStyle: { fontWeight: 400 },
-        data: ['Total Quota', 'Quota Usage'],
+        data: ['Total Kuota', 'Penggunaan Kuota'],
       },
       xAxis: {
         data: xData,
@@ -127,9 +127,9 @@ export const BucketQuotaUsage = () => {
             opacity: 1,
           },
           smooth: false,
-          name: 'Quota Usage',
+          name: 'Penggunaan Kuota',
           type: 'line',
-          stack: 'Quota Usage',
+          stack: 'Penggunaan Kuota',
           data: yQuotaUsage,
         },
         {
@@ -142,9 +142,9 @@ export const BucketQuotaUsage = () => {
           emphasis: { itemStyle: { opacity: 1 } },
           animationDuration: 600,
           smooth: false,
-          name: 'Total Quota',
+          name: 'Total Kuota',
           type: 'line',
-          stack: 'Total Quota',
+          stack: 'Total Kuota',
           data: yTotalQuota,
         },
       ],

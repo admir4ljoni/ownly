@@ -33,10 +33,10 @@ import { CreatePaymentAccount } from './CreatePaymentAccount';
 import { memo } from 'react';
 
 const ACCOUNT_ACTIONS: MenuOption[] = [
-  { label: 'View Details', value: 'detail' },
-  { label: 'Deposit', value: 'deposit' },
-  { label: 'Withdraw', value: 'withdraw' },
-  { label: 'Set as Non-refundable', value: 'setNonRefundable' },
+  { label: 'Lihat Detail', value: 'detail' },
+  { label: 'Isi Saldo', value: 'deposit' },
+  { label: 'Tarik Saldo', value: 'withdraw' },
+  { label: 'Jadikan Tidak Dapat Dikembalikan', value: 'setNonRefundable' },
 ];
 
 interface PaymentAccountListProps {}
@@ -89,8 +89,8 @@ export const PaymentAccountList = memo<PaymentAccountListProps>(function Payment
     () => (
       <ListEmpty
         type="empty-account"
-        title="No Payment Accounts"
-        desc="Create payment accounts to pay for storage and bandwidth. "
+        title="Belum Ada Akun Pembayaran"
+        desc="Buat Akun Pembayaran untuk membayar penyimpanan dan bandwidth. "
         empty={empty}
         h={274}
       >
@@ -111,7 +111,7 @@ export const PaymentAccountList = memo<PaymentAccountListProps>(function Payment
       title: (
         // account for default sort
         <SortItem onClick={() => onSorterChange('account', 'ascend')}>
-          <Text>Name</Text>
+          <Text>Nama</Text>
           {sortName === 'account' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
@@ -124,7 +124,7 @@ export const PaymentAccountList = memo<PaymentAccountListProps>(function Payment
       width: isLessThan1100 ? 130 : 'auto',
       title: (
         <SortItem onClick={() => onSorterChange('address', 'ascend')}>
-          Account Address
+          Alamat Akun
           {sortName === 'address' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
@@ -143,7 +143,7 @@ export const PaymentAccountList = memo<PaymentAccountListProps>(function Payment
       key: 'staticBalance',
       title: (
         <SortItem onClick={() => onSorterChange('staticBalance', 'ascend')}>
-          Balance
+          Saldo
           {sortName === 'balance' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
@@ -169,7 +169,7 @@ export const PaymentAccountList = memo<PaymentAccountListProps>(function Payment
       key: 'bufferBalance',
       title: (
         <SortItem onClick={() => onSorterChange('bufferBalance', 'ascend')}>
-          Prepaid Fee
+          Biaya Prabayar
           {sortName === 'bufferBalance' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
@@ -188,7 +188,7 @@ export const PaymentAccountList = memo<PaymentAccountListProps>(function Payment
       key: 'netflowRate',
       title: (
         <SortItem onClick={() => onSorterChange('netflowRate', 'ascend')}>
-          Flow Rate
+          Laju Pembayaran
           {sortName === 'netflowRate' ? SortIcon[dir] : <span>{SortIcon['ascend']}</span>}
         </SortItem>
       ),
@@ -207,7 +207,7 @@ export const PaymentAccountList = memo<PaymentAccountListProps>(function Payment
     },
     {
       key: 'Operation',
-      title: <Text textAlign={'center'}>Operation</Text>,
+      title: <Text textAlign={'center'}>Tindakan</Text>,
       width: 150,
       render: (_: string, record: AccountInfo) => {
         let operations = ['deposit', 'withdraw'];

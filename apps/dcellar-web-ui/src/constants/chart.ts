@@ -8,7 +8,7 @@ export const noDataOptions = {
       fontSize: 16,
       fontWeight: 500,
     },
-    text: 'No data',
+    text: 'Tidak ada data',
     left: 'center',
     top: 'center',
   },

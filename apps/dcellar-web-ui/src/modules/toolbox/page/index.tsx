@@ -10,7 +10,7 @@ export const ToolBoxPage = () => {
   return (
     <Box>
       <Text as="h1" fontSize={24} fontWeight={700} mb={16}>
-        Toolbox
+        Alat Bantu
       </Text>
       <Tabs activeKey={activeKey} onChange={(key: any) => setActiveKey(key)}>
         <TabList>

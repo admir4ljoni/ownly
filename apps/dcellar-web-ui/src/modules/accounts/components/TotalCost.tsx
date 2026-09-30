@@ -36,7 +36,7 @@ export const TotalCost = memo(function TotalCost() {
     });
     const newData = [];
     const others: any = {
-      name: 'Others',
+      name: 'Lainnya',
       value: '0',
       color: [colors[colors.length - 1]],
       addresses: [],
@@ -121,7 +121,7 @@ export const TotalCost = memo(function TotalCost() {
         },
       }}
     >
-      <CardTitle mb={16}>Total Cost</CardTitle>
+      <CardTitle mb={16}>Total Biaya</CardTitle>
       <Flex gap={8} mb={8}>
         <CardCost>{totalCost.totalCost}</CardCost>
         <CardCost>{displayTokenSymbol()}</CardCost>
@@ -137,7 +137,7 @@ export const TotalCost = memo(function TotalCost() {
           cursor={'pointer'}
           onClick={onBillingHistory}
         >
-          <Text fontWeight={500}>View Detail</Text>
+          <Text fontWeight={500}>Lihat Detail</Text>
           <IconFont type="forward" />
         </Flex>
       </Box>

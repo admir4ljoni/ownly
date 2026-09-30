@@ -23,13 +23,13 @@ export const Stats = () => {
   const statsData = useMemo(() => {
     return [
       {
-        name: 'Buckets',
+        name: 'Penyimpanan',
         icon: 'bucket',
         value: isEmpty(bucketListRecords) ? '--' : bucketList?.length || 0,
         link: InternalRoutePaths.buckets,
       },
       {
-        name: 'Accounts',
+        name: 'Akun',
         icon: 'account',
         // payment account length + a owner account
         value: isEmpty(paymentAccountListRecords) ? '--' : (paymentList?.length || 0) + 1,

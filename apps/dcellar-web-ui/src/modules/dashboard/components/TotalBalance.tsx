@@ -23,12 +23,12 @@ const FeeOptions: {
 }[] = [
   {
     id: 'totalPrepaidFee',
-    label: 'Total prepaid fee',
+    label: 'Total biaya prabayar',
     symbol: displayTokenSymbol(),
   },
   {
     id: 'totalNetflowRate',
-    label: 'Total flow rate',
+    label: 'Total laju pembayaran',
     symbol: displayTokenSymbol() + '/s',
   },
 ];
@@ -85,7 +85,7 @@ export const TotalBalance = ({ children, ...restProps }: TotalBalanceProps) => {
     <Card w={374} {...restProps}>
       <Flex>
         <Text fontWeight={600} fontSize={16}>
-          Total Balance
+          Total Saldo
         </Text>
         <TotalBalanceTips />
       </Flex>
@@ -122,7 +122,7 @@ export const TotalBalance = ({ children, ...restProps }: TotalBalanceProps) => {
             <IconFont type="in" />
           </StyledIcon>
           <Box fontWeight={500} fontSize="14px" marginTop={8}>
-            Transfer In
+            Transfer Masuk
           </Box>
         </ActionButton>
         <ActionButton
@@ -134,7 +134,7 @@ export const TotalBalance = ({ children, ...restProps }: TotalBalanceProps) => {
             <IconFont type="out" />
           </StyledIcon>
           <Box fontWeight={500} fontSize="14px" marginTop={8}>
-            Transfer Out
+            Transfer Keluar
           </Box>
         </ActionButton>
         <ActionButton
@@ -146,7 +146,7 @@ export const TotalBalance = ({ children, ...restProps }: TotalBalanceProps) => {
             <IconFont type="send" />
           </StyledIcon>
           <Box fontWeight={500} fontSize="14px" marginTop={8}>
-            Send
+            Kirim
           </Box>
         </ActionButton>
       </Flex>

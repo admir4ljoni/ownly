@@ -129,14 +129,14 @@ export const MonthlyDownloadQuota = memo<MonthlyDownloadQuotaProps>(function Mon
     <FormItem>
       <FormLabel>
         <Flex>
-          Monthly Download Quota{' '}
+          Kuota Unduhan Bulanan{' '}
           <Tips
             placement="bottom-start"
-            tips="Monthly quota will renewed automatically and can’t be downgraded until 30 days after the initial date."
+            tips="Kuota bulanan akan diperbarui otomatis dan tidak dapat diturunkan sebelum 30 hari sejak tanggal awal."
           />
         </Flex>
         <Text color="#76808F" fontWeight={400}>
-          Price: {renderBnb(price)} {displayTokenSymbol()}/GB/month
+          Harga: {renderBnb(price)} {displayTokenSymbol()}/GB/bulan
         </Text>
       </FormLabel>
       <Flex position="relative" alignItems="center" id="buy-quota-progress-bar">
@@ -150,7 +150,7 @@ export const MonthlyDownloadQuota = memo<MonthlyDownloadQuotaProps>(function Mon
                 title={
                   <>
                     <Text color="#76808F" fontSize={12}>
-                      Current Quota
+                      Kuota Saat Ini
                     </Text>
                     <Text fontSize={12} align="center">
                       {originValue}
@@ -175,7 +175,7 @@ export const MonthlyDownloadQuota = memo<MonthlyDownloadQuotaProps>(function Mon
               color={invalid ? '#EE3911' : '#14151A'}
               open={current !== undefined || value > 0}
               title={
-                invalid ? 'Lower quota cannot be set until 30 days after initial date.' : title
+                invalid ? 'Kuota tidak dapat diturunkan sebelum 30 hari sejak tanggal awal.' : title
               }
               arrow={true}
               overlayInnerStyle={overlayStyles}
@@ -200,7 +200,7 @@ export const MonthlyDownloadQuota = memo<MonthlyDownloadQuotaProps>(function Mon
             }}
           />
           <Text ml={8} fontSize={16} fontWeight={600} lineHeight="normal">
-            GB/month
+            GB/bulan
           </Text>
         </Flex>
       </Flex>

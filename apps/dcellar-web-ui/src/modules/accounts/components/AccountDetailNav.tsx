@@ -61,15 +61,15 @@ export const AccountDetailNav = ({ address }: { address: string }) => {
           tips={
             <Box>
               <Text fontSize={14} fontWeight={600} mb={4}>
-                Frozen Account
+                Akun Dibekukan
               </Text>
               <Text fontSize={14} fontWeight={400} color="readable.normal" mb={4}>
-                Your account is suspended due to insufficient balance. To reactivate your account,
-                please deposit at least &nbsp;
+                Akun Anda ditangguhkan karena saldo tidak cukup. Untuk mengaktifkan kembali akun Anda,
+                segera isi saldo minimal &nbsp;
                 <strong>
                   {unFreezeAmount} &nbsp;{displayTokenSymbol()}
                 </strong>
-                &nbsp; immediately.
+                .
               </Text>
               <Link
                 cursor={'pointer'}
@@ -79,7 +79,7 @@ export const AccountDetailNav = ({ address }: { address: string }) => {
                 textAlign={'right'}
                 onClick={() => onTopUpClick()}
               >
-                Top Up
+                Isi Saldo
               </Link>
             </Box>
           }
@@ -96,7 +96,7 @@ export const AccountDetailNav = ({ address }: { address: string }) => {
             w="fit-content"
             color={'readable.tertiary'}
           >
-            Non-Refundable
+            Tidak Dapat Dikembalikan
           </Box>
         )}
       </Box>

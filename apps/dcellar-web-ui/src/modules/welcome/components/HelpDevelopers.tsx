@@ -7,19 +7,19 @@ import { LandingH2, LandingResponsiveContainer } from '..';
 
 const datas = [
   {
-    intro: 'NFT Storage and Minting',
+    intro: 'Penyimpanan dan Pembuatan NFT',
     img: `${assetPrefix}/images/welcome/nft_1.png`,
     imgSm: `${assetPrefix}/images/welcome/nft_sm.png`,
     gaClickName: 'dc_lp.homepage.use_case.nft.click',
   },
   {
-    intro: 'SP Functional Verification',
+    intro: 'Verifikasi Fungsi Penyedia Penyimpanan',
     img: `${assetPrefix}/images/welcome/auth.png`,
     imgSm: `${assetPrefix}/images/welcome/auth_sm.png`,
     gaClickName: 'dc_lp.homepage.use_case.sp.click',
   },
   {
-    intro: 'Web Hosting',
+    intro: 'Hosting Web',
     img: `${assetPrefix}/images/welcome/server.png`,
     imgSm: `${assetPrefix}/images/welcome/server_sm.png`,
     gaClickName: 'dc_lp.homepage.use_case.hosting.click',
@@ -41,7 +41,7 @@ export const HelpDevelopers = () => {
           },
         }}
       >
-        <LandingH2>How Ownly Helps Developers</LandingH2>
+        <LandingH2>Cara Ownly Membantu Developer</LandingH2>
         <Text
           marginBottom={40}
           fontSize={16}
@@ -53,7 +53,7 @@ export const HelpDevelopers = () => {
             },
           }}
         >
-          Ownly can be used as a powerful developer tool that can make developer life much easier.
+          Ownly dapat digunakan sebagai alat developer yang andal untuk membuat pekerjaan developer jauh lebih mudah.
         </Text>
         <Flex
           gap={24}
@@ -76,7 +76,7 @@ export const HelpDevelopers = () => {
                   }}
                 >
                   <Image
-                    alt={`${item.intro} icon`}
+                    alt={`Ikon ${item.intro}`}
                     src={isMobile ? item.imgSm : item.img}
                     fallbackStrategy="beforeLoadOrError"
                     fallback={<Square size={191} color="white"></Square>}

@@ -151,11 +151,11 @@ export const PaymentAccountOperation = memo(function PaymentAccountOperation({
       default:
         dispatch(
           setSignatureAction({
-            title: 'Update Failed',
+            title: 'Pembaruan Gagal',
             icon: 'status-failed',
-            desc: 'Sorry, there’s something wrong when signing with the wallet.',
+            desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
             buttonText: BUTTON_GOT_IT,
-            errorText: 'Error message: ' + error,
+            errorText: 'Pesan kesalahan: ' + error,
           }),
         );
     }
@@ -167,7 +167,7 @@ export const PaymentAccountOperation = memo(function PaymentAccountOperation({
     dispatch(
       setSignatureAction({
         icon: Animates.object,
-        title: 'Updating payment account',
+        title: 'Memperbarui akun pembayaran',
         desc: WALLET_CONFIRM,
       }),
     );
@@ -183,7 +183,7 @@ export const PaymentAccountOperation = memo(function PaymentAccountOperation({
     setLoading(false);
     if (!txRes || txRes.code !== 0) return errorHandler(txError || UNKNOWN_ERROR);
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Payment account updated!' });
+    toast.success({ description: 'Akun pembayaran diperbarui!' });
     onClose();
     dispatch(
       setBucketPaymentAccount({
@@ -201,7 +201,7 @@ export const PaymentAccountOperation = memo(function PaymentAccountOperation({
       dispatch(
         setSignatureAction({
           icon: 'error-auth',
-          title: 'Confirm Payment Account',
+          title: 'Konfirmasi Akun Pembayaran',
           desc: PAYMASTER_CONTINUE_DESC,
           buttonText: CONTINUE_STEP,
           buttonOnClick() {
@@ -219,20 +219,20 @@ export const PaymentAccountOperation = memo(function PaymentAccountOperation({
       <QDrawerHeader flexDir={'column'}>
         <Flex cursor={'pointer'} alignItems={'center'} onClick={onClose} gap={8}>
           <IconFont type="back" />
-          Change Payment Account
+          Ganti Akun Pembayaran
         </Flex>
       </QDrawerHeader>
       <QDrawerBody>
         <Text fontWeight={500} lineHeight="normal">
-          Bucket Info
+          Info Penyimpanan
         </Text>
         <Divider my={8} />
         <Field>
-          <Label>Bucket name</Label>
+          <Label>Nama penyimpanan</Label>
           <Value>{bucket?.BucketName}</Value>
         </Field>
         <Field>
-          <Label>Payment account</Label>
+          <Label>Akun pembayaran</Label>
           <Value>{paymentAccount}</Value>
         </Field>
         <Divider />
@@ -253,7 +253,7 @@ export const PaymentAccountOperation = memo(function PaymentAccountOperation({
         />
         <InsufficientBalances loginAccount={loginAccount} accounts={insufficientBalanceAccounts} />
         <DCButton size={'lg'} variant="brand" disabled={!valid} onClick={onChangeConfirm}>
-          Confirm
+          Konfirmasi
         </DCButton>
       </QDrawerFooter>
     </>

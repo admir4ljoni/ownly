@@ -36,7 +36,7 @@ export const UploadObjectsList = ({ path, data }: { path: string; data: WaitObje
   const columns: ColumnProps<WaitObject>[] = [
     {
       key: 'name',
-      title: 'Name',
+      title: 'Nama',
       render: (_, record) => {
         return (
           <NameItem
@@ -46,7 +46,7 @@ export const UploadObjectsList = ({ path, data }: { path: string; data: WaitObje
             msg={
               record.isUpdate && DELEGATE_UPLOAD ? (
                 <Text as={'span'} color={'readable.tertiary'}>
-                  Replace the existing object
+                  Ganti berkas yang sudah ada
                 </Text>
               ) : (
                 record.msg
@@ -59,7 +59,7 @@ export const UploadObjectsList = ({ path, data }: { path: string; data: WaitObje
     },
     {
       key: 'path',
-      title: 'Path',
+      title: 'Lokasi',
       width: 170,
       render: (record) => {
         return (
@@ -96,7 +96,7 @@ export const UploadObjectsList = ({ path, data }: { path: string; data: WaitObje
                 <DCTooltip
                   title={
                     objectChanged
-                      ? "Please upload the original object as this objects' info already created on chain."
+                      ? 'Silakan unggah berkas asli karena info berkas ini sudah tercatat di jaringan.'
                       : ''
                   }
                 >
@@ -108,7 +108,7 @@ export const UploadObjectsList = ({ path, data }: { path: string; data: WaitObje
                     fontWeight={400}
                     onClick={() => updateObjectReplaceState(record.id)}
                   >
-                    {record.isUpdate ? 'Undo' : 'Replace'}
+                    {record.isUpdate ? 'Urungkan' : 'Ganti'}
                   </DCButton>
                 </DCTooltip>
               );

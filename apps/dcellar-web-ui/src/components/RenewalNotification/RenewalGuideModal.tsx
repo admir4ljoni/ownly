@@ -8,12 +8,12 @@ import { InternalRoutePaths } from '@/constants/paths';
 const STEP_DATA = [
   {
     num: 1,
-    description: 'Transfer in enough BNB to your Owner Account.',
+    description: 'Transfer masuk BNB secukupnya ke Akun Utama Anda.',
   },
   {
     num: 2,
     description:
-      'Deposit BNB from your Owner Account to your Payment Account which shares the same address with your Payment Account.',
+      'Isi saldo BNB dari Akun Utama ke Akun Pembayaran Anda yang memiliki alamat yang sama.',
   },
 ];
 
@@ -31,12 +31,12 @@ export const RenewalGuideModal = ({ isOpen, onClose }: RenewalGuideModalProps) =
       <ModalCloseButton />
       <ModalBody textAlign={'center'} mt={0}>
         <Text fontSize={'24px'} fontWeight={600} lineHeight="150%" marginBottom={'8px'}>
-          Ownly Renewal Guide
+          Panduan Perpanjangan Ownly
         </Text>
         <Text color="#76808F" fontSize={'16px'} fontWeight="400">
-          Your Owner Account has been frozen due to insufficient funds. The Payment Account
-          associated with the same address has also had its bucket restricted in service. Follow the
-          following steps to unfreeze your account and restore your data service.
+          Akun Utama Anda dibekukan karena saldo tidak cukup. Layanan penyimpanan pada Akun
+          Pembayaran dengan alamat yang sama juga dibatasi. Ikuti langkah-langkah berikut untuk
+          mengaktifkan kembali akun dan memulihkan layanan data Anda.
         </Text>
         <Flex flexDir={'column'} marginTop={32}>
           {STEP_DATA.map((step, index) => {
@@ -65,7 +65,7 @@ export const RenewalGuideModal = ({ isOpen, onClose }: RenewalGuideModalProps) =
             onNavigate(InternalRoutePaths.transfer_in);
           }}
         >
-          Transfer In
+          Transfer Masuk
         </DCButton>
       </ModalFooter>
     </DCModal>

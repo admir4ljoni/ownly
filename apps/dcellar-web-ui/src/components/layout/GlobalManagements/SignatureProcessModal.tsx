@@ -126,7 +126,7 @@ export const SignatureProcessModal = memo<SignatureProcessModalProps>(
                 }}
                 gaClickName={gaOptions.closeName}
               >
-                {NO_QUOTA ? 'Increase Quota' : signatureAction.buttonText}
+                {NO_QUOTA ? 'Tambah Kuota' : signatureAction.buttonText}
               </DCButton>
             </ModalFooter>
           )}

@@ -19,10 +19,10 @@ export const BucketUsageStatistics = () => {
         onChange={onChange}
       >
         <Flex justifyContent={'space-between'}>
-          <CardTitle>Usage Statistics</CardTitle>
+          <CardTitle>Statistik Penggunaan</CardTitle>
           <TabList gap={12}>
-            <Tab>Storage Usage</Tab>
-            <Tab>Download Quota Usage</Tab>
+            <Tab>Penggunaan Penyimpanan</Tab>
+            <Tab>Penggunaan Kuota Unduhan</Tab>
           </TabList>
         </Flex>
 

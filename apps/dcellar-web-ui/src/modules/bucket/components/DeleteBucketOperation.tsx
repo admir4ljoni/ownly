@@ -70,7 +70,7 @@ export const DeleteBucketOperation = memo<DeleteBucketOperationProps>(
               title: FILE_TITLE_DELETE_FAILED,
               icon: 'status-failed',
               buttonText: BUTTON_GOT_IT,
-              errorText: 'Error message: ' + error,
+              errorText: 'Pesan kesalahan: ' + error,
             }),
           );
       }
@@ -102,7 +102,7 @@ export const DeleteBucketOperation = memo<DeleteBucketOperationProps>(
     const onDeleteClick = async () => {
       dispatch(
         setSignatureAction({
-          title: 'Deleting Bucket',
+          title: 'Menghapus Penyimpanan',
           icon: Animates.delete,
           desc: WALLET_CONFIRM,
         }),
@@ -127,7 +127,7 @@ export const DeleteBucketOperation = memo<DeleteBucketOperationProps>(
       dispatch(setSignatureAction({}));
       dispatch(setupBucketList(loginAccount));
       toast.success({
-        description: `Bucket deleted successfully!`,
+        description: `Penyimpanan berhasil dihapus!`,
       });
       reportEvent({
         name: 'dc.toast.bucket_delete.success.show',
@@ -146,9 +146,9 @@ export const DeleteBucketOperation = memo<DeleteBucketOperationProps>(
 
     return (
       <>
-        <ModalHeader lineHeight={'36px'}>Confirm Delete</ModalHeader>
+        <ModalHeader lineHeight={'36px'}>Konfirmasi Hapus</ModalHeader>
         <ModalBody marginTop={'8px'}>
-          <Box className="ui-modal-desc">{`Are you sure to delete this bucket "${bucketName}"?`}</Box>
+          <Box className="ui-modal-desc">{`Yakin ingin menghapus penyimpanan "${bucketName}"?`}</Box>
           <TotalFees
             expandable={false}
             refund={true}
@@ -183,7 +183,7 @@ export const DeleteBucketOperation = memo<DeleteBucketOperationProps>(
             onClick={onClose}
             gaClickName="dc.bucket.delete_confirm.cancel.click"
           >
-            Cancel
+            Batal
           </DCButton>
           <DCButton
             variant={'scene'}
@@ -194,7 +194,7 @@ export const DeleteBucketOperation = memo<DeleteBucketOperationProps>(
             onClick={() => onDeleteClick()}
             gaClickName="dc.bucket.delete_confirm.delete.click"
           >
-            Delete
+            Hapus
           </DCButton>
         </ModalFooter>
       </>

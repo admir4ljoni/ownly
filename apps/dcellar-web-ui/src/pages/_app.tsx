@@ -10,6 +10,8 @@ import { wrapper } from '@/store';
 import { setupStorageProviders } from '@/store/slices/sp';
 import { ThemeProvider } from '@node-real/uikit';
 import '@node-real/walletkit/styles.css';
+import dayjs from 'dayjs';
+import 'dayjs/locale/id';
 import type { AppProps } from 'next/app';
 import App from 'next/app';
 import { ReactNode } from 'react';
@@ -21,6 +23,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { register } from 'swiper/element/bundle';
 
 register();
+dayjs.locale('id');
 export const ssrLandingRoutes = ['/', '/pricing-calculator', '/terms'];
 
 function OwnlyApp({ Component, ...rest }: AppProps) {

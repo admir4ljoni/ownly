@@ -19,7 +19,7 @@ export const Step = ({ num, description }: StepProps) => {
         <Box width={8} height={8} borderRadius={4} bg={'brand.brand6'} />
       </Flex>
       <Text fontWeight={500} flexShrink={0}>
-        Step {num}
+        Langkah {num}
       </Text>
       <Text>{description}</Text>
     </Flex>

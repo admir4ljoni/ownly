@@ -42,14 +42,14 @@ function ErrorComponent({ statusCode }: ErrorComponentProps) {
   const { err } = router.query;
   const isNoBucket = err === 'noBucket';
   const text = isNoBucket
-    ? 'Bucket Not Exist or Deleted'
+    ? 'Penyimpanan Tidak Ada atau Sudah Dihapus'
     : statusCode === 404
-      ? 'Page Not Found'
-      : 'Oops!';
+      ? 'Halaman Tidak Ditemukan'
+      : 'Ups!';
   const desc = isNoBucket
-    ? `This bucket might not exist or is no longer available.\r\nContact the owner of this bucket for more information.`
+    ? `Penyimpanan ini mungkin tidak ada atau sudah tidak tersedia.\r\nHubungi pemilik penyimpanan ini untuk informasi lebih lanjut.`
     : statusCode === 404
-      ? `The page you're looking for does not seem to exit.`
+      ? `Halaman yang Anda cari tampaknya tidak ada.`
       : errorCodes[statusCode as TErrorCodeKey];
 
   return (
@@ -57,7 +57,7 @@ function ErrorComponent({ statusCode }: ErrorComponentProps) {
       <SEOHead />
       <Container>
         <Logo
-          alt="Ownly Logo"
+          alt="Logo Ownly"
           src={
             colorMode === 'dark'
               ? `${assetPrefix}/images/ownly-logo-horizontal-dark.svg`
@@ -69,7 +69,7 @@ function ErrorComponent({ statusCode }: ErrorComponentProps) {
             <IconFont type={'status-failed'} w={120} display="inline-block" />
           ) : (
             <Image
-              alt="Oops, something went wrong"
+              alt="Ups, terjadi kesalahan"
               src={`${assetPrefix}/images/${statusCode === 404 ? '404' : 'error'}.png`}
               w={275}
               sx={{
@@ -95,7 +95,7 @@ function ErrorComponent({ statusCode }: ErrorComponentProps) {
           </Text>
           <Link href={address ? InternalRoutePaths.dashboard : '/'} legacyBehavior passHref replace>
             <DCButton w={132} h={32} as="a" mb={40} fontSize={12} borderRadius={4}>
-              {isNoBucket ? 'Back to Home' : 'Go to Home'}
+              {isNoBucket ? 'Kembali ke Beranda' : 'Ke Beranda'}
             </DCButton>
           </Link>
         </Content>

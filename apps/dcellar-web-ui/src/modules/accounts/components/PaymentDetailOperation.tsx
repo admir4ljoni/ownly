@@ -49,7 +49,7 @@ export const PaymentDetailOperation = memo<PaymentDetailOperationProps>(
       <>
         <BasicInfo
           loading={!!accountInfoLoading}
-          title="Account Detail"
+          title="Detail Akun"
           accountDetail={paymentAccount}
           availableBalance={availableBalance}
         />
@@ -63,7 +63,7 @@ export const PaymentDetailOperation = memo<PaymentDetailOperationProps>(
                 gaClickName="dc.file.f_detail_pop.download.click"
                 onClick={() => onAction('deposit')}
               >
-                Deposit
+                Isi Saldo
               </DCButton>
               {isNonRefundable && !isFrozen && (
                 <DCButton
@@ -73,7 +73,7 @@ export const PaymentDetailOperation = memo<PaymentDetailOperationProps>(
                   gaClickName="dc.file.f_detail_pop.share.click"
                   onClick={() => onAction('withdraw')}
                 >
-                  Withdraw
+                  Tarik Saldo
                 </DCButton>
               )}
             </Flex>

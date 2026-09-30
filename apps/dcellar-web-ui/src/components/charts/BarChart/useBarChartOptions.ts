@@ -19,7 +19,7 @@ export function useBarChartOptions(options: any, noData: boolean) {
     }
     const defaultOptions = {
       title: {
-        text: 'Cost Trend',
+        text: 'Tren Biaya',
         textStyle: {
           color: cssVar('readable.normal'),
           fontSize: 16,

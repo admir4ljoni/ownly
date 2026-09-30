@@ -21,9 +21,9 @@ export const SPFreeQuota = ({ sps }: SPFreeQuotaProps) => {
       flexDirection={'column'}
       paddingX={'0'}
     >
-      <H2>Free Quota</H2>
+      <H2>Kuota Gratis</H2>
       <Text fontSize={14} fontWeight={400} color={'readable.secondary'}>
-        Each bucket offers a one-time and monthly free quota from the chosen SP.
+        Setiap penyimpanan mendapat kuota gratis sekali pakai dan bulanan dari Penyedia Penyimpanan yang dipilih.
       </Text>
       <Flex
         flexWrap={'wrap'}
@@ -40,13 +40,13 @@ export const SPFreeQuota = ({ sps }: SPFreeQuotaProps) => {
           alignItems={'center'}
         >
           <Text px={[8, 16]} py={8} flex={400}>
-            Storage Provider
+            Penyedia Penyimpanan
           </Text>
           <Text px={[8, 16]} py={8} flex={277}>
-            Free monthly quota
+            Kuota gratis bulanan
           </Text>
           <Text px={[8, 16]} py={8} flex={277}>
-            Free quota (one-time)
+            Kuota gratis (sekali pakai)
           </Text>
         </Flex>
         {isEmpty(sps) && <Loading my={40} />}

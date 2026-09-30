@@ -95,7 +95,7 @@ export const ObjectBreadcrumb = memo<ObjectBreadcrumbProps>(function ObjectBread
         <BreadcrumbItem>
           <BreadcrumbLink as="div" fontWeight={500} fontSize={12} color="readable.tertiary">
             <GAClick name="dc.file.list.breadcrumbs.click">
-              <Link href="/buckets">Bucket</Link>
+              <Link href="/buckets">Penyimpanan</Link>
             </GAClick>
           </BreadcrumbLink>
         </BreadcrumbItem>

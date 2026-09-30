@@ -613,7 +613,7 @@ export const setupAllBills = () => async (dispatch: AppDispatch, getState: GetSt
   const [bills, bError] = await getRealTimeBillListByOwner(getListParams);
   if (count === null || cError || bills === null || bError) {
     dispatch(setLoadingAllBills(false));
-    return toast.error({ description: cError || bError || 'Failed to get billing list.' });
+    return toast.error({ description: cError || bError || 'Gagal memuat daftar tagihan.' });
   }
   dispatch(setAllBillsCount({ loginAccount: getCountParams.owner, count }));
   dispatch(setAllBills({ loginAccount: getCountParams.owner, bills }));

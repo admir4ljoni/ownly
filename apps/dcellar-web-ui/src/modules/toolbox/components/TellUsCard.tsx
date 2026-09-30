@@ -19,12 +19,12 @@ export const TellUsCard = () => {
       justifyContent={'center'}
     >
       <Text fontSize={18} fontWeight={600} color={'readable.normal'} textAlign={'center'}>
-        Tell us what other tools you want.
+        Beri tahu kami alat lain yang Anda butuhkan.
       </Text>
       <Box textAlign={'center'}>
         <Text color={'readable.secondary'}>
-          Want some off-the-shelf tools, API, or SDK to aid in development? Feel free to give us a
-          message.
+          Butuh alat, API, atau SDK siap pakai untuk membantu pengembangan? Jangan ragu untuk mengirim
+          pesan kepada kami.
         </Text>
       </Box>
       <DCButton
@@ -33,7 +33,7 @@ export const TellUsCard = () => {
         w={'fit-content'}
         onClick={() => onNavigateExternal('https://discord.com/invite/bnbchain/')}
       >
-        Contact Us
+        Hubungi Kami
       </DCButton>
     </Card>
   );

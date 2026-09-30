@@ -378,7 +378,7 @@ export const globalSlice = createSlice({
         .map((task) => {
           if (['HASH', 'HASHED', 'SIGN', 'SIGNED'].includes(task.status)) {
             task.status = 'CANCEL';
-            task.msg = 'Account switch or logout leads to cancellation of upload.';
+            task.msg = 'Unggahan dibatalkan karena Anda berganti akun atau keluar.';
           }
           return task;
         });
@@ -735,7 +735,7 @@ export const setupUploadTaskErrorMsg =
       updateUploadTaskErrorMsg({
         account,
         id: task.id,
-        msg: errorMsg || 'The object failed to be created.',
+        msg: errorMsg || 'Berkas gagal dibuat.',
         status,
       }),
     );
@@ -749,7 +749,7 @@ export const setupWaitTaskErrorMsg =
     const task = objectWaitQueue.find((t) => t.id === id);
     if (!task) return;
     // const isFolder = task.name.endsWith('/');
-    dispatch(updateWaitTaskMsg({ id: id, msg: errorMsg || 'The object failed to be created.' }));
+    dispatch(updateWaitTaskMsg({ id: id, msg: errorMsg || 'Berkas gagal dibuat.' }));
     // isFolder && dispatch(cancelWaitUploadFolder({ folderName: task.name }));
   };
 

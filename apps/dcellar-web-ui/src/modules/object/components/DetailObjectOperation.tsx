@@ -53,7 +53,7 @@ import { setSignatureAction } from '@/store/slices/global';
 import { VersionTable } from '@/modules/object/components/VersionTable';
 import { Activities } from '@/components/Activities';
 
-const VERSION_TABS = ['General Info', 'Activities', 'Versions'];
+const VERSION_TABS = ['Info Umum', 'Aktivitas', 'Versi'];
 
 interface DetailObjectOperationProps {
   selectObjectInfo: ObjectMeta;
@@ -161,7 +161,7 @@ export const DetailObjectOperation = memo<DetailObjectOperationProps>(
 
     return (
       <>
-        <QDrawerHeader>Object Detail</QDrawerHeader>
+        <QDrawerHeader>Detail Berkas</QDrawerHeader>
         <QDrawerBody>
           <Flex mb={24}>
             <IconFont type="detail-object" w={48} mr={24} />
@@ -201,28 +201,28 @@ export const DetailObjectOperation = memo<DetailObjectOperationProps>(
             <TabPanels>
               <TabPanel>
                 <Flex my={8} gap={8} flexDirection={'column'}>
-                  {renderPropRow('Date created', formatFullTime(+objectInfo.CreateAt * 1000))}
+                  {renderPropRow('Tanggal dibuat', formatFullTime(+objectInfo.CreateAt * 1000))}
                   {renderAddressLink(
-                    'Object ID',
+                    'ID Berkas',
                     formatId(Number(objectInfo.Id)),
                     'dc.file.f_detail_pop.id.click',
                     'dc.file.f_detail_pop.copy_id.click',
                     'object',
                   )}
                   {renderAddressLink(
-                    'Primary SP address',
+                    'Alamat Penyedia Penyimpanan Utama',
                     primarySp.operatorAddress,
                     'dc.file.f_detail_pop.spadd.click',
                     'dc.file.f_detail_pop.copy_spadd.click',
                   )}
                   {renderAddressLink(
-                    'Payment address',
+                    'Alamat pembayaran',
                     selectBucket.PaymentAddress,
                     'dc.file.f_detail_pop.seal.click',
                     'dc.file.f_detail_pop.copy_seal.click',
                   )}
                   {renderAddressLink(
-                    'Create transaction hash',
+                    'ID Transaksi pembuatan',
                     selectObjectInfo.CreateTxHash,
                     'dc.object.f_detail_pop.CreateTxHash.click',
                     'dc.object.f_detail_pop.copy_create_tx_hash.click',
@@ -230,7 +230,7 @@ export const DetailObjectOperation = memo<DetailObjectOperationProps>(
                   )}
                   {selectObjectInfo.SealTxHash !== EMPTY_TX_HASH &&
                     renderAddressLink(
-                      'Seal transaction hash',
+                      'ID Transaksi penyimpanan',
                       selectObjectInfo.SealTxHash,
                       'dc.object.f_detail_pop.SealTxHash.click',
                       'dc.object.f_detail_pop.copy_seal_tx_hash.click',
@@ -238,7 +238,7 @@ export const DetailObjectOperation = memo<DetailObjectOperationProps>(
                     )}
                   {objectInfo.Visibility === VisibilityType.VISIBILITY_TYPE_PUBLIC_READ &&
                     renderPropRow(
-                      'Universal link',
+                      'Tautan universal',
                       renderUrlWithLink(
                         `${primarySp.endpoint}/view/${currentBucketName}/${encodeObjectName(
                           objectInfo.ObjectName,
@@ -277,7 +277,7 @@ export const DetailObjectOperation = memo<DetailObjectOperationProps>(
                 isDisabled={bucketAccountDetail.status === EStreamRecordStatus.FROZEN}
                 onClick={() => onAction('view')}
               >
-                Preview
+                Pratinjau
               </DCButton>
               <DCButton
                 size={'lg'}
@@ -286,7 +286,7 @@ export const DetailObjectOperation = memo<DetailObjectOperationProps>(
                 isDisabled={bucketAccountDetail.status === EStreamRecordStatus.FROZEN}
                 onClick={() => onAction('download')}
               >
-                Download
+                Unduh
               </DCButton>
             </Flex>
           </QDrawerFooter>

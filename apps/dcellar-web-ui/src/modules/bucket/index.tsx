@@ -30,13 +30,13 @@ export const BucketPage = () => {
   return (
     <GAContextProvider prefix={'dc.bucket'}>
       <BucketOperations />
-      <PageTitle title={'Buckets'} metaTitle={'Buckets'}>
+      <PageTitle title={'Penyimpanan'} metaTitle={'Penyimpanan'}>
         <CreateBucket />
       </PageTitle>
       <RenewalNotification />
       {hasDiscontinueBucket && (
         <DiscontinueBanner
-          content="Some items were marked as discontinued and will be deleted by SP soon. Please backup your data in time. "
+          content="Beberapa item ditandai dihentikan dan akan segera dihapus oleh Penyedia Penyimpanan. Harap cadangkan data Anda tepat waktu. "
           height={44}
           marginBottom={16}
         />

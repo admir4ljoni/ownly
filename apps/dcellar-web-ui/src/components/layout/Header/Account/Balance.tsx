@@ -32,15 +32,15 @@ export const Balance = ({ address }: AvailableBalanceProps) => {
       </Flex>
       <Flex alignItems="center" justifyContent={'center'} margin={'16px auto 0'}>
         <Text color="readable.tertiary" fontWeight="500" fontSize="12px" lineHeight="20px">
-          Greenfield Available Balance
+          Saldo Tersedia di Greenfield
         </Text>
         <Tips
           containerWidth={'200px'}
           tips={
             <Box fontSize={'12px'} lineHeight="14px" w={'200px'}>
               <Box>
-                Please notice that due to the locked fee, Greenfield available balance is not equal
-                to your account overall balance, which is shown at your wallet.
+                Perlu diketahui, karena ada biaya yang dikunci, saldo tersedia di Greenfield tidak sama
+                dengan total saldo akun yang ditampilkan di dompet Anda.
               </Box>
             </Box>
           }

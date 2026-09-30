@@ -107,7 +107,7 @@ export const TotalCostTrend = () => {
     return {
       color: COLOR_PALETTE,
       title: {
-        text: 'Cost Trend',
+        text: 'Tren Biaya',
       },
       tooltip: {
         formatter: (params: any, ticket: string) => {
@@ -135,7 +135,7 @@ export const TotalCostTrend = () => {
           const EstimateFragment =
             curData.estimateCost === null
               ? ''
-              : `<div style="${styles.normal}">Estimate Cost:<div style="${styles.bnb}">${curData.estimateCost} ${TokenSymbol}</div></div>`;
+              : `<div style="${styles.normal}">Perkiraan Biaya:<div style="${styles.bnb}">${curData.estimateCost} ${TokenSymbol}</div></div>`;
           // const MoMFragment =
           //   curData.MoM === null
           //     ? ''
@@ -143,7 +143,7 @@ export const TotalCostTrend = () => {
           //  <div style="${styles.normal}">MoM:<div style="${styles.bnb}">${curData.MoM}%</div></div>`;
           return `
             <div style="${styles.box}">
-              <div style="${styles.total}">Total Cost: <div style="${styles.bnb}">${
+              <div style="${styles.total}">Total Biaya: <div style="${styles.bnb}">${
                 curData.totalCost || 0
               } ${TokenSymbol}</div>
               </div>
@@ -153,7 +153,7 @@ export const TotalCostTrend = () => {
         },
       },
       legend: {
-        data: ['Monthly Cost', 'Estimate Cost'],
+        data: ['Biaya Bulanan', 'Perkiraan Biaya'],
       },
       xAxis: [
         {
@@ -170,15 +170,15 @@ export const TotalCostTrend = () => {
       ],
       series: [
         {
-          name: 'Monthly Cost',
+          name: 'Biaya Bulanan',
           type: 'bar',
-          stack: 'Monthly Cost',
+          stack: 'Biaya Bulanan',
           data: monthlyCostData,
         },
         {
-          name: 'Estimate Cost',
+          name: 'Perkiraan Biaya',
           type: 'bar',
-          stack: 'Monthly Cost',
+          stack: 'Biaya Bulanan',
           data: estimateCostData,
         },
         // {

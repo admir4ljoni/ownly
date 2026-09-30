@@ -33,7 +33,7 @@ const WalletPage = () => {
   return (
     <>
       <Head>
-        <title>Wallet - Ownly{networkTag(runtimeEnv)}</title>
+        <title>Dompet - Ownly{networkTag(runtimeEnv)}</title>
       </Head>
       <Wallet />
     </>

@@ -48,14 +48,14 @@ export const EditGroupOperation = memo<EditGroupOperationProps>(function CreateG
   const { connector } = useAccount();
   const { setOpenAuthModal } = useOffChainAuth();
 
-  const fees = [{ label: 'Gas fee', types: [MsgUpdateGroupExtraTypeUrl] }];
+  const fees = [{ label: 'Biaya jaringan', types: [MsgUpdateGroupExtraTypeUrl] }];
   const valid = !(error.name || error.desc);
 
   const validateForm = (values: Record<'name' | 'desc', string>) => {
     const { desc } = values;
     const _error = { ...error };
     if (new Blob([desc]).size >= 500) {
-      _error.desc = 'Please enter less than 500 characters.';
+      _error.desc = 'Silakan masukkan kurang dari 500 karakter.';
     } else {
       _error.desc = '';
     }
@@ -71,11 +71,11 @@ export const EditGroupOperation = memo<EditGroupOperationProps>(function CreateG
       default:
         dispatch(
           setSignatureAction({
-            title: 'Update Failed',
+            title: 'Gagal Memperbarui',
             icon: 'status-failed',
-            desc: 'Sorry, there’s something wrong when signing with the wallet.',
+            desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
             buttonText: BUTTON_GOT_IT,
-            errorText: 'Error message: ' + error,
+            errorText: 'Pesan kesalahan: ' + error,
           }),
         );
     }
@@ -100,17 +100,17 @@ export const EditGroupOperation = memo<EditGroupOperationProps>(function CreateG
     if (form.desc === selectGroup.extra) {
       setLoading(false);
       onClose();
-      toast.success({ description: 'Group updated successfully!' });
+      toast.success({ description: 'Grup berhasil diperbarui!' });
       return;
     }
     dispatch(
-      setSignatureAction({ icon: Animates.group, title: 'Updating Group', desc: WALLET_CONFIRM }),
+      setSignatureAction({ icon: Animates.group, title: 'Memperbarui Grup', desc: WALLET_CONFIRM }),
     );
     const [txRes, txError] = await updateGroupExtra(payload, connector!);
     setLoading(false);
     if (!txRes || txRes.code !== 0) return errorHandler(txError || UNKNOWN_ERROR);
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Group updated successfully!' });
+    toast.success({ description: 'Grup berhasil diperbarui!' });
     dispatch(setupGroupList(loginAccount));
     onClose();
   };
@@ -121,17 +121,17 @@ export const EditGroupOperation = memo<EditGroupOperationProps>(function CreateG
 
   return (
     <>
-      <QDrawerHeader>Edit Description</QDrawerHeader>
+      <QDrawerHeader>Ubah Deskripsi</QDrawerHeader>
       <QDrawerBody>
         <FormControl mb={16} isInvalid={!!error.name}>
           <FormLabel>
             <Text fontSize={14} fontWeight={500} mb={8}>
-              Name
+              Nama
             </Text>
             <InputItem
               disabled
               value={form.name}
-              placeholder="Enter a group name"
+              placeholder="Masukkan nama grup"
               onChange={(e) => onFormValueChange(e.target.value, 'name')}
             />
           </FormLabel>
@@ -140,14 +140,14 @@ export const EditGroupOperation = memo<EditGroupOperationProps>(function CreateG
         <FormControl mb={16} isInvalid={!!error.desc}>
           <FormLabel>
             <Text fontSize={14} fontWeight={500} mb={8}>
-              Description
+              Deskripsi
             </Text>
             <TextareaItem
               onKeyDown={(e) => e.key === 'Enter' && onUpdateGroup()}
               value={form.desc}
               h={100}
               resize="none"
-              placeholder="Enter description for your group. (Optional)"
+              placeholder="Masukkan deskripsi grup Anda. (Opsional)"
               onChange={(e) => onFormValueChange(e.target.value, 'desc')}
             />
           </FormLabel>
@@ -172,11 +172,11 @@ export const EditGroupOperation = memo<EditGroupOperationProps>(function CreateG
           >
             {loading ? (
               <>
-                Loading
+                Memuat
                 <DotLoading />
               </>
             ) : (
-              'Update'
+              'Perbarui'
             )}
           </DCButton>
         </Flex>

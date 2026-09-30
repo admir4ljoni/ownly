@@ -16,10 +16,10 @@ export const Banner = () => {
         },
       }}
     >
-      <H1>BNB Greenfield Pricing Calculator</H1>
+      <H1>Kalkulator Harga BNB Greenfield</H1>
       <SubTitle>
-        With our pricing calculator, you can easily get an estimate for your project on{' '}
-        <strong>BNB Greenfield Mainnet</strong>.
+        Dengan kalkulator harga kami, Anda bisa dengan mudah memperkirakan biaya proyek Anda di{' '}
+        <strong>Jaringan Utama BNB Greenfield</strong>.
       </SubTitle>
     </Box>
   );

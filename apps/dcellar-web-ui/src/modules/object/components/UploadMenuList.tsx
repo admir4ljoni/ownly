@@ -52,7 +52,7 @@ export const UploadMenuList = memo<UploadMenuListProps>(function UploadMenuList(
               >
                 <Flex cursor="pointer">
                   <Text fontSize="14px" lineHeight="20px">
-                    Upload Object(s)
+                    Unggah Berkas
                   </Text>
                 </Flex>
                 <input
@@ -83,7 +83,7 @@ export const UploadMenuList = memo<UploadMenuListProps>(function UploadMenuList(
               >
                 <Flex cursor="pointer">
                   <Text fontSize="14px" lineHeight="20px">
-                    Upload Folder
+                    Unggah Folder
                   </Text>
                 </Flex>
                 <input

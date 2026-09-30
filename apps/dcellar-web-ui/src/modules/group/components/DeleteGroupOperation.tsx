@@ -27,7 +27,7 @@ export const DeleteGroupOperation = memo<DeleteGroupProps>(function DeleteGroup(
   const { setOpenAuthModal } = useOffChainAuth();
 
   const isOpen = !!groupRemoving.groupName;
-  const description = `Are you sure to delete this group ”${trimLongStr(
+  const description = `Apakah Anda yakin ingin menghapus grup ”${trimLongStr(
     groupRemoving.groupName,
     16,
     16,
@@ -43,11 +43,11 @@ export const DeleteGroupOperation = memo<DeleteGroupProps>(function DeleteGroup(
       default:
         dispatch(
           setSignatureAction({
-            title: 'Delete Failed',
+            title: 'Gagal Menghapus',
             icon: 'status-failed',
-            desc: 'Sorry, there’s something wrong when signing with the wallet.',
+            desc: 'Maaf, terjadi kesalahan saat menandatangani dengan dompet.',
             buttonText: BUTTON_GOT_IT,
-            errorText: 'Error message: ' + error,
+            errorText: 'Pesan kesalahan: ' + error,
           }),
         );
     }
@@ -59,12 +59,12 @@ export const DeleteGroupOperation = memo<DeleteGroupProps>(function DeleteGroup(
       groupName: groupRemoving.groupName,
     };
     dispatch(
-      setSignatureAction({ icon: Animates.group, title: 'Deleting Group', desc: WALLET_CONFIRM }),
+      setSignatureAction({ icon: Animates.group, title: 'Menghapus Grup', desc: WALLET_CONFIRM }),
     );
     const [txRes, txError] = await deleteGroup(payload, connector!);
     if (!txRes || txRes.code !== 0) return errorHandler(txError || UNKNOWN_ERROR);
     dispatch(setSignatureAction({}));
-    toast.success({ description: 'Group deleted successfully!' });
+    toast.success({ description: 'Grup berhasil dihapus!' });
     dispatch(setupGroupList(loginAccount));
   };
 
@@ -72,8 +72,8 @@ export const DeleteGroupOperation = memo<DeleteGroupProps>(function DeleteGroup(
     <GAContextProvider prefix={'delete_confirm'}>
       <TxConfirmModal
         isOpen={isOpen}
-        confirmText="Delete"
-        title="Confirm Delete"
+        confirmText="Hapus"
+        title="Konfirmasi Hapus"
         description={description}
         fee={fee}
         variant={'scene'}

@@ -1,10 +1,10 @@
 export const ErrorMsgMap: Record<string, string> = {
-  '4001': 'User rejected the request.',
-  '4100': 'The requested account and/or method has not been authorized by the user.',
-  '4200': 'The requested method is not supported by this Network provider.',
-  '4900': 'Your wallet is disconnected. Please check your network connectivity status.',
+  '4001': 'Permintaan ditolak oleh pengguna.',
+  '4100': 'Akun dan/atau tindakan yang diminta belum diizinkan oleh pengguna.',
+  '4200': 'Tindakan yang diminta tidak didukung oleh penyedia jaringan ini.',
+  '4900': 'Dompet Anda terputus. Silakan periksa koneksi internet Anda.',
   '4901':
-    'You are not connected to the correct chain for this transaction. Switch your network and retry.',
+    'Anda tidak terhubung ke jaringan yang benar untuk transaksi ini. Ganti jaringan lalu coba lagi.',
   '-32700':
-    'Your request object is incomplete. Please make sure the object sent to the contract does contain all the data that it requires.',
+    'Data permintaan Anda tidak lengkap. Pastikan data yang dikirim sudah berisi semua informasi yang diperlukan.',
 };

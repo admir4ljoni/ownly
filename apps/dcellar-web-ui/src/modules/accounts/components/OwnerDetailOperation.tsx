@@ -43,7 +43,7 @@ export const OwnerDetailOperation = memo<OwnerDetailOperationProps>(function Own
     <>
       <BasicInfo
         loading={!!accountInfoLoading}
-        title="Account Detail"
+        title="Detail Akun"
         accountDetail={selectAccount}
         availableBalance={availableBalance}
       />
@@ -55,7 +55,7 @@ export const OwnerDetailOperation = memo<OwnerDetailOperationProps>(function Own
             gaClickName="dc.file.f_detail_pop.share.click"
             onClick={() => onAction('transfer_in')}
           >
-            Transfer In
+            Transfer Masuk
           </DCButton>
           <DCButton
             size={'lg'}
@@ -64,7 +64,7 @@ export const OwnerDetailOperation = memo<OwnerDetailOperationProps>(function Own
             gaClickName="dc.file.f_detail_pop.download.click"
             onClick={() => onAction('transfer_out')}
           >
-            Transfer Out
+            Transfer Keluar
           </DCButton>
           <DCButton
             size={'lg'}
@@ -73,7 +73,7 @@ export const OwnerDetailOperation = memo<OwnerDetailOperationProps>(function Own
             gaClickName="dc.file.f_detail_pop.download.click"
             onClick={() => onAction('send')}
           >
-            Send
+            Kirim
           </DCButton>
         </Flex>
       </QDrawerFooter>

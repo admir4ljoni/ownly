@@ -5,16 +5,16 @@ import { useAppSelector } from '@/store';
 
 const HeadContent = {
   transfer_in: {
-    title: 'transfer in',
-    subtitle: <>Transfer BNB from BNB Smart Chain to your BNB Greenfield account.</>,
+    title: 'transfer masuk',
+    subtitle: <>Transfer BNB dari BNB Smart Chain ke akun BNB Greenfield Anda.</>,
   },
   transfer_out: {
-    title: 'transfer out',
-    subtitle: 'Transfer BNB out of your BNB Greenfield account to BNB Smart Chain.',
+    title: 'transfer keluar',
+    subtitle: 'Transfer BNB dari akun BNB Greenfield Anda ke BNB Smart Chain.',
   },
   send: {
-    title: 'send',
-    subtitle: 'Send/deposit/withdraw between BNB Greenfield accounts.',
+    title: 'kirim',
+    subtitle: 'Kirim/isi saldo/tarik saldo antar akun BNB Greenfield.',
   },
 };
 
