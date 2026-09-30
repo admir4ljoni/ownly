@@ -160,7 +160,7 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
   const validateNameRules = useCallback(
     (value: string) => {
       const types: { [key: string]: string } = {};
-      if (balance.comparedTo(BigNumber(MIN_AMOUNT)) < 0) {
+      if (balance.lt(MIN_AMOUNT)) {
         types['validateBalance'] = '';
       }
 
@@ -406,8 +406,8 @@ export const CreateBucketOperation = memo<CreateBucketOperationProps>(function C
 
   const isEnoughBalance = useMemo(() => {
     return !!(
-      (!validateNameAndGas.gas.value && balance.comparedTo(MIN_AMOUNT) >= 0) ||
-      (validateNameAndGas.gas.value && balance.comparedTo(validateNameAndGas.gas.value) >= 0)
+      (!validateNameAndGas.gas.value && balance.gte(MIN_AMOUNT)) ||
+      (validateNameAndGas.gas.value && balance.gte(validateNameAndGas.gas.value))
     );
   }, [balance, validateNameAndGas.gas.value]);
 

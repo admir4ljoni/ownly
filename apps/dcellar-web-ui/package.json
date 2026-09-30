@@ -49,7 +49,7 @@
     "redux-persist": "^6.0.0",
     "fast-xml-parser": "~4.2.7",
     "swiper": "~10.3.1",
-    "echarts": "~5.4.3",
+    "echarts": "~5.6.0",
     "echarts-for-react": "~3.0.2",
     "next-transpile-modules": "~10.0.1",
     "redux": "~4.2.1",
@@ -96,5 +96,5 @@
     ],
     "*.ts?(x)": "tsc-files --noEmit"
   },
-  "packageManager": "pnpm@8.5.0+sha1.83c41fe4ebdb61e08446f8bb68a75fb48756b330"
+  "packageManager": "pnpm@9.15.9"
 }

@@ -32,7 +32,7 @@ export const TotalCost = memo(function TotalCost() {
     if (costLoading || costTrendLoading || paymentAccountsLoading) return;
     const lowerKeyAccountInfo: Record<string, AccountInfo> = formatObjectAddress(accountInfos);
     const temp = [...(totalCost.detailCosts || [])].sort((a, b) => {
-      return BN(b.cost).comparedTo(a.cost);
+      return BN(b.cost).comparedTo(a.cost) ?? 0;
     });
     const newData = [];
     const others: any = {

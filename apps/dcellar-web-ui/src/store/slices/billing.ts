@@ -203,7 +203,7 @@ export const billingSlice = createSlice({
               totalCost: getPosDecimalValue(bill.TotalCost),
             };
           })
-          .sort((a, b) => BN(b.totalCost).comparedTo(a.totalCost));
+          .sort((a, b) => BN(b.totalCost).comparedTo(a.totalCost) ?? 0);
 
         allTotalCost = allTotalCost.plus(monthlyTotalCost);
         allTotalReadCost = allTotalReadCost.plus(monthlyTotalReadCost);
