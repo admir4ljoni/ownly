@@ -4,8 +4,15 @@ import { DCTooltip } from '@/components/common/DCTooltip';
 import { Status as StorageProviderStatus } from '@bnb-chain/greenfield-cosmos-types/greenfield/sp/types';
 import { Badge } from '@node-real/uikit';
 import { A } from './style';
-import { capitalize } from 'radash';
 import { memo } from 'react';
+
+const SP_STATUS_TEXT: Record<number, string> = {
+  [StorageProviderStatus.STATUS_IN_SERVICE]: 'Aktif',
+  [StorageProviderStatus.STATUS_IN_JAILED]: 'Ditangguhkan',
+  [StorageProviderStatus.STATUS_GRACEFUL_EXITING]: 'Sedang Berhenti',
+  [StorageProviderStatus.STATUS_IN_MAINTENANCE]: 'Dalam Perbaikan',
+  [StorageProviderStatus.STATUS_FORCED_EXITING]: 'Dihentikan Paksa',
+};
 
 type ErrorBadgeProps = {
   access: boolean;
@@ -23,11 +30,7 @@ export const ErrorBadge = memo(function ErrorBadge({ access, address, status }: 
   );
 
   const renderStatusBadge = () => {
-    const statusText = (StorageProviderStatus[status] || 'Unknown')
-      .replace('STATUS_', '')
-      .split('_')
-      .map((s) => capitalize(s))
-      .join(' ');
+    const statusText = SP_STATUS_TEXT[status] || 'Tidak Diketahui';
 
     return (
       <Badge ml={4} colorScheme="danger">
