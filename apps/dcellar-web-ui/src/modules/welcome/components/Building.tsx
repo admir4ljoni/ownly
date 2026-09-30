@@ -100,7 +100,7 @@ export const Building = () => {
                   <Flex
                     alignItems={'center'}
                     justifyContent={'center'}
-                    bg="rgba(0, 186, 52, 0.10)"
+                    bg="rgba(67, 99, 225, 0.10)"
                     w={56}
                     h={56}
                     borderRadius={4}

@@ -58,7 +58,7 @@ export const persistConfig = {
   storage,
   whitelist: ['persist'],
   throttle: 300,
-  keyPrefix: `Dcellar_${runtimeEnv}`,
+  keyPrefix: `Ownly_${runtimeEnv}`,
   stateReconciler: autoMergeLevel2,
 };
 

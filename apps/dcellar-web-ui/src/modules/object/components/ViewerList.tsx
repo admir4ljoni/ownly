@@ -457,10 +457,10 @@ export const ViewerList = memo<ViewerListProps>(function ViewerList({ selectObje
                           key={item.value}
                           alignItems="center"
                           h={47}
-                          bg={selected ? '#E5F8EB' : '#fff'}
+                          bg={selected ? '#ECEFFC' : '#fff'}
                           cursor="pointer"
                           _hover={{
-                            bg: selected ? '#E5F8EB' : '#F5F5F5',
+                            bg: selected ? '#ECEFFC' : '#F5F5F5',
                           }}
                           onMouseDown={(e) => {
                             e.preventDefault();
@@ -704,7 +704,7 @@ const Row = styled(Flex)`
   }
 
   &.selected {
-    background: #00ba341a;
+    background: #4363e11a;
   }
 `;
 

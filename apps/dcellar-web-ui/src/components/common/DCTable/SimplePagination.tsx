@@ -80,7 +80,7 @@ const StyledNav = styled(IconFont)`
   transition: all 0.2s;
 
   :not(.nav-disabled):hover {
-    color: #00ba34;
+    color: #4363e1;
   }
 
   &.nav-disabled {
@@ -106,14 +106,14 @@ const StyledButton = styled(MenuButton, transientOptions)<{ $open?: boolean }>`
   cursor: pointer;
 
   :hover {
-    border-color: #00ba34;
+    border-color: #4363e1;
     background: #fff;
   }
 
   ${(props) =>
     props.$open &&
     css`
-      border-color: #00ba34;
+      border-color: #4363e1;
       background: #fff;
     `}
 `;

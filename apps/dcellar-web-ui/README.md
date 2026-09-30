@@ -1,10 +1,10 @@
-# DCellar-web-ui
-DCellar-web-ui is a decentralized application (dapp) built with Next.js
+# Ownly web UI
+Ownly web UI is a decentralized application (dapp) built with Next.js
 
 ## Getting Started
 To get a local copy up and running, please follow these simple steps.
 ### Prerequisites
-Here is what you need to be able to run dcellar-web-ui
+Here is what you need to be able to run the Ownly web UI
 
 - Node.js (Version: >=18.x)
 - [@microsoft/rush](https://rushjs.io/pages/intro/get_started/) (Version: >=5.112.x)
@@ -51,12 +51,12 @@ To integrate the BNB Greenfield Billing API for accessing user monthly bills, bi
     - [BNB Greenfield Testnet Enhanced API](https://nodereal.io/api-marketplace/bnb-greenfield-testnet-enhanced-api)
     - [BNB Greenfield Mainnet Billing API](https://nodereal.io/api-marketplace/bnb-greenfield-mainnet-billing-api)
     - [BNB Greenfield Mainnet Enhanced API](https://nodereal.io/api-marketplace/bnb-greenfield-mainnet-enhanced-api)
-4. **Configure DCellar-web-ui**: Replace `NEXT_PRIVATE_BILLING_API_URL` and `NEXT_PRIVATE_EXPLORER_API_URL` in your DCellar-web-ui environment variables with the obtained API endpoints.
+4. **Configure Ownly web UI**: Replace `NEXT_PRIVATE_BILLING_API_URL` and `NEXT_PRIVATE_EXPLORER_API_URL` in your Ownly web UI environment variables with the obtained API endpoints.
 
-With these steps, you can seamlessly integrate the BNB Greenfield Billing and Enhanced APIs into your DCellar-web-ui application, unlocking access to the complete dashboard and account modules.
+With these steps, you can seamlessly integrate the BNB Greenfield Billing and Enhanced APIs into your Ownly web UI application, unlocking access to the complete dashboard and account modules.
 
 ## Contributing
-Please follow our [DCellar Contribution Guide](../../CONTRIBUTING.md).
+Please follow our [Ownly Contribution Guide](../../CONTRIBUTING.md).
 
 
 ## License

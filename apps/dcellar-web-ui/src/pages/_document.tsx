@@ -13,6 +13,8 @@ export default function Document() {
           content="9P1xIkjIzkjS3UiiTBjcjN5tfyh4Yk6FDKELgtTdMGE"
         />
         <link rel="icon" href={`${assetPrefix}/favicon.ico`} />
+        <link rel="icon" type="image/svg+xml" href={`${assetPrefix}/images/ownly-mark.svg`} />
+        <link rel="apple-touch-icon" href={`${assetPrefix}/apple-touch-icon.png`} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

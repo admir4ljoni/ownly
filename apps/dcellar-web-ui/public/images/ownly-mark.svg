@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164" height="164" viewBox="0 0 164 164" fill="none"><defs>
+    <linearGradient id="omr" x1="16" y1="16" x2="148" y2="148" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#33C0A8"/><stop offset="0.45" stop-color="#2FA7C1"/>
+      <stop offset="0.75" stop-color="#3685D8"/><stop offset="1" stop-color="#4363E1"/>
+    </linearGradient>
+    <linearGradient id="omd" x1="119" y1="17" x2="145" y2="43" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3685D8"/><stop offset="1" stop-color="#4363E1"/>
+    </linearGradient>
+    <mask id="omm" maskUnits="userSpaceOnUse" x="0" y="0" width="164" height="164">
+      <rect width="164" height="164" fill="#fff"/><circle cx="132" cy="30" r="19" fill="#000"/>
+    </mask>
+  </defs>
+  <circle cx="82" cy="82" r="66" stroke="url(#omr)" stroke-width="32" fill="none" mask="url(#omm)"/>
+  <circle cx="132" cy="30" r="13" fill="url(#omd)"/></svg>

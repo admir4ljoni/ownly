@@ -1,18 +1,18 @@
 /* for IDE type infer */
 :root {
-  --ui-colors-opacity1: rgba(0, 186, 52, 0.1);
-  --ui-colors-opacity2: rgba(0, 186, 52, 0.15);
+  --ui-colors-opacity1: rgba(67, 99, 225, 0.1);
+  --ui-colors-opacity2: rgba(67, 99, 225, 0.15);
   --ui-colors-opacity3: rgba(238, 57, 17, 0.1);
   --ui-colors-opacity4: rgba(238, 57, 17, 0.15);
   --ui-colors-opacity5: rgba(238, 124, 17, 0.1);
   --ui-colors-opacity6: rgba(238, 124, 17, 0.15);
-  --ui-colors-opacity7: rgba(17, 132, 238, 0.1);
-  --ui-colors-opacity8: rgba(17, 132, 238, 0.15);
+  --ui-colors-opacity7: rgba(54, 133, 216, 0.1);
+  --ui-colors-opacity8: rgba(54, 133, 216, 0.15);
   --ui-colors-opacity9: rgba(0, 0, 0, 0.15);
   --ui-colors-opacity10: rgba(255, 255, 255, 0.1);
   --ui-colors-readable-tertiary: #76808f;
   --ui-colors-readable-disable: #aeb4bc;
-  --ui-colors-readable-primary: #00ba34;
+  --ui-colors-readable-primary: #4363e1;
   --ui-colors-readable-label-normal: #eebe11;
   --ui-colors-readable-label-active: #f1ca3c;
   --ui-colors-bg-secondary: #fafafa;
@@ -26,22 +26,22 @@
   --ui-colors-scene-waiting-active: #f1ca3c;
   --ui-colors-scene-waiting-opacity-normal: rgba(240, 185, 11, 0.1);
   --ui-colors-scene-waiting-opacity-active: rgba(240, 185, 11, 0.15);
-  --ui-colors-brand-normal-hight: #009e2c;
-  --ui-colors-brand-normal: #00ba34;
-  --ui-colors-brand-disable: #c2eece;
-  --ui-colors-brand-brand1: #e6f8eb;
-  --ui-colors-brand-brand2: #c2eece;
-  --ui-colors-brand-brand3: #91e1a8;
-  --ui-colors-brand-brand4: #5ed47f;
-  --ui-colors-brand-brand5: #2ec659;
-  --ui-colors-brand-brand6: #00ba34;
-  --ui-colors-brand-brand7: #009e2c;
-  --ui-colors-brand-brand8: #008425;
-  --ui-colors-brand-brand9: #006a1e;
-  --ui-colors-brand-brand10: #005417;
+  --ui-colors-brand-normal-hight: #3653c4;
+  --ui-colors-brand-normal: #4363e1;
+  --ui-colors-brand-disable: #d0d8f7;
+  --ui-colors-brand-brand1: #eceffc;
+  --ui-colors-brand-brand2: #d0d8f7;
+  --ui-colors-brand-brand3: #a8b7f0;
+  --ui-colors-brand-brand4: #7e93e9;
+  --ui-colors-brand-brand5: #5f7ae5;
+  --ui-colors-brand-brand6: #4363e1;
+  --ui-colors-brand-brand7: #3653c4;
+  --ui-colors-brand-brand8: #2b44a3;
+  --ui-colors-brand-brand9: #213582;
+  --ui-colors-brand-brand10: #182762;
   --ui-colors-shadows-normal: 0px 2px 8px rgba(11, 14, 17, 0.16);
-  --ui-colors-scene-primary-normal: #9b00fb;
-  --ui-colors-scene-primary-opacity: rgba(184, 69, 255, 0.1);
+  --ui-colors-scene-primary-normal: #4363e1;
+  --ui-colors-scene-primary-opacity: rgba(67, 99, 225, 0.1);
   --ui-colors-scene-success-opacity: rgba(46, 209, 145, 0.1);
   --ui-colors-scene-danger-opacity: rgba(252, 110, 117, 0.1);
   --ui-colors-scene-warning-opacity: rgba(245, 182, 49, 0.1);
@@ -56,7 +56,7 @@
   --ui-colors-bg-codebox: #262d37;
   --ui-colors-bg-top-normal: #2b2f36;
   --ui-colors-bg-top-active: #2e323a;
-  --ui-colors-scene-primary-active: #3ec659;
+  --ui-colors-scene-primary-active: #3653c4;
   --ui-colors-scene-success-normal: #02c076;
   --ui-colors-scene-success-active: #48ffb8;
   --ui-colors-scene-danger-normal: #d9304e;
@@ -73,12 +73,12 @@
   --ui-fontSizes-b: 16px;
   --ui-fontSizes-b2: 14px;
   --ui-fontSizes-f: 12px;
-  --ui-fonts-heading: Poppins, Inter, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
-    Noto Color Emoji;
-  --ui-fonts-body: Inter, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
-    Noto Color Emoji;
+  --ui-fonts-heading:
+    Poppins, Inter, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --ui-fonts-body:
+    Inter, -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --ui-fonts-code: Menlo, Monaco, 'Ubuntu Mono', Consolas, source-code-pro, monospace !important;
   --ui-fontWeights-normal: 400;
   --ui-fontWeights-medium: 500;
@@ -94,8 +94,8 @@
   --ui-zIndices-popover: 1400;
   --ui-zIndices-toast: 1500;
   --ui-zIndices-tooltip: 1600;
-  --ui-transition-property-common: background-color, border-color, color, fill, stroke, opacity,
-    box-shadow, transform;
+  --ui-transition-property-common:
+    background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   --ui-transition-property-colors: background-color, border-color, color, fill, stroke;
   --ui-transition-property-dimensions: width, height;
   --ui-transition-property-position: left, right, top, bottom;

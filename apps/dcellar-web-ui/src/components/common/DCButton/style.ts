@@ -25,7 +25,7 @@ export const buttonConfig = {
           pr: props.rightIcon ? 4 : 8,
           h: 24,
           minW: 24,
-          borderRadius: 4,
+          borderRadius: 6,
           fontSize: '14px',
         },
         leftIcon: {
@@ -45,7 +45,7 @@ export const buttonConfig = {
           px,
           h: 40,
           minW: 40,
-          borderRadius: 4,
+          borderRadius: 8,
           fontSize: '16px',
         },
       };
@@ -59,7 +59,7 @@ export const buttonConfig = {
           px,
           h: 48,
           minW: 40,
-          borderRadius: 4,
+          borderRadius: 8,
           fontSize: '16px',
         },
       };
@@ -92,11 +92,15 @@ export const buttonConfig = {
         button: {
           color: 'readable.white',
           bg: 'brand.brand6',
+          bgImage: 'linear-gradient(135deg, #3685D8 0%, #4363E1 100%)',
           _hover: {
             bg: 'brand.brand5',
+            filter: 'brightness(1.08)',
           },
           _disabled: {
             cursor: 'not-allowed',
+            bgImage: 'none',
+            filter: 'none',
             bg: 'readable.disable',
             color: 'readable.tertiary',
             _hover: {

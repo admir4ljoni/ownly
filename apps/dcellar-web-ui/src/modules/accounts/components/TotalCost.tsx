@@ -16,7 +16,7 @@ import { memo, useMemo } from 'react';
 import { BillingHistoryQuery } from '..';
 import { CardContainer, CardCost, CardTitle } from './Common';
 
-const colors = ['#009E2C', '#008425', '#005417', '#C2EECE'];
+const colors = ['#4363E1', '#3685D8', '#33C0A8', '#D0D8F7'];
 
 export const TotalCost = memo(function TotalCost() {
   const router = useRouter();

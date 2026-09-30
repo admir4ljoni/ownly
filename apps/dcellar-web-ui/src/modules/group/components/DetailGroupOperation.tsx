@@ -139,7 +139,7 @@ export const DetailGroupOperation = memo<DetailGroupOperationProps>(function Gro
                     <Text
                       as="a"
                       textDecoration="underline"
-                      _hover={{ textDecoration: 'underline', color: '#00BA34' }}
+                      _hover={{ textDecoration: 'underline', color: '#4363E1' }}
                       target="_blank"
                       href={`${GREENFIELD_CHAIN_EXPLORER_URL}/group/${hexString}`}
                     >

@@ -1,15 +1,15 @@
 import { ButtonGroup, Flex } from '@node-real/uikit';
 
-import { runtimeEnv } from '@/base/env';
+import { NETWORK_URLS, runtimeEnv } from '@/base/env';
 import { DCButton } from '@/components/common/DCButton';
 
 const LINKS = {
   mainnet: {
-    fullUrl: 'https://dcellar.io/pricing-calculator',
+    fullUrl: NETWORK_URLS.mainnet && `${NETWORK_URLS.mainnet}/pricing-calculator`,
     internalUrl: '/pricing-calculator',
   },
   testnet: {
-    fullUrl: 'https://testnet.dcellar.io/pricing-calculator',
+    fullUrl: NETWORK_URLS.testnet && `${NETWORK_URLS.testnet}/pricing-calculator`,
     internalUrl: '/pricing-calculator',
   },
 };
@@ -18,7 +18,7 @@ export const NetworkSwitch = () => {
   const network = ['testnet', 'mainnet'].includes(runtimeEnv) ? runtimeEnv : 'testnet';
 
   const onSwitchClick = (net: 'mainnet' | 'testnet') => {
-    if (net === network) return;
+    if (net === network || !LINKS[net].fullUrl) return;
     window.location.href = LINKS[net].fullUrl;
   };
 

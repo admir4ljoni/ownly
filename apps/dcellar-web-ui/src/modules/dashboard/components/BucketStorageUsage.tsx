@@ -91,9 +91,9 @@ export const BucketStorageUsage = () => {
       series: [
         {
           symbolSize: 5,
-          lineStyle: { color: '#00BA34' },
+          lineStyle: { color: '#4363E1' },
           itemStyle: {
-            color: '#00BA34',
+            color: '#4363E1',
             opacity: 1,
           },
           emphasis: { itemStyle: { opacity: 1 } },

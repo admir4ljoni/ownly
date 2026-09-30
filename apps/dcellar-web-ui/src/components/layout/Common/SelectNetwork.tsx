@@ -1,4 +1,4 @@
-import { runtimeEnv } from '@/base/env';
+import { NETWORK_URLS, runtimeEnv } from '@/base/env';
 import { IconFont } from '@/components/IconFont';
 import { DCButton } from '@/components/common/DCButton';
 import { DCMenu } from '@/components/common/DCMenu';
@@ -22,12 +22,12 @@ const networks: TNetwork[] = [
   {
     label: 'Mainnet',
     value: 'mainnet',
-    domain: 'https://dcellar.io',
+    domain: NETWORK_URLS.mainnet,
   },
   {
     label: 'Testnet',
     value: 'testnet',
-    domain: 'https://testnet.dcellar.io',
+    domain: NETWORK_URLS.testnet,
   },
 ];
 
@@ -44,7 +44,7 @@ export const SelectNetwork = ({ buttonStyles = {} }: SelectNetworkProps) => {
   const selected = ['mainnet', 'testnet'].includes(runtimeEnv) ? runtimeEnv : 'testnet';
 
   const onItemClick = (net: TNetwork) => {
-    if (runtimeEnv === net.value) {
+    if (runtimeEnv === net.value || !net.domain) {
       return;
     }
     const rootPath = GO_ROOT_PATHS[router.pathname];
@@ -57,7 +57,7 @@ export const SelectNetwork = ({ buttonStyles = {} }: SelectNetworkProps) => {
       zIndex={1400}
       selectIcon
       value={selected}
-      options={networks}
+      options={networks.filter((net) => net.value === selected || net.domain)}
       onMenuSelect={(v) => onItemClick(v as TNetwork)}
     >
       {({ isOpen }) => (

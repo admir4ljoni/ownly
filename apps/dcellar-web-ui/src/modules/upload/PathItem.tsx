@@ -19,9 +19,9 @@ export const PathItem = memo<PathItemProps>(function PathItem({ path, status, ..
   const finished = status === 'FINISH';
   const hoverStyles = finished
     ? {
-        color: '#3ec659',
+        color: '#5f7ae5',
         cursor: 'pointer',
-        borderColor: '#3ec659',
+        borderColor: '#5f7ae5',
       }
     : {
         cursor: 'default',

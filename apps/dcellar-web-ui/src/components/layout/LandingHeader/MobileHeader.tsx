@@ -59,7 +59,6 @@ export const MobileHeader = () => {
                 onClick={onClose}
               >
                 {item.title}
-                <item.Icon w={16} />
               </QListItem>
             </NextLink>
           ))}

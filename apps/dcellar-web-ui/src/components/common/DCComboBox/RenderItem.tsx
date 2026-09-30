@@ -34,8 +34,8 @@ export const RenderItem = memo<RenderItemProps>(function RenderItem({
         color: '#1E2026',
         bg: '#FAFAFA',
         _hover: {
-          borderColor: '#00BA34',
-          bg: 'rgba(0, 186, 52, 0.10)',
+          borderColor: '#4363E1',
+          bg: 'rgba(67, 99, 225, 0.10)',
         },
       }
     : {
@@ -63,7 +63,7 @@ export const RenderItem = memo<RenderItemProps>(function RenderItem({
         cursor="pointer"
         width={12}
         color={valid ? '#76808F' : '#EE3911'}
-        _hover={{ color: valid ? '#009E2C' : '#EE3911' }}
+        _hover={{ color: valid ? '#3653C4' : '#EE3911' }}
       />
     </Flex>
   );

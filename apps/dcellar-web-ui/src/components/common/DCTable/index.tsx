@@ -120,7 +120,7 @@ export const SealLoading = () => {
       <Flex w={'84px'} h={'8px'} bg={'#E7F3FD'} borderRadius={'28px'} overflow={'hidden'}>
         <Flex
           w={`30%`}
-          bg={'#1184EE'}
+          bg={'#3685D8'}
           borderRadius={'28px'}
           animation={`${loading} 1.5s linear infinite`}
         />
@@ -149,7 +149,7 @@ export const UploadProgress = (props: { progress: number }) => {
   return (
     <Flex alignItems={'center'}>
       <Flex w={'84px'} h={'8px'} bg={'#E7F3FD'} borderRadius={'28px'} overflow={'hidden'}>
-        <Flex w={`${progress}%`} bg={'#1184EE'} borderRadius={'28px'} />
+        <Flex w={`${progress}%`} bg={'#3685D8'} borderRadius={'28px'} />
       </Flex>
       <Text
         color={'readable.normal'}
@@ -209,11 +209,11 @@ export const SortItem = styled.span`
     }
 
     border-radius: 360px;
-    background: rgba(0, 186, 52, 0.1);
+    background: rgba(67, 99, 225, 0.1);
   }
 
   :active {
-    background: rgba(0, 186, 52, 0.15);
+    background: rgba(67, 99, 225, 0.15);
   }
 `;
 
@@ -244,7 +244,7 @@ const Container = styled.div<{ rowCursor: string }>`
 
   .ant-table-tbody > tr.ant-table-row-selected > td,
   .ant-table-tbody > tr.ant-table-row:hover > td {
-    background: rgba(0, 186, 52, 0.1);
+    background: rgba(67, 99, 225, 0.1);
   }
 
   .ant-table-tbody > tr > td {
@@ -270,13 +270,13 @@ const Container = styled.div<{ rowCursor: string }>`
   }
 
   .ant-checkbox-checked:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
-    background-color: #2ec659;
+    background-color: #5f7ae5;
     border-color: transparent;
   }
 
   .ant-checkbox-indeterminate .ant-checkbox-inner {
-    background-color: #00ba34;
-    border-color: #00ba34;
+    background-color: #4363e1;
+    border-color: #4363e1;
 
     &:after {
       background-color: #fff;
@@ -285,8 +285,8 @@ const Container = styled.div<{ rowCursor: string }>`
   }
 
   .ant-checkbox-indeterminate:hover .ant-checkbox-inner {
-    background-color: #2ec659;
-    border-color: #2ec659;
+    background-color: #5f7ae5;
+    border-color: #5f7ae5;
   }
 
   .ant-table-cell {

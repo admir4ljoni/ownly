@@ -31,7 +31,7 @@ export const RenewalGuideModal = ({ isOpen, onClose }: RenewalGuideModalProps) =
       <ModalCloseButton />
       <ModalBody textAlign={'center'} mt={0}>
         <Text fontSize={'24px'} fontWeight={600} lineHeight="150%" marginBottom={'8px'}>
-          DCellar Renewal Guide
+          Ownly Renewal Guide
         </Text>
         <Text color="#76808F" fontSize={'16px'} fontWeight="400">
           Your Owner Account has been frozen due to insufficient funds. The Payment Account

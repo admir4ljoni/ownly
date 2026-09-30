@@ -7,7 +7,6 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Link,
   Text,
 } from '@node-real/uikit';
 import BigNumber from 'bignumber.js';
@@ -63,19 +62,7 @@ const AmountErrors = {
   validatePrecision: `The maximum precision is ${CRYPTOCURRENCY_DISPLAY_PRECISION} digits.`,
   required: 'Amount is required.',
   min: 'Please enter a minimum amount of 0.00000001.',
-  validateWithdrawMaxAmountError: (
-    <>
-      No withdrawals allowed over 100 {displayTokenSymbol()}.{' '}
-      <Link
-        href="https://docs.nodereal.io/docs/dcellar-faq#wallet-related"
-        color="readable.danger"
-        _hover={{ color: 'readable.danger' }}
-        textDecoration={'underline'}
-      >
-        Learn More
-      </Link>
-    </>
-  ),
+  validateWithdrawMaxAmountError: <>No withdrawals allowed over 100 {displayTokenSymbol()}.</>,
 };
 
 const DefaultFee = {

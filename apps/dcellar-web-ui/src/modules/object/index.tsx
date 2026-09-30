@@ -95,7 +95,7 @@ export const ObjectsPage = () => {
     <GAContextProvider prefix={'dc.object'}>
       <ObjectContainer>
         <Head>
-          <title>{bucketName} - DCellar</title>
+          <title>{bucketName} - Ownly</title>
         </Head>
         <PanelContainer>
           <Flex justifyContent="space-between" alignItems="center">

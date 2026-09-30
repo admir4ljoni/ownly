@@ -119,8 +119,8 @@ export const BatchOperations = memo<BatchOperationsProps>(function BatchOperatio
                 <Text
                   cursor="pointer"
                   as="span"
-                  color="#00BA34"
-                  _hover={{ color: '#2EC659' }}
+                  color="#4363E1"
+                  _hover={{ color: '#5F7AE5' }}
                   borderBottom="1px solid currentColor"
                   onClick={onOpenQuotaManage}
                 >

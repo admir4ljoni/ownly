@@ -1,9 +1,5 @@
 import { ObjectMeta } from '@bnb-chain/greenfield-js-sdk/dist/esm/types/sp/Common';
 
-export const GAS_FEE_DOC = 'https://docs.nodereal.io/docs/dcellar-faq#fee-related';
-export const PREPAID_FEE_DOC = 'https://docs.nodereal.io/docs/dcellar-faq#fee-related';
-export const SETTLEMENT_FEE_DOC = 'https://docs.nodereal.io/docs/dcellar-faq#fee-related';
-
 // status_TITLE
 const FILE_TITLE_UPLOADING = 'Uploading Object';
 const FILE_TITLE_DOWNLOADING = 'Downloading Object';

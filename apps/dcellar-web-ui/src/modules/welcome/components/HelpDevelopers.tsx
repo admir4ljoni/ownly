@@ -8,21 +8,18 @@ import { LandingH2, LandingResponsiveContainer } from '..';
 const datas = [
   {
     intro: 'NFT Storage and Minting',
-    link: 'https://docs.nodereal.io/docs/dcellar-as-developer-tool#nft-metadata-and-medium-storage',
     img: `${assetPrefix}/images/welcome/nft_1.png`,
     imgSm: `${assetPrefix}/images/welcome/nft_sm.png`,
     gaClickName: 'dc_lp.homepage.use_case.nft.click',
   },
   {
     intro: 'SP Functional Verification',
-    link: 'https://docs.nodereal.io/docs/dcellar-as-developer-tool#verify-your-storage-provider-sp-with-dcellar',
     img: `${assetPrefix}/images/welcome/auth.png`,
     imgSm: `${assetPrefix}/images/welcome/auth_sm.png`,
     gaClickName: 'dc_lp.homepage.use_case.sp.click',
   },
   {
     intro: 'Web Hosting',
-    link: 'https://docs.nodereal.io/docs/dcellar-as-developer-tool#web-hosting',
     img: `${assetPrefix}/images/welcome/server.png`,
     imgSm: `${assetPrefix}/images/welcome/server_sm.png`,
     gaClickName: 'dc_lp.homepage.use_case.hosting.click',
@@ -44,7 +41,7 @@ export const HelpDevelopers = () => {
           },
         }}
       >
-        <LandingH2>How DCellar Helps Developers</LandingH2>
+        <LandingH2>How Ownly Helps Developers</LandingH2>
         <Text
           marginBottom={40}
           fontSize={16}
@@ -56,7 +53,7 @@ export const HelpDevelopers = () => {
             },
           }}
         >
-          DCellar can be used as a powerful developer tool that can make developer life much easier.
+          Ownly can be used as a powerful developer tool that can make developer life much easier.
         </Text>
         <Flex
           gap={24}
@@ -70,10 +67,7 @@ export const HelpDevelopers = () => {
             datas.map((item, index) => (
               <GAClick name={item.gaClickName} key={index}>
                 <Box
-                  as="a"
-                  href={item.link}
                   key={index}
-                  target="_blank"
                   overflow={'hidden'}
                   borderRadius={4}
                   transition={'all 0.2s'}

@@ -23,7 +23,7 @@ import { register } from 'swiper/element/bundle';
 register();
 export const ssrLandingRoutes = ['/', '/pricing-calculator', '/terms'];
 
-function DcellarApp({ Component, ...rest }: AppProps) {
+function OwnlyApp({ Component, ...rest }: AppProps) {
   const { store, props } = wrapper.useWrappedStore(rest);
   const persistor = persistStore(store, {}, function () {
     persistor.persist();
@@ -64,7 +64,7 @@ function DcellarApp({ Component, ...rest }: AppProps) {
 }
 
 // Disable Automatic Static Optimization to make runtime envs work.
-DcellarApp.getInitialProps = wrapper.getInitialAppProps((store) => async (appCtx) => {
+OwnlyApp.getInitialProps = wrapper.getInitialAppProps((store) => async (appCtx) => {
   // todo refactor every page fetch policy
   // only empty cache, then do fetch
   await store.dispatch(setupStorageProviders());
@@ -73,4 +73,4 @@ DcellarApp.getInitialProps = wrapper.getInitialAppProps((store) => async (appCtx
   return { pageProps: { ...nest.pageProps } };
 });
 
-export default DcellarApp;
+export default OwnlyApp;

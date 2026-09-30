@@ -12,7 +12,6 @@ import {
   BUTTON_GOT_IT,
   FILE_DESCRIPTION_CANCEL_ERROR,
   FILE_TITLE_CANCEL_FAILED,
-  GAS_FEE_DOC,
   WALLET_CONFIRM,
 } from '@/modules/object/constant';
 import {
@@ -29,16 +28,7 @@ import { SpEntity } from '@/store/slices/sp';
 import { formatLockFee } from '@/utils/object';
 import { Long, MsgCancelCreateObjectTypeUrl } from '@bnb-chain/greenfield-js-sdk';
 import { ObjectMeta } from '@bnb-chain/greenfield-js-sdk/dist/esm/types/sp/Common';
-import {
-  Box,
-  Flex,
-  Link,
-  ModalBody,
-  ModalFooter,
-  ModalHeader,
-  Text,
-  toast,
-} from '@node-real/uikit';
+import { Box, Flex, ModalBody, ModalFooter, ModalHeader, Text, toast } from '@node-real/uikit';
 import { useAsyncEffect } from 'ahooks';
 import { without } from 'lodash-es';
 import React, { memo, useEffect, useState } from 'react';
@@ -55,21 +45,7 @@ export const renderFee = (
       <Flex alignItems="center" mb="4px">
         <Text fontSize={'14px'} lineHeight={'28px'} fontWeight={400} color={'readable.tertiary'}>
           {key}
-          {key?.toLowerCase() === 'gas fee' && (
-            <>
-              {' '}
-              (
-              <Link
-                href={GAS_FEE_DOC}
-                textDecoration={'underline'}
-                color="readable.disabled"
-                target="_blank"
-              >
-                Pay by Owner Account
-              </Link>
-              )
-            </>
-          )}
+          {key?.toLowerCase() === 'gas fee' && <> ( Pay by Owner Account )</>}
         </Text>
         {keyIcon && <Box>{keyIcon}</Box>}
       </Flex>

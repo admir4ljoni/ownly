@@ -19,7 +19,7 @@ export const PageTitle = memo<PropsWithChildren<PageTitleProps>>(function PageTi
       {metaTitle && (
         <Head>
           <title>
-            {metaTitle} - DCellar{networkTag(runtimeEnv)}
+            {metaTitle} - Ownly{networkTag(runtimeEnv)}
           </title>
         </Head>
       )}

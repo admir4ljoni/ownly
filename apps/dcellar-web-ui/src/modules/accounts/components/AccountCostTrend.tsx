@@ -12,7 +12,7 @@ import { memo, useMemo, useRef } from 'react';
 import { useAccountEstimateCost } from '../hooks';
 import { CardContainer } from './Common';
 
-const colors = ['#00BA34', '#C2EECE', '#1184EE'];
+const colors = ['#4363E1', '#D0D8F7', '#33C0A8'];
 
 type BarItem = AccountCostMonth & {
   MoM: string;

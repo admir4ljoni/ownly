@@ -23,10 +23,10 @@ const Content = styled.div`
 `;
 
 const Logo = styled.img`
-  aspect-ratio: 338/144;
+  height: 40px;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 48px;
+  top: 48px;
 `;
 
 interface ErrorComponentProps {
@@ -57,11 +57,11 @@ function ErrorComponent({ statusCode }: ErrorComponentProps) {
       <SEOHead />
       <Container>
         <Logo
-          alt="Dcellar Logo"
+          alt="Ownly Logo"
           src={
             colorMode === 'dark'
-              ? `${assetPrefix}/images/logo_welcome_dark.svg`
-              : `${assetPrefix}/images/logo_welcome.svg`
+              ? `${assetPrefix}/images/ownly-logo-horizontal-dark.svg`
+              : `${assetPrefix}/images/ownly-logo-horizontal.svg`
           }
         />
         <Content>

@@ -28,7 +28,6 @@ export const BucketStatusNotice = ({
       icon: 'colored-error2',
       title: 'Flow rate exceeds limit',
       desc: "The bucket's flow rate exceeds the payment account limit. Contact the account owner or switch accounts to increase it.",
-      link: 'https://docs.nodereal.io/docs/dcellar-faq#question-why-is-my-bucket-flow-rate-limited',
       show: flowRateLimit,
     },
     bucketStatusReason || { title: '', desc: '', icon: '', show: false },

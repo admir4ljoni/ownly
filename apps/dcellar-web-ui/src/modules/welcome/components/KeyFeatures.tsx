@@ -17,7 +17,7 @@ export const keyFeatureList: TFeatureItem[] = [
   {
     label: 'Storage Management',
     title: 'Visualized Storage Management',
-    desc: "DCellar's visual storage management feature enables you to easily store, download, share and perform batch operations on objects.",
+    desc: "Ownly's visual storage management feature enables you to easily store, download, share and perform batch operations on objects.",
     introImg: `${assetPrefix}/images/welcome/storage.png`,
     introImgSm: `${assetPrefix}/images/welcome/storage_sm.png`,
     gaClickName: 'dc_lp.homepage.key_f.storage.click',

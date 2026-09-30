@@ -21,14 +21,14 @@ export function ActionButton(props: ActionButtonProps) {
           className="btn-action"
           boxSize={24}
           // visibility={'hidden'}
-          bg="rgba(0, 186, 52, 0.1)"
+          bg="rgba(67, 99, 225, 0.1)"
           flexShrink={0}
           cursor="pointer"
           borderRadius={18}
           transitionProperty="colors"
           transitionDuration="normal"
           _hover={{
-            bgColor: 'rgba(0, 186, 52, 0.2)',
+            bgColor: 'rgba(67, 99, 225, 0.2)',
             color: 'brand.brand6',
           }}
           onClick={onBeforeClick}

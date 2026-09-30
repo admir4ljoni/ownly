@@ -224,7 +224,7 @@ export const CreateObject = memo<NewObjectProps>(function NewObject({
                     height={'40px'}
                     borderRightRadius={4}
                     alignItems={'center'}
-                    borderLeft={disabled ? '1px solid readable.border' : '1px solid #5ED47F'}
+                    borderLeft={disabled ? '1px solid readable.border' : '1px solid #7E93E9'}
                   >
                     <IconFont
                       transform="rotate(-90deg)"

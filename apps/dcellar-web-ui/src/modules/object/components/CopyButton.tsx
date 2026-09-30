@@ -28,9 +28,9 @@ export const CopyButton = memo<CopyButtonProps>(function CopyButton({ text, chil
 const Copy = styled(Button)`
   padding: 8px 24px;
   border-radius: 360px;
-  border: 1px solid #00ba34;
+  border: 1px solid #4363e1;
   background: #fff;
-  color: #00ba34;
+  color: #4363e1;
   text-align: center;
   font-family: Inter, sans-serif;
   font-size: 14px;
@@ -39,6 +39,6 @@ const Copy = styled(Button)`
   height: 38px;
   :hover {
     color: #fff;
-    background: #00ba34;
+    background: #4363e1;
   }
 `;

@@ -181,7 +181,7 @@ export const MonthlyDownloadQuota = memo<MonthlyDownloadQuotaProps>(function Mon
               overlayInnerStyle={overlayStyles}
               getPopupContainer={() => document.getElementById('buy-quota-progress-bar')!}
             >
-              <Indicator bg={'#00ba34'} onMouseDown={onDragStart} />
+              <Indicator bg={'#4363e1'} onMouseDown={onDragStart} />
             </DCTooltip>
           </Progress>
         </Track>
@@ -213,7 +213,7 @@ const ProgressOrigin = styled(Box)`
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #91e1a8;
+  background-color: #a8b7f0;
 `;
 
 const OriginIndicator = styled(Box)`
@@ -239,19 +239,19 @@ const Indicator = styled(Box)`
   cursor: pointer;
 
   .indicator-moving & {
-    background: #009e2c;
+    background: #3653c4;
   }
 `;
 
 const Progress = styled(Box)`
-  background: #00ba34;
+  background: #4363e1;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
 
   .indicator-moving & {
-    background: #009e2c;
+    background: #3653c4;
   }
 `;
 

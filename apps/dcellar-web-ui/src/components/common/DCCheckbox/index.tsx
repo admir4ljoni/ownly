@@ -21,20 +21,20 @@ const Container = styled.div`
     display: none;
   }
   .ant-checkbox-checked:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
-    background-color: #2ec659;
+    background-color: #5f7ae5;
     border-color: transparent;
   }
   .ant-checkbox-indeterminate .ant-checkbox-inner {
-    background-color: #00ba34;
-    border-color: #00ba34;
+    background-color: #4363e1;
+    border-color: #4363e1;
     &:after {
       background-color: #fff;
       height: 2px;
     }
   }
   .ant-checkbox-indeterminate:hover .ant-checkbox-inner {
-    background-color: #2ec659;
-    border-color: #2ec659;
+    background-color: #5f7ae5;
+    border-color: #5f7ae5;
   }
   .ant-checkbox-disabled .ant-checkbox-inner {
     background: #fafafa;

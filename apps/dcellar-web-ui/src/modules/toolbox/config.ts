@@ -24,7 +24,7 @@ export type ToolItem = {
 export const toolList = [
   {
     icon: 'source-code',
-    title: 'DCellar Open Source',
+    title: 'Ownly Open Source',
     type: ToolTypeEnum.DevTool,
     badge: badgeTexts[ToolTypeEnum.DevTool],
     links: [
@@ -34,7 +34,7 @@ export const toolList = [
         url: 'https://github.com/node-real/dcellar',
       },
     ],
-    desc: 'Utilize DCellar open-source codebase and encourage collaboration to improve and extend its functionality.',
+    desc: 'Utilize the Ownly open-source codebase and encourage collaboration to improve and extend its functionality.',
   },
   {
     icon: 'upload',

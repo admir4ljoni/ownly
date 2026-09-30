@@ -137,7 +137,7 @@ const Container = styled(Flex)`
     border: 1px solid #e6e8ea;
 
     &:focus-within {
-      border: 1px solid #00ba34;
+      border: 1px solid #4363e1;
     }
   }
 

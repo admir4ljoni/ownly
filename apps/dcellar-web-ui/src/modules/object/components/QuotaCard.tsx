@@ -30,8 +30,8 @@ export const QuotaCard = memo<QuotaCardProps>(function QuotaCard() {
         </Flex>
         <Text
           as="span"
-          color="#00BA34"
-          _hover={{ color: '#2EC659' }}
+          color="#4363E1"
+          _hover={{ color: '#5F7AE5' }}
           cursor="pointer"
           onClick={onManageQuota}
         >
@@ -39,7 +39,7 @@ export const QuotaCard = memo<QuotaCardProps>(function QuotaCard() {
         </Text>
       </Flex>
       <Track>
-        <Box w={`${formattedQuota.remainPercent}%`} h={8} bg="#00BA34" />
+        <Box w={`${formattedQuota.remainPercent}%`} h={8} bg="#4363E1" />
       </Track>
     </Container>
   );

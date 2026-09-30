@@ -2,12 +2,12 @@ import { ThemeConfig } from 'antd';
 
 export const antdTheme: ThemeConfig = {
   token: {
-    colorPrimary: '#00BA34',
+    colorPrimary: '#4363E1',
     colorBorderSecondary: '#e6e8ea',
-    colorLink: '#00BA34',
-    colorLinkActive: '#00BA34',
-    colorLinkHover: '#00BA34',
-    colorText: '#1E2026',
+    colorLink: '#4363E1',
+    colorLinkActive: '#3653C4',
+    colorLinkHover: '#5F7AE5',
+    colorText: '#061A33',
     colorTextHeading: '#76808F',
     fontFamily: 'Inter, sans-serif',
     colorError: '#EE3911',
@@ -29,8 +29,8 @@ export const antdTheme: ThemeConfig = {
     },
     DatePicker: {
       borderRadiusSM: 2,
-      cellActiveWithRangeBg: '#E5F8EB',
-      cellHoverWithRangeBg: '#CEF2D9',
+      cellActiveWithRangeBg: '#ECEFFC',
+      cellHoverWithRangeBg: '#D0D8F7',
       cellRangeBorderColor: '#E6E8EA',
     },
   },

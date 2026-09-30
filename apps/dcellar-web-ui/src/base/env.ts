@@ -23,6 +23,8 @@ const {
   NEXT_PUBLIC_APOLLO_LIST_FOR_SELL_ENDPOINT,
   NEXT_PUBLIC_APOLLO_GLOBAL_NOTIFICATION,
   NEXT_PUBLIC_APOLLO_GLOBAL_NOTIFICATION_ETA,
+  NEXT_PUBLIC_MAINNET_URL,
+  NEXT_PUBLIC_TESTNET_URL,
 } = publicRuntimeConfig || {};
 
 const { NEXT_PRIVATE_BILLING_API_URL, NEXT_PRIVATE_EXPLORER_API_URL } = serverRuntimeConfig || {};
@@ -34,6 +36,11 @@ export const runtimeEnv: TRuntimeEnv = NEXT_PUBLIC_ENV || 'qa';
 
 export const assetPrefix = '';
 export const GA_ID = NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+// Where the network switcher sends users; a network without a URL is not offered.
+export const NETWORK_URLS: Record<'mainnet' | 'testnet', string> = {
+  mainnet: removeTrailingSlash(NEXT_PUBLIC_MAINNET_URL || ''),
+  testnet: removeTrailingSlash(NEXT_PUBLIC_TESTNET_URL || ''),
+};
 // This default values for compatible wagmi build error.
 export const GREENFIELD_CHAIN_ID = +NEXT_PUBLIC_GREENFIELD_CHAIN_ID || 5600;
 export const BSC_CHAIN_ID = +NEXT_PUBLIC_BSC_CHAIN_ID || 97;

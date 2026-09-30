@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 
 export const A = styled.a`
   :hover {
-    color: #00ba34;
+    color: #4363e1;
   }
 
   margin-left: 4px;
@@ -48,11 +48,9 @@ export const TD = styled(Box, transientOptions)<{ $dot?: number }>`
         height: 8px;
         border-radius: 100%;
 
-        background-color: ${props.$dot < 100
-          ? '#00BA34'
-          : props.$dot < 200
-            ? '#EEBE11'
-            : '#EE3911'};
+        background-color: ${
+          props.$dot < 100 ? '#4363E1' : props.$dot < 200 ? '#EEBE11' : '#EE3911'
+        };
       }
     `}
 `;

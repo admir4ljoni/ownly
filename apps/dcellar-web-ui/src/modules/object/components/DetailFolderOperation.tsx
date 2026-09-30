@@ -22,7 +22,6 @@ import { last } from 'lodash-es';
 import { memo, useMemo, useState } from 'react';
 import { MOCK_EMPTY_FOLDER_OBJECT } from '@/modules/object/constant';
 import { ObjectMeta } from '@bnb-chain/greenfield-js-sdk/dist/esm/types/sp/Common';
-import { DCLink } from '@/components/common/DCLink';
 import { Tips } from '@/components/common/Tips';
 import { DCButton } from '@/components/common/DCButton';
 
@@ -145,12 +144,6 @@ export const DetailFolderOperation = memo<DetailFolderOperationProps>(
                               "This path doesn't exist as an entity on the blockchain and lacks chain information."
                             }
                           </Box>
-                          <DCLink
-                            href="https://docs.nodereal.io/docs/dcellar-faq#question-what-is--folder-simulated-by-a-path-"
-                            target="_blank"
-                          >
-                            Learn more
-                          </DCLink>
                         </Box>
                       }
                     />

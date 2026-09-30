@@ -97,7 +97,7 @@ export const renderAddressWithLink = (
         <GAClick name={gaClickName}>
           <Link
             target="_blank"
-            color="#1184EE"
+            color="#3685D8"
             cursor={'pointer'}
             textDecoration={'underline'}
             _hover={{
@@ -129,11 +129,11 @@ export const renderUrlWithLink = (
       <GAClick name={gaClickName}>
         <Link
           target="_blank"
-          color="#1184EE"
+          color="#3685D8"
           cursor={'pointer'}
           textDecoration={'underline'}
           _hover={{
-            color: '#1184EE',
+            color: '#3685D8',
           }}
           href={encodedText}
           fontSize={'14px'}

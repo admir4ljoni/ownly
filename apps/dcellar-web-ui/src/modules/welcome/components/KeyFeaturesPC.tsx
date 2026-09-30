@@ -16,10 +16,10 @@ export const KeyFeaturesPC = memo(function KeyFeaturesPC() {
     color: 'readable.tertiary',
     _selected: {
       color: 'readable.normal',
-      bg: 'rgba(0, 186, 52, 0.10)',
+      bg: 'rgba(67, 99, 225, 0.10)',
       _hover: {
         color: 'readable.normal',
-        bg: 'rgba(0, 186, 52, 0.2)',
+        bg: 'rgba(67, 99, 225, 0.2)',
       },
     },
     _hover: {

@@ -35,7 +35,7 @@ import { getStoreNetflowRate } from '@/utils/payment';
 import { getTimestampInSeconds } from '@/utils/time';
 import { MsgDeleteObjectTypeUrl } from '@bnb-chain/greenfield-js-sdk';
 import { ObjectMeta } from '@bnb-chain/greenfield-js-sdk/dist/esm/types/sp/Common';
-import { Flex, Link, ModalBody, ModalFooter, ModalHeader, Text, toast } from '@node-real/uikit';
+import { Flex, ModalBody, ModalFooter, ModalHeader, Text, toast } from '@node-real/uikit';
 import { useAsyncEffect } from 'ahooks';
 import { without } from 'lodash-es';
 import { memo, useMemo, useState } from 'react';
@@ -267,16 +267,7 @@ export const DeleteObjectOperation = memo<DeleteObjectOperationProps>(
               mb={'12px'}
             >
               You’ve paid {displayTime(reserveTime)} locked storage fee for this object, but this
-              object has been stored less than {displayTime(reserveTime)}.{' '}
-              <Link
-                color="readable.normal"
-                textDecoration={'underline'}
-                cursor={'pointer'}
-                href="https://docs.nodereal.io/docs/dcellar-faq#fee-related "
-                target="_blank"
-              >
-                Learn more
-              </Link>
+              object has been stored less than {displayTime(reserveTime)}.
             </Text>
           )}
           <Text className="ui-modal-desc">{description}</Text>

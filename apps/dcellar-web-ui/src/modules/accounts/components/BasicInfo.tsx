@@ -66,7 +66,7 @@ export const BasicInfo = ({ loading, title, accountDetail, availableBalance }: P
           </Text>
           <Link
             target="_blank"
-            color="#1184EE"
+            color="#3685D8"
             cursor={'pointer'}
             textDecoration={'underline'}
             _hover={{

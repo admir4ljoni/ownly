@@ -58,12 +58,6 @@ const ASIDE = [
     icon: 'discord',
     text: 'Discord',
   },
-  {
-    link: 'https://docs.nodereal.io/docs/dcellar-get-started',
-    trackId: 'dc.main.nav.faq.click',
-    icon: 'help',
-    text: 'About DCellar',
-  },
 ];
 
 interface NavProps {}
@@ -147,6 +141,9 @@ const MenuItem = styled.li<{ $active?: boolean }>`
   font-weight: 500;
   transition: all 0.15s;
   list-style-type: none;
+  margin: 2px 8px;
+  border-radius: 8px;
+  overflow: hidden;
   a {
     display: grid;
     gap: 12px;
@@ -160,8 +157,16 @@ const MenuItem = styled.li<{ $active?: boolean }>`
       ? css`
           z-index: 1;
           color: var(--ui-colors-brand-normal-hight);
-          border-right: 3px solid var(--ui-colors-brand-normal);
-          background: rgba(0, 186, 52, 0.1);
+          background: rgba(67, 99, 225, 0.1);
+          ::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #33c0a8, #4363e1);
+          }
           ${MenuIcon} {
             color: var(--ui-colors-brand-normal-hight);
           }

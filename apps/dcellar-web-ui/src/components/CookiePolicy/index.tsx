@@ -39,7 +39,7 @@ export const CookiePolicy = ({ onClose }: Props) => {
       }}
       justify="center"
       paddingY={'16px'}
-      color="#9B00FB"
+      color="#33C0A8"
     >
       <Flex
         width={'100%'}
@@ -50,12 +50,12 @@ export const CookiePolicy = ({ onClose }: Props) => {
       >
         <Box mb={['16px', '0']}>
           <Text maxW={'716px'} fontSize="14" lineHeight={'150%'} color="#E6E8EA">
-            NodeReal uses cookies to provide a better experience. Check here to manage{' '}
+            We use cookies to provide a better experience. Check here to manage{' '}
             <Box
               as="button"
-              color="scene.success.normal"
+              color="brand.mint"
               _hover={{
-                color: 'scene.success.active',
+                color: 'brand.brand3',
               }}
               onClick={() => {
                 setOpen(true);
@@ -73,9 +73,9 @@ export const CookiePolicy = ({ onClose }: Props) => {
               target="_blank"
               onClick={() => reportEvent({ name: 'dc_lp.main.cookie.learnmore.click', data: {} })}
               href={'https://docs.nodereal.io/docs/cookie-policy'}
-              color="scene.success.normal"
+              color="brand.mint"
               _hover={{
-                color: 'scene.success.active',
+                color: 'brand.brand3',
               }}
             >
               learn more

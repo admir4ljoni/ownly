@@ -23,14 +23,14 @@ export const PageProtect: React.FC<any> = ({ children }) => {
     const inProtectGNFDPath = protectGNFDPaths.some((path) => pathname === path);
     const isNoProtectGNFDPath = noProtectPaths.some((path) => pathname === path);
     const isGNFD = isRightChain(chain?.id, GREENFIELD_CHAIN_ID);
-    const isDcellarChains = [GREENFIELD_CHAIN_ID, BSC_CHAIN_ID].includes(chain?.id);
+    const isOwnlyChains = [GREENFIELD_CHAIN_ID, BSC_CHAIN_ID].includes(chain?.id);
 
     if (isNoProtectGNFDPath) {
       return onClose();
     } else if (inProtectGNFDPath) {
       isGNFD ? onClose() : onOpen();
     } else {
-      isDcellarChains ? onClose() : onOpen();
+      isOwnlyChains ? onClose() : onOpen();
     }
   }, [chain?.id, onClose, onOpen, pathname]);
 

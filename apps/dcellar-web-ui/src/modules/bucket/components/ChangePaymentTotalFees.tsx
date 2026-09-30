@@ -4,7 +4,6 @@ import { GasFee } from '@/components/Fee/GasFee';
 import { PrepaidFee } from '@/components/Fee/PrepaidFee';
 import { SettlementFee } from '@/components/Fee/SettlementFee';
 import { TotalFeeBox } from '@/components/Fee/TotalFeeBox';
-import { LearnMoreTips } from '@/components/common/Tips';
 import { CRYPTOCURRENCY_DISPLAY_PRECISION } from '@/modules/wallet/constants';
 import { useAppSelector } from '@/store';
 import { selectBnbUsdtExchangeRate } from '@/store/slices/global';
@@ -25,10 +24,6 @@ export type ChangePaymentTotalFeeProps = {
   fromSponsor: boolean;
   toSponsor: boolean;
 };
-
-const TipsLink =
-  'https://docs.nodereal.io/docs/dcellar-faq#question-how-much-to-pay-for-changing-payment-account';
-const Tips = <LearnMoreTips href={TipsLink} text="Total Fees" />;
 
 export const ChangePaymentTotalFee = ({
   gasFee,
@@ -59,7 +54,6 @@ export const ChangePaymentTotalFee = ({
       expand={isOpen}
       exchangeRate={exchangeRate}
       canExpand={true}
-      Tips={Tips}
     >
       {!fromSponsor && (
         <>

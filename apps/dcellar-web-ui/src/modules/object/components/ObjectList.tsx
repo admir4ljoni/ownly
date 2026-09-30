@@ -61,12 +61,7 @@ import Link from 'next/link';
 import { useUploadProcessObjects } from '@/hooks/useUploadProcessObjects';
 
 export type ObjectActionValueType =
-  | 'marketplace'
-  | 'detail'
-  | 'share'
-  | 'download'
-  | 'cancel'
-  | 'delete';
+  'marketplace' | 'detail' | 'share' | 'download' | 'cancel' | 'delete';
 
 export type ObjectMenuOption = Omit<MenuOption, 'value'> & {
   value: ObjectActionValueType;
@@ -219,7 +214,7 @@ export const ObjectList = memo<ObjectListProps>(function ObjectList({ shareMode 
       if (!currentPathExist && isBucketOwner)
         return (
           <Box sx={{ a: { color: 'brand.normal' } }}>
-            The path no longer exists on DCellar. You can{' '}
+            The path no longer exists on Ownly. You can{' '}
             <Link href={`/buckets/${currentBucketName}`}>return to the bucket list</Link> and
             continue your work.
           </Box>

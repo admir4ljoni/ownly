@@ -258,7 +258,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
                     <GAClick name={item.gaClickName}>
                       <Link
                         target="_blank"
-                        color="#1184EE"
+                        color="#3685D8"
                         cursor={'pointer'}
                         textDecoration={'underline'}
                         _hover={{
@@ -275,7 +275,7 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
                 ) : (
                   <Link
                     target="_blank"
-                    color="#1184EE"
+                    color="#3685D8"
                     cursor={'pointer'}
                     textDecoration={'underline'}
                     _hover={{
@@ -460,8 +460,8 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
               placement="bottom"
             >
               <Flex bg="#F5F5F5" height={8} my={4} alignItems={'center'}>
-                <Box bg="#00BA34" height={8} w={`${formattedQuota.readRemainPercent}%`} />
-                <Box bg="#91E1A8" height={8} w={`${formattedQuota.freeRemainPercent}%`} />
+                <Box bg="#4363E1" height={8} w={`${formattedQuota.readRemainPercent}%`} />
+                <Box bg="#A8B7F0" height={8} w={`${formattedQuota.freeRemainPercent}%`} />
               </Flex>
             </Tooltip>
             <Text
@@ -474,8 +474,8 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
               {formattedQuota.show}{' '}
               <Text
                 as="span"
-                color="#00BA34"
-                _hover={{ color: '#2EC659' }}
+                color="#4363E1"
+                _hover={{ color: '#5F7AE5' }}
                 cursor="pointer"
                 onClick={onManageQuota}
               >
@@ -498,8 +498,8 @@ export const DetailBucketOperation = memo<DetailBucketOperationProps>(function D
         )}
         {isBucketMigrating && (
           <DiscontinueBanner
-            icon={<IconFont w={16} type={'migrate'} color={'#1184EE'} />}
-            color={'#1184EE'}
+            icon={<IconFont w={16} type={'migrate'} color={'#3685D8'} />}
+            color={'#3685D8'}
             bg="opacity7"
             marginBottom={16}
             content="This bucket is in the process of data migration to another provider."

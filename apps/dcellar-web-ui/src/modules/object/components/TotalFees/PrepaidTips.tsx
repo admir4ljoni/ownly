@@ -1,9 +1,8 @@
 import { Tips } from '@/components/common/Tips';
-import { PREPAID_FEE_DOC } from '@/modules/object/constant';
 import { useAppSelector } from '@/store';
 import { selectStoreFeeParams } from '@/store/slices/global';
 import { displayTime } from '@/utils/common';
-import { Box, Link } from '@node-real/uikit';
+import { Box } from '@node-real/uikit';
 import { memo } from 'react';
 
 interface PrePaidTipsProps {}
@@ -18,16 +17,6 @@ export const PrePaidTips = memo<PrePaidTipsProps>(function PrePaidTips() {
       tips={
         <Box>
           <Box>Prepaid fee for {reserveTime} and will be charged based on the flow rate.</Box>
-          <Box textAlign={'right'}>
-            <Link
-              cursor={'pointer'}
-              textDecoration={'underline'}
-              href={PREPAID_FEE_DOC}
-              target="_blank"
-            >
-              Learn more
-            </Link>
-          </Box>
         </Box>
       }
     />

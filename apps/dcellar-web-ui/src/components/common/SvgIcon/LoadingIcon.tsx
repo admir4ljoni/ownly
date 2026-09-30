@@ -2,7 +2,7 @@ import { Icon, IconProps } from '@node-real/icons';
 
 export const LoadingIcon = ({
   strokeWidth = 4,
-  stroke = '#00BA34',
+  stroke = '#4363E1',
   ...props
 }: IconProps & { strokeWidth?: number; stroke?: string }) => (
   <Icon width="26" height="26" viewBox="0 0 26 26" fill="none" {...props}>

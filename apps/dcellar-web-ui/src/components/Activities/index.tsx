@@ -49,7 +49,7 @@ export const Activities = memo<ActivitiesProps>(function Activities({ loading, a
               </Text>
               &nbsp; (
               <Link
-                color={'#1184EE'}
+                color={'#3685D8'}
                 _hover={{ color: '#3C9AF1' }}
                 href={`${GREENFIELD_CHAIN_EXPLORER_URL}/tx/0x${item.hash}`}
                 target="_blank"

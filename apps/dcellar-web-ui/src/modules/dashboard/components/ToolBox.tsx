@@ -18,12 +18,6 @@ const TOOL_OPTIONS = [
     link: '/pricing-calculator',
     target: '_blank',
   },
-  {
-    icon: 'tutorials',
-    name: 'Tutorial',
-    link: 'https://docs.nodereal.io/docs/dcellar-get-started',
-    target: '_blank',
-  },
 ];
 
 export const ToolBox = ({ children, ...restProps }: CardProps) => {

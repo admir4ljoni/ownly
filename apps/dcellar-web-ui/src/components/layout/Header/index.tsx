@@ -1,6 +1,6 @@
 import { runtimeEnv } from '@/base/env';
 import { CookiePolicyContainer } from '@/components/CookiePolicyContainer';
-import { IconFont } from '@/components/IconFont';
+import { BrandLogo } from '@/components/layout/Logo';
 import { TaskManagement } from '@/modules/upload/TaskManagement';
 import { networkTag } from '@/utils/common';
 import styled from '@emotion/styled';
@@ -19,7 +19,7 @@ export const Header = memo<HeaderProps>(function Header({ taskManagement = true 
       <HeaderContainer>
         <LogoContainer>
           <Link href="/" target="_blank" data-track-id="dc.main.nav.logo.click">
-            <IconFont type="logo-new" w={184} h={32} />
+            <BrandLogo h={32} />
           </Link>
           {runtimeEnv === 'testnet' && <Badge>{networkTag(runtimeEnv)}</Badge>}
         </LogoContainer>

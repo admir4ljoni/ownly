@@ -28,7 +28,6 @@ export const BucketNameColumn = memo<BucketNameColumnProps>(function BucketNameC
         return {
           icon: 'colored-error2',
           title: 'Discontinue Notice',
-          link: 'https://docs.nodereal.io/docs/dcellar-faq#question-what-is-discontinue',
           desc: `This item will be deleted by SP with an estimated time of ${estimateTime}. Please backup your data in time.`,
           show: true,
         };

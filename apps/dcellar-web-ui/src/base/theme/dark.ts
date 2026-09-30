@@ -6,7 +6,7 @@ export const dark = {
       disabled: '#5E6673',
       border: '#2E323A',
       white: '#FFFFFF',
-      primary: '#5ECA62',
+      primary: '#7E93E9',
       tertiary: '#76808F',
       placeholder: '#5E6673',
       neutral1: '#171924',
@@ -15,9 +15,9 @@ export const dark = {
       neutral4: '#646B80',
       neutral5: '#858CA2',
       neutral6: '#A1A7BB',
-      brand5: '#2EC659',
-      brand6: '#00BA34',
-      brand7: '#009E2C',
+      brand5: '#5F7AE5',
+      brand6: '#4363E1',
+      brand7: '#3653C4',
     },
 
     bg: {
@@ -33,8 +33,8 @@ export const dark = {
 
     scene: {
       primary: {
-        normal: '#5ECA62',
-        active: '#5ECA62',
+        normal: '#6F89EC',
+        active: '#7E93E9',
       },
 
       success: {

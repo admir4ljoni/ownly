@@ -1,6 +1,5 @@
 import { Avatar } from '@/components/Avatar';
 import { CopyText } from '@/components/common/CopyText';
-import { DCLink } from '@/components/common/DCLink';
 import { Tips } from '@/components/common/Tips';
 import { getShortenWalletAddress } from '@/utils/wallet';
 import { Box, Flex, Text } from '@node-real/uikit';
@@ -43,12 +42,6 @@ export const Balance = ({ address }: AvailableBalanceProps) => {
                 Please notice that due to the locked fee, Greenfield available balance is not equal
                 to your account overall balance, which is shown at your wallet.
               </Box>
-              <DCLink
-                href="https://docs.nodereal.io/docs/dcellar-faq#question-what-is-greenfield-available-balance"
-                target="_blank"
-              >
-                Learn more
-              </DCLink>
             </Box>
           }
         />

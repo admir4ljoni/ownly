@@ -301,7 +301,7 @@ const Row = styled(Flex)`
   }
 
   &.selected {
-    background: #00ba341a;
+    background: #4363e11a;
   }
 `;
 

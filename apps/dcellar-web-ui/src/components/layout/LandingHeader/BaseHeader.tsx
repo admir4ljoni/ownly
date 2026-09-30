@@ -5,7 +5,6 @@ import { GAClick } from '@/components/common/GATracker';
 import { breakpoints } from '@/modules/responsive';
 import { networkTag } from '@/utils/common';
 import styled from '@emotion/styled';
-import { ExternalLinkIcon, IconProps } from '@node-real/icons';
 import { Badge, Box, Flex, Link } from '@node-real/uikit';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -18,22 +17,13 @@ export const MENUS = [
     title: 'Homepage',
     link: '/',
     target: '',
-    Icon: () => <></>,
     gaName: 'dc_lp.main.header.homepage.click',
   },
   {
     title: 'Pricing',
     link: '/pricing-calculator',
     target: '',
-    Icon: () => <></>,
     gaName: 'dc_lp.main.header.pricing.click',
-  },
-  {
-    title: 'Docs',
-    link: 'https://docs.nodereal.io/docs/dcellar-get-started',
-    target: '_blank',
-    Icon: (props: IconProps) => <ExternalLinkIcon w={12} ml={2} mt={-1} {...props} />,
-    gaName: 'dc_lp.main.header.docs.click',
   },
 ];
 
@@ -87,10 +77,7 @@ export const BaseHeader = () => {
               target={item.target}
             >
               <GAClick name={item.gaName}>
-                <Box display="contents">
-                  {item.title}
-                  <item.Icon />
-                </Box>
+                <Box display="contents">{item.title}</Box>
               </GAClick>
             </Link>
           </NextLink>
@@ -121,7 +108,7 @@ export const BaseHeader = () => {
 function getGAOptions(pathname: string) {
   switch (true) {
     case pathname === '/pricing-calculator':
-      return 'dc_lp.calculator.dcellar.connect_wallet.click';
+      return 'dc_lp.calculator.ownly.connect_wallet.click';
     default:
       return 'dc_lp.main.header.connect_wallet.click';
   }

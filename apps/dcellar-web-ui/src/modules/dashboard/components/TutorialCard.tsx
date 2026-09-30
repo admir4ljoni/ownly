@@ -33,25 +33,25 @@ export const TutorialCard = () => {
       Link: (
         <Link
           fontWeight={500}
-          target="_blank"
-          href="https://docs.nodereal.io/docs/dcellar-get-started#upload-object"
+          cursor="pointer"
+          onClick={() => router.push(InternalRoutePaths.buckets)}
         >
-          Learn More
+          Go to Buckets
         </Link>
       ),
     },
     {
       title: 'Monitor Usage',
       description:
-        'DCellar provides a highly efficient dashboard, enabling you to manage your data usage and cost estimates with ease.',
+        'Ownly provides a highly efficient dashboard, enabling you to manage your data usage and cost estimates with ease.',
       icon: 'share-objects',
       Link: (
         <Link
           fontWeight={500}
-          target="_blank"
-          href="https://docs.nodereal.io/docs/dcellar-get-started#monitor-usage"
+          cursor="pointer"
+          onClick={() => router.push(InternalRoutePaths.accounts)}
         >
-          Learn More
+          View Accounts
         </Link>
       ),
     },

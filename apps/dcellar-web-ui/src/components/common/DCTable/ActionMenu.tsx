@@ -97,8 +97,8 @@ const styles = css`
   transition: all 0.1s;
 
   :hover {
-    background-color: rgba(0, 186, 52, 0.2);
-    color: #00ba34;
+    background-color: rgba(67, 99, 225, 0.2);
+    color: #4363e1;
   }
 `;
 
@@ -109,6 +109,6 @@ const DownloadIcon = styled(Center)`
 
 export const StyledMenuButton = styled(MenuButton, transientOptions)<{ $open?: boolean }>`
   ${styles};
-  background-color: ${(props) => (props.$open ? 'rgba(0, 186, 52, 0.1)' : 'transparent')};
-  color: ${(props) => (props.$open ? '#00BA34' : '#1E2026')};
+  background-color: ${(props) => (props.$open ? 'rgba(67, 99, 225, 0.1)' : 'transparent')};
+  color: ${(props) => (props.$open ? '#4363E1' : '#1E2026')};
 `;

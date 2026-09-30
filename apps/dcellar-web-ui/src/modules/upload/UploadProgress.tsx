@@ -11,7 +11,7 @@ export const UploadProgress = memo<UploadProgressProps>(function UploadProgress(
       size="32"
       value={value}
       trackColor="bg.bottom"
-      color="#00BA34"
+      color="#4363E1"
       marginRight={'4px'}
     >
       <CircularProgressLabel>

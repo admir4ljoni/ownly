@@ -58,7 +58,7 @@ export const AccountDetail = () => {
   return (
     <>
       <Head>
-        <title>{accountDetail.name} - DCellar</title>
+        <title>{accountDetail.name} - Ownly</title>
       </Head>
       <NonRefundableModal />
       <Flex gap={16} flexDirection={'column'}>

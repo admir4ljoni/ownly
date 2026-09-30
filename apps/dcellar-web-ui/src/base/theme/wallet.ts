@@ -2,10 +2,10 @@ import { CustomTheme } from '@node-real/walletkit/dist/themes/base';
 
 export const customTheme: CustomTheme = {
   colors: {
-    text: '#1E2026',
+    text: '#061A33',
     textSecondary: '#76808F',
-    primary: '#00ba34',
-    primaryActive: '#3ec659',
+    primary: '#4363E1',
+    primaryActive: '#3653C4',
     error: '#ee3911',
     errorActive: '#f15d3c',
     border: '#E6E8EA',
@@ -17,7 +17,7 @@ export const customTheme: CustomTheme = {
     buttonText: 'var(--wk-colors-text)',
     buttonTextHover: 'var(--wk-colors-text)',
     buttonBackground: '#f5f5f5',
-    buttonBackgroundHover: 'rgba(0, 186, 52, 0.10)',
+    buttonBackgroundHover: 'rgba(67, 99, 225, 0.10)',
 
     connectButtonText: 'var(--wk-colors-text)',
     connectButtonTextHover: 'var(--wk-colors-text)',
@@ -37,7 +37,7 @@ export const customTheme: CustomTheme = {
     optionText: 'var(--wk-colors-text)',
     optionTextHover: 'var(--wk-colors-text)',
     optionBackground: '#f5f5f5',
-    optionBackgroundHover: 'rgba(0, 186, 52, 0.10)',
+    optionBackgroundHover: 'rgba(67, 99, 225, 0.10)',
 
     walletOptionText: 'var(--wk-colors-optionText)',
     walletOptionTextHover: 'var(--wk-colors-optionTextHover)',

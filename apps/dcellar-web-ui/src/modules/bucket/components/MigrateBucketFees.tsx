@@ -3,7 +3,6 @@ import { FullBalance } from '@/components/Fee/FullBalance';
 import { GasFee } from '@/components/Fee/GasFee';
 import { SettlementFee } from '@/components/Fee/SettlementFee';
 import { TotalFeeBox } from '@/components/Fee/TotalFeeBox';
-import { LearnMoreTips } from '@/components/common/Tips';
 import { CRYPTOCURRENCY_DISPLAY_PRECISION } from '@/modules/wallet/constants';
 import { useAppSelector } from '@/store';
 import { selectBnbUsdtExchangeRate } from '@/store/slices/global';
@@ -15,10 +14,6 @@ export type MigrateBucketFeesProps = {
   settlementFee: string;
   paymentAddress: string;
 };
-
-const TipsLink =
-  'https://docs.nodereal.io/docs/dcellar-faq#question-how-much-to-pay-for-changing-payment-account';
-const Tips = <LearnMoreTips href={TipsLink} text="Total Fees" />;
 
 export const MigrateBucketFees = ({
   gasFee,
@@ -39,7 +34,6 @@ export const MigrateBucketFees = ({
       expand={isOpen}
       exchangeRate={exchangeRate}
       canExpand={true}
-      Tips={Tips}
     >
       <SettlementFee amount={settlementFee} />
       <FullBalance address={paymentAddress} />

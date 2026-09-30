@@ -34,7 +34,7 @@ export const UploadMenuList = memo<UploadMenuListProps>(function UploadMenuList(
             transform: 'rotate(-270deg)',
           },
           '.ui-icon__container': {
-            bgColor: '#009E2C',
+            bgColor: '#3653C4',
           },
         }}
       >
@@ -47,7 +47,7 @@ export const UploadMenuList = memo<UploadMenuListProps>(function UploadMenuList(
               <MenuItem
                 _hover={{
                   color: 'brand.brand7',
-                  backgroundColor: 'rgba(0, 186, 52, 0.10)',
+                  backgroundColor: 'rgba(67, 99, 225, 0.10)',
                 }}
               >
                 <Flex cursor="pointer">
@@ -77,7 +77,7 @@ export const UploadMenuList = memo<UploadMenuListProps>(function UploadMenuList(
               <MenuItem
                 _hover={{
                   color: 'brand.brand7',
-                  backgroundColor: 'rgba(0, 186, 52, 0.10)',
+                  backgroundColor: 'rgba(67, 99, 225, 0.10)',
                 }}
                 isDisabled={disabled}
               >

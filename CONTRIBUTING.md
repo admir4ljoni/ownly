@@ -1,5 +1,5 @@
-# DCellar Contribution Guide
-Thanks for your interest in contributing to DCellar! Please take a moment to review this document before submitting a pull request.
+# Ownly Contribution Guide
+Thanks for your interest in contributing to Ownly! Please take a moment to review this document before submitting a pull request.
 
 ## Prerequisites
 This project relies on [`nodejs`](https://nodejs.org/en), and use [`rushjs`](https://rushjs.io/) as a monorepo manager, make sure you have them installed:

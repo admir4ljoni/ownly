@@ -39,14 +39,14 @@ export default function TermsOfUsePage() {
           },
         }}
       >
-        <H1>DCellar Terms of Use</H1>
+        <H1>Ownly Terms of Use</H1>
         <Content>
-          The following terms and conditions govern all use of the dcellar.io and testnet.dcellar.io
-          website and all content, services and products available at or through the website. The
-          Website is owned and operated by NodeReal. The Website is offered subject to your
-          acceptance without modification of all of the terms and conditions contained herein and
-          all other operating rules, policies and procedures that may be published from time to time
-          on this Site by NodeReal.
+          The following terms and conditions govern all use of the Ownly website and all content,
+          services and products available at or through the website. The Website is owned and
+          operated by NodeReal. The Website is offered subject to your acceptance without
+          modification of all of the terms and conditions contained herein and all other operating
+          rules, policies and procedures that may be published from time to time on this Site by
+          NodeReal.
         </Content>
         <Content>
           Please read this Agreement carefully before accessing or using the Website. By accessing

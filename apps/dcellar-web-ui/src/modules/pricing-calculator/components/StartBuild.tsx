@@ -10,7 +10,7 @@ import { smMedia } from '@/modules/responsive';
 export const StartBuildContent = ({ gaClickName }: { gaClickName: string }) => (
   <>
     <H2 fontSize={40} fontWeight={700}>
-      Start Building with DCellar Now
+      Start Building with Ownly Now
     </H2>
     <Text
       fontSize={16}
@@ -20,8 +20,8 @@ export const StartBuildContent = ({ gaClickName }: { gaClickName: string }) => (
         },
       }}
     >
-      Start your business with BNB Greenfield&apos;s decentralized storage solution with DCellar,
-      and easily expand your operations.
+      Start your business with BNB Greenfield&apos;s decentralized storage solution with Ownly, and
+      easily expand your operations.
     </Text>
     <ConnectWallet
       text="Get Started"
@@ -59,6 +59,6 @@ export const StartBuild = () => (
       },
     }}
   >
-    <StartBuildContent gaClickName="dc_lp.calculator.dcellar.connect_wallet.click" />
+    <StartBuildContent gaClickName="dc_lp.calculator.ownly.connect_wallet.click" />
   </PriceResponsiveContainer>
 );

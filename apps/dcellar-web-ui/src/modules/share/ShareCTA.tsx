@@ -1,18 +1,16 @@
 import styled from '@emotion/styled';
-import { Box, Text } from '@node-real/uikit';
+import { Image, Text } from '@node-real/uikit';
 import Link from 'next/link';
 
 import { DCButton } from '@/components/common/DCButton';
-import { DCLink } from '@/components/common/DCLink';
-import { GAClick } from '@/components/common/GATracker';
-import { IconFont } from '@/components/IconFont';
+import { assetPrefix } from '@/base/env';
 
 export const ShareCTA = () => {
   return (
     <Content>
-      <IconFont type={'light-logo'} w={40} />
+      <Image alt="Ownly" src={`${assetPrefix}/images/ownly-mark.svg`} w={40} />
       <Text fontWeight={600} fontSize={16} lineHeight="19px" m={24}>
-        Start your journey of BNB Greenfield decentralized data network with DCellar Now.🥳
+        Start your journey of BNB Greenfield decentralized data network with Ownly Now.🥳
       </Text>
       <Link href="/buckets" legacyBehavior passHref replace>
         <DCButton
@@ -26,17 +24,6 @@ export const ShareCTA = () => {
           Get Started
         </DCButton>
       </Link>
-      <DCLink
-        color={'readable.normal'}
-        target="_blank"
-        href="https://docs.nodereal.io/docs/dcellar-get-started"
-      >
-        <GAClick name="dc.shared_ui.preview.learn_more.click">
-          <Box fontWeight={500} as="span" lineHeight="20px">
-            Learn More
-          </Box>
-        </GAClick>
-      </DCLink>
     </Content>
   );
 };

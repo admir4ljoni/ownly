@@ -191,8 +191,8 @@ export const MigrateBucketOperation = memo(function MigrateBucketOperation({
               No enough download quota to change primary storage provider.
             </Text>
             <Text
-              color="#00BA34"
-              _hover={{ color: '#2EC659' }}
+              color="#4363E1"
+              _hover={{ color: '#5F7AE5' }}
               cursor="pointer"
               onClick={onManageQuota}
             >

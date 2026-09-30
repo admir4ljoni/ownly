@@ -54,7 +54,7 @@ export const MigratingBucketNoticeBanner = ({ bucketName }: { bucketName: string
 
   return (
     <Flex
-      color={'#1184EE'}
+      color={'#3685D8'}
       justifyContent={'space-between'}
       mb={16}
       backgroundColor="opacity7"
@@ -68,7 +68,7 @@ export const MigratingBucketNoticeBanner = ({ bucketName }: { bucketName: string
       </Flex>
       <Text
         as="span"
-        _hover={{ color: '#1184EE' }}
+        _hover={{ color: '#3685D8' }}
         cursor="pointer"
         textDecoration={'underline'}
         onClick={onCancelMigration}

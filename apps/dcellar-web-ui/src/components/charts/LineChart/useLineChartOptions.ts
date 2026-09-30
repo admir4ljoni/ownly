@@ -134,11 +134,11 @@ export function useLineChartOptions(options: any, noData: boolean) {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
               {
                 offset: 0,
-                color: rgba('#00BA34', 0.2),
+                color: rgba('#4363E1', 0.2),
               },
               {
                 offset: 1,
-                color: rgba('#00BA34', 0),
+                color: rgba('#4363E1', 0),
               },
             ]),
           },

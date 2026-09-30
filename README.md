@@ -1,5 +1,7 @@
-# DCellar
-DCellar is a development management console built on the BNB Greenfield decentralized storage network.
+# Ownly
+Ownly is a development management console built on the BNB Greenfield decentralized storage network.
+
+Ownly is based on the open-source [DCellar](https://github.com/node-real/dcellar) project by NodeReal.
 
 ## Features
 - [x] Connect using Trust Wallet, Metamask, and WalletConnect
@@ -31,7 +33,7 @@ DCellar is a development management console built on the BNB Greenfield decentra
 
 ## About this Repository
 
-This repository is a [monorepo](https://en.wikipedia.org/wiki/Monorepo) that holds the source code to multiple projects for Dcellar. It is built using [Rush](http://rushjs.io/).
+This repository is a [monorepo](https://en.wikipedia.org/wiki/Monorepo) that holds the source code to multiple projects for Ownly. It is built using [Rush](http://rushjs.io/).
 
 See [rush.json](./rush.json) for the complete list of packages.
 
@@ -139,7 +141,6 @@ If you use editor other than vscode, just make your app's directory as your work
 ## Documentation Links
 - [Greenfield Whitepaper](https://github.com/bnb-chain/greenfield-whitepaper)
 - [Guide to BNB Greenfield](https://docs.bnbchain.org/bnb-greenfield/)
-- [Guide to DCellar](https://docs.nodereal.io/docs/dcellar-get-started)
 - [Guide to Rush](https://rushjs.io/pages/intro/welcome/)
 - [Guide to Apollo](https://github.com/apolloconfig/apollo)
 - [BNB Greenfield Release Notes](https://docs.bnbchain.org/bnb-greenfield/release-notes/releaseNotes/)
@@ -164,7 +165,7 @@ $ rush add -p next
 ```
 
 ## Contributing
-Please follow our [DCellar Contribution Guide](./CONTRIBUTING.md).
+Please follow our [Ownly Contribution Guide](./CONTRIBUTING.md).
 
 
 ## License
