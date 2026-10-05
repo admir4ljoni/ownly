@@ -363,7 +363,7 @@ export const UploadObjectsOperation = memo<UploadObjectsOperationProps>(
                   justifyContent={'center'}
                   gaClickName="dc.file.upload_modal.confirm.click"
                 >
-                  {(loading || creating) && !checkedQueue ? (
+                  {loading || creating ? (
                     <>
                       Memuat
                       <DotLoading />

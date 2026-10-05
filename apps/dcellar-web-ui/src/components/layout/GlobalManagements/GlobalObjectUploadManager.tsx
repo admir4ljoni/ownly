@@ -1,6 +1,7 @@
 import { useChecksumApi } from '@/modules/checksum';
 import { useAppDispatch, useAppSelector } from '@/store';
 import {
+  UPLOADING_STATUSES,
   UploadObject,
   progressFetchList,
   refreshTaskFolder,
@@ -213,7 +214,7 @@ export const GlobalObjectUploadManager = memo<GlobalTasksProps>(
             setupUploadTaskErrorMsg({
               account: loginAccount,
               task,
-              errorMsg: authExpired ? 'Sesi masuk sudah kedaluwarsa.' : error1 || 'gagal mengunggah',
+              errorMsg: authExpired ? 'Sesi masuk sudah kedaluwarsa.' : error2 || 'gagal mengunggah',
             }),
           );
         }
@@ -397,6 +398,15 @@ export const GlobalObjectUploadManager = memo<GlobalTasksProps>(
       if (isAuthPending) return;
       setAuthModal(false);
     }, [isAuthPending]);
+
+    // warn before leaving the page while uploads are in progress; the queue is not persisted.
+    const uploading = queue.some((t) => UPLOADING_STATUSES.includes(t.status));
+    useEffect(() => {
+      if (!uploading) return;
+      const warn = (e: BeforeUnloadEvent) => e.preventDefault();
+      window.addEventListener('beforeunload', warn);
+      return () => window.removeEventListener('beforeunload', warn);
+    }, [uploading]);
 
     // 2. sign
     useAsyncEffect(async () => {
